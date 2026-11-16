@@ -5,6 +5,7 @@ import "./globals.css";
 import { site, tel, sms } from "@/data/site";
 import { services } from "@/data/services";
 import { asset, isPreview } from "@/data/base";
+import { hoursList, season } from "@/data/hours";
 
 const archivo = localFont({
   src: "../fonts/archivo-latin-standard-normal.woff2",
@@ -127,6 +128,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <a href={site.facebook}>Facebook</a>
                 </li>
               </ul>
+            </div>
+            <div>
+              <p className="foot-h">{season}</p>
+              <dl className="hours-list">
+                {hoursList.map(([d, t]) => (
+                  <div key={d}>
+                    <dt>{d}</dt>
+                    <dd>{t}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
             <div>
               <p className="foot-h">Services</p>

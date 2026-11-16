@@ -12,8 +12,8 @@ export type Service = {
   searchName: string;
   from: number;
   time: string;
-  /** start times offered on the booking page */
-  starts: string[];
+  /** hours to plan for on the booking page; start times are worked out from Owen's hours (hours.ts) */
+  jobHours: number;
   owenSays: string;
   note?: string;
   includes: { group: string; items: string[] }[];
@@ -24,9 +24,7 @@ export type Service = {
   goodFor: string;
 };
 
-const allDay = ["8am"];
-const longJob = ["8am", "10am"];
-const shortJob = ["8am", "10am", "midday", "2pm"];
+// jobHours: top of Owen's own time range. Correction and coating are guesses (CONFIRM list).
 
 export const services: Service[] = [
   {
@@ -35,7 +33,7 @@ export const services: Service[] = [
     searchName: "Mobile car valet",
     from: 45,
     time: "1 to 2 hours",
-    starts: shortJob,
+    jobHours: 2,
     owenSays: "Bring your vehicle back to looking like new with the basic package.",
     note: "Subject to condition, and any type of vehicle welcome.",
     includes: [
@@ -75,7 +73,7 @@ export const services: Service[] = [
     searchName: "Car deep clean",
     from: 150,
     time: "3 to 5 hours",
-    starts: longJob,
+    jobHours: 5,
     owenSays: "Bring your vehicle back to looking brand new with the full deep clean package.",
     includes: [
       {
@@ -118,7 +116,7 @@ export const services: Service[] = [
     searchName: "Paint correction",
     from: 170,
     time: "Most of a day",
-    starts: allDay,
+    jobHours: 6,
     owenSays:
       "My paint correction package is the ideal solution for vehicles with paint defects, swirl marks, and minor imperfections.",
     includes: [
@@ -156,7 +154,7 @@ export const services: Service[] = [
     searchName: "Ceramic coating",
     from: 220,
     time: "Ask Owen",
-    starts: allDay,
+    jobHours: 6,
     owenSays: "This gives your vehicle the ultimate long-lasting protection with the ceramic coating option.",
     note: "3, 5 and 7 year options available.",
     includes: [
@@ -194,7 +192,7 @@ export const services: Service[] = [
     searchName: "Maintenance valet plan",
     from: 40,
     time: "1 to 2 hours",
-    starts: shortJob,
+    jobHours: 2,
     owenSays:
       "My maintenance plan is designed to keep your vehicle looking its best on a regular booked basis. Enjoying a little discount with a few added extras too.",
     note: "Every 1, 2, 4 or 6 weeks.",

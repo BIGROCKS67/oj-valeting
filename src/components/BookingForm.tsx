@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { services, getService, gbp } from "@/data/services";
 import { site } from "@/data/site";
 import { asset } from "@/data/base";
+import { hours, hoursList, season, startTimes } from "@/data/hours";
 
 // The booking builder (DESIGN.md section 7). Posts to FormSubmit, which emails Owen the whole
 // job card. With JavaScript off it is one long form with a plain date box; with it on it becomes
@@ -34,14 +35,18 @@ type Errors = Record<string, string>;
 const dayFmt = new Intl.DateTimeFormat("en-GB", { weekday: "short", day: "numeric", month: "short" });
 const longFmt = new Intl.DateTimeFormat("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric" });
 
-function bookableDays() {
+const isoOf = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+const dowOf = (iso: string) => new Date(iso + "T12:00:00").getDay();
+
+/** Working days from tomorrow, skipping days off and days too short for the job. */
+function bookableDays(jobHours: number) {
   const out: Date[] = [];
   const d = new Date();
   d.setHours(12, 0, 0, 0);
   d.setDate(d.getDate() + site.minNoticeDays);
   for (let i = 0; i < site.bookAheadDays; i++) {
-    const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
-    if (site.workDays.includes(d.getDay()) && !site.closedDates.includes(iso)) out.push(new Date(d));
+    if (!site.closedDates.includes(isoOf(d)) && startTimes(d.getDay(), jobHours).length) out.push(new Date(d));
     d.setDate(d.getDate() + 1);
   }
   return out;
@@ -67,7 +72,9 @@ export function BookingForm() {
   const [start, setStart] = useState("");
 
   const service = getService(pkg);
-  const days = useMemo(() => (js ? bookableDays() : []), [js]);
+  const jobHours = service?.jobHours ?? 2;
+  const days = useMemo(() => (js ? bookableDays(jobHours) : []), [js, jobHours]);
+  const starts = day ? startTimes(dowOf(day), jobHours) : [];
 
   useEffect(() => {
     setJs(true);
@@ -87,8 +94,14 @@ export function BookingForm() {
     if (!service) return;
     setExtras((xs) => xs.filter((x) => service.extras.includes(x)));
     setOption((o) => (service.option?.choices.includes(o) ? o : ""));
-    setStart((t) => (service.starts.includes(t) ? t : ""));
   }, [pkg]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // a different package or day can rule out the chosen day or start time
+  useEffect(() => {
+    if (!js) return;
+    if (day && !days.some((d) => isoOf(d) === day)) setDay("");
+    setStart((t) => (starts.includes(t) ? t : ""));
+  }, [day, jobHours, js]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function val(name: string) {
     const fd = new FormData(form.current!);
@@ -384,9 +397,20 @@ export function BookingForm() {
             </h2>
           </legend>
           <p className="hint">
-            Owen works {site.hoursText}. He&rsquo;ll text you to confirm the slot, or to offer the nearest one if that day has
-            filled up.
+            Owen texts you to confirm the slot, or to offer the nearest one if that day has filled up. Sundays are by
+            arrangement: <a href={`tel:${site.phoneIntl}`}>call</a> or text Owen.
           </p>
+          <details className="hours-box">
+            <summary>{season}</summary>
+            <dl className="hours-list">
+              {hoursList.map(([d, t]) => (
+                <div key={d}>
+                  <dt>{d}</dt>
+                  <dd>{t}</dd>
+                </div>
+              ))}
+            </dl>
+          </details>
 
           <div className={`field${errors.date ? " has-err" : ""}`}>
             {js ? (
@@ -395,7 +419,7 @@ export function BookingForm() {
                 {err("date")}
                 <div className="days">
                   {days.map((d, i) => {
-                    const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+                    const iso = isoOf(d);
                     const weekStart = i > 0 && d.getDay() < days[i - 1].getDay();
                     return (
                       <label key={iso} className={`day${weekStart ? " wk" : ""}`}>
@@ -426,11 +450,15 @@ export function BookingForm() {
           <fieldset className={`field${errors.start ? " has-err" : ""}`} {...aria("start")}>
             <legend className="label">Start time</legend>
             {err("start")}
-            {service && service.starts.length === 1 && (
-              <p className="hint">This is a long job, so Owen starts it first thing.</p>
+            {js && !day && <p className="hint">Choose a day to see the start times.</p>}
+            {js && day && hours[dowOf(day)]?.oneJob && (
+              <p className="hint">Saturdays are one job only, starting first thing.</p>
+            )}
+            {js && day && !hours[dowOf(day)]?.oneJob && starts.length === 1 && (
+              <p className="hint">This job takes most of Owen&rsquo;s day, so he starts it first thing.</p>
             )}
             <div className="chips">
-              {(js ? service?.starts ?? [] : ["8am", "10am", "midday", "2pm"]).map((t, i) => (
+              {(js ? starts : ["8am", "8:30am", "9am", "10am", "11am", "midday", "1pm", "2pm"]).map((t, i) => (
                 <label key={t} className="chip">
                   <input
                     type="radio"

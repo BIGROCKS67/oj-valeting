@@ -16,16 +16,17 @@ Owen (OJ Valeting), mobile valeting and detailing, Bucks / Northants / Oxon. Pho
 
 `/book/` is a 5-step booking builder: package, vehicle (type, make/model, condition, plan frequency or coating years), extras, day and start time, details. A dark "job card" beside it updates live. It posts to FormSubmit, which emails Owen the whole job card with a subject like "Booking request: Full deep clean, Friday, 20 November 2026 at 10am". He texts the customer to confirm. Works without JavaScript as one long form.
 
-- Days offered: `workDays` (Mon to Sat for now) minus `closedDates`, from tomorrow to 6 weeks ahead. Start times per package in `services.ts` (short jobs 8am to 2pm, deep clean 8am/10am, correction and coating 8am).
+- Hours: Owen's **winter hours** (WhatsApp, 16 Nov 2026) in `src/data/hours.ts`: Mon 8am to 4pm, Tue 8am to 2pm, Wed 9am to 4pm, Thu 8am to 2pm, Fri 9am to 4pm, Sat one job at 8:30am, Sun by arrangement (not bookable online; about one Sunday a month for maintenance customers). Shown in the footer and on the booking page.
+- Start times are worked out per day: every two hours from his start, as long as the job (`jobHours` in `services.ts`: basic and maintenance 2, deep clean 5, correction and coating 6) finishes by his finish time. Days off in `site.closedDates`. Bookable from tomorrow to 6 weeks ahead. **Update `hours.ts` when his summer hours start.**
 - **Not end-to-end tested**: sending would trigger FormSubmit's one-off activation email to Owen. Do the first real test with Owen watching his inbox, click Activate, then check a booking lands (and not in spam).
 - **Live diary later (optional):** if Owen wants slots to disappear once taken, plus reminders and deposits, he signs up himself to Goldie (most UK detailers use it) or Cal.com (free), then put the link in `site.bookingApp`. None of the local rivals checked have online booking at all.
 
 ## CONFIRM with Owen (nothing below is on the site as fact)
 
-1. **Working days and hours.** Site assumes Monday to Saturday. Which days, and is there a cut-off for start times?
+1. ~~Working days and hours.~~ Done 16 Nov 2026 (winter hours). Ask for **summer hours** in spring.
 2. **Days off** over Christmas and holidays (`closedDates`).
 3. **What's included** in each package. Drafted from what other UK detailers list; each list shows a yellow "Draft" tag until he signs it off. Check especially: does the basic include snow foam and two-bucket wash; does the deep clean include shampoo/extraction and steam?
-4. **Times** for paint correction ("most of a day") and ceramic coating ("Ask Owen"): how long do they really take, and does coating need 2 days?
+4. **Times** for paint correction ("most of a day") and ceramic coating ("Ask Owen"): booking assumes 6 hours for both. How long do they really take, and does coating need 2 days?
 5. **Extras prices.** He has none published. Site says "priced with the job". Prices would make the booking total exact.
 6. **Vehicle size pricing.** Does a 7-seater or van cost more? Currently all "from" prices.
 7. **Base town** and the towns he wants to be found in (Buckingham? Towcester? Brackley? Bicester? MK?). Needed for Google profile and town pages.
