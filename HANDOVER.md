@@ -9,6 +9,7 @@ Owen (OJ Valeting), mobile valeting and detailing, Bucks / Northants / Oxon. Pho
 - Data to edit: `src/data/site.ts` (phone, hours, closed days, booking app link), `services.ts` (prices, what's included, extras), `reviews.ts`, `photos.ts` (captions, home photo order).
 - Photos: 103 originals from his old site in `img/raw/` (not committed); 42 chosen ones as WebP in `public/photos/`.
 - Pages: home, 5 service pages (`/car-valeting/`, `/deep-clean/`, `/paint-correction/`, `/ceramic-coating/`, `/maintenance-valet/`), `/book/`, `/book/sent/`, `/work/`, `/reviews/`, `/privacy/`, robots, sitemap, `llms.txt`.
+- **Repo: https://github.com/BIGROCKS67/oj-valeting** (public). Every push to `main` deploys to GitHub Pages via `.github/workflows/pages.yml`: **https://bigrocks67.github.io/oj-valeting/** (built under `/oj-valeting/`, noindex + robots Disallow while on github.io). To go live on Owen's domain: add `public/CNAME` with the domain, set it in Settings > Pages, point DNS (playbook section 1); the build then switches to the root and allows Google.
 - **Demo: https://oj-valeting.vercel.app** (Vercel project `oj-valeting`, team eagleaibots-projects, public, `X-Robots-Tag: noindex` on *.vercel.app). Redeploy: `cd oj-valeting && npx vercel --prod --yes --scope eagleaibots-projects`. `.vercelignore` keeps `img/raw` out of the upload. Go-live on his own domain still to do.
 
 ## Booking system (how it works)
