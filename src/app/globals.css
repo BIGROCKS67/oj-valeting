@@ -1,0 +1,1272 @@
+/* Concept: the site is Owen's van pulling up: black livery, his services and prices
+   painted down the side, and the proof parked on every drive. (DESIGN.md) */
+
+:root {
+  --livery: oklch(0.19 0.012 245); /* the van's black side panels */
+  --livery-2: oklch(0.25 0.014 245); /* same panel in the shade */
+  --paper: oklch(0.985 0.005 240); /* the van's white lettering, logo background */
+  --paper-2: oklch(0.955 0.012 238); /* white wrap panel on the van's nose */
+  --ink: oklch(0.2 0.015 245); /* livery black, used for text */
+  --ink-soft: oklch(0.42 0.02 245);
+  --rule: oklch(0.86 0.012 240);
+  --foam: #0097d7; /* blue on Owen's old site and the logo foam */
+  --foam-ink: oklch(0.47 0.13 240); /* same hue, dark enough for links on paper */
+  --foam-lite: oklch(0.8 0.1 232); /* same hue, light enough for text on livery */
+  --bubble: oklch(0.93 0.04 232); /* pale logo bubbles: selected states */
+  --shadow-grey: oklch(0.62 0.01 245); /* grey drop shadow on the logo lettering */
+  --err: oklch(0.5 0.19 27);
+  --draft: oklch(0.92 0.16 100);
+
+  --font: var(--font-archivo), "Arial", sans-serif;
+  --step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+  --step-2: clamp(1.44rem, 1.25rem + 0.9vw, 2rem);
+  --step-3: clamp(1.73rem, 1.4rem + 1.6vw, 2.67rem);
+  --step-4: clamp(2.07rem, 1.5rem + 2.8vw, 3.8rem);
+  --r: 4px;
+  --gut: clamp(16px, 4vw, 48px);
+  --max: 1240px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 1rem;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--step-0);
+  line-height: 1.55;
+  font-optical-sizing: auto;
+  padding-bottom: 64px; /* room for the action bar on phones */
+}
+@media (min-width: 900px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  color: var(--foam-ink);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+:focus-visible {
+  outline: 3px solid var(--foam);
+  outline-offset: 2px;
+}
+h1,
+h2,
+h3 {
+  font-stretch: 125%;
+  font-weight: 850;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  margin: 0 0 0.5em;
+}
+h1 {
+  font-size: var(--step-4);
+}
+h2 {
+  font-size: var(--step-3);
+}
+h3 {
+  font-size: var(--step-1);
+}
+p {
+  text-wrap: pretty;
+  margin: 0 0 1em;
+  max-width: 64ch;
+}
+.num {
+  font-variant-numeric: tabular-nums lining-nums;
+  white-space: nowrap;
+}
+.wrap {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gut);
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--livery);
+  color: var(--paper);
+  padding: 0.6rem 1rem;
+  z-index: 50;
+}
+.skip:focus {
+  left: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4em;
+  min-height: 48px;
+  padding: 0.7em 1.2em;
+  border-radius: var(--r);
+  border: 2px solid transparent;
+  font: inherit;
+  font-weight: 700;
+  font-stretch: 112%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+.btn-big {
+  font-size: var(--step-1);
+  min-height: 56px;
+}
+.btn-foam {
+  background: var(--foam);
+  color: var(--livery);
+}
+.btn-foam:hover {
+  background: oklch(from var(--foam) calc(l + 0.06) c h);
+}
+.btn-foam:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+.btn-line {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: transparent;
+}
+.btn-line:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+.btn-line-dark {
+  border-color: var(--paper);
+  color: var(--paper);
+}
+.btn-line-dark:hover {
+  background: var(--paper);
+  color: var(--livery);
+}
+
+/* Header */
+.site-head {
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+  z-index: 20;
+}
+.head-in {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: 0.6rem var(--gut);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.brand img {
+  height: 44px;
+  width: auto;
+}
+.nav {
+  margin-left: auto;
+}
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+.nav-wide {
+  display: none;
+}
+.nav-menu summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding-inline: 0.8rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+}
+.nav-menu summary::-webkit-details-marker {
+  display: none;
+}
+.nav-menu[open] summary {
+  background: var(--ink);
+  color: var(--paper);
+}
+.nav-menu ul {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.5rem var(--gut) 1rem;
+}
+.nav-menu li a {
+  display: block;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: var(--step-1);
+}
+.head-call {
+  display: none;
+}
+.head-book {
+  display: none;
+}
+@media (min-width: 900px) {
+  .brand img {
+    height: 56px;
+  }
+  .nav-menu {
+    display: none;
+  }
+  .nav-wide {
+    display: flex;
+    gap: 1.6rem;
+  }
+  .head-call {
+    display: block;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: right;
+    line-height: 1.2;
+  }
+  .head-call-l {
+    display: block;
+    font-size: var(--step--1);
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  .head-book {
+    display: inline-flex;
+  }
+}
+
+/* Hero: lettering on paper beside the van */
+.hero {
+  display: grid;
+  max-width: calc(var(--max) + 2 * var(--gut));
+  margin-inline: auto;
+}
+.hero-text {
+  padding: clamp(1.5rem, 4vw, 4rem) var(--gut) 1.5rem;
+  align-self: center;
+}
+.hero h1 {
+  max-width: 14ch;
+  text-shadow: 0.045em 0.045em 0 color-mix(in oklab, var(--shadow-grey) 45%, transparent);
+}
+.hero-sub {
+  font-size: var(--step-1);
+  line-height: 1.4;
+  color: var(--ink-soft);
+  max-width: 40ch;
+}
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 1rem;
+}
+.hero-small {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.hero-photo {
+  margin: 0;
+}
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 50% 60%;
+}
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: 1.15fr 0.85fr;
+    min-height: min(calc(100svh - 74px), 820px);
+  }
+  .hero-photo img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
+
+/* Price list: painted down the van side */
+.livery {
+  background: var(--livery);
+  color: var(--paper);
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+.livery-in {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gut);
+  display: grid;
+  gap: 2rem;
+}
+.livery-head p {
+  color: color-mix(in oklab, var(--paper) 78%, var(--livery));
+}
+.livery a {
+  color: var(--foam-lite);
+}
+.pricelist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--paper);
+}
+.pricelist li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid color-mix(in oklab, var(--paper) 25%, var(--livery));
+}
+.pricelist h3 {
+  margin: 0;
+  font-size: var(--step-2);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+.pricelist h3 a {
+  color: var(--paper);
+  text-decoration: none;
+}
+.pricelist h3 a:hover {
+  text-decoration: underline;
+}
+.pl-price {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+  text-align: right;
+  font-stretch: 125%;
+  font-weight: 850;
+  font-size: var(--step-3);
+  line-height: 1;
+  color: var(--foam-lite);
+}
+.pl-from {
+  display: block;
+  font-size: var(--step--1);
+  font-weight: 500;
+  font-stretch: 100%;
+  color: color-mix(in oklab, var(--paper) 70%, var(--livery));
+}
+.pl-time {
+  margin: 0.25rem 0 0;
+  font-weight: 600;
+  color: color-mix(in oklab, var(--paper) 75%, var(--livery));
+}
+.pl-says {
+  grid-column: 1 / -1;
+  margin: 0.6rem 0 0.4rem;
+}
+.pl-links {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  margin: 0;
+  font-weight: 600;
+}
+.livery-foot {
+  font-size: var(--step--1);
+  color: color-mix(in oklab, var(--paper) 72%, var(--livery));
+}
+@media (min-width: 900px) {
+  .livery-in {
+    grid-template-columns: 1fr 2.2fr;
+    column-gap: 4rem;
+  }
+  .livery-head {
+    position: sticky;
+    top: 1.5rem;
+    align-self: start;
+  }
+  .livery-foot {
+    grid-column: 2;
+  }
+  .pricelist li {
+    grid-template-columns: 1fr 9rem 9rem;
+    align-items: baseline;
+  }
+  .pl-time {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+  }
+  .pl-price {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* Section heads */
+.sec-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.sec-head h2 {
+  max-width: 20ch;
+  margin: 0;
+}
+.sec-head p {
+  margin: 0;
+}
+
+/* Driveway row: swipe on phones, staggered grid on desktop */
+.drives {
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+.drive-row {
+  list-style: none;
+  margin: 0;
+  padding: 0 var(--gut) 0.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 68%;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--gut);
+}
+.drive-row li {
+  scroll-snap-align: start;
+}
+figure {
+  margin: 0;
+}
+figcaption {
+  font-size: var(--step--1);
+  font-weight: 600;
+  padding-top: 0.4rem;
+  color: var(--ink-soft);
+}
+.drive-row img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .drive-row {
+    max-width: var(--max);
+    margin-inline: auto;
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: visible;
+    gap: 1.25rem;
+  }
+  .drive-row li:nth-child(4n + 2) {
+    margin-top: 3rem;
+  }
+  .drive-row li:nth-child(4n + 4) {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Owen */
+.owen {
+  background: var(--paper-2);
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+.owen-grid {
+  display: grid;
+  gap: 2rem;
+}
+.owen-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.owen-text p:first-of-type {
+  font-size: var(--step-1);
+  line-height: 1.4;
+}
+.facts {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.facts li {
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  padding: 0.3rem 0.7rem;
+  font-weight: 700;
+  font-size: var(--step--1);
+}
+@media (min-width: 900px) {
+  .owen-grid {
+    grid-template-columns: 5fr 7fr;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+
+/* Reviews */
+.said {
+  padding-block: clamp(2.5rem, 6vw, 5rem);
+}
+.big-quote {
+  margin: 0 0 2rem;
+  max-width: 34ch;
+}
+.big-quote p {
+  font-stretch: 112%;
+  font-weight: 700;
+  font-size: var(--step-2);
+  line-height: 1.2;
+  max-width: none;
+  margin: 0;
+}
+.big-quote blockquote {
+  margin: 0;
+}
+.reviews {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem 2.5rem;
+}
+.reviews li {
+  border-top: 2px solid var(--ink);
+  padding-top: 1rem;
+}
+.reviews blockquote {
+  margin: 0;
+}
+.who {
+  font-weight: 700;
+  margin: 0;
+}
+.when {
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-left: 0.4em;
+}
+@media (min-width: 760px) {
+  .reviews {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+/* Book band */
+.book-band {
+  background: var(--livery);
+  color: var(--paper);
+  padding-block: clamp(2.5rem, 6vw, 4.5rem);
+}
+.bb-grid {
+  display: grid;
+  gap: 1.5rem;
+  align-items: center;
+}
+.bb-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+@media (min-width: 900px) {
+  .bb-grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+  .bb-actions {
+    justify-content: flex-end;
+  }
+}
+
+/* Footer */
+.site-foot {
+  background: var(--livery-2);
+  color: var(--paper);
+  padding-block: 3rem 2rem;
+  font-size: var(--step--1);
+}
+.site-foot a {
+  color: var(--paper);
+}
+.foot-in {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gut);
+  display: grid;
+  gap: 2rem;
+}
+.foot-mark {
+  width: 72px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+.foot-name,
+.foot-h {
+  font-stretch: 125%;
+  font-weight: 850;
+  font-size: var(--step-1);
+  margin-bottom: 0.4rem;
+}
+.site-foot ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.site-foot li {
+  padding: 0.25rem 0;
+}
+.legal {
+  max-width: var(--max);
+  margin: 2rem auto 0;
+  padding-inline: var(--gut);
+  color: color-mix(in oklab, var(--paper) 70%, var(--livery));
+}
+@media (min-width: 900px) {
+  .foot-in {
+    grid-template-columns: 2fr 1.4fr 1fr 1fr;
+  }
+}
+
+/* Sticky action bar on phones */
+.action-bar {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.6fr;
+  background: var(--livery);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.action-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration: none;
+  border-right: 1px solid var(--livery-2);
+}
+.action-bar .ab-book {
+  background: var(--foam);
+  color: var(--livery);
+}
+@media (min-width: 900px) {
+  .action-bar {
+    display: none;
+  }
+}
+
+/* Service pages */
+.svc-hero {
+  display: grid;
+  max-width: calc(var(--max) + 2 * var(--gut));
+  margin-inline: auto;
+}
+.svc-hero-text {
+  padding: clamp(1.25rem, 4vw, 3.5rem) var(--gut) 1.5rem;
+}
+.crumb {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.svc-meta {
+  font-weight: 700;
+  font-size: var(--step-1);
+}
+.svc-says {
+  font-size: var(--step-1);
+  line-height: 1.4;
+  border-left: 4px solid var(--foam);
+  padding-left: 1rem;
+}
+.svc-hero-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .svc-hero {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+  .svc-hero-photo img {
+    height: 100%;
+    max-height: 720px;
+    aspect-ratio: auto;
+  }
+}
+.svc-body {
+  display: grid;
+  gap: 2rem;
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+.inc-group h3 {
+  margin-top: 1.5rem;
+}
+.included ul,
+.extras ul {
+  padding-left: 1.2em;
+  margin: 0;
+}
+.included li,
+.extras li {
+  padding: 0.25rem 0;
+}
+.extras {
+  background: var(--livery);
+  color: var(--paper);
+  padding: 1.5rem;
+  align-self: start;
+}
+.extras h2 {
+  font-size: var(--step-2);
+}
+.aside-note {
+  font-size: var(--step--1);
+  color: color-mix(in oklab, var(--paper) 75%, var(--livery));
+  margin-top: 1rem;
+}
+@media (min-width: 900px) {
+  .svc-body {
+    grid-template-columns: 1.6fr 1fr;
+    gap: 4rem;
+  }
+}
+.draft {
+  display: inline-block;
+  background: var(--draft);
+  color: var(--ink);
+  font-size: var(--step--1);
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.photo-strip {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0.5rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 68%;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.photo-strip li {
+  scroll-snap-align: start;
+}
+.photo-strip img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .photo-strip {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: visible;
+    gap: 1.25rem;
+  }
+}
+.other {
+  padding-block: 2rem 4rem;
+}
+.other-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid var(--ink);
+}
+.other-list a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-stretch: 112%;
+  font-size: var(--step-1);
+}
+.other-list a:hover {
+  color: var(--foam-ink);
+}
+
+/* Other pages */
+.page-head {
+  padding-block: clamp(2rem, 5vw, 4rem) 1.5rem;
+}
+.work-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 0 auto;
+}
+.work-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+@media (min-width: 600px) {
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 1100px) {
+  .work-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.center-cta {
+  display: flex;
+  justify-content: center;
+  padding-block: 2.5rem 4rem;
+  max-width: none;
+}
+.prose {
+  padding-block: clamp(2rem, 5vw, 4rem);
+  max-width: calc(68ch + 2 * var(--gut));
+}
+.prose h2 {
+  font-size: var(--step-2);
+  margin-top: 1.5em;
+}
+.sent {
+  display: grid;
+  gap: 2rem;
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+.sent img {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .sent {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+  }
+}
+
+/* Booking builder */
+.book-page {
+  padding-block: clamp(1.5rem, 4vw, 3rem) 4rem;
+}
+.book-intro h1 {
+  margin-bottom: 0.3em;
+}
+.booker {
+  display: grid;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 900px) {
+  .booker.is-js {
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+    align-items: start;
+  }
+}
+.book-form {
+  min-width: 0;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+legend {
+  padding: 0;
+}
+.step {
+  margin-bottom: 2rem;
+}
+.booker:not(.is-js) .step {
+  border-top: 2px solid var(--ink);
+  padding-top: 1rem;
+}
+.step > legend h2 {
+  font-size: var(--step-2);
+  outline: none;
+}
+.steps-head {
+  margin-bottom: 1.25rem;
+}
+.step-count {
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+.step-dots {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.step-dots li {
+  border-top: 5px solid var(--rule);
+  padding-top: 0.3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.step-dots li.done {
+  border-color: var(--ink);
+}
+.step-dots li.now {
+  border-color: var(--foam);
+  color: var(--ink);
+}
+@media (max-width: 520px) {
+  .step-dots li {
+    font-size: 0;
+  }
+}
+.field {
+  margin-bottom: 1.4rem;
+}
+.label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.hint {
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  margin: -0.2rem 0 0.6rem;
+}
+input[type="text"],
+input:not([type]),
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea {
+  font: inherit;
+  color: var(--ink);
+  background: white;
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  padding: 0.6rem 0.75rem;
+  min-height: 48px;
+  width: 100%;
+}
+textarea {
+  field-sizing: content;
+  min-height: 6rem;
+  max-height: 16rem;
+  max-width: 40rem;
+}
+.w-m {
+  max-width: 26rem;
+}
+.w-phone {
+  max-width: 15ch;
+}
+.w-pc {
+  max-width: 10ch;
+  text-transform: uppercase;
+}
+.w-date {
+  max-width: 13rem;
+}
+.has-err input,
+.has-err textarea,
+input[aria-invalid="true"] {
+  border-color: var(--err);
+}
+.has-err {
+  border-left: 4px solid var(--err);
+  padding-left: 0.8rem;
+}
+.field-err {
+  color: var(--err);
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+}
+.err-summary {
+  border: 4px solid var(--err);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  outline: none;
+}
+.err-summary:focus {
+  outline: 3px solid var(--foam);
+}
+.err-title {
+  font-weight: 800;
+  font-size: var(--step-1);
+  margin: 0 0 0.4rem;
+}
+.err-summary ul {
+  margin: 0;
+  padding-left: 1.2em;
+}
+.err-summary a {
+  color: var(--err);
+  font-weight: 700;
+}
+
+/* package choice: the price list again, as radios */
+.pkg-list {
+  display: grid;
+  border-top: 2px solid var(--ink);
+}
+.pkg {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "dot name price" "dot time price";
+  column-gap: 0.9rem;
+  align-items: center;
+  padding: 0.9rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  cursor: pointer;
+}
+.pkg input {
+  grid-area: dot;
+  width: 22px;
+  height: 22px;
+  accent-color: var(--livery);
+  margin: 0;
+}
+.pkg-name {
+  grid-area: name;
+  font-weight: 800;
+  font-stretch: 118%;
+  font-size: var(--step-1);
+  line-height: 1.15;
+}
+.pkg-time {
+  grid-area: time;
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+}
+.pkg-price {
+  grid-area: price;
+  font-weight: 800;
+  font-stretch: 118%;
+}
+.pkg:hover {
+  background: var(--paper-2);
+}
+.pkg:has(input:checked) {
+  background: var(--livery);
+  color: var(--paper);
+}
+.pkg:has(input:checked) .pkg-time {
+  color: color-mix(in oklab, var(--paper) 75%, var(--livery));
+}
+.pkg:has(input:checked) .pkg-price {
+  color: var(--foam-lite);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.chip {
+  position: relative;
+  cursor: pointer;
+}
+.chip input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.chip span {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.45rem 0.85rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--r);
+  background: white;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.chip-check span::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.5em;
+  border: 2px solid currentColor;
+  border-radius: 2px;
+  flex: none;
+}
+.chip input:checked + span {
+  background: var(--bubble);
+  border-color: var(--livery);
+  box-shadow: inset 0 0 0 1px var(--livery);
+}
+.chip-check input:checked + span::before {
+  background: var(--livery);
+  box-shadow: inset 0 0 0 2px var(--bubble);
+}
+.chip input:focus-visible + span {
+  outline: 3px solid var(--foam);
+  outline-offset: 2px;
+}
+.days {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(6.4rem, 1fr));
+  gap: 0.4rem;
+}
+.day {
+  position: relative;
+  cursor: pointer;
+}
+.day input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.day span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  background: white;
+  font-weight: 600;
+  font-size: var(--step--1);
+  font-variant-numeric: tabular-nums;
+}
+.day input:checked + span {
+  background: var(--livery);
+  color: var(--paper);
+  border-color: var(--livery);
+}
+.day input:focus-visible + span {
+  outline: 3px solid var(--foam);
+  outline-offset: 2px;
+}
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.privacy-note {
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  margin-top: 1rem;
+}
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* The job card beside the form */
+.jobcard {
+  background: var(--livery);
+  color: var(--paper);
+  padding: 1.25rem 1.4rem;
+  border-top: 6px solid var(--foam);
+}
+@media (min-width: 900px) {
+  .jobcard {
+    position: sticky;
+    top: 1.5rem;
+  }
+}
+.jc-title {
+  font-stretch: 125%;
+  font-weight: 850;
+  font-size: var(--step-1);
+  margin-bottom: 0.6rem;
+}
+.jobcard dl {
+  margin: 0;
+}
+.jobcard dl div {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0.5rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid color-mix(in oklab, var(--paper) 20%, var(--livery));
+}
+.jobcard dt {
+  color: color-mix(in oklab, var(--paper) 68%, var(--livery));
+  font-size: var(--step--1);
+}
+.jobcard dd {
+  margin: 0;
+  font-weight: 600;
+}
+.jc-note {
+  font-size: var(--step--1);
+  color: color-mix(in oklab, var(--paper) 72%, var(--livery));
+  margin: 0.9rem 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

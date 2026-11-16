@@ -1,0 +1,7 @@
+node_modules
+.next
+out
+img/raw
+*.tsbuildinfo
+next-env.d.ts
+.vercel
