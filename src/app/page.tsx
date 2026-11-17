@@ -76,7 +76,8 @@ export default function Home() {
             ))}
           </ol>
           <p className="livery-foot">
-            Extras like ozone treatment, dog hair removal, headlight restoration and clay bar can go on any booking.
+            Prices go up with vehicle size, and every service page has the full table. Add-ons like ozone treatment
+            (£20), pet hair removal (from £25) and headlight restoration (from £75) can go on any booking.
           </p>
         </div>
       </section>

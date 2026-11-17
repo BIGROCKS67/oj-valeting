@@ -1237,3 +1237,58 @@ textarea {
 @keyframes page-in {
   from { opacity: 0.4; transform: translateY(10px); }
 }
+
+/* Prices by vehicle size on each service page (Owen's price list, 17 Nov 2026) */
+.svc-prices {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+}
+.price-tables {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-top: 1rem;
+}
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+.price-table caption {
+  text-align: left;
+  font-weight: 700;
+  padding: 0 0 0.5rem;
+}
+.price-table caption span {
+  display: block;
+  font-weight: 400;
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+}
+.price-table th,
+.price-table td {
+  padding: 0.55rem 0.9rem;
+  border-top: 1px solid var(--rule);
+}
+.price-table th {
+  text-align: left;
+  font-weight: 500;
+}
+.price-table td {
+  text-align: right;
+  font-weight: 700;
+}
+.size-guide {
+  font-size: var(--step--1);
+  color: var(--ink-soft);
+  max-width: 70ch;
+  margin-top: 1rem;
+}
+.size-guide .draft {
+  margin-right: 0.5rem;
+}
+.extras li .num {
+  white-space: nowrap;
+  color: var(--foam-lite);
+  font-weight: 700;
+}

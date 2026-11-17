@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, getService, gbp } from "@/data/services";
+import { services, getService, gbp, addOnPrice, sizeGuide } from "@/data/services";
 import { reviews } from "@/data/reviews";
 import { site, tel } from "@/data/site";
 import { Pic } from "@/components/Pic";
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   if (!s) return {};
   return {
     title: `${s.searchName}, from ${gbp(s.from)} | OJ Valeting`,
-    description: `${s.owenSays} Mobile, at your home or work across Bucks, Northants and Oxfordshire. From ${gbp(s.from)}. Book online.`,
+    description: `${s.owenSays} Mobile, at your home or work across Bucks, Oxon, Northants, Beds and Warwickshire. From ${gbp(s.from)}. Book online.`,
     alternates: { canonical: `/${s.slug}/` },
   };
 }
@@ -64,6 +64,38 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         </figure>
       </section>
 
+      <section className="wrap svc-prices" aria-labelledby="pr-h">
+        <h2 id="pr-h">Prices by vehicle size</h2>
+        <div className="price-tables">
+          {s.prices.map((t) => (
+            <table key={t.label} className="price-table">
+              <caption>
+                {t.label}
+                {t.note && <span>{t.note}</span>}
+              </caption>
+              <tbody>
+                {t.prices.map(([size, price]) => (
+                  <tr key={size}>
+                    <th scope="row">{size}</th>
+                    <td className="num">{price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ))}
+        </div>
+        <p className="size-guide">
+          <Draft what="the sizes" />
+          {sizeGuide.map(([size, what], i) => (
+            <span key={size}>
+              <strong>{size}</strong> {what}
+              {i < sizeGuide.length - 1 ? ". " : "."}
+            </span>
+          ))}{" "}
+          A &ldquo;+&rdquo; means from: Owen confirms the final price once he&rsquo;s seen the vehicle.
+        </p>
+      </section>
+
       <section className="wrap svc-body">
         <div className="included">
           <h2>What&rsquo;s included</h2>
@@ -86,10 +118,12 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             <>
               <ul>
                 {s.extras.map((e) => (
-                  <li key={e}>{e}</li>
+                  <li key={e}>
+                    {e} <span className="num">{addOnPrice(e)}</span>
+                  </li>
                 ))}
               </ul>
-              <p className="aside-note">Tick any you want when you book and Owen will price them with the job.</p>
+              <p className="aside-note">Mention any you want in the notes when you book, or text Owen.</p>
             </>
           ) : (
             <p>Added extras are available on request. Mention them when you book.</p>

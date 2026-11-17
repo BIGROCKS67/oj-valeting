@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { site, tel, sms } from "@/data/site";
-import { services, gbp } from "@/data/services";
+import { services, gbp, addOns } from "@/data/services";
 import { hoursList, season } from "@/data/hours";
 
 export const metadata: Metadata = {
@@ -42,10 +42,19 @@ export default function Book() {
             ))}
           </ul>
           <p>
-            Owen confirms the final price once he knows the size and state of the vehicle. Caravan, motorhome, horsebox or
+            These are prices for a small car. Bigger vehicles cost a bit more: each service page has the full
+            table by size. Owen confirms the final price once he&rsquo;s seen the vehicle. Caravan, motorhome, horsebox or
             something not on the list? <a href={sms("Hi Owen, ")}>Text him</a> and he&rsquo;ll sort a time.
           </p>
           <p>{site.payment}</p>
+          <h2>Add-ons</h2>
+          <ul className="book-prices" role="list">
+            {Object.entries(addOns).map(([name, price]) => (
+              <li key={name}>
+                <span>{name}</span> <span className="num">{price}</span>
+              </li>
+            ))}
+          </ul>
         </div>
         <div>
           <h2>Where Owen works</h2>
