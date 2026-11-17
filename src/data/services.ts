@@ -24,7 +24,7 @@ export const addOns: Record<string, string> = {
   "Alloy ceramic coating, up to 2 years": "£80+",
   "Exhaust polish": "£25+",
   "Exhaust tips polished and restored": "£30+",
-  "Clay bar with full decontamination wash": "£80",
+  "Clay bar with full decontamination wash": "£50",
   "Full decontamination wash": "£40+",
   "Mould removal": "£40+",
   "Soft top treatment": "£65+",
@@ -178,7 +178,7 @@ export const services: Service[] = [
     blurb: "Machine polished to take out swirls, light scratches and dullness.",
     squareId: "OUN7JPWB65ZLOR6BKFUDUTO2",
     searchName: "Paint correction",
-    from: 170,
+    from: 210,
     time: "3 to 5 hours",
     jobHours: 5,
     owenSays:
@@ -212,8 +212,8 @@ export const services: Service[] = [
     prices: [
       {
         label: "Paint correction",
-        note: "Add a clay bar for £50",
-        prices: [["Small", "£170"], ["Medium", "£190"], ["Large", "£210"], ["XL", "£230"]],
+        note: "Clay bar included",
+        prices: [["Small", "£210"], ["Medium", "£230"], ["Large", "£250"], ["XL", "£270"]],
       },
     ],
     photos: ["owen-porsche-boxster-polish", "porsche-911", "garage-gloss-bonnet", "ford-headlight"],

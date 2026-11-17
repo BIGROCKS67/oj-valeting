@@ -123,7 +123,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                   </li>
                 ))}
               </ul>
-              <p className="aside-note">Mention any you want in the notes when you book, or text Owen.</p>
+              <p className="aside-note">Mention any you want in the notes when you book, or text Owen. After something that isn&rsquo;t listed? Just ask.</p>
             </>
           ) : (
             <p>Added extras are available on request. Mention them when you book.</p>

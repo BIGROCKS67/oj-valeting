@@ -134,7 +134,7 @@ export function ServiceMenu() {
                 ))}
               </ul>
             )}
-            {t === "Add-ons" && <p className="menu-note">Add any of these to a booking. Mention them in the notes, or text Owen.</p>}
+            {t === "Add-ons" && <p className="menu-note">Add any of these to a booking. Mention them in the notes, or text Owen. After something that isn&rsquo;t listed? Just ask.</p>}
           </div>
         );
       })}
