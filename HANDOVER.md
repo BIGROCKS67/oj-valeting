@@ -16,12 +16,12 @@ Owen (OJ Valeting), mobile valeting and detailing, Bucks / Northants / Oxon. Pho
 
 All booking is Owen's Square Appointments diary (see "Square Appointments" below). Every Book button links to `site.bookingApp`. `/book/` is a short page with prices, hours and the button into Square, kept for old links and Google. Customers only see free slots, Owen approves each request, and Square sends reminders.
 
-- Hours shown on the site: Owen's **winter hours** (WhatsApp, 16 Nov 2026) in `src/data/hours.ts`, in the footer and on /book/. Bookable hours are set separately in Square. **When his summer hours start, change both.**
+- Hours (Owen, 17 Nov 2026): Mon, Wed, Fri, Sat, Sun 8am to 6pm; Tue and Thu 8am to 4pm. Same on the site (`src/data/hours.ts`, footer and /book/), Google profile and Square. Owen blocks off slots he can't do in the Square calendar himself. **If they change, change all three.**
 - The old 5-step FormSubmit form was removed on 17 Nov 2026 so there is one system only.
 
 ## CONFIRM with Owen (nothing below is on the site as fact)
 
-1. ~~Working days and hours.~~ Done 16 Nov 2026 (winter hours). Ask for **summer hours** in spring.
+1. ~~Working days and hours.~~ Done 17 Nov 2026 (one set of hours, 7 days; Owen blocks slots in Square).
 2. **Days off** over Christmas and holidays (`closedDates`).
 3. **What's included** in each package. Drafted from what other UK detailers list; each list shows a yellow "Draft" tag until he signs it off. Check especially: does the basic include snow foam and two-bucket wash; does the deep clean include shampoo/extraction and steam?
 4. **Times** for paint correction ("most of a day") and ceramic coating ("Ask Owen"): booking assumes 6 hours for both. How long do they really take, and does coating need 2 days?
@@ -64,7 +64,6 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 - Rules: Owen approves every request (auto-accept off), one service per booking, slots follow service length from his start time, 12 hours' notice, 60 days ahead.
 - Days off (Christmas, holidays) and summer hours: set them in Square (block time on the calendar, Settings > Locations for hours) and update `hours.ts` so the footer matches.
 - Plan: Square auto-started a 30-day Appointments Plus trial (ends 17 Dec 2026). No card on the account, so it can't charge. Free plan loses confirmation texts/emails and Google Calendar sync. Decide before 17 Dec.
-- Saturday allows 8:30 and 11:00 for short jobs. Owen just declines the second one if he only wants one job.
 
 ## Google Business Profile (17 Nov 2026)
 

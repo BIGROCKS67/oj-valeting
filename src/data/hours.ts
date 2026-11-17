@@ -1,16 +1,16 @@
-// Owen's winter hours, from his WhatsApp to Jack on 16 Nov 2026, shown in the footer and on /book/.
-// Saturday is one job only. Sunday is by arrangement (mostly maintenance customers, about one
-// Sunday a month), so it isn't offered online. When his summer hours start, change these AND his
-// opening hours in Square (Settings > Locations), which is what customers actually book against.
+// Owen's opening hours, from his message of 17 Nov 2026, shown in the footer and on /book/.
+// These match his Google profile and his bookable hours in Square (Settings > Locations).
+// Owen blocks off the slots he can't do in the Square calendar himself. If the hours change,
+// change all three together.
 
-export const season = "Winter hours";
+export const season = "Opening hours";
 
 export const hoursList: [string, string][] = [
-  ["Monday", "8am to 4pm"],
-  ["Tuesday", "8am to 2pm"],
-  ["Wednesday", "9am to 4pm"],
-  ["Thursday", "8am to 2pm"],
-  ["Friday", "9am to 4pm"],
-  ["Saturday", "One job, usually starting 8:30am"],
-  ["Sunday", "By arrangement"],
+  ["Monday", "8am to 6pm"],
+  ["Tuesday", "8am to 4pm"],
+  ["Wednesday", "8am to 6pm"],
+  ["Thursday", "8am to 4pm"],
+  ["Friday", "8am to 6pm"],
+  ["Saturday", "8am to 6pm"],
+  ["Sunday", "8am to 6pm"],
 ];
