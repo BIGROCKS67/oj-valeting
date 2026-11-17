@@ -272,7 +272,7 @@ export const services: Service[] = [
       },
     ],
     option: { name: "coating_years", label: "How long should it last?", choices: ["3 years", "5 years", "7 years", "Not sure yet"] },
-    photos: ["owen-wheel-clean", "bmw-m4", "hyundai-ioniq-5-n", "gloss-roof"],
+    photos: ["owen-wheel-clean", "owen-polo-sill", "bmw-m4", "hyundai-ioniq-5-n"],
     goodFor: "a new or freshly corrected car you want to keep looking that way, and easier to wash.",
   },
   {
@@ -425,7 +425,7 @@ export const services: Service[] = [
     includesConfirmed: false,
     extras: ["Clay bar with full decontamination wash", "Headlight restoration, the pair", "Exhaust tips polished and restored", "Ceramic spray"],
     prices: [{ label: "Outside only", prices: [["Small", "£35"], ["Medium", "£40"], ["Large", "£45"], ["XL", "£50"]] }],
-    photos: ["owen-polo-sill", "porsche-wheel", "vw-golf-r-rear", "bmw-m4-rear"],
+    photos: ["range-rover-satin", "porsche-wheel", "vw-golf-r-rear", "bmw-m4-rear"],
     goodFor: "paint that feels rough or looks dull, or a car getting ready for polishing or a coating.",
   },
 ];
