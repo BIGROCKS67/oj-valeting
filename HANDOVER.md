@@ -158,3 +158,11 @@ Owen's changes:
 - IndexNow: key file `public/22fa1e8532a7cea2eb6140162d2bb6b8.txt` (keep it). After each deploy: `node scripts/indexnow.mjs` (202 = accepted).
 - Search Console sitemap resubmitted: 22 pages read. Footer and menu link to Areas and Guides.
 - Not done yet: Bing Places (Jack signs in), Google posts (draft and ask Jack), a ranking baseline report like R4R's.
+
+## 18 Nov 2026 (Owen's answers)
+
+- Job times (Owen): basic interior 45 min, basic exterior 45 min, deep interior 2 hours. Site (`services.ts`, llms.txt) and Square (all 4 sizes, 30 min travel after unchanged) updated. Deep exterior still 5h: CONFIRM.
+- Address: Owen doesn't mind. Keep it HIDDEN on Google (service-area business, he goes to the customer; showing a home address breaks Google's rules). Site stays "Buckingham MK18". Never publish his street address.
+- Square Appointments Plus: £29 per location a month, trial ends 18 Dec 2026 (Square's date), no card on the account. Owen asked the price for keeping customer texts; Jack to tell him.
+- ojvaleting.org transfer: Owen said yes (17 Nov). Domain is unlocked (whois status ok), already on GoDaddy name servers (ns33/ns34.domaincontrol.com). Transfer started on Owen's GoDaddy, stopped at the auth code box; Jack pastes the design.com code and picks 1 year. After it lands: check the A/CNAME/TXT records still serve the redirect repo.
+- Ceramic photo: Owen sends it 18 Nov.
