@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services, getService, gbp, addOnPrice, sizeGuide } from "@/data/services";
 import { reviews } from "@/data/reviews";
-import { site, tel } from "@/data/site";
+import { site, tel, bookUrl } from "@/data/site";
 import { Pic } from "@/components/Pic";
 import { captions } from "@/data/photos";
 import { Draft } from "@/components/Draft";
@@ -51,7 +51,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           {s.owenSays ? <p className="svc-says">&ldquo;{s.owenSays}&rdquo;</p> : <p className="svc-says">{s.blurb}</p>}
           <p>Best for {s.goodFor}</p>
           <div className="hero-cta">
-            <a href={site.bookingApp} className="btn btn-foam btn-big">
+            <a href={bookUrl(s.squareId)} className="btn btn-foam btn-big">
               Book the {s.name.toLowerCase()}
             </a>
             <a href={tel} className="btn btn-line btn-big">

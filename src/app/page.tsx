@@ -34,7 +34,13 @@ export default function Home() {
               Call <span className="num">{site.phone}</span>
             </a>
           </div>
-          <p className="hero-small">Fully insured. Emergency call-outs too.</p>
+          <p className="hero-small">
+            <a href={site.google.url} className="rating">
+              <span className="stars" aria-hidden="true">★★★★★</span> {site.google.rating} from {site.google.count} Google
+              reviews
+            </a>
+            <span>Fully insured. Emergency call-outs too.</span>
+          </p>
         </div>
         <figure className="hero-photo">
           <Pic id="oj-van-livery" priority sizes="(min-width: 900px) 45vw, 100vw" alt="The black OJ Valeting van with its blue bubble livery, parked on a gravel drive" />

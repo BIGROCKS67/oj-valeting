@@ -11,10 +11,49 @@ export const metadata: Metadata = {
 };
 
 // All booking goes through Owen's Square diary (site.bookingApp). This page is here for old
-// links and Google, and hands straight over to it.
+// links and Google, and hands straight over to it. FAQ answers use only what Owen has told us.
+
+const faq: [string, string][] = [
+  [
+    "How does booking work?",
+    "Pick the service and your car size, then a free slot in Owen's live diary. Owen gets the request, checks it and confirms. Square sends you a confirmation and a reminder before the day.",
+  ],
+  [
+    "Which size is my car?",
+    "Roughly: small is a Polo or Fiesta, medium a Golf or 3 Series, large an estate or SUV, and XL a 7-seater, big 4x4 or van. If you're not sure, pick the nearest and Owen will tell you before he starts.",
+  ],
+  [
+    "Can the price change?",
+    "Prices are from prices. Owen confirms the final figure once he's seen the size and state of the vehicle, before he starts, so there are no surprises at the end.",
+  ],
+  ["How do I pay?", "Cash or bank transfer on the day. Owen doesn't take cards at the moment."],
+  [
+    "Where do you cover?",
+    "Owen is based between Brackley and Buckingham and covers Buckinghamshire, Oxfordshire, Northamptonshire, Bedfordshire and Warwickshire. Further afield is fine too, with a small fuel charge (about £10 for a job 45 minutes away).",
+  ],
+  [
+    "Caravan, motorhome, horsebox or van?",
+    "All welcome. Text Owen a photo and he'll quote and sort a time, because these vary too much to price online.",
+  ],
+  [
+    "Can I add extras?",
+    "Yes. Mention them in the notes when you book, or text Owen. Every add-on and its price is listed on this page.",
+  ],
+  [
+    "How do I change or cancel?",
+    "Use the link in your Square confirmation email, or text Owen on 07708 600114 as early as you can.",
+  ],
+];
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })),
+};
 export default function Book() {
   return (
     <section className="wrap book-page" aria-labelledby="book-h">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <div className="book-intro">
         <h1 id="book-h">Book a clean</h1>
         <p>
@@ -73,6 +112,15 @@ export default function Book() {
             ))}
           </dl>
         </div>
+      </div>
+      <div className="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        {faq.map(([q, a]) => (
+          <details key={q}>
+            <summary>{q}</summary>
+            <p>{a}</p>
+          </details>
+        ))}
       </div>
     </section>
   );

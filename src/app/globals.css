@@ -1389,3 +1389,100 @@ textarea {
 .menu {
   min-width: 0;
 }
+.mc-sizes {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+}
+.mc-sizes button {
+  flex: 1;
+  font: inherit;
+  font-size: var(--step--1);
+  font-weight: 700;
+  color: var(--paper);
+  background: transparent;
+  border: 1px solid color-mix(in oklab, var(--paper) 30%, var(--livery));
+  border-radius: var(--r);
+  padding: 0.4rem 0;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.12s, border-color 0.12s, transform 0.12s var(--ease-out);
+}
+.mc-sizes button:hover {
+  border-color: var(--foam-lite);
+}
+.mc-sizes button:active {
+  transform: scale(0.96);
+}
+.mc-sizes button[aria-pressed="true"] {
+  background: var(--paper);
+  color: var(--livery);
+  border-color: var(--paper);
+}
+.mc-sizes button:focus-visible {
+  outline: 3px solid var(--foam-lite);
+  outline-offset: 2px;
+}
+.mc-plus {
+  font-weight: 850;
+  color: var(--foam-lite);
+}
+.mc-hint {
+  margin: -0.25rem 0 0;
+  font-size: var(--step--1);
+  color: color-mix(in oklab, var(--paper) 60%, var(--livery));
+}
+.hero-small {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  align-items: center;
+}
+.rating {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+.rating:hover {
+  text-decoration: underline;
+}
+.rating .stars {
+  color: #f5a623;
+  letter-spacing: 0.05em;
+}
+.faq {
+  margin-top: 3rem;
+  max-width: 70ch;
+}
+.faq details {
+  border-bottom: 1px solid var(--rule);
+}
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 700;
+  padding: 1rem 2rem 1rem 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.25rem;
+  top: 0.85rem;
+  font-size: 1.3em;
+  line-height: 1;
+  color: var(--foam-ink);
+  transition: transform 0.2s var(--ease-out);
+}
+.faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq details p {
+  margin: 0 0 1rem;
+  color: var(--ink-soft);
+}

@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { services, categories, addOns, protectionAddOns, gbp, type Service } from "@/data/services";
-import { site } from "@/data/site";
+import { services, categories, addOns, protectionAddOns, sizeGuide, gbp, type Service } from "@/data/services";
+import { bookUrl } from "@/data/site";
 import { Pic } from "@/components/Pic";
 
 // Owen's menu, by category. Without JavaScript every panel shows, one after another,
@@ -13,7 +13,12 @@ const tabs = [...categories, "Add-ons"] as const;
 type Tab = (typeof tabs)[number];
 const slugOf = (t: Tab) => t.toLowerCase().replace(/[^a-z]+/g, "-");
 
-function Card({ s }: { s: Service }) {
+const sizeHint: Record<string, string> = Object.fromEntries(sizeGuide.map(([k, v]) => [k, v.split(",")[0]]));
+
+function Card({ s, js }: { s: Service; js: boolean }) {
+  const table = s.prices[0];
+  const [size, setSize] = useState(0);
+  const [label, price] = table.prices[size];
   return (
     <li className="menu-card">
       <Link href={`/${s.slug}/`} className="mc-pic" tabIndex={-1} aria-hidden="true">
@@ -24,15 +29,32 @@ function Card({ s }: { s: Service }) {
           <Link href={`/${s.slug}/`}>{s.name}</Link>
         </h3>
         <p className="mc-blurb">{s.blurb}</p>
+        {js && (
+          <div className="mc-sizes" role="group" aria-label={`${s.name}: price by vehicle size`}>
+            {table.prices.map(([k], i) => (
+              <button key={k} type="button" aria-pressed={i === size} onClick={() => setSize(i)}>
+                {k}
+              </button>
+            ))}
+          </div>
+        )}
         <p className="mc-meta">
           <span>{s.time}</span>
-          <span className="mc-price">
-            from <strong className="num">{gbp(s.from)}</strong>
-          </span>
+          {js ? (
+            <span className="mc-price" aria-live="polite">
+              {label} <strong className="num">{price.replace("+", "")}</strong>
+              {price.endsWith("+") && <span className="mc-plus">+</span>}
+            </span>
+          ) : (
+            <span className="mc-price">
+              from <strong className="num">{gbp(s.from)}</strong>
+            </span>
+          )}
         </p>
+        {js && <p className="mc-hint">{sizeHint[label]}</p>}
         <p className="mc-links">
-          <Link href={`/${s.slug}/`}>Prices by size</Link>
-          <a href={site.bookingApp} className="pl-book">
+          <Link href={`/${s.slug}/`}>What&rsquo;s included</Link>
+          <a href={bookUrl(s.squareId)} className="pl-book">
             Book
           </a>
         </p>
@@ -97,7 +119,7 @@ export function ServiceMenu() {
             {list.length > 0 && (
               <ul className="menu-cards" role="list">
                 {list.map((s) => (
-                  <Card key={s.slug} s={s} />
+                  <Card key={s.slug} s={s} js={js} />
                 ))}
               </ul>
             )}

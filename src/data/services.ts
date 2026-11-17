@@ -47,6 +47,8 @@ export type Service = {
   category: Category;
   /** one plain line for the menu card */
   blurb: string;
+  /** Square Appointments item id, so Book opens this service directly */
+  squareId?: string;
   /** what the page is found by in search */
   searchName: string;
   from: number;
@@ -74,6 +76,7 @@ export const services: Service[] = [
     name: "Basic package",
     category: "Full valets",
     blurb: "A proper valet inside and out, at your home or work.",
+    squareId: "Y335SIFHZPY26WGD4L74DGV7",
     searchName: "Mobile car valet",
     from: 45,
     time: "1 to 2 hours",
@@ -122,6 +125,7 @@ export const services: Service[] = [
     name: "Full deep clean",
     category: "Full valets",
     blurb: "Everything out, shampooed, steamed and decontaminated, inside and out.",
+    squareId: "7QPFGXPL75UJLWTY7WEMRYJR",
     searchName: "Car deep clean",
     from: 150,
     time: "3 to 5 hours",
@@ -172,6 +176,7 @@ export const services: Service[] = [
     name: "Full paint correction",
     category: "Polishing",
     blurb: "Machine polished to take out swirls, light scratches and dullness.",
+    squareId: "OUN7JPWB65ZLOR6BKFUDUTO2",
     searchName: "Paint correction",
     from: 170,
     time: "Most of a day",
@@ -219,6 +224,7 @@ export const services: Service[] = [
     name: "Ceramic coating",
     category: "Protection",
     blurb: "Years of gloss and protection, and a car that's far easier to wash.",
+    squareId: "YOJHVAR5GVHFBCLZETWATB6Z",
     searchName: "Ceramic coating",
     from: 270,
     time: "Ask Owen",
@@ -266,6 +272,7 @@ export const services: Service[] = [
     name: "Maintenance package",
     category: "Plans",
     blurb: "A booked-in wash and tidy every 2, 4 or 6 weeks, so the car never slips.",
+    squareId: "BGCFUBL4UQKHY4JFNSSAHAOM",
     searchName: "Maintenance valet plan",
     from: 40,
     time: "1 to 2 hours",
