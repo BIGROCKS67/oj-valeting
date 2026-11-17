@@ -69,9 +69,12 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 ## Google Business Profile (17 Nov 2026)
 
 - Owen's profile "OJVALETING" is verified (blue tick), 13 reviews at 5.0, category Valeting service. Jack (rockelljack@gmail.com) is a Manager, Owen is owner.
-- Changed 17 Nov: website to https://ojvalet.co.uk/ and hours to his winter hours (both pending Google review, up to ~10 min, sometimes longer); booking link to the Square page; "from" prices and descriptions on Basic £45, Deep clean £150, Maintenance £40, Ceramic coating £220, Paint correction £170.
+- Changed 17 Nov: website to https://ojvalet.co.uk/ and hours to his winter hours (both approved same day); booking link to the Square page; "from" prices and descriptions on Basic £45, Deep clean £150, Maintenance £40, Ceramic coating £220, Paint correction £170.
 - Left as Owen set them: business name "OJVALETING" (renaming can trigger re-verification), description, service area (Oxon, Beds, Warks, Bucks, Northants), Facebook link (facebook.com/ojvaleting_, check it works; the site uses the profile.php id link).
-- To do: newer photos (last added 140 days ago), a review link/QR for Owen to send customers, town-level service areas once he confirms towns, Search Console for ojvalet.co.uk.
+- Service area (17 Nov, pending review when set): kept the 5 counties and added towns round Towcester: Towcester, Silverstone, Paulerspury, Stoke Bruerne, Roade, Stony Stratford, Brackley, Buckingham, Milton Keynes, Northampton.
+- **Review link:** https://g.page/r/CddJGqjpZkcFEBM/review. QR code in `handover/owen-google-review-qr.png` (and .svg for print).
+- **Search Console:** https://ojvalet.co.uk/ added on Jack's Google account (rockelljack@gmail.com), verified by `public/google4b6729940671f1e8.html` (don't delete it), sitemap submitted (10 pages, Success), homepage indexing requested. Add Owen as an owner later if he wants access.
+- To do: newer photos (last added 140 days ago).
 
 ## Search check (16 Nov 2026, research agent; US-based search tool so not exact UK Google)
 
