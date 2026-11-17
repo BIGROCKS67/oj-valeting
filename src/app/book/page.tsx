@@ -4,7 +4,7 @@ import { services, gbp, addOns } from "@/data/services";
 import { hoursList, season } from "@/data/hours";
 
 export const metadata: Metadata = {
-  title: "Book a mobile valet or detail online | OJ Valeting",
+  title: "Book a mobile car valet, Brackley | OJ Valeting",
   description:
     "Book Owen to come to you. Mobile valeting across Bucks, Northants, Oxfordshire, Beds and Warwickshire, and nationwide.",
   alternates: { canonical: "/book/" },

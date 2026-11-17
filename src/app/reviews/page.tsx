@@ -4,7 +4,7 @@ import { reviews, homeQuote } from "@/data/reviews";
 import { ReviewList } from "@/components/ReviewList";
 
 export const metadata: Metadata = {
-  title: "Reviews from OJ Valeting customers",
+  title: "OJ Valeting reviews: mobile valeting, Brackley",
   description: "What customers say about Owen's mobile valeting: deep cleans, ozone treatment, paint correction, caravans and vans.",
   alternates: { canonical: "/reviews/" },
 };

@@ -117,7 +117,7 @@ export const services: Service[] = [
       { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
       { label: "Outside only", prices: [["Small", "£25"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
     ],
-    photos: ["owen-porsche-boxster-wash", "owen-wheel-clean", "vw-golf-r", "porsche-cayenne"],
+    photos: ["owen-porsche-boxster-wash", "vw-golf-r", "porsche-cayenne", "boot-cleaned"],
     goodFor: "a car that's been looked after and needs a proper clean inside and out.",
   },
   {
@@ -264,7 +264,7 @@ export const services: Service[] = [
       },
     ],
     option: { name: "coating_years", label: "How long should it last?", choices: ["3 years", "5 years", "7 years", "Not sure yet"] },
-    photos: ["bmw-m4", "hyundai-ioniq-5-n", "gloss-roof", "range-rover-sport"],
+    photos: ["owen-wheel-clean", "bmw-m4", "hyundai-ioniq-5-n", "gloss-roof"],
     goodFor: "a new or freshly corrected car you want to keep looking that way, and easier to wash.",
   },
   {
@@ -398,7 +398,7 @@ export const services: Service[] = [
     squareId: "36UI4EG27IT4KO6FDC7V623W",
     category: "Exterior",
     blurb: "Full wash plus iron fallout and tar taken off the paint, then sealed.",
-    searchName: "Car exterior deep clean and decontamination",
+    searchName: "Car exterior deep clean",
     from: 35,
     time: "Up to 5 hours",
     jobHours: 5,

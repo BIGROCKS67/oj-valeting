@@ -22,9 +22,9 @@ const archivo = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "Mobile Car Valeting and Detailing, from £45 | OJ Valeting",
+  title: "OJ Valeting | Mobile Car Valeting, Brackley & Buckingham",
   description:
-    "Owen comes to your home or work with the OJ Valeting van. Valets from £45, deep cleans from £150, paint correction and ceramic coating. Book online.",
+    "Owen comes to your home or work with the OJ Valeting van. Valets from £45, deep cleans from £150, paint correction and ceramic coating. Brackley, Buckingham, Towcester and beyond.",
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -114,6 +114,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}. Fully insured. Emergency call-outs
                 too.
               </p>
+              <p className="foot-base">Based in Buckingham, Buckinghamshire MK18</p>
             </div>
             <div>
               <p className="foot-h">Get in touch</p>

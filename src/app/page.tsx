@@ -14,6 +14,8 @@ const suds: [number, number, number][] = [
   [53, 22, 600], [61, 36, 200], [69, 16, 440], [77, 28, 40], [85, 20, 380], [93, 34, 180],
 ];
 
+export const metadata = { alternates: { canonical: "/" } };
+
 export default function Home() {
   return (
     <>

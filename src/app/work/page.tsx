@@ -4,7 +4,7 @@ import { site, bookHref } from "@/data/site";
 import { Pic } from "@/components/Pic";
 
 export const metadata: Metadata = {
-  title: "Our work: cars, vans and horseboxes | OJ Valeting",
+  title: "Valeting work: cars, vans, horseboxes | OJ Valeting",
   description:
     "Photos of OJ Valeting jobs, every one on the customer's own drive: Porsches, Range Rovers, a Scania horsebox, an Opel Manta and more.",
   alternates: { canonical: "/work/" },

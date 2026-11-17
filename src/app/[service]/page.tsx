@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   const s = getService((await params).service);
   if (!s) return {};
   return {
-    title: `${s.searchName}, from ${gbp(s.from)} | OJ Valeting`,
-    description: `${s.owenSays ?? s.blurb} Mobile, at your home or work across Bucks, Oxon, Northants, Beds and Warwickshire. From ${gbp(s.from)}. Book online.`,
+    title: `${s.searchName}, Brackley | OJ Valeting`,
+    description: `${s.owenSays ?? s.blurb} Mobile, at your home or work across Bucks, Oxon, Northants, Beds and Warwickshire. From ${gbp(s.from)}. Call or text Owen to book.`,
     alternates: { canonical: `/${s.slug}/` },
   };
 }

@@ -2,7 +2,7 @@ import { site } from "./site";
 import { services } from "./services";
 
 // LocalBusiness on the home page only, where every value is visible. Service-area business:
-// no street address (Owen goes to the customer). UI_RULES 13.3.
+// no street address (Owen goes to the customer), just his postal town. UI_RULES 13.3.
 export const businessLd = {
   "@context": "https://schema.org",
   "@type": "AutoWash",
@@ -13,7 +13,9 @@ export const businessLd = {
   email: site.email,
   image: `${site.url}/og.jpg`,
   logo: `${site.url}/logo.png`,
-  sameAs: [site.instagram, site.facebook],
+  address: { "@type": "PostalAddress", addressLocality: "Buckingham", addressRegion: "Buckinghamshire", postalCode: "MK18", addressCountry: "GB" },
+  hasMap: site.google.url,
+  sameAs: [site.instagram, site.facebook, site.google.url],
   priceRange: "££",
   paymentAccepted: "Cash, Bank transfer",
   areaServed: [

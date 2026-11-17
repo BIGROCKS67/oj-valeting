@@ -7,7 +7,7 @@ export const captions: Record<string, string> = {
   "oj-van-livery": "The OJ Valeting van",
   "oj-van-rear": "The OJ Valeting van",
   "owen-steam-cleaning-door": "Owen steam cleaning a door card",
-  "owen-wheel-clean": "Owen cleaning the wheels on a VW Polo",
+  "owen-wheel-clean": "Owen ceramic coating a VW Polo",
   "owen-polo-roof": "Owen drying the roof of a VW Polo",
   "owen-polo-sill": "Owen on the sills of a VW Polo",
   "owen-porsche-boxster-wash": "Owen washing a Porsche Boxster",
