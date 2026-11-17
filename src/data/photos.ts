@@ -47,6 +47,8 @@ export const captions: Record<string, string> = {
   "discovery-interior": "Land Rover Discovery interior",
   "boot-cleaned": "Seven-seater boot",
   "seat-headlight": "Headlight, SEAT",
+  "headlight-restoration": "Headlight restoration by Owen",
+  "soft-top-treatment": "Soft top treatment by Owen",
   "range-rover-satin": "Range Rover, satin grey",
 };
 

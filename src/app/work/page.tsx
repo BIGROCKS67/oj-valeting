@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/work/" },
 };
 
-const extra = ["porsche-cayenne", "porsche-wheel", "range-rover-satin", "discovery-interior", "seat-headlight", "owen-polo-sill", "vw-golf-r", "bmw-5-series"];
+const extra = ["porsche-cayenne", "porsche-wheel", "range-rover-satin", "discovery-interior", "headlight-restoration", "owen-polo-sill", "soft-top-treatment", "vw-golf-r", "bmw-5-series"];
 
 export default function Work() {
   const all = [...wall, ...extra];
@@ -19,8 +19,9 @@ export default function Work() {
       <section className="wrap page-head" aria-labelledby="work-h">
         <h1 id="work-h">Our work</h1>
         <p>
-          {all.length} jobs, every one done on the owner&rsquo;s drive or yard. Owen posts new ones on{" "}
-          <a href={site.instagram}>Instagram {site.instagramHandle}</a>.
+          {/* Owen, 17 Nov 2026: over 450 vehicles cleaned. */}
+          Over 450 vehicles cleaned, every one on the owner&rsquo;s drive or yard. New ones go up on{" "}
+          <a href={site.instagram}>Instagram {site.instagramHandle}</a> and <a href={site.facebook}>Facebook</a>.
         </p>
       </section>
       <ul className="wrap work-grid" role="list">
