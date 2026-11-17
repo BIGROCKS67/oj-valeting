@@ -81,6 +81,17 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 - **Search Console:** https://ojvalet.co.uk/ added on Jack's Google account (rockelljack@gmail.com), verified by `public/google4b6729940671f1e8.html` (don't delete it), sitemap submitted (10 pages, Success), homepage indexing requested. Add Owen as an owner later if he wants access.
 - To do: newer photos (last added 140 days ago).
 
+## Prices (Owen's price list, 17 Nov 2026)
+
+- On the site: every service page has a "Prices by vehicle size" table (Small, Medium, Large, XL), plus Inside only and Outside only for the basic and deep clean. Add-ons have prices on each service page and in full on /book/. Data lives in `services.ts` (`prices`, `addOns`, `sizeGuide`).
+- Changes from before: ceramic is now from £270 (3 year, small car; 5 year £300/£340/£380), maintenance is every 2, 4 or 6 weeks (no weekly).
+- **CONFIRM with Owen:**
+  - Ceramic XL: his list says £350, less than Large £380. Site shows "Ask Owen" for XL until he confirms (probably a typo).
+  - Which cars count as Small, Medium, Large, XL. The site's guide (Polo/Fiesta, Golf/3 Series, estates and SUVs, 7-seaters/vans/motorhomes) is my best guess and shows a Draft tag.
+  - Scratch removal and stage 2/3 correction have no price on his list, so they show "Ask Owen".
+- Google profile: every service and add-on now has his prices (17 Nov).
+- Square: still the old single prices (ceramic still £220). Needs size options added when Jack is signed in.
+
 ## Search check (16 Nov 2026, research agent; US-based search tool so not exact UK Google)
 
 - OJ Valeting does not appear for "mobile valeting Buckingham", "car valeting Towcester", "mobile car detailing Brackley", "ceramic coating Buckingham", "car valeting near Milton Keynes" or "paint correction Northamptonshire". Only a long "OJ Valeting Buckingham Owen" search finds ojvaleting.org.
