@@ -122,3 +122,11 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 - Booking flow clicked through in the browser pane: package carried over from the price list, step errors (title gets "Error:", summary takes focus, clears once fixed), job card updates, payload checked. Final send not pressed (see above).
 - 390px: no sideways scroll, action bar Call / Text / Book, photo row swipes.
 - Not yet done: Lighthouse, real-phone test, one real test booking through Square, client review.
+
+## Booking paused (17 Nov 2026, Owen's request)
+
+Owen asked to close booking until he's ready to go live.
+- Square: online booking disabled (Appointments > Online booking > Channels > ... > Disable online booking). This also stops the Book button on his Google profile. Reopen with "Enable online booking" on the same page.
+- Site: `bookingOpen: false` in `src/data/site.ts`. Every Book button goes to /book/, which says call or text Owen. Set it to `true` to send them to Square again.
+- Both have to be switched back on together.
+- Job lengths (Owen, 17 Nov): Basic 1-2h, Full deep clean 3-5h, Paint correction 3-5h, Ceramic 3-5h, Maintenance 1-2h, Basic interior 1h, Basic exterior 1-2h. Square blocks the top of each range. Deep interior and deep exterior: CONFIRM (still 5h).
