@@ -22,6 +22,8 @@ const archivo = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  // Bing Webmaster Tools (Jack's account), added 17 Nov 2026. Keep it.
+  verification: { other: { "msvalidate.01": "41E604313DBE1C6486CD9A5F3A4A5002" } },
   title: "OJ Valeting | Mobile Car Valeting, Brackley & Buckingham",
   description:
     "Owen comes to your home or work with the OJ Valeting van. Valets from £45, deep cleans from £150, paint correction and ceramic coating. Brackley, Buckingham, Towcester and beyond.",
