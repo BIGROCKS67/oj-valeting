@@ -9,7 +9,7 @@ import { Pic } from "@/components/Pic";
 // Owen's menu, by category. Without JavaScript every panel shows, one after another,
 // so the whole price list is still there. With it, tabs switch between them.
 
-const tabs = [...categories, "Add-ons"] as const;
+const tabs = ["All", ...categories, "Add-ons"] as const;
 type Tab = (typeof tabs)[number];
 const slugOf = (t: Tab) => t.toLowerCase().replace(/[^a-z]+/g, "-");
 
@@ -65,7 +65,7 @@ function Card({ s, js }: { s: Service; js: boolean }) {
 
 export function ServiceMenu() {
   const [js, setJs] = useState(false);
-  const [active, setActive] = useState<Tab>("Full valets");
+  const [active, setActive] = useState<Tab>("All");
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   useEffect(() => setJs(true), []);
 
@@ -104,7 +104,9 @@ export function ServiceMenu() {
       )}
 
       {tabs.map((t) => {
-        const list = services.filter((s) => s.category === t);
+        // "All" only exists with JavaScript; without it every category panel already shows.
+        if (t === "All" && !js) return null;
+        const list = t === "All" ? services : services.filter((s) => s.category === t);
         const extras = t === "Add-ons" ? Object.keys(addOns) : t === "Protection" ? protectionAddOns : [];
         return (
           <div
