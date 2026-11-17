@@ -68,7 +68,7 @@ export type Service = {
   goodFor: string;
 };
 
-// jobHours: top of Owen's own time range. Correction and coating are guesses (CONFIRM list).
+// jobHours: top of Owen's own time range (Owen's job times, 17 Nov 2026). Deep interior and deep exterior: CONFIRM.
 
 export const services: Service[] = [
   {
@@ -179,8 +179,8 @@ export const services: Service[] = [
     squareId: "OUN7JPWB65ZLOR6BKFUDUTO2",
     searchName: "Paint correction",
     from: 170,
-    time: "Most of a day",
-    jobHours: 6,
+    time: "3 to 5 hours",
+    jobHours: 5,
     owenSays:
       "My paint correction package is the ideal solution for vehicles with paint defects, swirl marks, and minor imperfections.",
     includes: [
@@ -227,8 +227,8 @@ export const services: Service[] = [
     squareId: "YOJHVAR5GVHFBCLZETWATB6Z",
     searchName: "Ceramic coating",
     from: 270,
-    time: "Ask Owen",
-    jobHours: 6,
+    time: "3 to 5 hours",
+    jobHours: 5,
     owenSays: "This gives your vehicle the ultimate long-lasting protection with the ceramic coating option.",
     note: "3, 5 and 7 year options available.",
     includes: [
@@ -306,8 +306,8 @@ export const services: Service[] = [
     blurb: "Hoovered, wiped down and glass cleaned inside. Outside left as it is.",
     searchName: "Mobile car interior valet",
     from: 30,
-    time: "Up to 2 hours",
-    jobHours: 2,
+    time: "About 1 hour",
+    jobHours: 1,
     note: "Price depends on condition.",
     includes: [
       {
@@ -339,7 +339,7 @@ export const services: Service[] = [
     blurb: "Snow foam, safe hand wash, wheels and glass. Inside left as it is.",
     searchName: "Mobile car wash and exterior valet",
     from: 25,
-    time: "Up to 2 hours",
+    time: "1 to 2 hours",
     jobHours: 2,
     includes: [
       {

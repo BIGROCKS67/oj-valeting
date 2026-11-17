@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import Link from "next/link";
 import "./globals.css";
-import { site, tel, sms } from "@/data/site";
+import { site, tel, sms, bookHref } from "@/data/site";
 import { services } from "@/data/services";
 import { asset, isPreview } from "@/data/base";
 import { hoursList, season } from "@/data/hours";
@@ -96,7 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href={tel} className="head-call">
               <span className="head-call-l">Call Owen</span> <span className="num">{site.phone}</span>
             </a>
-            <a href={site.bookingApp} className="btn btn-foam head-book">
+            <a href={bookHref} className="btn btn-foam head-book">
               Book a clean
             </a>
           </div>
@@ -162,7 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="foot-h">More</p>
               <ul>
                 <li>
-                  <a href={site.bookingApp}>Book a clean</a>
+                  <a href={bookHref}>Book a clean</a>
                 </li>
                 <li>
                   <Link href="/work/">Our work</Link>
@@ -184,7 +184,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <nav className="action-bar" aria-label="Quick contact">
           <a href={tel}>Call</a>
           <a href={sms("Hi Owen, ")}>Text</a>
-          <a href={site.bookingApp} className="ab-book">
+          <a href={bookHref} className="ab-book">
             Book a clean
           </a>
         </nav>

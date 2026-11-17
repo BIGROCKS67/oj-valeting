@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { wall, captions } from "@/data/photos";
-import { site } from "@/data/site";
+import { site, bookHref } from "@/data/site";
 import { Pic } from "@/components/Pic";
 
 export const metadata: Metadata = {
@@ -34,7 +34,7 @@ export default function Work() {
         ))}
       </ul>
       <p className="wrap center-cta">
-        <a href={site.bookingApp} className="btn btn-foam btn-big">
+        <a href={bookHref} className="btn btn-foam btn-big">
           Book a clean
         </a>
       </p>

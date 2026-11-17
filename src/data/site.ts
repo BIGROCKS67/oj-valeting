@@ -17,17 +17,25 @@ export const site = {
   towns: ["Brackley", "Buckingham", "Towcester", "Bicester", "Banbury", "Silverstone", "Milton Keynes", "Northampton", "Aylesbury", "Oxford"],
   // Owen, 17 Nov 2026: no card machine, so cash or bank transfer.
   payment: "Pay by cash or bank transfer on the day.",
-  fuelNote: "Further afield is fine too, with a small fuel charge (about £10 for a job 45 minutes away).",
+  // Owen, 17 Nov 2026: say nationwide.
+  fuelNote: "Nationwide too: further afield is fine, with a small fuel charge (about £10 for a job 45 minutes away).",
   // Hours shown on the site live in hours.ts. Bookable hours, days off and notice are set in Square.
   // Owen's Square Appointments booking page (set up 17 Nov 2026). Shows his real free slots,
   // with 30 minutes' travel after each job; he approves each request. Every Book button links here.
+  // Owen, 17 Nov 2026: online booking paused until he is ready to go live. While false, every
+  // Book button goes to /book/, which says call or text. Set true (and switch Square back on) to reopen.
+  bookingOpen: false,
   bookingApp: "https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services",
   // Google Business Profile, as shown on Maps 17 Nov 2026. Update the count as reviews come in.
   google: { rating: "5.0", count: 13, url: "https://maps.google.com/?cid=380385847269804503" },
 };
 
 /** Book straight into one service in Square, or the full list if it isn't there yet */
-export const bookUrl = (squareId?: string) => (squareId ? `${site.bookingApp}/${squareId}` : site.bookingApp);
+export const bookUrl = (squareId?: string) =>
+  !site.bookingOpen ? "/book/" : squareId ? `${site.bookingApp}/${squareId}` : site.bookingApp;
+
+/** Where a general Book button goes: Square when booking is open, /book/ while it is paused */
+export const bookHref = bookUrl();
 
 export const tel = `tel:${site.phoneIntl}`;
 export const sms = (body: string) => `sms:${site.phoneIntl}?&body=${encodeURIComponent(body)}`;

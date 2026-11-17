@@ -6,7 +6,7 @@ import { hoursList, season } from "@/data/hours";
 export const metadata: Metadata = {
   title: "Book a mobile valet or detail online | OJ Valeting",
   description:
-    "Pick a free slot in Owen's live diary and he comes to you. Mobile valeting across Bucks, Northants and Oxfordshire.",
+    "Book Owen to come to you. Mobile valeting across Bucks, Northants, Oxfordshire, Beds and Warwickshire, and nationwide.",
   alternates: { canonical: "/book/" },
 };
 
@@ -16,7 +16,9 @@ export const metadata: Metadata = {
 const faq: [string, string][] = [
   [
     "How does booking work?",
-    "Pick the service and your car size, then a free slot in Owen's live diary. Owen gets the request, checks it and confirms. Square sends you a confirmation and a reminder before the day.",
+    site.bookingOpen
+      ? "Pick the service and your car size, then a free slot in Owen's live diary. Owen gets the request, checks it and confirms. Square sends you a confirmation and a reminder before the day."
+      : "Call or text Owen on 07708 600114 with the service, your car and a day that suits, and he'll sort a time with you. Online booking opens soon.",
   ],
   [
     "Which size is my car?",
@@ -29,7 +31,7 @@ const faq: [string, string][] = [
   ["How do I pay?", "Cash or bank transfer on the day. Owen doesn't take cards at the moment."],
   [
     "Where do you cover?",
-    "Owen is based between Brackley and Buckingham and covers Buckinghamshire, Oxfordshire, Northamptonshire, Bedfordshire and Warwickshire. Further afield is fine too, with a small fuel charge (about £10 for a job 45 minutes away).",
+    "Owen is based between Brackley and Buckingham and covers Buckinghamshire, Oxfordshire, Northamptonshire, Bedfordshire and Warwickshire. Nationwide too, with a small fuel charge for further afield (about £10 for a job 45 minutes away).",
   ],
   [
     "Caravan, motorhome, horsebox or van?",
@@ -41,7 +43,9 @@ const faq: [string, string][] = [
   ],
   [
     "How do I change or cancel?",
-    "Use the link in your Square confirmation email, or text Owen on 07708 600114 as early as you can.",
+    site.bookingOpen
+      ? "Use the link in your Square confirmation email, or text Owen on 07708 600114 as early as you can."
+      : "Text or call Owen on 07708 600114 as early as you can.",
   ],
 ];
 
@@ -56,18 +60,37 @@ export default function Book() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <div className="book-intro">
         <h1 id="book-h">Book a clean</h1>
-        <p>
-          Owen&rsquo;s diary is live, so you only see times he can actually do. Pick the package and a time, and he
-          confirms it with you before the day.
-        </p>
-        <p className="book-live">
-          <a href={site.bookingApp} className="btn btn-foam btn-big">
-            See free slots and book
-          </a>
-          <a href={tel} className="btn btn-line btn-big">
-            Or call <span className="num">{site.phone}</span>
-          </a>
-        </p>
+        {site.bookingOpen ? (
+          <>
+            <p>
+              Owen&rsquo;s diary is live, so you only see times he can actually do. Pick the package and a time, and he
+              confirms it with you before the day.
+            </p>
+            <p className="book-live">
+              <a href={site.bookingApp} className="btn btn-foam btn-big">
+                See free slots and book
+              </a>
+              <a href={tel} className="btn btn-line btn-big">
+                Or call <span className="num">{site.phone}</span>
+              </a>
+            </p>
+          </>
+        ) : (
+          <>
+            <p>
+              Online booking opens soon. For now, call or text Owen with the service, your car and a day that suits,
+              and he&rsquo;ll sort a time with you.
+            </p>
+            <p className="book-live">
+              <a href={sms("Hi Owen, I'd like to book a ")} className="btn btn-foam btn-big">
+                Text Owen to book
+              </a>
+              <a href={tel} className="btn btn-line btn-big">
+                Call <span className="num">{site.phone}</span>
+              </a>
+            </p>
+          </>
+        )}
       </div>
 
       <div className="book-more">

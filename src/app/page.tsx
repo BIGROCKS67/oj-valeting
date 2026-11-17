@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { site, tel } from "@/data/site";
+import { site, tel, bookHref } from "@/data/site";
 import { wall, captions } from "@/data/photos";
 import { reviews, homeQuote } from "@/data/reviews";
 import { Pic } from "@/components/Pic";
@@ -24,10 +24,10 @@ export default function Home() {
           <h1 id="hero-h">Mobile car valeting and detailing on your drive, from&nbsp;£45</h1>
           <p className="hero-sub">
             Owen brings the van and all the kit to your home or work, across {site.counties.slice(0, -1).join(", ")} and{" "}
-            {site.counties.at(-1)}. Valets, deep cleans, paint correction and ceramic coating.
+            {site.counties.at(-1)}, and nationwide. Valets, deep cleans, paint correction and ceramic coating.
           </p>
           <div className="hero-cta">
-            <a href={site.bookingApp} className="btn btn-foam btn-big">
+            <a href={bookHref} className="btn btn-foam btn-big">
               Book a clean
             </a>
             <a href={tel} className="btn btn-line btn-big">
@@ -137,13 +137,16 @@ export default function Home() {
       <section className="book-band" aria-labelledby="bb-h">
         <div className="wrap bb-grid">
           <div>
-            <h2 id="bb-h">Book straight into Owen&rsquo;s diary</h2>
+            <h2 id="bb-h">{site.bookingOpen ? <>Book straight into Owen&rsquo;s diary</> : <>Book with Owen</>}</h2>
             <p>
-              Pick the package and a free slot. You only see times Owen can do, and he confirms before the day. Based between Brackley and Buckingham, covering {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}. {site.fuelNote} {site.payment}
+              {site.bookingOpen
+                ? "Pick the package and a free slot. You only see times Owen can do, and he confirms before the day."
+                : "Call or text Owen to book. Online booking opens soon."}{" "}
+              Based between Brackley and Buckingham, covering {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}. {site.fuelNote} {site.payment}
             </p>
           </div>
           <div className="bb-actions">
-            <a href={site.bookingApp} className="btn btn-foam btn-big">
+            <a href={bookHref} className="btn btn-foam btn-big">
               Book a clean
             </a>
             <a href={tel} className="btn btn-line-dark btn-big">
