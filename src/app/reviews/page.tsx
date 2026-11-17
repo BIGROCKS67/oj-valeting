@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { site } from "@/data/site";
 import { reviews, homeQuote } from "@/data/reviews";
 import { ReviewList } from "@/components/ReviewList";
 
@@ -16,9 +16,9 @@ export default function Reviews() {
       <p>Every review customers have left for Owen, newest first, word for word.</p>
       <ReviewList items={[...reviews, { text: homeQuote.text, name: "Monthly customer", when: "2026" }]} />
       <p className="center-cta">
-        <Link href="/book/" className="btn btn-foam btn-big">
+        <a href={site.bookingApp} className="btn btn-foam btn-big">
           Book a clean
-        </Link>
+        </a>
       </p>
     </section>
   );

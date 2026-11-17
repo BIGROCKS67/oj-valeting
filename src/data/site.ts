@@ -12,13 +12,9 @@ export const site = {
   instagramHandle: "@ojvaleting_",
   facebook: "https://www.facebook.com/profile.php?id=61581228436016",
   counties: ["Buckinghamshire", "Northamptonshire", "Oxfordshire"],
-  // Working hours and start times live in hours.ts.
-  // Days off. England bank holidays to Easter 2027 for now. CONFIRM with Owen: holidays and Christmas.
-  closedDates: ["2026-12-25", "2026-12-26", "2026-12-28", "2027-01-01", "2027-03-26", "2027-03-29"],
-  bookAheadDays: 42,
-  minNoticeDays: 1,
+  // Hours shown on the site live in hours.ts. Bookable hours, days off and notice are set in Square.
   // Owen's Square Appointments booking page (set up 17 Nov 2026). Shows his real free slots,
-  // with 30 minutes' travel after each job; he approves each request. Empty = email requests only.
+  // with 30 minutes' travel after each job; he approves each request. Every Book button links here.
   bookingApp: "https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services",
 };
 

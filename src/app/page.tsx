@@ -27,9 +27,9 @@ export default function Home() {
             {site.counties.at(-1)}. Valets, deep cleans, paint correction and ceramic coating.
           </p>
           <div className="hero-cta">
-            <Link href="/book/" className="btn btn-foam btn-big">
+            <a href={site.bookingApp} className="btn btn-foam btn-big">
               Book a clean
-            </Link>
+            </a>
             <a href={tel} className="btn btn-line btn-big">
               Call <span className="num">{site.phone}</span>
             </a>
@@ -68,9 +68,9 @@ export default function Home() {
                 <p className="pl-says">{s.owenSays}</p>
                 <p className="pl-links">
                   <Link href={`/${s.slug}/`}>What&rsquo;s included</Link>
-                  <Link href={`/book/?package=${s.slug}`} className="pl-book">
+                  <a href={site.bookingApp} className="pl-book">
                     Book the {s.name.toLowerCase()}
-                  </Link>
+                  </a>
                 </p>
               </li>
             ))}
@@ -149,16 +149,15 @@ export default function Home() {
       <section className="book-band" aria-labelledby="bb-h">
         <div className="wrap bb-grid">
           <div>
-            <h2 id="bb-h">Book online in about two minutes</h2>
+            <h2 id="bb-h">Book straight into Owen&rsquo;s diary</h2>
             <p>
-              Choose the package, tell Owen about the vehicle, add any extras and pick a day and start time. He texts you
-              back to confirm. Covering {site.counties.join(", ")} and further by arrangement.
+              Pick the package and a free slot. You only see times Owen can do, and he confirms before the day. Covering {site.counties.join(", ")} and further by arrangement.
             </p>
           </div>
           <div className="bb-actions">
-            <Link href="/book/" className="btn btn-foam btn-big">
+            <a href={site.bookingApp} className="btn btn-foam btn-big">
               Book a clean
-            </Link>
+            </a>
             <a href={tel} className="btn btn-line-dark btn-big">
               Or call <span className="num">{site.phone}</span>
             </a>

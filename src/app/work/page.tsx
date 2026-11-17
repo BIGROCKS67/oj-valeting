@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { wall, captions } from "@/data/photos";
 import { site } from "@/data/site";
 import { Pic } from "@/components/Pic";
@@ -35,9 +34,9 @@ export default function Work() {
         ))}
       </ul>
       <p className="wrap center-cta">
-        <Link href="/book/" className="btn btn-foam btn-big">
+        <a href={site.bookingApp} className="btn btn-foam btn-big">
           Book a clean
-        </Link>
+        </a>
       </p>
     </>
   );

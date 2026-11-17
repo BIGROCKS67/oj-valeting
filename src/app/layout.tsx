@@ -96,9 +96,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <a href={tel} className="head-call">
               <span className="head-call-l">Call Owen</span> <span className="num">{site.phone}</span>
             </a>
-            <Link href="/book/" className="btn btn-foam head-book">
+            <a href={site.bookingApp} className="btn btn-foam head-book">
               Book a clean
-            </Link>
+            </a>
           </div>
         </header>
 
@@ -162,7 +162,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="foot-h">More</p>
               <ul>
                 <li>
-                  <Link href="/book/">Book a clean</Link>
+                  <a href={site.bookingApp}>Book a clean</a>
                 </li>
                 <li>
                   <Link href="/work/">Our work</Link>
@@ -184,9 +184,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <nav className="action-bar" aria-label="Quick contact">
           <a href={tel}>Call</a>
           <a href={sms("Hi Owen, ")}>Text</a>
-          <Link href="/book/" className="ab-book">
+          <a href={site.bookingApp} className="ab-book">
             Book a clean
-          </Link>
+          </a>
         </nav>
       </body>
     </html>

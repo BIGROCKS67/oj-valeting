@@ -14,12 +14,10 @@ Owen (OJ Valeting), mobile valeting and detailing, Bucks / Northants / Oxon. Pho
 
 ## Booking system (how it works)
 
-`/book/` is a 5-step booking builder: package, vehicle (type, make/model, condition, plan frequency or coating years), extras, day and start time, details. A dark "job card" beside it updates live. It posts to FormSubmit, which emails Owen the whole job card with a subject like "Booking request: Full deep clean, Friday, 20 November 2026 at 10am". He texts the customer to confirm. Works without JavaScript as one long form.
+All booking is Owen's Square Appointments diary (see "Square Appointments" below). Every Book button links to `site.bookingApp`. `/book/` is a short page with prices, hours and the button into Square, kept for old links and Google. Customers only see free slots, Owen approves each request, and Square sends reminders.
 
-- Hours: Owen's **winter hours** (WhatsApp, 16 Nov 2026) in `src/data/hours.ts`: Mon 8am to 4pm, Tue 8am to 2pm, Wed 9am to 4pm, Thu 8am to 2pm, Fri 9am to 4pm, Sat one job at 8:30am, Sun by arrangement (not bookable online; about one Sunday a month for maintenance customers). Shown in the footer and on the booking page.
-- Start times are worked out per day: every two hours from his start, as long as the job (`jobHours` in `services.ts`: basic and maintenance 2, deep clean 5, correction and coating 6) finishes by his finish time. Days off in `site.closedDates`. Bookable from tomorrow to 6 weeks ahead. **Update `hours.ts` when his summer hours start.**
-- **Not end-to-end tested**: sending would trigger FormSubmit's one-off activation email to Owen. Do the first real test with Owen watching his inbox, click Activate, then check a booking lands (and not in spam).
-- **Live diary later (optional):** if Owen wants slots to disappear once taken, plus reminders and deposits, he signs up himself to Goldie (most UK detailers use it) or Cal.com (free), then put the link in `site.bookingApp`. None of the local rivals checked have online booking at all.
+- Hours shown on the site: Owen's **winter hours** (WhatsApp, 16 Nov 2026) in `src/data/hours.ts`, in the footer and on /book/. Bookable hours are set separately in Square. **When his summer hours start, change both.**
+- The old 5-step FormSubmit form was removed on 17 Nov 2026 so there is one system only.
 
 ## CONFIRM with Owen (nothing below is on the site as fact)
 
@@ -60,10 +58,11 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 
 ## Square Appointments (17 Nov 2026)
 
-- Owen's own Square account (Ojsvaleting@gmail.com, he created it). Booking page: https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services, linked as `site.bookingApp` (button at the top of /book/ and inside the form's day step). The email form stays as a fallback.
+- Owen's own Square account (Ojsvaleting@gmail.com, he created it). Booking page: https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services, linked as `site.bookingApp`. **Square is the only booking system (17 Nov 2026):** every Book button on the site goes straight to it, /book/ is a short page with prices, hours and a button into Square. The old 5-step FormSubmit form and /book/sent/ were removed.
 - Location: mobile, Europe/London, phone 07708 600114, appointments "at the customer's location". Hours match `hours.ts` (Sat 8:30 to 14:30).
 - Services: Basic £45 2h, Full deep clean £150 5h, Paint correction £170 6h, Ceramic coating £220 6h, Maintenance £40 2h. Each blocks 30 minutes after for travel. Prices are Square "fixed" but every description says "From".
 - Rules: Owen approves every request (auto-accept off), one service per booking, slots follow service length from his start time, 12 hours' notice, 60 days ahead.
+- Days off (Christmas, holidays) and summer hours: set them in Square (block time on the calendar, Settings > Locations for hours) and update `hours.ts` so the footer matches.
 - Plan: Square auto-started a 30-day Appointments Plus trial (ends 17 Dec 2026). No card on the account, so it can't charge. Free plan loses confirmation texts/emails and Google Calendar sync. Decide before 17 Dec.
 - Saturday allows 8:30 and 11:00 for short jobs. Owen just declines the second one if he only wants one job.
 
@@ -88,4 +87,4 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 - Production build clean, 16 static pages.
 - Booking flow clicked through in the browser pane: package carried over from the price list, step errors (title gets "Error:", summary takes focus, clears once fixed), job card updates, payload checked. Final send not pressed (see above).
 - 390px: no sideways scroll, action bar Call / Text / Book, photo row swipes.
-- Not yet done: Lighthouse, real-phone test, end-to-end FormSubmit test, client review.
+- Not yet done: Lighthouse, real-phone test, one real test booking through Square, client review.

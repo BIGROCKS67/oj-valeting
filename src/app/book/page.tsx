@@ -1,36 +1,63 @@
 import type { Metadata } from "next";
-import { BookingForm } from "@/components/BookingForm";
-import { site, tel } from "@/data/site";
+import { site, tel, sms } from "@/data/site";
+import { services, gbp } from "@/data/services";
+import { hoursList, season } from "@/data/hours";
 
 export const metadata: Metadata = {
   title: "Book a mobile valet or detail online | OJ Valeting",
   description:
-    "Choose your package, vehicle, extras and a day, and Owen texts you to confirm. Mobile valeting across Bucks, Northants and Oxfordshire.",
+    "Pick a free slot in Owen's live diary and he comes to you. Mobile valeting across Bucks, Northants and Oxfordshire.",
   alternates: { canonical: "/book/" },
 };
 
+// All booking goes through Owen's Square diary (site.bookingApp). This page is here for old
+// links and Google, and hands straight over to it.
 export default function Book() {
   return (
     <section className="wrap book-page" aria-labelledby="book-h">
       <div className="book-intro">
         <h1 id="book-h">Book a clean</h1>
         <p>
-          Takes about two minutes, and Owen texts you to confirm. Rather talk it through? Call{" "}
-          <a href={tel} className="num">
-            {site.phone}
-          </a>
-          .
+          Owen&rsquo;s diary is live, so you only see times he can actually do. Pick the package and a time, and he
+          confirms it with you before the day.
         </p>
-        {site.bookingApp && (
-          <p className="book-live">
-            <a href={site.bookingApp} className="btn btn-foam">
-              See Owen&rsquo;s free slots and book
-            </a>
-            <span>Live diary, so you only see times he can do. Or fill in the form below.</span>
-          </p>
-        )}
+        <p className="book-live">
+          <a href={site.bookingApp} className="btn btn-foam btn-big">
+            See free slots and book
+          </a>
+          <a href={tel} className="btn btn-line btn-big">
+            Or call <span className="num">{site.phone}</span>
+          </a>
+        </p>
       </div>
-      <BookingForm />
+
+      <div className="book-more">
+        <div>
+          <h2>Prices</h2>
+          <ul className="book-prices" role="list">
+            {services.map((s) => (
+              <li key={s.slug}>
+                <span>{s.name}</span> <span className="num">from {gbp(s.from)}</span>
+              </li>
+            ))}
+          </ul>
+          <p>
+            Owen confirms the final price once he knows the size and state of the vehicle. Caravan, motorhome, horsebox or
+            something not on the list? <a href={sms("Hi Owen, ")}>Text him</a> and he&rsquo;ll sort a time.
+          </p>
+        </div>
+        <div>
+          <h2>{season}</h2>
+          <dl className="hours-list">
+            {hoursList.map(([d, t]) => (
+              <div key={d}>
+                <dt>{d}</dt>
+                <dd>{t}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
     </section>
   );
 }
