@@ -34,7 +34,7 @@ const faq: [string, string][] = [
     "Owen is based between Brackley and Buckingham and covers Buckinghamshire, Oxfordshire, Northamptonshire, Bedfordshire and Warwickshire. Nationwide too, with a small fuel charge for further afield (about £10 for a job 45 minutes away).",
   ],
   [
-    "Caravan, motorhome, horsebox or van?",
+    "Motorbike, caravan, motorhome, horsebox, van or farm vehicle?",
     "All welcome. Text Owen a photo and he'll quote and sort a time, because these vary too much to price online.",
   ],
   [
@@ -105,7 +105,7 @@ export default function Book() {
           </ul>
           <p>
             These are prices for a small car. Bigger vehicles cost a bit more: each service page has the full
-            table by size. Owen confirms the final price once he&rsquo;s seen the vehicle. Caravan, motorhome, horsebox or
+            table by size. Owen confirms the final price once he&rsquo;s seen the vehicle. Motorbike, caravan, motorhome, horsebox, farm vehicle or
             something not on the list? <a href={sms("Hi Owen, ")}>Text him</a> and he&rsquo;ll sort a time.
           </p>
           <p>{site.payment}</p>

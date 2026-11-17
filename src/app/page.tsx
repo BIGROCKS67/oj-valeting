@@ -60,8 +60,8 @@ export default function Home() {
             <h2 id="prices-h">Prices</h2>
             <p>
               Pick what you need: inside, outside or both, a polish, a coating or a regular plan. Prices are for a small
-              car and go up with size, and every service has its full table. Cars, vans, caravans, motorhomes and
-              horseboxes all welcome.
+              car and go up with size, and every service has its full table. Cars, vans, motorbikes, caravans, motorhomes,
+              horseboxes and farm vehicles all welcome.
             </p>
           </div>
           <ServiceMenu />
