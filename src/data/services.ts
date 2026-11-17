@@ -117,7 +117,7 @@ export const services: Service[] = [
       { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
       { label: "Outside only", prices: [["Small", "£25"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
     ],
-    photos: ["owen-wheel-clean", "vw-golf-r", "porsche-cayenne", "boot-cleaned"],
+    photos: ["owen-porsche-boxster-wash", "owen-wheel-clean", "vw-golf-r", "porsche-cayenne"],
     goodFor: "a car that's been looked after and needs a proper clean inside and out.",
   },
   {
@@ -216,7 +216,7 @@ export const services: Service[] = [
         prices: [["Small", "£170"], ["Medium", "£190"], ["Large", "£210"], ["XL", "£230"]],
       },
     ],
-    photos: ["porsche-911", "garage-gloss-bonnet", "ford-headlight", "porsche-taycan"],
+    photos: ["owen-porsche-boxster-polish", "porsche-911", "garage-gloss-bonnet", "ford-headlight"],
     goodFor: "dark paint that shows every swirl, bush scratches, or paint that has gone flat.",
   },
   {

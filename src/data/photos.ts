@@ -10,6 +10,8 @@ export const captions: Record<string, string> = {
   "owen-wheel-clean": "Owen cleaning the wheels on a VW Polo",
   "owen-polo-roof": "Owen drying the roof of a VW Polo",
   "owen-polo-sill": "Owen on the sills of a VW Polo",
+  "owen-porsche-boxster-wash": "Owen washing a Porsche Boxster",
+  "owen-porsche-boxster-polish": "Owen machine polishing a Porsche Boxster",
   "vw-golf-r-rear": "VW Golf R",
   "vw-golf-r": "VW Golf R",
   "mitsubishi-evo-vi": "Mitsubishi Lancer Evo VI",

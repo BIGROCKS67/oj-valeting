@@ -1,170 +1,178 @@
 {
-"oj-van-livery": [
-1200,
-1600
-],
-"oj-van-rear": [
-1200,
-1600
-],
-"owen-steam-cleaning-door": [
-1200,
-1600
-],
-"owen-wheel-clean": [
-1200,
-900
-],
-"owen-polo-roof": [
-1200,
-900
-],
-"owen-polo-sill": [
-1200,
-900
-],
-"vw-golf-r-rear": [
-1200,
-1600
-],
-"vw-golf-r": [
-1200,
-1600
-],
-"mitsubishi-evo-vi": [
-1200,
-1599
-],
-"porsche-cayenne": [
-1200,
-1600
-],
-"bmw-5-series": [
-1200,
-1600
-],
-"porsche-911": [
-1200,
-1600
-],
-"porsche-718-boxster": [
-1200,
-1600
-],
-"porsche-macan": [
-1200,
-1600
-],
-"bmw-m4-rear": [
-1200,
-1600
-],
-"bmw-m4": [
-1200,
-1600
-],
-"hyundai-ioniq-5-n": [
-1200,
-1600
-],
-"range-rover": [
-1200,
-1600
-],
-"land-rover-defender-110": [
-1200,
-1600
-],
-"opel-manta": [
-1200,
-1600
-],
-"opel-manta-rear": [
-1200,
-1600
-],
-"porsche-red-leather-interior": [
-1200,
-1600
-],
-"engine-bay": [
-1200,
-1600
-],
-"gloss-roof": [
-1200,
-1600
-],
-"ford-headlight": [
-1200,
-1600
-],
-"touring-caravan": [
-1200,
-1600
-],
-"motorhome": [
-1200,
-1600
-],
-"scania-horsebox": [
-1200,
-1600
-],
-"tesla": [
-1200,
-1600
-],
-"mitsubishi-evo-trailer": [
-1200,
-1600
-],
-"garage-gloss-bonnet": [
-1200,
-1600
-],
-"porsche-taycan": [
-1200,
-1600
-],
-"range-rover-sport": [
-1200,
-1600
-],
-"land-rover-defender-90": [
-1200,
-1600
-],
-"mercedes-cle-cabriolet": [
-1200,
-1600
-],
-"porsche-wheel": [
-1200,
-1600
-],
-"ford-interior": [
-1200,
-1600
-],
-"land-rover-interior": [
-1200,
-1600
-],
-"discovery-interior": [
-1200,
-1600
-],
-"boot-cleaned": [
-1200,
-1600
-],
-"seat-headlight": [
-1200,
-1600
-],
-"range-rover-satin": [
-1200,
-1600
-]
+  "oj-van-livery": [
+    1200,
+    1600
+  ],
+  "oj-van-rear": [
+    1200,
+    1600
+  ],
+  "owen-steam-cleaning-door": [
+    1200,
+    1600
+  ],
+  "owen-wheel-clean": [
+    1200,
+    900
+  ],
+  "owen-polo-roof": [
+    1200,
+    900
+  ],
+  "owen-polo-sill": [
+    1200,
+    900
+  ],
+  "vw-golf-r-rear": [
+    1200,
+    1600
+  ],
+  "vw-golf-r": [
+    1200,
+    1600
+  ],
+  "mitsubishi-evo-vi": [
+    1200,
+    1599
+  ],
+  "porsche-cayenne": [
+    1200,
+    1600
+  ],
+  "bmw-5-series": [
+    1200,
+    1600
+  ],
+  "porsche-911": [
+    1200,
+    1600
+  ],
+  "porsche-718-boxster": [
+    1200,
+    1600
+  ],
+  "porsche-macan": [
+    1200,
+    1600
+  ],
+  "bmw-m4-rear": [
+    1200,
+    1600
+  ],
+  "bmw-m4": [
+    1200,
+    1600
+  ],
+  "hyundai-ioniq-5-n": [
+    1200,
+    1600
+  ],
+  "range-rover": [
+    1200,
+    1600
+  ],
+  "land-rover-defender-110": [
+    1200,
+    1600
+  ],
+  "opel-manta": [
+    1200,
+    1600
+  ],
+  "opel-manta-rear": [
+    1200,
+    1600
+  ],
+  "porsche-red-leather-interior": [
+    1200,
+    1600
+  ],
+  "engine-bay": [
+    1200,
+    1600
+  ],
+  "gloss-roof": [
+    1200,
+    1600
+  ],
+  "ford-headlight": [
+    1200,
+    1600
+  ],
+  "touring-caravan": [
+    1200,
+    1600
+  ],
+  "motorhome": [
+    1200,
+    1600
+  ],
+  "scania-horsebox": [
+    1200,
+    1600
+  ],
+  "tesla": [
+    1200,
+    1600
+  ],
+  "mitsubishi-evo-trailer": [
+    1200,
+    1600
+  ],
+  "garage-gloss-bonnet": [
+    1200,
+    1600
+  ],
+  "porsche-taycan": [
+    1200,
+    1600
+  ],
+  "range-rover-sport": [
+    1200,
+    1600
+  ],
+  "land-rover-defender-90": [
+    1200,
+    1600
+  ],
+  "mercedes-cle-cabriolet": [
+    1200,
+    1600
+  ],
+  "porsche-wheel": [
+    1200,
+    1600
+  ],
+  "ford-interior": [
+    1200,
+    1600
+  ],
+  "land-rover-interior": [
+    1200,
+    1600
+  ],
+  "discovery-interior": [
+    1200,
+    1600
+  ],
+  "boot-cleaned": [
+    1200,
+    1600
+  ],
+  "seat-headlight": [
+    1200,
+    1600
+  ],
+  "range-rover-satin": [
+    1200,
+    1600
+  ],
+  "owen-porsche-boxster-wash": [
+    1200,
+    1193
+  ],
+  "owen-porsche-boxster-polish": [
+    1200,
+    1313
+  ]
 }
