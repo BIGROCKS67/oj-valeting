@@ -7,6 +7,12 @@ import { Pic } from "@/components/Pic";
 import { ReviewList } from "@/components/ReviewList";
 import { businessLd } from "@/data/schema";
 
+// Foam bubbles that rise once behind the price list: [left %, size px, delay ms]
+const suds: [number, number, number][] = [
+  [4, 26, 0], [11, 14, 260], [19, 40, 120], [27, 18, 520], [36, 30, 340], [44, 12, 80],
+  [53, 22, 600], [61, 36, 200], [69, 16, 440], [77, 28, 40], [85, 20, 380], [93, 34, 180],
+];
+
 export default function Home() {
   return (
     <>
@@ -35,6 +41,11 @@ export default function Home() {
       </section>
 
       <section className="livery" id="prices" aria-labelledby="prices-h">
+        <div className="suds" aria-hidden="true">
+          {suds.map(([x, size, delay], i) => (
+            <span key={i} style={{ "--x": `${x}%`, "--s": `${size}px`, "--d": `${delay}ms` } as React.CSSProperties} />
+          ))}
+        </div>
         <div className="livery-in">
           <div className="livery-head">
             <h2 id="prices-h">Prices</h2>

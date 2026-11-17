@@ -1302,3 +1302,181 @@ input[aria-invalid="true"] {
   grid-template-columns: 6rem 1fr;
   border-color: color-mix(in oklab, var(--paper) 18%, var(--livery-2));
 }
+
+/* ------------------------------------------------------------------
+   Motion (added 16 Nov 2026 at Jack's request). Everything sits behind
+   html.motion, which is only set when reduced motion is not requested.
+   Transform and opacity only.
+   ------------------------------------------------------------------ */
+:root {
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-park: cubic-bezier(0.22, 1.12, 0.36, 1);
+}
+
+/* Hero: the van pulls up, the lettering follows, then light runs across the fresh polish */
+.hero-photo,
+.svc-hero-photo {
+  position: relative;
+  overflow: clip;
+}
+.motion .hero-photo img,
+.motion .svc-hero-photo img {
+  animation: pull-up 1.1s var(--ease-park) both;
+}
+.motion .hero-text > *,
+.motion .svc-hero-text > * {
+  animation: rise 0.7s var(--ease-out) both;
+  animation-delay: calc(var(--n, 0) * 90ms + 150ms);
+}
+.hero-text > :nth-child(2),
+.svc-hero-text > :nth-child(2) { --n: 1; }
+.hero-text > :nth-child(3),
+.svc-hero-text > :nth-child(3) { --n: 2; }
+.hero-text > :nth-child(4),
+.svc-hero-text > :nth-child(4) { --n: 3; }
+.hero-text > :nth-child(5),
+.svc-hero-text > :nth-child(5) { --n: 4; }
+.motion .hero-photo::after,
+.motion .svc-hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent 30%, rgb(255 255 255 / 0.38) 48%, rgb(255 255 255 / 0.1) 54%, transparent 66%);
+  transform: translateX(-130%);
+  animation: gloss 1.3s var(--ease-out) 1s both;
+}
+@keyframes pull-up {
+  from { opacity: 0; transform: translateX(14%) scale(1.06); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes gloss {
+  to { transform: translateX(130%); }
+}
+
+/* Scroll reveals: hidden only while html.motion is on and the block hasn't arrived */
+.motion :is(.livery-head, .sec-head, .owen-text, .big-quote, .reviews > li, .bb-grid > *, .inc-group, .extras) {
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.motion :is(.livery-head, .sec-head, .owen-text, .big-quote, .reviews > li, .bb-grid > *, .inc-group, .extras):not(.in) {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+/* Prices go on like signwriting down the van side, the figure lands last */
+.motion .pricelist > li {
+  transition: opacity 0.6s var(--ease-out), transform 0.8s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 110ms);
+}
+.motion .pricelist > li:not(.in) {
+  opacity: 0;
+  transform: translateX(-48px);
+}
+.motion .pricelist > li .pl-price {
+  transition: opacity 0.5s var(--ease-out), transform 0.6s var(--ease-park);
+  transition-delay: calc(var(--i, 0) * 110ms + 280ms);
+}
+.motion .pricelist > li:not(.in) .pl-price {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Photos come out of the wash: settle from slightly large, staggered */
+.motion :is(.drive-row, .photo-strip, .work-grid) > li {
+  transition: opacity 0.7s var(--ease-out), transform 0.9s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+.motion :is(.drive-row, .photo-strip, .work-grid) > li:not(.in) {
+  opacity: 0;
+  transform: translateY(36px) scale(0.96);
+}
+.motion .owen-photo {
+  transition: opacity 0.8s var(--ease-out), transform 1s var(--ease-out);
+}
+.motion .owen-photo:not(.in) {
+  opacity: 0;
+  transform: translateX(-40px);
+}
+
+/* Foam bubbles rise once behind the price list */
+.livery {
+  position: relative;
+  overflow: clip;
+}
+.livery-in {
+  position: relative;
+  z-index: 1;
+}
+.suds {
+  display: none;
+}
+.motion .suds {
+  display: block;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.suds span {
+  position: absolute;
+  bottom: -60px;
+  left: var(--x);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  border: 2px solid color-mix(in oklab, var(--foam-lite) 70%, transparent);
+  background: radial-gradient(circle at 32% 30%, rgb(255 255 255 / 0.5) 0 12%, transparent 13%),
+    color-mix(in oklab, var(--foam) 18%, transparent);
+  opacity: 0;
+}
+.suds.in span {
+  animation: bubble 2.8s var(--ease-out) var(--d) both;
+}
+@keyframes bubble {
+  0% { opacity: 0; transform: translateY(0) scale(0.6); }
+  15% { opacity: 0.85; }
+  80% { opacity: 0.6; transform: translateY(-62vh) scale(1); }
+  100% { opacity: 0; transform: translateY(-70vh) scale(1.35); }
+}
+
+/* Hover and press */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .btn {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s, transform 0.15s var(--ease-out);
+  }
+  .btn-foam::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(105deg, transparent 30%, rgb(255 255 255 / 0.45) 50%, transparent 70%);
+    transform: translateX(-120%);
+    transition: transform 0.6s var(--ease-out);
+  }
+  .btn-foam:hover::after {
+    transform: translateX(120%);
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .pricelist > li .pl-price {
+    transition: transform 0.25s var(--ease-out);
+  }
+  .motion .pricelist > li.in:hover .pl-price,
+  .pricelist > li:hover .pl-price {
+    transform: translateX(-6px);
+    transition-delay: 0s;
+  }
+  :is(.drive-row, .photo-strip, .work-grid) > li.in:hover {
+    transform: translateY(-6px);
+    transition: transform 0.25s var(--ease-out);
+    transition-delay: 0s;
+  }
+}

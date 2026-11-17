@@ -6,6 +6,10 @@ import { site, tel, sms } from "@/data/site";
 import { services } from "@/data/services";
 import { asset, isPreview } from "@/data/base";
 import { hoursList, season } from "@/data/hours";
+import { Motion } from "@/components/Motion";
+
+// Turns motion on before first paint (no flash), and off again after 3s if the page script never ran.
+const motionBoot = `try{var d=document.documentElement;if(matchMedia("(prefers-reduced-motion: no-preference)").matches&&"IntersectionObserver"in window){d.classList.add("motion");setTimeout(function(){if(!window.__motion)d.classList.remove("motion")},3000)}}catch(e){}`;
 
 const archivo = localFont({
   src: "../fonts/archivo-latin-standard-normal.woff2",
@@ -43,8 +47,12 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={archivo.variable}>
+    <html lang="en-GB" className={archivo.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: motionBoot }} />
+      </head>
       <body>
+        <Motion />
         <a className="skip" href="#main">
           Skip to content
         </a>

@@ -56,7 +56,8 @@ Survivors 2, 3 and 7 combine without sharing a main technique. SCAMPER "combine"
   - `--bubble` pale blue from the logo bubbles: selected states.
 - **Radius:** 4px on controls, 0 on photos and panels (the van is boxy).
 - **Signature component:** the booking builder at `/book/`. Pick the package from the van-side list, then the vehicle, extras, a day and a start time; a "job card" beside it updates the price and time as you go and is what lands in Owen's inbox.
-- **Big interaction:** none. No load or scroll animation.
+- **Big interaction:** none.
+- **Motion (changed 16 Nov 2026, Jack asked for animation):** the hero van pulls in from the right and a polish gloss runs across it once; prices slide on like signwriting with the figure landing last; foam bubbles rise once behind the price list; photos settle in staggered; foam buttons get a shine on hover. All behind `html.motion` (set before paint only without reduced motion, removed after 3s if JS never runs), transform and opacity only. Code: `src/components/Motion.tsx` and the end of `globals.css`.
 
 ## 8. Swap test
 

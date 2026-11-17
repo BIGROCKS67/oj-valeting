@@ -43,6 +43,9 @@ Checked with whois on 16 Nov 2026:
 - Taken: ojvaleting.co.uk and ojvaleting.com (both IONOS, Sept 2022, the Lincoln OJ Valeting), ojvaleting.uk (Fasthosts, 2023).
 - **Free: ojvalet.co.uk, ojvalet.com, ojvalet.uk, ojvaleting.org.uk.**
 - Owen owns ojvaleting.org (Wild West Domains / GoDaddy, registered 1 Oct 2025, renews 1 Oct 2027).
+- design.com DNS for ojvaleting.org (saved 16 Nov 2026 before the move to GoDaddy): A @ and A www "Handled by Design.com", and TXT @ `google-site-verification=YluESfpPUzvSWva2nqVvO4Ad6PXnOyhoM2_tTw30Y0I`. Add that TXT back at GoDaddy after the transfer so Search Console stays verified.
+- design.com also lists ojvaleting.co.uk as "Inactive" (auto-renew off). Whois shows it with someone else (IONOS), so it's a dead entry, nothing to transfer.
+- design.com has no transfer-out button: the unlock and authorisation code come from their support.
 
 Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody else takes it), make ojvalet.co.uk the main address, and keep ojvaleting.org pointing at it so old links, his Instagram bio and anything Google already has still work. The domain ending barely affects Google ranking, but .co.uk tells local customers he's a UK trader and .org reads as a charity. The van doesn't show a web address (only phone and Gmail), so changing costs nothing on the livery. Business name stays OJ Valeting everywhere.
 
