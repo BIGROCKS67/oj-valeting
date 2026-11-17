@@ -68,17 +68,29 @@ export function Motion() {
       },
       { rootMargin: "0px 0px -4% 0px", threshold: 0 },
     );
-    els.forEach((el) => !el.classList.contains("in") && io.observe(el));
+    const seen = new WeakSet<Element>();
+    const watch = (el: HTMLElement) => {
+      if (seen.has(el) || el.classList.contains("in")) return;
+      seen.add(el);
+      io.observe(el);
+    };
+    els.forEach(watch);
+    // Blocks that appear after load (the menu's All tab renders once JavaScript is running) get
+    // watched too, or they would stay hidden.
+    const mo = new MutationObserver(() => document.querySelectorAll<HTMLElement>(SEL).forEach(watch));
+    mo.observe(document.getElementById("main") ?? document.body, { childList: true, subtree: true });
 
     const onChange = () => {
       if (!mq.matches) {
         root.classList.remove("motion");
         io.disconnect();
+        mo.disconnect();
       }
     };
     mq.addEventListener("change", onChange);
     return () => {
       io.disconnect();
+      mo.disconnect();
       mq.removeEventListener("change", onChange);
     };
   }, [path]);
