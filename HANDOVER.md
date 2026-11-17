@@ -147,3 +147,14 @@ Owen's changes:
 - Ceramic extras: Interior plastics polished removed, Interior leather ceramic coating £120+ added (also in Add-ons). Tip on the ceramic page and card: paint correction first comes at a discounted price (no figure: Owen quotes it).
 - Polo photo is Owen ceramic coating (caption fixed, now the ceramic photo). Deep exterior card photo changed to Owen on the Polo sills.
 - Still waiting: Owen's new ceramic photo (tomorrow), his call about the maintenance page, deep interior/exterior job times, address pin decision.
+
+## SEO and AI search, matched to R4R and JP (17 Nov 2026, late)
+
+- Town pages: /areas/ plus Brackley, Buckingham, Towcester, Bicester (`src/data/areas.ts`). Facts only: drive time from Owen's base, real nearby villages, his prices, hours, payment, reviews. Add a town by adding an entry.
+- Guides: /guides/ with "How much does a mobile car valet cost?" and "Do I need paint correction before a ceramic coating?" (`src/data/guides.ts`), Article + FAQPage schema. CONFIRM: Owen to read both.
+- robots.txt names the AI crawlers (GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended, Applebot, Bingbot).
+- Schema: founder (Owen), opening hours, contact point, WebSite node.
+- llms.txt rewritten with every price by size, extras, payment, hours, areas and guides.
+- IndexNow: key file `public/22fa1e8532a7cea2eb6140162d2bb6b8.txt` (keep it). After each deploy: `node scripts/indexnow.mjs` (202 = accepted).
+- Search Console sitemap resubmitted: 22 pages read. Footer and menu link to Areas and Guides.
+- Not done yet: Bing Places (Jack signs in), Google posts (draft and ask Jack), a ranking baseline report like R4R's.
