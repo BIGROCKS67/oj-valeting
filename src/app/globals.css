@@ -1486,3 +1486,19 @@ textarea {
   margin: 0 0 1rem;
   color: var(--ink-soft);
 }
+
+/* Owen's tip with the prices, e.g. paint correction before a ceramic coating */
+.price-tip {
+  max-width: 62ch;
+  margin: 0 0 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border-left: 4px solid var(--foam, #0a96d6);
+  background: color-mix(in srgb, var(--foam, #0a96d6) 10%, transparent);
+  font-weight: 500;
+}
+.mc-tip {
+  margin: 0.5rem 0 0;
+  padding-left: 0.6rem;
+  border-left: 3px solid var(--foam, #0a96d6);
+  font-size: 0.875rem;
+}

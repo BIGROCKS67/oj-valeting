@@ -29,6 +29,7 @@ function Card({ s, js }: { s: Service; js: boolean }) {
           <Link href={`/${s.slug}/`}>{s.name}</Link>
         </h3>
         <p className="mc-blurb">{s.blurb}</p>
+        {s.cardTip && <p className="mc-tip">{s.cardTip}</p>}
         {js && (
           <div className="mc-sizes" role="group" aria-label={`${s.name}: price by vehicle size`}>
             {table.prices.map(([k], i) => (

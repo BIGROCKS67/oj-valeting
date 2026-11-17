@@ -66,6 +66,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
 
       <section className="wrap svc-prices" aria-labelledby="pr-h">
         <h2 id="pr-h">Prices by vehicle size</h2>
+        {s.tip && <p className="price-tip">{s.tip}</p>}
         <div className="price-tables">
           {s.prices.map((t) => (
             <table key={t.label} className="price-table">

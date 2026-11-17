@@ -30,6 +30,18 @@ export function Motion() {
   const path = usePathname();
 
   useEffect(() => {
+    // The mobile menu is a <details>. Next keeps the layout when you move between pages, so it
+    // would stay open over the new page: close it on any link tap inside it, and on page change.
+    const close = () => document.querySelectorAll("details.nav-menu[open]").forEach((d) => d.removeAttribute("open"));
+    const onClick = (e: MouseEvent) => {
+      if ((e.target as HTMLElement).closest("details.nav-menu a")) close();
+    };
+    document.addEventListener("click", onClick);
+    close();
+    return () => document.removeEventListener("click", onClick);
+  }, [path]);
+
+  useEffect(() => {
     // Moving between pages: the new page eases in instead of snapping (the first load has the hero).
     if (firstPage) firstPage = false;
     else if (document.documentElement.classList.contains("motion")) {

@@ -130,3 +130,20 @@ Owen asked to close booking until he's ready to go live.
 - Site: `bookingOpen: false` in `src/data/site.ts`. Every Book button goes to /book/, which says call or text Owen. Set it to `true` to send them to Square again.
 - Both have to be switched back on together.
 - Job lengths (Owen, 17 Nov): Basic 1-2h, Full deep clean 3-5h, Paint correction 3-5h, Ceramic 3-5h, Maintenance 1-2h, Basic interior 1h, Basic exterior 1-2h. Square blocks the top of each range. Deep interior and deep exterior: CONFIRM (still 5h).
+
+## Ranking push and Owen's changes (17 Nov 2026, evening)
+
+Done, following LOCAL-SEO-BOOST-PLAYBOOK.md (same steps as R4R and JP):
+- Titles now carry the town ("... , Brackley | OJ Valeting"; home "OJ Valeting | Mobile Car Valeting, Brackley & Buckingham"). Home has a canonical. Schema has Buckingham MK18 (postal town only, no street) and the Maps link. Footer says "Based in Buckingham, Buckinghamshire MK18".
+- Google profile: renamed OJVALETING to "OJ Valeting" (pending review), added category "Car wash", 5 product cards (Basic, Deep clean, Paint correction £210, Ceramic £270, Maintenance £40) with photos and links, the 2 Porsche photos.
+- Search Console: sitemap resubmitted (14 pages). Request indexing hit the daily quota, try again another day.
+- Bing Webmaster Tools: ojvalet.co.uk added and verified by the `msvalidate.01` meta tag in layout.tsx (keep it), sitemap submitted. Bing Places not done yet (Jack has to sign in to bingplaces.com).
+- Price menu opens on an "All" tab.
+- Mobile menu now closes when a link is tapped (it used to cover the top of the next page).
+
+Owen's changes:
+- Paint correction includes the clay bar: £210 / £230 / £250 / £270 (site, Square, Google card).
+- Clay bar add-on £50 (was £80). Extras say "After something that isn't listed? Just ask."
+- Ceramic extras: Interior plastics polished removed, Interior leather ceramic coating £120+ added (also in Add-ons). Tip on the ceramic page and card: paint correction first comes at a discounted price (no figure: Owen quotes it).
+- Polo photo is Owen ceramic coating (caption fixed, now the ceramic photo). Deep exterior card photo changed to Owen on the Polo sills.
+- Still waiting: Owen's new ceramic photo (tomorrow), his call about the maintenance page, deep interior/exterior job times, address pin decision.

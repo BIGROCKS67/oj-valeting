@@ -35,6 +35,7 @@ export const addOns: Record<string, string> = {
   "Headlight restoration, the pair": "£75+",
   "Vinyl removal": "£150+",
   "Interior plastics polished": "£40+",
+  "Interior leather ceramic coating": "£120+",
   "Ozone treatment": "£20",
 };
 export const addOnPrice = (name: string) => addOns[name] ?? "Ask Owen";
@@ -49,6 +50,10 @@ export type Service = {
   blurb: string;
   /** Square Appointments item id, so Book opens this service directly */
   squareId?: string;
+  /** A highlighted line shown with the prices, e.g. a related service Owen recommends */
+  tip?: string;
+  /** Short version of the tip for the price menu card */
+  cardTip?: string;
   /** what the page is found by in search */
   searchName: string;
   from: number;
@@ -236,7 +241,7 @@ export const services: Service[] = [
         group: "Preparation",
         items: [
           "Full wash and decontamination",
-          "Clay bar and a machine polish so the coating goes on to clean, corrected paint",
+          "Clay bar so the coating goes on to clean, smooth paint",
           "Panel wipe to take off any oils before coating",
         ],
       },
@@ -253,8 +258,11 @@ export const services: Service[] = [
     extras: [
       "Full window ceramic coating, 1 year",
       "Alloy ceramic coating, up to 2 years",
-      "Interior plastics polished",
+      "Interior leather ceramic coating",
     ],
+    // Owen, 17 Nov 2026: paint may need correcting first, at a discounted price.
+    cardTip: "Need a paint correction first? It comes at a discounted price with a coating.",
+    tip: "Paint swirled or dull? It may need a paint correction first so the coating goes on to perfect paint. Book the two together and the correction comes at a discounted price. Owen will tell you when he sees the car.",
     // CONFIRM: Owen's list says XL £350, less than Large £380. Shown as "Ask Owen" until he confirms.
     prices: [
       {
@@ -417,14 +425,14 @@ export const services: Service[] = [
     includesConfirmed: false,
     extras: ["Clay bar with full decontamination wash", "Headlight restoration, the pair", "Exhaust tips polished and restored", "Ceramic spray"],
     prices: [{ label: "Outside only", prices: [["Small", "£35"], ["Medium", "£40"], ["Large", "£45"], ["XL", "£50"]] }],
-    photos: ["garage-gloss-bonnet", "porsche-wheel", "vw-golf-r-rear", "bmw-m4-rear"],
+    photos: ["owen-polo-sill", "porsche-wheel", "vw-golf-r-rear", "bmw-m4-rear"],
     goodFor: "paint that feels rough or looks dull, or a car getting ready for polishing or a coating.",
   },
 ];
 
 /** Menu order on the home page, and which add-ons sit in the Protection tab */
 export const categories: Category[] = ["Full valets", "Interior", "Exterior", "Polishing", "Protection", "Plans"];
-export const protectionAddOns = ["Full window ceramic coating, 1 year", "Alloy ceramic coating, up to 2 years", "Ceramic spray"];
+export const protectionAddOns = ["Full window ceramic coating, 1 year", "Alloy ceramic coating, up to 2 years", "Interior leather ceramic coating", "Ceramic spray"];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
 export const gbp = (n: number) => `£${n}`;
