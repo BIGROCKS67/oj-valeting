@@ -5,6 +5,7 @@ import { wall, captions } from "@/data/photos";
 import { reviews, homeQuote } from "@/data/reviews";
 import { Pic } from "@/components/Pic";
 import { ReviewList } from "@/components/ReviewList";
+import { RowButtons } from "@/components/RowButtons";
 import { businessLd } from "@/data/schema";
 
 // Foam bubbles that rise once behind the price list: [left %, size px, delay ms]
@@ -88,10 +89,11 @@ export default function Home() {
               From a Golf R to a Scania horsebox. More on <Link href="/work/">our work</Link> and{" "}
               <a href={site.instagram}>Instagram</a>.
             </p>
+            <RowButtons target="drive-row" label="Scroll the driveway photos" />
           </div>
         </div>
-        <ul className="drive-row" role="list">
-          {wall.slice(0, 12).map((id) => (
+        <ul className="drive-row" id="drive-row" role="list" tabIndex={0} aria-label="Cars cleaned on their owners' drives">
+          {wall.slice(0, 16).map((id) => (
             <li key={id}>
               <figure>
                 <Pic id={id} sizes="(min-width: 900px) 22vw, 70vw" />

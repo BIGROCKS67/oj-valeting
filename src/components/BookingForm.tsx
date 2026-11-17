@@ -147,16 +147,22 @@ export function BookingForm() {
     setErrors({});
     clearTitle();
     setStep((n) => Math.min(n + 1, steps.length - 1));
-    requestAnimationFrame(() => {
-      stepHead.current?.focus();
-      form.current?.scrollIntoView({ block: "start" });
-    });
+    requestAnimationFrame(toStep);
   }
   function back() {
     setErrors({});
     clearTitle();
     setStep((n) => Math.max(n - 1, 0));
-    requestAnimationFrame(() => stepHead.current?.focus());
+    requestAnimationFrame(toStep);
+  }
+  // Focus the new step's heading; only scroll if the top of the form has gone off screen.
+  function toStep() {
+    stepHead.current?.focus({ preventScroll: true });
+    const top = form.current?.getBoundingClientRect().top ?? 0;
+    if (top < 0 || top > window.innerHeight * 0.5) {
+      const smooth = window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
+      form.current?.scrollIntoView({ block: "start", behavior: smooth ? "smooth" : "auto" });
+    }
   }
 
   function onSubmit(ev: React.FormEvent<HTMLFormElement>) {

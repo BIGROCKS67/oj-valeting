@@ -24,8 +24,23 @@ const SEL = [
   ".work-grid > li",
 ].join(",");
 
+let firstPage = true;
+
 export function Motion() {
   const path = usePathname();
+
+  useEffect(() => {
+    // Moving between pages: the new page eases in instead of snapping (the first load has the hero).
+    if (firstPage) firstPage = false;
+    else if (document.documentElement.classList.contains("motion")) {
+      const main = document.getElementById("main");
+      if (main) {
+        main.classList.remove("page-in");
+        void main.offsetWidth;
+        main.classList.add("page-in");
+      }
+    }
+  }, [path]);
 
   useEffect(() => {
     (window as unknown as { __motion: boolean }).__motion = true;
@@ -38,21 +53,20 @@ export function Motion() {
     root.classList.add("motion");
 
     const els = Array.from(document.querySelectorAll<HTMLElement>(SEL));
-    for (const el of els) {
-      const sibs = el.parentElement ? Array.from(el.parentElement.children).filter((c) => c.matches(SEL)) : [];
-      el.style.setProperty("--i", String(Math.min(Math.max(sibs.indexOf(el), 0), 8)));
-    }
 
+    // Stagger only the blocks that arrive together, so nothing waits behind things off screen.
     const io = new IntersectionObserver(
       (entries) => {
+        let k = 0;
         for (const e of entries) {
           if (e.isIntersecting) {
+            (e.target as HTMLElement).style.setProperty("--i", String(Math.min(k++, 4)));
             e.target.classList.add("in");
             io.unobserve(e.target);
           }
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.1 },
+      { rootMargin: "0px 0px -4% 0px", threshold: 0 },
     );
     els.forEach((el) => !el.classList.contains("in") && io.observe(el));
 
