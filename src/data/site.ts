@@ -17,9 +17,9 @@ export const site = {
   closedDates: ["2026-12-25", "2026-12-26", "2026-12-28", "2027-01-01", "2027-03-26", "2027-03-29"],
   bookAheadDays: 42,
   minNoticeDays: 1,
-  // When Owen signs up to a live booking app (Goldie, Cal.com), put the link here and
-  // the booking page hands over to it for the day and time. Empty = booking request by email.
-  bookingApp: "",
+  // Owen's Square Appointments booking page (set up 17 Nov 2026). Shows his real free slots,
+  // with 30 minutes' travel after each job; he approves each request. Empty = email requests only.
+  bookingApp: "https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services",
 };
 
 export const tel = `tel:${site.phoneIntl}`;

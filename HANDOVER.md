@@ -58,6 +58,15 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 - The Vercel demo (oj-valeting.vercel.app) is now noindex so only ojvalet.co.uk is indexed.
 - To do: add ojvalet.co.uk to Search Console (verify through GoDaddy) and submit the sitemap; update Instagram, Facebook and Google profile links to ojvalet.co.uk.
 
+## Square Appointments (17 Nov 2026)
+
+- Owen's own Square account (Ojsvaleting@gmail.com, he created it). Booking page: https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services, linked as `site.bookingApp` (button at the top of /book/ and inside the form's day step). The email form stays as a fallback.
+- Location: mobile, Europe/London, phone 07708 600114, appointments "at the customer's location". Hours match `hours.ts` (Sat 8:30 to 14:30).
+- Services: Basic £45 2h, Full deep clean £150 5h, Paint correction £170 6h, Ceramic coating £220 6h, Maintenance £40 2h. Each blocks 30 minutes after for travel. Prices are Square "fixed" but every description says "From".
+- Rules: Owen approves every request (auto-accept off), one service per booking, slots follow service length from his start time, 12 hours' notice, 60 days ahead.
+- Plan: Square auto-started a 30-day Appointments Plus trial (ends 17 Dec 2026). No card on the account, so it can't charge. Free plan loses confirmation texts/emails and Google Calendar sync. Decide before 17 Dec.
+- Saturday allows 8:30 and 11:00 for short jobs. Owen just declines the second one if he only wants one job.
+
 ## Search check (16 Nov 2026, research agent; US-based search tool so not exact UK Google)
 
 - OJ Valeting does not appear for "mobile valeting Buckingham", "car valeting Towcester", "mobile car detailing Brackley", "ceramic coating Buckingham", "car valeting near Milton Keynes" or "paint correction Northamptonshire". Only a long "OJ Valeting Buckingham Owen" search finds ojvaleting.org.

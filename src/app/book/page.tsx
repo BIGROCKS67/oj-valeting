@@ -21,6 +21,14 @@ export default function Book() {
           </a>
           .
         </p>
+        {site.bookingApp && (
+          <p className="book-live">
+            <a href={site.bookingApp} className="btn btn-foam">
+              See Owen&rsquo;s free slots and book
+            </a>
+            <span>Live diary, so you only see times he can do. Or fill in the form below.</span>
+          </p>
+        )}
       </div>
       <BookingForm />
     </section>
