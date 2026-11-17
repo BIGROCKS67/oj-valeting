@@ -60,7 +60,7 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 
 - Owen's own Square account (Ojsvaleting@gmail.com, he created it). Booking page: https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services, linked as `site.bookingApp`. **Square is the only booking system (17 Nov 2026):** every Book button on the site goes straight to it, /book/ is a short page with prices, hours and a button into Square. The old 5-step FormSubmit form and /book/sent/ were removed.
 - Location: mobile, Europe/London, phone 07708 600114, appointments "at the customer's location". Hours match `hours.ts` (Sat 8:30 to 14:30).
-- Services: Basic £45 2h, Full deep clean £150 5h, Paint correction £170 6h, Ceramic coating £220 6h, Maintenance £40 2h. Each blocks 30 minutes after for travel. Prices are Square "fixed" but every description says "From".
+- Services: Basic 2h, Full deep clean 5h, Paint correction 6h, Ceramic coating 6h, Maintenance 2h, each with size options (see Prices). Each blocks 30 minutes after for travel. Prices are Square "fixed" but every description says "From".
 - Rules: Owen approves every request (auto-accept off), one service per booking, slots follow service length from his start time, 12 hours' notice, 60 days ahead.
 - Days off (Christmas, holidays) and summer hours: set them in Square (block time on the calendar, Settings > Locations for hours) and update `hours.ts` so the footer matches.
 - Plan: Square auto-started a 30-day Appointments Plus trial (ends 17 Dec 2026). No card on the account, so it can't charge. Free plan loses confirmation texts/emails and Google Calendar sync. Decide before 17 Dec.
@@ -90,7 +90,7 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
   - Which cars count as Small, Medium, Large, XL. The site's guide (Polo/Fiesta, Golf/3 Series, estates and SUVs, 7-seaters/vans/motorhomes) is my best guess and shows a Draft tag.
   - Scratch removal and stage 2/3 correction have no price on his list, so they show "Ask Owen".
 - Google profile: every service and add-on now has his prices (17 Nov).
-- Square: still the old single prices (ceramic still £220). Needs size options added when Jack is signed in.
+- Square (17 Nov): every service has Small / Medium / Large / XL options with Owen's prices, each with the same duration and 30 minutes' travel after. Ceramic is 5 year prices (£300/£340/£380) with XL as "price varies" until Owen confirms; 3 or 7 year goes in the booking notes. Inside-only and outside-only aren't separate options in Square yet: customers mention them in the notes or text Owen.
 
 ## Search check (16 Nov 2026, research agent; US-based search tool so not exact UK Google)
 
