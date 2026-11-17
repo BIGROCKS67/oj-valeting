@@ -75,7 +75,8 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 - Description rewritten 17 Nov (no prices or links, per Google rules). Extras given descriptions: clay bar, engine detailing, car waxing, ozone. Service edits can take up to a day to publish.
 - Photos: 12 uploaded 17 Nov (van livery and rear, Owen at work x2, BMW M4, Defender 110, Discovery interior, engine bay, gloss roof, motorhome, Mercedes CLE, Ford interior), pending Google review. Uploader that works with the browser tools: https://www.google.com/local/business/10978543438317604054/promote/photos/add (open it directly, not in the Search overlay).
 - Post published 17 Nov (Jack OK'd it): online booking announcement with the van photo and a Book button to Square. Post editor that works with the browser tools: https://www.google.com/local/business/10978543438317604054/promote/updates/add
-- Not done, needs Owen: payment methods (cash/card?), opening date.
+- Payments (Owen, 17 Nov): cash or bank transfer, no card machine. Google: not cash-only, no credit/debit/NFC (Google has no bank transfer option). Site shows "Pay by cash or bank transfer on the day" on home and /book/, schema paymentAccepted matches. If he gets a card reader, update `site.payment` and the Google attributes.
+- Not done, needs Owen: opening date.
 - **Review link:** https://g.page/r/CddJGqjpZkcFEBM/review. QR code in `handover/owen-google-review-qr.png` (and .svg for print).
 - **Search Console:** https://ojvalet.co.uk/ added on Jack's Google account (rockelljack@gmail.com), verified by `public/google4b6729940671f1e8.html` (don't delete it), sitemap submitted (10 pages, Success), homepage indexing requested. Add Owen as an owner later if he wants access.
 - To do: newer photos (last added 140 days ago).
