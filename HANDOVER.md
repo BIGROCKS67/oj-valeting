@@ -92,6 +92,15 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 - Google profile: every service and add-on now has his prices (17 Nov).
 - Square (17 Nov): every service has Small / Medium / Large / XL options with Owen's prices, each with the same duration and 30 minutes' travel after. Ceramic is 5 year prices (£300/£340/£380) with XL as "price varies" until Owen confirms; 3 or 7 year goes in the booking notes. Inside-only and outside-only aren't separate options in Square yet: customers mention them in the notes or text Owen.
 
+## Menu, research and next upgrades (17 Nov 2026)
+
+- Home page price list is now a tabbed menu (Full valets, Interior, Exterior, Polishing, Protection, Plans, Add-ons) with a card per service: photo, blurb, time, and Small/Medium/Large/XL buttons that change the price. `ServiceMenu.tsx`. Owen liked this layout on iautodetailing.co.uk; the look is still his own.
+- New service pages from his price list: /interior-valet/, /deep-interior/, /exterior-valet/, /deep-exterior/. Times on these ("Up to 2 hours", "Up to 5 hours") are upper bounds from the full packages: CONFIRM with Owen. They aren't in Square yet, so their Book buttons open the full Square list.
+- Book buttons open the matching Square service (`squareId` in services.ts).
+- Hero shows "5.0 from 13 Google reviews" linking to his Maps listing (`site.google`; update the count now and then).
+- /book/ has an FAQ (FAQPage schema) using only facts Owen has given.
+- Research on ~10 top detailer sites (agent report, 17 Nov): the gaps that need Owen are the Draft tags, before/after pairs, products he uses, insurance, a named maintenance plan, gift vouchers, booking terms (deposit/cancellation), water and power, and 5 town pages with real local jobs.
+
 ## Search check (16 Nov 2026, research agent; US-based search tool so not exact UK Google)
 
 - OJ Valeting does not appear for "mobile valeting Buckingham", "car valeting Towcester", "mobile car detailing Brackley", "ceramic coating Buckingham", "car valeting near Milton Keynes" or "paint correction Northamptonshire". Only a long "OJ Valeting Buckingham Owen" search finds ojvaleting.org.
