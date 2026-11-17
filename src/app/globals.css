@@ -1502,3 +1502,38 @@ textarea {
   border-left: 3px solid var(--foam, #0a96d6);
   font-size: 0.875rem;
 }
+
+/* Areas and guides: simple link lists and article rhythm */
+.area-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 1.75rem;
+  display: grid;
+  gap: 0.75rem;
+  max-width: 62ch;
+}
+.area-list li {
+  display: grid;
+  gap: 0.15rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, currentColor 15%, transparent);
+}
+.area-list a {
+  font-weight: 600;
+}
+.area-list span {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+.town-page h2,
+.guide h2 {
+  margin-top: 2.25rem;
+}
+.guide p,
+.town-page > p {
+  max-width: 62ch;
+}
+.guide-meta {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}

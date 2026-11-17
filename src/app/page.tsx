@@ -6,7 +6,7 @@ import { Pic } from "@/components/Pic";
 import { ReviewList } from "@/components/ReviewList";
 import { RowButtons } from "@/components/RowButtons";
 import { ServiceMenu } from "@/components/ServiceMenu";
-import { businessLd } from "@/data/schema";
+import { businessLd, websiteLd } from "@/data/schema";
 
 // Foam bubbles that rise once behind the price list: [left %, size px, delay ms]
 const suds: [number, number, number][] = [
@@ -19,7 +19,7 @@ export const metadata = { alternates: { canonical: "/" } };
 export default function Home() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([businessLd, websiteLd]) }} />
 
       <section className="hero" aria-labelledby="hero-h">
         <div className="hero-text">
