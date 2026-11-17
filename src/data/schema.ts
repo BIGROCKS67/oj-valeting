@@ -15,7 +15,10 @@ export const businessLd = {
   logo: `${site.url}/logo.png`,
   sameAs: [site.instagram, site.facebook],
   priceRange: "££",
-  areaServed: site.counties.map((n) => ({ "@type": "AdministrativeArea", name: n })),
+  areaServed: [
+    ...site.counties.map((n) => ({ "@type": "AdministrativeArea", name: n })),
+    ...site.towns.map((n) => ({ "@type": "City", name: n })),
+  ],
   makesOffer: services.map((s) => ({
     "@type": "Offer",
     priceSpecification: { "@type": "PriceSpecification", minPrice: s.from, priceCurrency: "GBP" },
@@ -34,7 +37,10 @@ export function serviceLd(slug: string) {
     description: s.owenSays,
     url: `${site.url}/${s.slug}/`,
     provider: { "@id": `${site.url}/#business` },
-    areaServed: site.counties.map((n) => ({ "@type": "AdministrativeArea", name: n })),
+    areaServed: [
+    ...site.counties.map((n) => ({ "@type": "AdministrativeArea", name: n })),
+    ...site.towns.map((n) => ({ "@type": "City", name: n })),
+  ],
     offers: { "@type": "Offer", priceCurrency: "GBP", price: s.from, priceSpecification: { "@type": "PriceSpecification", minPrice: s.from, priceCurrency: "GBP" } },
   };
 }

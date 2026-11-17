@@ -47,6 +47,12 @@ export default function Book() {
           </p>
         </div>
         <div>
+          <h2>Where Owen works</h2>
+          <p>
+            Based between Brackley and Buckingham. Regulars in {site.towns.slice(0, -1).join(", ")} and{" "}
+            {site.towns.at(-1)}, and anywhere across {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}.{" "}
+            {site.fuelNote}
+          </p>
           <h2>{season}</h2>
           <dl className="hours-list">
             {hoursList.map(([d, t]) => (

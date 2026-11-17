@@ -151,7 +151,7 @@ export default function Home() {
           <div>
             <h2 id="bb-h">Book straight into Owen&rsquo;s diary</h2>
             <p>
-              Pick the package and a free slot. You only see times Owen can do, and he confirms before the day. Covering {site.counties.join(", ")} and further by arrangement.
+              Pick the package and a free slot. You only see times Owen can do, and he confirms before the day. Based between Brackley and Buckingham, covering {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}. {site.fuelNote}
             </p>
           </div>
           <div className="bb-actions">
