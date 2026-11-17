@@ -15,6 +15,7 @@ export const businessLd = {
   logo: `${site.url}/logo.png`,
   sameAs: [site.instagram, site.facebook],
   priceRange: "££",
+  paymentAccepted: "Cash, Bank transfer",
   areaServed: [
     ...site.counties.map((n) => ({ "@type": "AdministrativeArea", name: n })),
     ...site.towns.map((n) => ({ "@type": "City", name: n })),

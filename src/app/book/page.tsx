@@ -45,6 +45,7 @@ export default function Book() {
             Owen confirms the final price once he knows the size and state of the vehicle. Caravan, motorhome, horsebox or
             something not on the list? <a href={sms("Hi Owen, ")}>Text him</a> and he&rsquo;ll sort a time.
           </p>
+          <p>{site.payment}</p>
         </div>
         <div>
           <h2>Where Owen works</h2>
