@@ -4,5 +4,5 @@
 // next/link adds the base path by itself.
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const asset = (p: string) => `${basePath}${p}`;
-/** true while the site is only a preview on github.io: keep it out of Google */
-export const isPreview = basePath !== "";
+/** true on the github.io preview and the Vercel demo: keep those out of Google so only ojvaleting.org is indexed */
+export const isPreview = basePath !== "" || process.env.VERCEL === "1";
