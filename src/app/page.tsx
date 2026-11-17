@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { site, tel } from "@/data/site";
-import { services, gbp } from "@/data/services";
 import { wall, captions } from "@/data/photos";
 import { reviews, homeQuote } from "@/data/reviews";
 import { Pic } from "@/components/Pic";
 import { ReviewList } from "@/components/ReviewList";
 import { RowButtons } from "@/components/RowButtons";
+import { ServiceMenu } from "@/components/ServiceMenu";
 import { businessLd } from "@/data/schema";
 
 // Foam bubbles that rise once behind the price list: [left %, size px, delay ms]
@@ -51,33 +51,14 @@ export default function Home() {
           <div className="livery-head">
             <h2 id="prices-h">Prices</h2>
             <p>
-              Every price is a starting price. Owen confirms the final figure once he knows the size and state of the
-              vehicle, before he starts. Cars, vans, caravans, motorhomes and horseboxes all welcome.
+              Pick what you need: inside, outside or both, a polish, a coating or a regular plan. Prices are for a small
+              car and go up with size, and every service has its full table. Cars, vans, caravans, motorhomes and
+              horseboxes all welcome.
             </p>
           </div>
-          <ol className="pricelist" role="list">
-            {services.map((s) => (
-              <li key={s.slug}>
-                <h3>
-                  <Link href={`/${s.slug}/`}>{s.name}</Link>
-                </h3>
-                <p className="pl-time">{s.note && s.slug === "maintenance-valet" ? `${s.time}, ${s.note.toLowerCase()}` : s.time}</p>
-                <p className="pl-price">
-                  <span className="pl-from">from</span> <span className="num">{gbp(s.from)}</span>
-                </p>
-                <p className="pl-says">{s.owenSays}</p>
-                <p className="pl-links">
-                  <Link href={`/${s.slug}/`}>What&rsquo;s included</Link>
-                  <a href={site.bookingApp} className="pl-book">
-                    Book the {s.name.toLowerCase()}
-                  </a>
-                </p>
-              </li>
-            ))}
-          </ol>
+          <ServiceMenu />
           <p className="livery-foot">
-            Prices go up with vehicle size, and every service page has the full table. Add-ons like ozone treatment
-            (£20), pet hair removal (from £25) and headlight restoration (from £75) can go on any booking.
+            Owen confirms the final price once he&rsquo;s seen the vehicle, before he starts. {site.payment}
           </p>
         </div>
       </section>

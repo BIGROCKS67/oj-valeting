@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   if (!s) return {};
   return {
     title: `${s.searchName}, from ${gbp(s.from)} | OJ Valeting`,
-    description: `${s.owenSays} Mobile, at your home or work across Bucks, Oxon, Northants, Beds and Warwickshire. From ${gbp(s.from)}. Book online.`,
+    description: `${s.owenSays ?? s.blurb} Mobile, at your home or work across Bucks, Oxon, Northants, Beds and Warwickshire. From ${gbp(s.from)}. Book online.`,
     alternates: { canonical: `/${s.slug}/` },
   };
 }
@@ -48,7 +48,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             {s.time}
             {s.note ? `. ${s.note}` : ""}
           </p>
-          <p className="svc-says">&ldquo;{s.owenSays}&rdquo;</p>
+          {s.owenSays ? <p className="svc-says">&ldquo;{s.owenSays}&rdquo;</p> : <p className="svc-says">{s.blurb}</p>}
           <p>Best for {s.goodFor}</p>
           <div className="hero-cta">
             <a href={site.bookingApp} className="btn btn-foam btn-big">

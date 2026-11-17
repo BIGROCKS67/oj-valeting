@@ -35,7 +35,7 @@ export function serviceLd(slug: string) {
     "@id": `${site.url}/${s.slug}/#service`,
     name: s.name,
     serviceType: s.searchName,
-    description: s.owenSays,
+    description: s.owenSays ?? s.blurb,
     url: `${site.url}/${s.slug}/`,
     provider: { "@id": `${site.url}/#business` },
     areaServed: [

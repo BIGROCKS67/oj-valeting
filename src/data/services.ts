@@ -39,16 +39,22 @@ export const addOns: Record<string, string> = {
 };
 export const addOnPrice = (name: string) => addOns[name] ?? "Ask Owen";
 
+export type Category = "Full valets" | "Interior" | "Exterior" | "Polishing" | "Protection" | "Plans";
+
 export type Service = {
   slug: string;
   name: string;
+  category: Category;
+  /** one plain line for the menu card */
+  blurb: string;
   /** what the page is found by in search */
   searchName: string;
   from: number;
   time: string;
   /** hours to plan for on the booking page; start times are worked out from Owen's hours (hours.ts) */
   jobHours: number;
-  owenSays: string;
+  /** Owen's own words from his old site; only on services he described himself */
+  owenSays?: string;
   note?: string;
   includes: { group: string; items: string[] }[];
   includesConfirmed: boolean;
@@ -66,6 +72,8 @@ export const services: Service[] = [
   {
     slug: "car-valeting",
     name: "Basic package",
+    category: "Full valets",
+    blurb: "A proper valet inside and out, at your home or work.",
     searchName: "Mobile car valet",
     from: 45,
     time: "1 to 2 hours",
@@ -112,6 +120,8 @@ export const services: Service[] = [
   {
     slug: "deep-clean",
     name: "Full deep clean",
+    category: "Full valets",
+    blurb: "Everything out, shampooed, steamed and decontaminated, inside and out.",
     searchName: "Car deep clean",
     from: 150,
     time: "3 to 5 hours",
@@ -160,6 +170,8 @@ export const services: Service[] = [
   {
     slug: "paint-correction",
     name: "Full paint correction",
+    category: "Polishing",
+    blurb: "Machine polished to take out swirls, light scratches and dullness.",
     searchName: "Paint correction",
     from: 170,
     time: "Most of a day",
@@ -205,6 +217,8 @@ export const services: Service[] = [
   {
     slug: "ceramic-coating",
     name: "Ceramic coating",
+    category: "Protection",
+    blurb: "Years of gloss and protection, and a car that's far easier to wash.",
     searchName: "Ceramic coating",
     from: 270,
     time: "Ask Owen",
@@ -250,6 +264,8 @@ export const services: Service[] = [
   {
     slug: "maintenance-valet",
     name: "Maintenance package",
+    category: "Plans",
+    blurb: "A booked-in wash and tidy every 2, 4 or 6 weeks, so the car never slips.",
     searchName: "Maintenance valet plan",
     from: 40,
     time: "1 to 2 hours",
@@ -275,7 +291,132 @@ export const services: Service[] = [
     photos: ["range-rover", "land-rover-defender-110", "bmw-5-series", "owen-polo-roof"],
     goodFor: "keeping a car at its best once it's had a deep clean. Steve F keeps both his household's cars on it.",
   },
+  {
+    slug: "interior-valet",
+    name: "Basic interior clean",
+    category: "Interior",
+    blurb: "Hoovered, wiped down and glass cleaned inside. Outside left as it is.",
+    searchName: "Mobile car interior valet",
+    from: 30,
+    time: "Up to 2 hours",
+    jobHours: 2,
+    note: "Price depends on condition.",
+    includes: [
+      {
+        group: "Inside",
+        items: [
+          "Seats, carpets, mats and boot hoovered",
+          "Dash, console and door cards wiped down",
+          "Windows and mirrors cleaned inside",
+        ],
+      },
+    ],
+    includesConfirmed: false,
+    extras: [
+      "Pet hair removal (depends how bad)",
+      "Ozone treatment",
+      "Interior plastics polished",
+    ],
+    prices: [
+      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
+    ],
+    photos: ["discovery-interior", "ford-interior", "boot-cleaned", "land-rover-interior"],
+    goodFor: "a car that looks fine outside but needs the inside sorting: school runs, work vans, dog hair.",
+  },
+  {
+    slug: "exterior-valet",
+    name: "Basic exterior clean",
+    category: "Exterior",
+    blurb: "Snow foam, safe hand wash, wheels and glass. Inside left as it is.",
+    searchName: "Mobile car wash and exterior valet",
+    from: 25,
+    time: "Up to 2 hours",
+    jobHours: 2,
+    includes: [
+      {
+        group: "Outside",
+        items: [
+          "Snow foam pre-wash to lift the dirt before anything touches the paint",
+          "Hand wash, two-bucket method",
+          "Wheels, tyres and arches cleaned, tyres dressed",
+          "Hand dried with microfibre towels",
+          "Windows and mirrors cleaned",
+        ],
+      },
+    ],
+    includesConfirmed: false,
+    extras: ["Wax sealant or paste wax", "Ceramic spray", "Exhaust polish", "Engine bay clean"],
+    prices: [{ label: "Outside only", prices: [["Small", "£25"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] }],
+    photos: ["vw-golf-r", "range-rover-satin", "owen-polo-roof", "gloss-roof"],
+    goodFor: "a quick, safe wash between valets, or before a trip or a sale.",
+  },
+  {
+    slug: "deep-interior",
+    name: "Deep interior clean",
+    category: "Interior",
+    blurb: "Everything out, seats and carpets shampooed and extracted, plastics steamed.",
+    searchName: "Car interior deep clean",
+    from: 130,
+    time: "Up to 5 hours",
+    jobHours: 5,
+    includes: [
+      {
+        group: "Inside",
+        items: [
+          "Everything taken out, then every surface hoovered, including under the seats and in the boot well",
+          "Seats and carpets shampooed and extracted",
+          "Plastics, vents and door shuts steam cleaned",
+          "Leather cleaned and conditioned",
+          "Interior glass cleaned",
+        ],
+      },
+    ],
+    includesConfirmed: false,
+    extras: [
+      "Ozone treatment",
+      "Pet hair removal (depends how bad)",
+      "Mould removal",
+      "Interior plastics polished",
+    ],
+    prices: [{ label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£155+"]] }],
+    photos: ["owen-steam-cleaning-door", "porsche-red-leather-interior", "land-rover-interior", "discovery-interior"],
+    goodFor: "family and dog cars, smells, spills, mould, or a car you've just bought second hand.",
+  },
+  {
+    slug: "deep-exterior",
+    name: "Deep exterior clean",
+    category: "Exterior",
+    blurb: "Full wash plus iron fallout and tar taken off the paint, then sealed.",
+    searchName: "Car exterior deep clean and decontamination",
+    from: 35,
+    time: "Up to 5 hours",
+    jobHours: 5,
+    includes: [
+      {
+        group: "Outside",
+        items: [
+          "Snow foam and two-bucket hand wash",
+          "Wheel faces and barrels cleaned, arches degreased",
+          "Iron fallout and tar removed from the paint",
+          "Door shuts cleaned",
+          "Sealant applied, tyres dressed, glass cleaned",
+        ],
+      },
+    ],
+    includesConfirmed: false,
+    extras: ["Clay bar with full decontamination wash", "Headlight restoration, the pair", "Exhaust tips polished and restored", "Ceramic spray"],
+    prices: [{ label: "Outside only", prices: [["Small", "£35"], ["Medium", "£40"], ["Large", "£45"], ["XL", "£50"]] }],
+    photos: ["garage-gloss-bonnet", "porsche-wheel", "vw-golf-r-rear", "bmw-m4-rear"],
+    goodFor: "paint that feels rough or looks dull, or a car getting ready for polishing or a coating.",
+  },
 ];
+
+/** Menu order on the home page, and which add-ons sit in the Protection tab */
+export const categories: Category[] = ["Full valets", "Interior", "Exterior", "Polishing", "Protection", "Plans"];
+export const protectionAddOns = ["Full window ceramic coating, 1 year", "Alloy ceramic coating, up to 2 years", "Ceramic spray"];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
 export const gbp = (n: number) => `£${n}`;
+
+// Keep every list (nav, footer, /book/, "Other services") in menu order: valets first, plans last.
+services.sort((a, b) => categories.indexOf(a.category) - categories.indexOf(b.category));

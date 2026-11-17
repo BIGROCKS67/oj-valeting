@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 
 const SEL = [
   ".livery-head",
-  ".pricelist > li",
+  ".menu-card",
   ".suds",
   ".sec-head",
   ".drive-row > li",
