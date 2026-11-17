@@ -17,7 +17,7 @@ export const businessLd = {
   hasMap: site.google.url,
   sameAs: [site.instagram, site.facebook, site.google.url],
   priceRange: "££",
-  paymentAccepted: "Cash, Bank transfer",
+  paymentAccepted: "Cash, Bank transfer, Apple Pay",
   areaServed: [
     ...site.counties.map((n) => ({ "@type": "AdministrativeArea", name: n })),
     ...site.towns.map((n) => ({ "@type": "City", name: n })),

@@ -66,7 +66,7 @@ export default function Home() {
           </div>
           <ServiceMenu />
           <p className="livery-foot">
-            Owen confirms the final price once he&rsquo;s seen the vehicle, before he starts. {site.payment}
+            Owen confirms the final price once he&rsquo;s seen the vehicle, before he starts. Fuel charges may apply further afield. {site.payment}
           </p>
         </div>
       </section>

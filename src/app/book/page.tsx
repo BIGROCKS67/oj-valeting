@@ -28,7 +28,7 @@ const faq: [string, string][] = [
     "Can the price change?",
     "Prices are from prices. Owen confirms the final figure once he's seen the size and state of the vehicle, before he starts, so there are no surprises at the end.",
   ],
-  ["How do I pay?", "Cash or bank transfer on the day. Owen doesn't take cards at the moment."],
+  ["How do I pay?", "Apple Pay, bank transfer or cash on the day."],
   [
     "Where do you cover?",
     "Owen is based between Brackley and Buckingham and covers Buckinghamshire, Oxfordshire, Northamptonshire, Bedfordshire and Warwickshire. Nationwide too, with a small fuel charge for further afield (about £10 for a job 45 minutes away).",

@@ -15,8 +15,8 @@ export const site = {
   // (about £10 for a job 45 minutes away). Based between Brackley and Buckingham.
   counties: ["Buckinghamshire", "Northamptonshire", "Oxfordshire", "Bedfordshire", "Warwickshire"],
   towns: ["Brackley", "Buckingham", "Towcester", "Bicester", "Banbury", "Silverstone", "Milton Keynes", "Northampton", "Aylesbury", "Oxford"],
-  // Owen, 17 Nov 2026: no card machine, so cash or bank transfer.
-  payment: "Pay by cash or bank transfer on the day.",
+  // Owen, 17 Nov 2026 (late): Apple Pay, bank transfer and cash.
+  payment: "Pay by Apple Pay, bank transfer or cash on the day.",
   // Owen, 17 Nov 2026: say nationwide.
   fuelNote: "Nationwide too: further afield is fine, with a small fuel charge (about £10 for a job 45 minutes away).",
   // Hours shown on the site live in hours.ts. Bookable hours, days off and notice are set in Square.
