@@ -4,7 +4,7 @@
 export const site = {
   name: "OJ Valeting",
   owner: "Owen",
-  url: "https://ojvaleting.org", // CONFIRM: Owen may move to a new domain
+  url: "https://ojvalet.co.uk", // ojvaleting.org and ojvalet.com redirect here
   phone: "07708 600114",
   phoneIntl: "+447708600114",
   email: "Ojsvaleting@gmail.com",
