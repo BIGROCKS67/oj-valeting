@@ -301,6 +301,7 @@ export const services: Service[] = [
   {
     slug: "interior-valet",
     name: "Basic interior clean",
+    squareId: "QHVHCQN4AXLK6WH4HEILDT4Z",
     category: "Interior",
     blurb: "Hoovered, wiped down and glass cleaned inside. Outside left as it is.",
     searchName: "Mobile car interior valet",
@@ -333,6 +334,7 @@ export const services: Service[] = [
   {
     slug: "exterior-valet",
     name: "Basic exterior clean",
+    squareId: "NZHA643IUQHGJDWAL24V2XWG",
     category: "Exterior",
     blurb: "Snow foam, safe hand wash, wheels and glass. Inside left as it is.",
     searchName: "Mobile car wash and exterior valet",
@@ -360,6 +362,7 @@ export const services: Service[] = [
   {
     slug: "deep-interior",
     name: "Deep interior clean",
+    squareId: "JIGGKAI27UU5FOWNBFT7M2CO",
     category: "Interior",
     blurb: "Everything out, seats and carpets shampooed and extracted, plastics steamed.",
     searchName: "Car interior deep clean",
@@ -392,6 +395,7 @@ export const services: Service[] = [
   {
     slug: "deep-exterior",
     name: "Deep exterior clean",
+    squareId: "36UI4EG27IT4KO6FDC7V623W",
     category: "Exterior",
     blurb: "Full wash plus iron fallout and tar taken off the paint, then sealed.",
     searchName: "Car exterior deep clean and decontamination",

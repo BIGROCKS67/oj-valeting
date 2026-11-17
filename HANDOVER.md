@@ -60,7 +60,7 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 
 - Owen's own Square account (Ojsvaleting@gmail.com, he created it). Booking page: https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services, linked as `site.bookingApp`. **Square is the only booking system (17 Nov 2026):** every Book button on the site goes straight to it, /book/ is a short page with prices, hours and a button into Square. The old 5-step FormSubmit form and /book/sent/ were removed.
 - Location: mobile, Europe/London, phone 07708 600114, appointments "at the customer's location". Hours match `hours.ts` (Sat 8:30 to 14:30).
-- Services: Basic 2h, Full deep clean 5h, Paint correction 6h, Ceramic coating 6h, Maintenance 2h, each with size options (see Prices). Each blocks 30 minutes after for travel. Prices are Square "fixed" but every description says "From".
+- Services: Basic 2h, Full deep clean 5h, Paint correction 6h, Ceramic coating 6h, Maintenance 2h, plus (added 17 Nov) Basic interior clean 2h £30-£45, Basic exterior clean 2h £25-£45, Deep interior clean 5h £130-£155, Deep exterior clean 5h £35-£50. Each has size options (see Prices). Each blocks 30 minutes after for travel. Prices are Square "fixed" but every description says "From".
 - Rules: Owen approves every request (auto-accept off), one service per booking, slots follow service length from his start time, 12 hours' notice, 60 days ahead.
 - Days off (Christmas, holidays) and summer hours: set them in Square (block time on the calendar, Settings > Locations for hours) and update `hours.ts` so the footer matches.
 - Plan: Square auto-started a 30-day Appointments Plus trial (ends 17 Dec 2026). No card on the account, so it can't charge. Free plan loses confirmation texts/emails and Google Calendar sync. Decide before 17 Dec.
@@ -95,7 +95,7 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 ## Menu, research and next upgrades (17 Nov 2026)
 
 - Home page price list is now a tabbed menu (Full valets, Interior, Exterior, Polishing, Protection, Plans, Add-ons) with a card per service: photo, blurb, time, and Small/Medium/Large/XL buttons that change the price. `ServiceMenu.tsx`. Owen liked this layout on iautodetailing.co.uk; the look is still his own.
-- New service pages from his price list: /interior-valet/, /deep-interior/, /exterior-valet/, /deep-exterior/. Times on these ("Up to 2 hours", "Up to 5 hours") are upper bounds from the full packages: CONFIRM with Owen. They aren't in Square yet, so their Book buttons open the full Square list.
+- New service pages from his price list: /interior-valet/, /deep-interior/, /exterior-valet/, /deep-exterior/. Times on these ("Up to 2 hours", "Up to 5 hours") are upper bounds from the full packages: CONFIRM with Owen. All four are now in Square with Small/Medium/Large/XL and their own Book deep links. Deep exterior at 5 hours blocks most of Owen's day for a £35 job: CONFIRM the real time and change it in Square and services.ts together.
 - Book buttons open the matching Square service (`squareId` in services.ts).
 - Hero shows "5.0 from 13 Google reviews" linking to his Maps listing (`site.google`; update the count now and then).
 - /book/ has an FAQ (FAQPage schema) using only facts Owen has given.
