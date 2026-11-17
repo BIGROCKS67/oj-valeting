@@ -66,6 +66,13 @@ Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody 
 - Plan: Square auto-started a 30-day Appointments Plus trial (ends 17 Dec 2026). No card on the account, so it can't charge. Free plan loses confirmation texts/emails and Google Calendar sync. Decide before 17 Dec.
 - Saturday allows 8:30 and 11:00 for short jobs. Owen just declines the second one if he only wants one job.
 
+## Google Business Profile (17 Nov 2026)
+
+- Owen's profile "OJVALETING" is verified (blue tick), 13 reviews at 5.0, category Valeting service. Jack (rockelljack@gmail.com) is a Manager, Owen is owner.
+- Changed 17 Nov: website to https://ojvalet.co.uk/ and hours to his winter hours (both pending Google review, up to ~10 min, sometimes longer); booking link to the Square page; "from" prices and descriptions on Basic £45, Deep clean £150, Maintenance £40, Ceramic coating £220, Paint correction £170.
+- Left as Owen set them: business name "OJVALETING" (renaming can trigger re-verification), description, service area (Oxon, Beds, Warks, Bucks, Northants), Facebook link (facebook.com/ojvaleting_, check it works; the site uses the profile.php id link).
+- To do: newer photos (last added 140 days ago), a review link/QR for Owen to send customers, town-level service areas once he confirms towns, Search Console for ojvalet.co.uk.
+
 ## Search check (16 Nov 2026, research agent; US-based search tool so not exact UK Google)
 
 - OJ Valeting does not appear for "mobile valeting Buckingham", "car valeting Towcester", "mobile car detailing Brackley", "ceramic coating Buckingham", "car valeting near Milton Keynes" or "paint correction Northamptonshire". Only a long "OJ Valeting Buckingham Owen" search finds ojvaleting.org.
