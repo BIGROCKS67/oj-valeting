@@ -49,6 +49,15 @@ Checked with whois on 16 Nov 2026:
 
 Recommendation: buy **ojvalet.co.uk** (and ojvalet.com for a few quid so nobody else takes it), make ojvalet.co.uk the main address, and keep ojvaleting.org pointing at it so old links, his Instagram bio and anything Google already has still work. The domain ending barely affects Google ranking, but .co.uk tells local customers he's a UK trader and .org reads as a charity. The van doesn't show a web address (only phone and Gmail), so changing costs nothing on the livery. Business name stays OJ Valeting everywhere.
 
+## Domains live (17 Nov 2026)
+
+- **ojvalet.co.uk is the main address.** Owen bought it and ojvalet.com on his own GoDaddy (Ojsvaleting@gmail.com) on 17 Nov 2026, renew 17 Nov 2027. DNS at GoDaddy: A @ 185.199.108-111.153, CNAME www bigrocks67.github.io. GitHub Pages (this repo) custom domain ojvalet.co.uk, HTTPS enforced. `public/CNAME` and `site.url` match.
+- **ojvalet.com**: GoDaddy forwarding, 301 to https://ojvalet.co.uk.
+- **ojvaleting.org stays at design.com for now** (transfer cancelled, nothing paid). DNS there: A @ 185.199.108-111.153, CNAME www bigrocks67.github.io, plus the google-site-verification TXT. It serves the tiny repo BIGROCKS67/ojvaleting-redirect (`../ojvaleting-redirect`), which sends every page to ojvalet.co.uk and maps the old paths (/my-services, /portfolio, /reviews). Not a true 301, as Pages can't do that.
+- **Watch out:** design.com says Owen's subscription is cancelled and ends 1 Oct 2027, the same day the .org is due to renew. Before then either transfer the .org to his GoDaddy (EPP code from design.com support, he has one from 17 Nov 2026) or let it lapse once Google has moved to ojvalet.co.uk.
+- The Vercel demo (oj-valeting.vercel.app) is now noindex so only ojvalet.co.uk is indexed.
+- To do: add ojvalet.co.uk to Search Console (verify through GoDaddy) and submit the sitemap; update Instagram, Facebook and Google profile links to ojvalet.co.uk.
+
 ## Search check (16 Nov 2026, research agent; US-based search tool so not exact UK Google)
 
 - OJ Valeting does not appear for "mobile valeting Buckingham", "car valeting Towcester", "mobile car detailing Brackley", "ceramic coating Buckingham", "car valeting near Milton Keynes" or "paint correction Northamptonshire". Only a long "OJ Valeting Buckingham Owen" search finds ojvaleting.org.
