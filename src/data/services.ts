@@ -73,7 +73,7 @@ export type Service = {
   goodFor: string;
 };
 
-// jobHours: top of Owen's own time range (Owen's job times, 17 Nov 2026). Deep interior and deep exterior: CONFIRM.
+// jobHours: top of Owen's own time range (Owen's job times, 17 Nov 2026). Basic interior/exterior 45 min, deep interior 2h (Owen, 18 Nov 2026). Deep exterior: CONFIRM.
 
 export const services: Service[] = [
   {
@@ -314,8 +314,8 @@ export const services: Service[] = [
     blurb: "Hoovered, wiped down and glass cleaned inside. Outside left as it is.",
     searchName: "Mobile car interior valet",
     from: 30,
-    time: "About 1 hour",
-    jobHours: 1,
+    time: "About 45 minutes",
+    jobHours: 0.75,
     note: "Price depends on condition.",
     includes: [
       {
@@ -347,8 +347,8 @@ export const services: Service[] = [
     blurb: "Snow foam, safe hand wash, wheels and glass. Inside left as it is.",
     searchName: "Mobile car wash and exterior valet",
     from: 25,
-    time: "1 to 2 hours",
-    jobHours: 2,
+    time: "About 45 minutes",
+    jobHours: 0.75,
     includes: [
       {
         group: "Outside",
@@ -375,8 +375,8 @@ export const services: Service[] = [
     blurb: "Everything out, seats and carpets shampooed and extracted, plastics steamed.",
     searchName: "Car interior deep clean",
     from: 130,
-    time: "Up to 5 hours",
-    jobHours: 5,
+    time: "About 2 hours",
+    jobHours: 2,
     includes: [
       {
         group: "Inside",
