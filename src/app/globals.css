@@ -281,23 +281,21 @@ p {
   }
 }
 
-/* Hero: Owen's jobs full-bleed behind the lettering (Owen liked the photo right across the back),
-   three of them cross-fading slowly. Livery black rises from the lettering side so it always reads. */
+/* Hero: one full-bleed photo of a finished job, big lettering, one action. Still, apart from the
+   photo settling in on load (Jack, 18 Nov: slick and professional, like Porsche and Polestar). */
 .hero {
   position: relative;
   isolation: isolate;
   overflow: clip;
   display: grid;
-  align-items: end;
-  min-height: min(calc(100svh - 74px), 900px);
   background: var(--livery);
   color: var(--paper);
 }
 .hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
+  position: relative;
   overflow: hidden;
+  height: 46svh;
+  min-height: 280px;
 }
 .hero-bg picture {
   position: absolute;
@@ -312,31 +310,24 @@ p {
   object-fit: cover;
   object-position: 50% var(--focus, 50%);
 }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(to top, var(--livery) 12%, color-mix(in oklab, var(--livery) 75%, transparent) 50%, color-mix(in oklab, var(--livery) 10%, transparent) 85%);
-}
 .hero-text {
   width: 100%;
   max-width: calc(var(--max) + 2 * var(--gut));
   margin-inline: auto;
-  padding: 30svh var(--gut) 2rem;
+  padding: 1.75rem var(--gut) 2.5rem;
 }
 .hero h1 {
-  font-size: clamp(2.3rem, 1rem + 3.9vw, 4.4rem);
+  font-size: clamp(2.3rem, 1rem + 3.9vw, 4.25rem);
   line-height: 1;
   letter-spacing: -0.02em;
-  max-width: 15ch;
+  max-width: 14ch;
   color: var(--paper);
-  text-shadow: 0 2px 24px color-mix(in oklab, var(--livery) 50%, transparent);
+  text-shadow: none;
 }
 .hero-sub {
   font-size: var(--step-1);
   line-height: 1.45;
-  color: color-mix(in oklab, var(--paper) 85%, var(--livery));
+  color: color-mix(in oklab, var(--paper) 78%, var(--livery));
   max-width: 40ch;
   margin-top: 1.25rem;
 }
@@ -345,7 +336,7 @@ p {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem 1.5rem;
-  margin: 2rem 0 0;
+  margin: 2rem 0 1.25rem;
 }
 .hero-link {
   color: var(--paper);
@@ -357,6 +348,11 @@ p {
 .hero-link:hover {
   color: var(--foam-lite);
 }
+.hero-small {
+  font-size: var(--step--1);
+  font-weight: 600;
+  color: color-mix(in oklab, var(--paper) 70%, var(--livery));
+}
 .hero .rating {
   color: var(--paper);
 }
@@ -366,24 +362,36 @@ p {
     justify-content: center;
   }
 }
-@media (min-width: 900px) {
-  .hero {
-    align-items: center;
+@media (min-width: 700px) {
+  .hero-bg {
+    height: 62svh;
   }
-  .hero::before {
-    background:
-      linear-gradient(to left, color-mix(in oklab, var(--livery) 90%, transparent) 0%, color-mix(in oklab, var(--livery) 62%, transparent) 38%, transparent 70%),
-      linear-gradient(to top, color-mix(in oklab, var(--livery) 55%, transparent), transparent 35%);
+}
+/* Big screens: lettering on livery black on the left, the photo filling the right */
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: min(calc(100svh - 74px), 880px);
+  }
+  .hero-bg {
+    grid-column: 2;
+    grid-row: 1;
+    height: auto;
+    min-height: 100%;
   }
   .hero-bg img {
-    object-position: var(--focus-x, 40%) 50%;
+    object-position: 38% 66%;
   }
-  /* Lettering on the right, the cars on the left (the Taycan's wheel sits left in its photo) */
   .hero-text {
-    padding-block: 4rem;
-    display: grid;
-    grid-template-columns: minmax(0, 40rem);
-    justify-content: end;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    max-width: none;
+    padding: 4rem clamp(2rem, 4vw, 4.5rem) 4rem max(var(--gut), calc((100vw - var(--max)) / 2));
+  }
+  .hero h1 {
+    max-width: 15ch;
+    font-size: clamp(2.4rem, 0.6rem + 3.4vw, 4.1rem);
   }
 }
 

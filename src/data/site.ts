@@ -30,13 +30,13 @@ export const site = {
   // Book button goes to /book/, which says call or text. Set true (and switch Square back on) to reopen.
   bookingOpen: false,
   // Home page photos (Owen, call 18 Nov 2026: finished cars, not the van). They cross-fade slowly,
-  // first one first, full-bleed behind the lettering. Wider screens use public/photos/hero-<photo>-wide.webp
-  // (focusX = across), phones <photo>-960.webp (focus = down). Swap for Owen's video
+  // first one first. Big screens show public/photos/hero-<photo>-tall.webp beside the lettering;
+  // phones show <photo>-960.webp on top, cropped at "focus" down the picture. Swap for Owen's video
   // loop when he films one.
   hero: [
-    { photo: "porsche-taycan-black", focus: "62%", focusX: "0%", alt: "A black Porsche Taycan with red brake calipers, glossy after a valet by Owen" },
-    { photo: "defender-snow-foam", focus: "60%", focusX: "30%", alt: "A Land Rover Defender covered in snow foam on a brick drive" },
-    { photo: "range-rover-black", focus: "60%", focusX: "30%", alt: "A black Range Rover, freshly cleaned, on a block-paved drive" },
+    { photo: "porsche-taycan-black", focus: "72%", alt: "A black Porsche Taycan with red brake calipers, glossy after a valet by Owen" },
+    { photo: "defender-snow-foam", focus: "60%", alt: "A Land Rover Defender covered in snow foam on a brick drive" },
+    { photo: "range-rover-black", focus: "62%", alt: "A black Range Rover, freshly cleaned, on a block-paved drive" },
   ],
   bookingApp: "https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services",
   // Google Business Profile, as shown on Maps 17 Nov 2026. Update the count as reviews come in.
