@@ -198,10 +198,10 @@ Not sure from the call: Owen mentioned "Protection" and Jack said "protection pl
 
 Waiting on Owen: the better bonnet photo, a photo of him by his van and his "Hi, I'm Owen" paragraph for About, his T&Cs wording, any caption corrections, which hero he prefers, and the "What's included" lists (he'll do those last).
 
-## 18 Nov 2026 (evening): three hero looks for Owen to try
+## 18 Nov 2026 (evening): hero looks for Owen to try
 
-Jack asked to build all three "wow" ideas and let Owen pick on the live home page. Normal visitors see no change. Owen's links:
-- https://ojvalet.co.uk/?look=1 Foam (the one to push): a WebGL shader (`src/components/FoamGL.tsx`) draws real-looking snow foam over the Taycan: round lit bubbles in three sizes, thicker clumps and thinner streaks sliding down. Wipe it with the mouse or a finger and the paint underneath looks wet with droplets. 2.5 s after the last wipe (5 s if untouched) water rinses it down from the top with drips, then one polish light sweeps across. Falls back to the simpler 2D foam if WebGL is missing.
-- https://ojvalet.co.uk/?look=2 3D wheel: an alloy built in code (three.js, loaded only on this look) turning behind the lettering and tilting with the mouse.
-- https://ojvalet.co.uk/?look=3 Scroll: scrolling flicks through 12 of his own jobs behind the lettering. A stand-in until he films one job dirty to clean on a tripod.
-A bar at the bottom switches looks, and "I like this one" opens WhatsApp with the choice typed out. Once he picks: build that look into the hero for real, then delete `src/components/HeroLooks.tsx`, the `<HeroLooks />` line in `src/app/page.tsx` and the "Hero looks" CSS block at the end of `globals.css` (and `three` from package.json if he doesn't pick 2).
+Jack asked for something "proper insane" for the home page, built to the level of the best car sites, and for Owen to pick on the live page. Normal visitors see no change. Owen's links:
+- https://ojvalet.co.uk/?look=1 Foam. A WebGL shader (`src/components/FoamGL.tsx`) draws dense, real-looking snow foam over the Taycan: round lit bubbles in three sizes, clumps, and streaks sliding down. Nobody has to do anything (Jack: attention spans). Scrolling rinses it down the car with rounded drips and a bright water line, one way only, and with no scroll it rinses itself 1.8 s after the photo loads. Then one polish light sweeps across, and a few water beads stay on the paint.
+- https://ojvalet.co.uk/?look=2 Scroll. A shader (`src/components/ScrollGL.tsx`) runs through 8 of his jobs while you scroll. Each car pushes in slowly, then a water squeegee pulls down the screen and leaves the next car behind it, with droplets in its wake. The car's name lands in big type, with a 01/08 counter. The picture follows the scroll with weight, so a flick glides and a hard scroll still gets through.
+- The 3D wheel was dropped (Jack, 18 Nov). three.js is uninstalled.
+A bar at the bottom switches looks, and "I like this one" opens WhatsApp with the choice typed out. Without WebGL both looks fall back to simpler versions. Once Owen picks: build that look into the hero for real, then delete the other one, the look bar and `HeroLooks.tsx`.

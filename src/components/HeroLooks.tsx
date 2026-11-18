@@ -2,32 +2,19 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { FoamGL } from "@/components/FoamGL";
+import { ScrollGL, scrollSeq } from "@/components/ScrollGL";
 import { asset } from "@/data/base";
 
 // Three hero "looks" for Owen to try on the live home page before he picks one (Jack, 18 Nov 2026).
 // Only switched on by ?look= in the address (ojvalet.co.uk/?look=1), so normal visitors see the
 // standard hero. Remove this file and the <HeroLooks /> line once Owen has chosen.
 //   1 Foam: the car is covered in snow foam and you wipe it off
-//   2 Wheel: a 3D alloy, built in code, turning behind the lettering
-//   3 Scroll: scrolling flicks through his own jobs (stand-in until he films one job on a tripod)
+//   2 Scroll: scrolling runs through his own jobs, a water squeegee wiping from one car to the next
 
-type Look = 0 | 1 | 2 | 3;
-const names: Record<Look, string> = { 0: "Photo", 1: "Foam", 2: "3D wheel", 3: "Scroll" };
+type Look = 0 | 1 | 2;
+const names: Record<Look, string> = { 0: "Photo", 1: "Foam", 2: "Scroll" };
 
-const seq = [
-  "defender-snow-foam",
-  "porsche-taycan-black",
-  "porsche-boxster-red",
-  "range-rover-black",
-  "bmw-m4-white",
-  "alfa-romeo-4c",
-  "porsche-taycan-blue",
-  "defender-90-black",
-  "porsche-macan-white",
-  "bmw-m2",
-  "porsche-cayenne-coupe",
-  "bmw-m4-wash",
-];
+const seq = scrollSeq;
 
 export function HeroLooks() {
   const [look, setLook] = useState<Look | null>(null);
@@ -36,7 +23,7 @@ export function HeroLooks() {
 
   useEffect(() => {
     const v = new URLSearchParams(location.search).get("look");
-    if (v !== null) setLook((["0", "1", "2", "3"].includes(v) ? Number(v) : 0) as Look);
+    if (v !== null) setLook((["0", "1", "2"].includes(v) ? Number(v) : 0) as Look);
   }, []);
 
   useEffect(() => {
@@ -62,11 +49,10 @@ export function HeroLooks() {
   return (
     <>
       {look === 1 && (noGL ? <Foam /> : <FoamGL onFail={failGL} />)}
-      {look === 2 && <Wheel />}
-      {look === 3 && <Scroll />}
+      {look === 2 && (noGL ? <Scroll /> : <ScrollGL onFail={failGL} />)}
       <div className="look-bar" role="region" aria-label="Try a home page look">
         <span className="look-bar-h">Try a look:</span>
-        {([0, 1, 2, 3] as Look[]).map((l) => (
+        {([0, 1, 2] as Look[]).map((l) => (
           <button key={l} type="button" aria-pressed={look === l} onClick={() => pick(l)}>
             {l === 0 ? names[0] : `${l}. ${names[l]}`}
           </button>
@@ -212,186 +198,7 @@ function Foam() {
   );
 }
 
-/* ---------- 2. Wheel: a 3D alloy built in code ---------- */
-
-function Wheel() {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    let stop = () => {};
-    let cancelled = false;
-    (async () => {
-      const THREE = await import("three");
-      const { RoomEnvironment } = await import("three/examples/jsm/environments/RoomEnvironment.js");
-      if (cancelled || !ref.current) return;
-      const box = ref.current;
-      const hero = box.closest<HTMLElement>(".hero")!;
-
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-      renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.45;
-      box.appendChild(renderer.domElement);
-
-      const scene = new THREE.Scene();
-      const pmrem = new THREE.PMREMGenerator(renderer);
-      scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
-      const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 50);
-      camera.position.set(0, 0, 7.2);
-
-      scene.environmentIntensity = 1.3;
-      const key = new THREE.DirectionalLight(0xffffff, 4);
-      key.position.set(3, 2, 4);
-      const rim = new THREE.DirectionalLight(0x7cc8ee, 3); // foam-blue edge light from behind
-      rim.position.set(-4, 3, -3);
-      scene.add(key, rim, new THREE.AmbientLight(0x8fb8d8, 0.35));
-
-      const rig = new THREE.Group(); // tilts to the pointer
-      const wheel = new THREE.Group(); // spins
-      rig.add(wheel);
-      scene.add(rig);
-
-      const tyreMat = new THREE.MeshStandardMaterial({ color: 0x121316, roughness: 0.85 });
-      const gunmetal = new THREE.MeshStandardMaterial({ color: 0x2b2f35, metalness: 1, roughness: 0.32 });
-      const machined = new THREE.MeshStandardMaterial({ color: 0xf3f5f7, metalness: 1, roughness: 0.08 });
-      const disc = new THREE.MeshStandardMaterial({ color: 0x6f7378, metalness: 1, roughness: 0.45 });
-      const red = new THREE.MeshPhysicalMaterial({ color: 0xc8141c, metalness: 0.2, roughness: 0.28, clearcoat: 1 });
-
-      // Tyre: a lathe of the sidewall profile
-      const prof = [
-        [0.86, -0.38], [0.95, -0.42], [1.08, -0.41], [1.16, -0.34], [1.19, 0], [1.16, 0.34], [1.08, 0.41], [0.95, 0.42], [0.86, 0.38],
-      ].map(([r, z]) => new THREE.Vector2(r, z));
-      const tyre = new THREE.Mesh(new THREE.LatheGeometry(prof, 96), tyreMat);
-      tyre.rotation.x = Math.PI / 2;
-      wheel.add(tyre);
-
-      // Barrel and polished lip
-      const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.86, 0.86, 0.84, 96, 1, true), gunmetal);
-      barrel.rotation.x = Math.PI / 2;
-      barrel.material.side = THREE.DoubleSide;
-      wheel.add(barrel);
-      const lip = new THREE.Mesh(new THREE.TorusGeometry(0.87, 0.035, 16, 128), machined);
-      lip.position.z = 0.4;
-      lip.scale.setScalar(1.0);
-      wheel.add(lip);
-
-      // Ten tapered spokes in five pairs: gunmetal body, machined face
-      const spokeShape = (wHub: number, wRim: number) => {
-        const sh = new THREE.Shape();
-        sh.moveTo(-wHub / 2, 0.2);
-        sh.lineTo(wHub / 2, 0.2);
-        sh.lineTo(wRim / 2, 0.84);
-        sh.lineTo(-wRim / 2, 0.84);
-        sh.closePath();
-        return sh;
-      };
-      const bodyGeo = new THREE.ExtrudeGeometry(spokeShape(0.1, 0.2), { depth: 0.12, bevelEnabled: true, bevelSize: 0.012, bevelThickness: 0.012, bevelSegments: 2 });
-      const faceGeo = new THREE.ExtrudeGeometry(spokeShape(0.05, 0.11), { depth: 0.015, bevelEnabled: false });
-      for (let i = 0; i < 10; i++) {
-        const a = (i / 10) * Math.PI * 2 + (i % 2 ? 0.09 : -0.09);
-        const arm = new THREE.Group();
-        const body = new THREE.Mesh(bodyGeo, gunmetal);
-        body.position.z = 0.3;
-        const face = new THREE.Mesh(faceGeo, machined);
-        face.position.z = 0.435;
-        arm.add(body, face);
-        arm.rotation.z = a;
-        wheel.add(arm);
-      }
-
-      // Hub, centre cap and five nuts
-      const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.24, 0.16, 48), gunmetal);
-      hub.rotation.x = Math.PI / 2;
-      hub.position.z = 0.38;
-      const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.04, 40), machined);
-      cap.rotation.x = Math.PI / 2;
-      cap.position.z = 0.47;
-      wheel.add(hub, cap);
-      for (let i = 0; i < 5; i++) {
-        const a = (i / 5) * Math.PI * 2;
-        const nut = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.06, 6), machined);
-        nut.rotation.x = Math.PI / 2;
-        nut.position.set(Math.cos(a) * 0.16, Math.sin(a) * 0.16, 0.47);
-        wheel.add(nut);
-      }
-
-      // Brake disc and the red caliper (these don't spin)
-      const rotor = new THREE.Mesh(new THREE.CylinderGeometry(0.74, 0.74, 0.05, 72), disc);
-      rotor.rotation.x = Math.PI / 2;
-      rotor.position.z = 0.02;
-      rig.add(rotor);
-      const caliper = new THREE.Mesh(new THREE.TorusGeometry(0.66, 0.09, 16, 40, Math.PI / 2.6), red);
-      caliper.position.z = 0.14;
-      caliper.rotation.z = Math.PI * 0.08;
-      rig.add(caliper);
-
-      let px = 0;
-      let py = 0;
-      const onMove = (e: PointerEvent) => {
-        const r = hero.getBoundingClientRect();
-        px = (e.clientX - r.left) / r.width - 0.5;
-        py = (e.clientY - r.top) / r.height - 0.5;
-      };
-      hero.addEventListener("pointermove", onMove);
-
-      const size = () => {
-        const w = box.clientWidth;
-        const h = box.clientHeight;
-        renderer.setSize(w, h, false);
-        camera.aspect = w / h;
-        camera.updateProjectionMatrix();
-        const wide = w / h > 1;
-        const viewH = 2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2));
-        const viewW = viewH * camera.aspect;
-        rig.position.set(wide ? -viewW * 0.2 : 0, wide ? -0.05 : viewH * 0.2, 0);
-        rig.scale.setScalar(wide ? Math.min(1.25, (viewW * 0.42) / 2.4) : Math.min(0.9, (viewW * 0.8) / 2.4));
-      };
-      size();
-      const ro = new ResizeObserver(size);
-      ro.observe(box);
-
-      const still = !window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
-      let raf = 0;
-      let visible = true;
-      const io = new IntersectionObserver(([e]) => (visible = e.isIntersecting));
-      io.observe(box);
-      const t0 = performance.now();
-      const frame = (t: number) => {
-        const s = (t - t0) / 1000;
-        if (visible) {
-          wheel.rotation.z = -s * 0.7;
-          rig.rotation.y += (-0.32 + px * 0.5 - rig.rotation.y) * 0.06;
-          rig.rotation.x += (0.08 + py * 0.3 - rig.rotation.x) * 0.06;
-          key.position.x = Math.sin(s * 0.6) * 5; // light sweeps across the fresh polish
-          renderer.render(scene, camera);
-        }
-        if (!still) raf = requestAnimationFrame(frame);
-      };
-      rig.rotation.set(0.08, -0.32, 0);
-      if (still) renderer.render(scene, camera);
-      else raf = requestAnimationFrame(frame);
-      box.classList.add("is-on");
-
-      stop = () => {
-        cancelAnimationFrame(raf);
-        hero.removeEventListener("pointermove", onMove);
-        ro.disconnect();
-        io.disconnect();
-        renderer.dispose();
-        pmrem.dispose();
-        renderer.domElement.remove();
-      };
-    })();
-    return () => {
-      cancelled = true;
-      stop();
-    };
-  }, []);
-
-  return <div ref={ref} className="hero-fx hero-wheel" aria-hidden="true" />;
-}
-
-/* ---------- 3. Scroll: flick through his jobs ---------- */
+/* ---------- 2. Scroll, without WebGL: flick through his jobs ---------- */
 
 function Scroll() {
   const ref = useRef<HTMLDivElement>(null);

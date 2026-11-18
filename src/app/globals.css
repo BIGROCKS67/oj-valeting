@@ -1650,39 +1650,18 @@ textarea {
 .hero-foam-gl {
   width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 0.6s var(--ease-out);
 }
-.hero-foam-gl.is-on {
-  opacity: 1;
-}
-.hero[data-look="2"] .hero-bg,
-.hero[data-look="3"] .hero-bg {
+.hero[data-look="2"] .hero-bg {
   display: none;
 }
 .hero[data-look="2"] {
-  background: radial-gradient(ellipse at 28% 50%, var(--livery-2), var(--livery) 65%);
-}
-.hero-wheel {
-  opacity: 0;
-  transition: opacity 0.8s var(--ease-out);
-}
-.hero-wheel.is-on {
-  opacity: 1;
-}
-.hero-wheel canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-.hero[data-look="3"] {
-  min-height: 320vh;
+  min-height: 280vh;
   align-items: start;
 }
-.hero[data-look="3"]::before {
+.hero[data-look="2"]::before {
   display: none;
 }
-.hero[data-look="3"] .hero-text {
+.hero[data-look="2"] .hero-text {
   position: sticky;
   top: 0;
   min-height: 100svh;
@@ -1724,7 +1703,7 @@ textarea {
   font-size: var(--step--1);
 }
 @media (min-width: 700px) {
-  .hero[data-look="3"] .hero-text {
+  .hero[data-look="2"] .hero-text {
     align-content: center;
   }
   .seq-stage::after {
@@ -1733,8 +1712,7 @@ textarea {
       linear-gradient(to top, color-mix(in oklab, var(--livery) 60%, transparent), transparent 40%);
   }
   .seq-count {
-    top: auto;
-    bottom: 1.5rem;
+    top: 1.5rem;
   }
 }
 .look-bar {
@@ -1797,4 +1775,43 @@ textarea {
 }
 .hero:has(.hero-foam-gl) .hero-bg {
   visibility: hidden;
+}
+
+.seq-gl {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+}
+.seq-gl.is-on {
+  opacity: 1;
+}
+/* The car's name lands in big type as each one arrives */
+.seq-name {
+  position: absolute;
+  z-index: 1;
+  left: var(--gut);
+  top: 3.25rem;
+  margin: 0;
+  max-width: 12ch;
+  color: var(--paper);
+  font-size: clamp(2rem, 1rem + 5vw, 5.5rem);
+  font-weight: 900;
+  font-stretch: 125%;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-shadow: 0.04em 0.04em 0 color-mix(in oklab, var(--livery) 70%, transparent);
+  animation: name-in 0.5s var(--ease-out) both;
+}
+@keyframes name-in {
+  from { opacity: 0; transform: translateY(0.4em); clip-path: inset(0 0 100% 0); }
+  to { opacity: 1; transform: none; clip-path: inset(0 0 0 0); }
+}
+@media (min-width: 700px) {
+  .seq-name {
+    top: 3.5rem;
+    max-width: 9ch;
+  }
 }
