@@ -18,7 +18,7 @@ export default function Privacy() {
       <p>
         Online bookings are taken through Square Appointments (squareup.com), which holds your name, number, email,
         address and booking so Owen can see them in his diary and send you reminders. Square&rsquo;s own privacy notice
-        covers how it stores them. Owen uses your details only to confirm and carry out the booking and to contact you
+        covers how it stores them. If you use the quote form on the contact page, it is sent to Owen's email by FormSubmit (formsubmit.co), which passes it on and doesn't use it for anything else. Owen uses your details only to confirm and carry out the booking and to contact you
         about it.
       </p>
       <h2>How long they are kept</h2>

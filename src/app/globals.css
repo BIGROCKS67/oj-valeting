@@ -2805,3 +2805,152 @@ textarea {
     object-position: 50% 30%;
   }
 }
+
+/* Drop-downs (terms on Contact, Good to know on service pages) */
+.drops {
+  border-top: 1px solid var(--rule);
+}
+.drops details {
+  border-bottom: 1px solid var(--rule);
+}
+.drops summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 16px 0;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.drops summary::-webkit-details-marker {
+  display: none;
+}
+.drops summary::after {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  rotate: 45deg;
+  translate: 0 -3px;
+  transition: rotate 0.2s ease-out, translate 0.2s ease-out;
+}
+.drops details[open] summary::after {
+  rotate: 225deg;
+  translate: 0 3px;
+}
+.drops summary:hover {
+  color: var(--foam-ink);
+}
+.drops details p {
+  margin: 0 0 16px;
+  max-width: 62ch;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.contact-terms .drops {
+  margin-top: 0.5rem;
+}
+.terms-foot {
+  margin-top: 1rem !important;
+  font-size: 14px;
+}
+.svc-faq {
+  padding-block: clamp(2rem, 5vw, 3.5rem);
+  max-width: calc(52rem + 2 * var(--gut));
+  margin-inline: 0;
+}
+.svc-faq h2 {
+  margin: 0 0 1rem;
+}
+
+/* Contact: big call row and the quote form */
+.contact-call {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin: 2rem 0;
+}
+.quote-form {
+  margin-top: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+}
+.quote-form h2 {
+  margin: 0;
+  font-size: var(--step-2);
+}
+.qf-lead {
+  margin: 0.4rem 0 1.25rem;
+  color: var(--ink-soft);
+}
+.qf-honey {
+  position: absolute;
+  left: -9999px;
+}
+.qf-grid {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 1.25rem;
+}
+.qf-grid label {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.qf-grid input,
+.qf-grid select,
+.qf-grid textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in oklab, var(--ink) 30%, transparent);
+  border-radius: 2px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 400;
+  font-size: 16px;
+}
+.qf-grid textarea {
+  resize: vertical;
+}
+.qf-grid :is(input, select, textarea):focus-visible {
+  outline: 3px solid var(--foam);
+  outline-offset: 1px;
+  border-color: var(--foam-ink);
+}
+@media (min-width: 640px) {
+  .qf-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .qf-wide {
+    grid-column: 1 / -1;
+  }
+}
+.contact-side h2 + .contact-list {
+  margin-top: 0.5rem;
+}
+.contact-side .contact-list {
+  border-top-color: rgb(255 255 255 / 0.12);
+  margin-bottom: 2rem;
+}
+.contact-side .contact-list li {
+  grid-template-columns: 5.5rem 1fr;
+  border-bottom-color: rgb(255 255 255 / 0.12);
+}
+.contact-side .contact-list span {
+  color: color-mix(in oklab, var(--paper) 60%, transparent);
+}
+.contact-side .contact-list a {
+  color: var(--paper);
+  font-size: 15px;
+}

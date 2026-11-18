@@ -142,6 +142,46 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         </aside>
       </section>
 
+      {/* Good to know: drop-downs like elitekleanz.com (Owen, 18 Nov). Facts already on the site; the
+          deposit line is a draft until Owen confirms the amount. */}
+      <section className="wrap svc-faq" aria-labelledby="gk-h">
+        <h2 id="gk-h">Good to know</h2>
+        <div className="drops">
+          <details>
+            <summary>How long does it take?</summary>
+            <p>
+              {s.time === "Owen will confirm the time" ? "Owen will tell you when he quotes." : `${s.time}, depending on the size and state of the vehicle.`}
+            </p>
+          </details>
+          <details>
+            <summary>Can the price change?</summary>
+            <p>
+              The prices are starting prices for each size. Owen confirms the final price once he&rsquo;s seen the
+              vehicle, before he starts. {s.note?.startsWith("Price may change") ? s.note : ""} {site.honest}
+            </p>
+          </details>
+          <details>
+            <summary>What do you need from me?</summary>
+            <p>{site.needs}</p>
+          </details>
+          <details>
+            <summary>Is there a deposit?</summary>
+            <p>
+              A deposit secures your booking. Owen confirms the amount when you book. The full terms are on the{" "}
+              <Link href="/contact/#terms">contact page</Link>.
+            </p>
+          </details>
+          <details>
+            <summary>What if it rains?</summary>
+            <p>Owen brings a waterproof gazebo, so rain won&rsquo;t stop the job.</p>
+          </details>
+          <details>
+            <summary>How do I pay?</summary>
+            <p>{site.payment}</p>
+          </details>
+        </div>
+      </section>
+
       <section className="wrap svc-photos" aria-label={`${s.name} photos`}>
         <ul className="photo-strip" role="list">
           {s.photos.slice(1).map((id) => (
