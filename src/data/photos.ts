@@ -27,7 +27,7 @@ export const captions: Record<string, string> = {
   "land-rover-defender-110": "Land Rover Defender 110",
   "opel-manta": "Opel Manta",
   "opel-manta-rear": "Opel Manta",
-  "porsche-red-leather-interior": "Red leather, Porsche Macan",
+  "porsche-red-leather-interior": "Leather protection, Porsche Macan",
   "engine-bay": "Engine bay, Range Rover",
   "gloss-roof": "Gloss black roof",
   "ford-headlight": "Headlight, Ford Focus",
@@ -79,7 +79,7 @@ export const captions: Record<string, string> = {
   "defender-90-black": "Land Rover Defender 90",
   "bmw-m2": "BMW M2",
   "porsche-taycan-black": "Porsche Taycan",
-  "range-rover-boot": "Range Rover boot",
+  "range-rover-boot": "Deep interior clean",
   "range-rover-sport-gloss": "Range Rover Sport",
   "porsche-cayenne-coupe": "Porsche Cayenne Coupé",
   "range-rover-sport-grey": "Range Rover Sport",
@@ -102,13 +102,12 @@ export function photo(id: string): Photo {
 }
 
 /** The driveway wall on the home page (first 16) and /work/. Newest photos first, mixing car types and colours. */
+// Owen, 18 Nov: the Boxster and white M4 were up twice, so the repeat shots stay off the wall.
 export const wall = [
   "porsche-taycan-black",
   "defender-snow-foam",
-  "porsche-boxster-red",
   "range-rover-black",
   "ktm-duke",
-  "bmw-m4-wash",
   "alfa-romeo-4c",
   "coachman-caravan",
   "defender-110-green",
@@ -132,7 +131,6 @@ export const wall = [
   "range-rover-sport-grey",
   "audi-q2",
   "vw-transporter",
-  "bmw-m4-white",
   "range-rover-sport-rear",
   "vw-polo-grey",
   "defender-110-black",

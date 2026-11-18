@@ -208,3 +208,4 @@ A bar at the bottom switches looks, and "I like this one" opens WhatsApp with th
 
 - 18 Nov 15:37: About page now uses Owen's own text (WhatsApp), Draft tag removed. Still waiting on the photo of him by his van.
 - 18 Nov: footer now says "and nationwide" and "24 hour emergency call-outs" (Owen's About text), name in capitals: OJ VALETING.
+- 18 Nov 15:39 (Owen): repeat Boxster and white M4 shots taken off Our Work; Range Rover boot captioned "Deep interior clean"; red Macan leather captioned "Leather protection, Porsche Macan".
