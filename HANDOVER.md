@@ -175,5 +175,5 @@ Owen's changes:
 - Ceramic coating: Owen will use the same photo, no AI images. "Change the others as mentioned" still needs his list.
 - Google product cards (all 5): payment line now "Pay by Apple Pay, bank transfer or cash." (18 Nov 2026, pending Google review).
 - ojvaleting.org transfer: Owen paid at GoDaddy, 1 year, £24.17 (18 Nov 2026). Waiting for it to land (up to 5-7 days); then check DNS still points at the ojvaleting-redirect repo.
-- Google profile strength: only "Add a shop front photo" missing. Use handover/oj-valeting-van.jpg (the van). Jack or Owen drags it in; Google's upload box won't take it from the browser tool.
+- Google profile strength: shop front photo (the van, handover/oj-valeting-van.jpg) added 18 Nov 2026, so the checklist is complete. Skipped the Ads credit and Workspace offers.
 - Ranking re-check scheduled as a one-off task on 15 Jan 2027 (oj-valeting-ranking-check-jan-2027).
