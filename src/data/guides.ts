@@ -117,7 +117,7 @@ export const guides: Guide[] = [
       {
         q: "Can other parts be coated too?",
         a: [
-          "Yes: full window ceramic coating for 1 year from £50, alloy ceramic coating for up to 2 years from £80, and interior leather ceramic coating from £120.",
+          "Yes: full window ceramic coating for 12 to 24 months from £60, alloy ceramic coating for 1 or 2 years from £60, and interior leather ceramic coating from £120.",
         ],
       },
     ],

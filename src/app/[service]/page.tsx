@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, getService, gbp, addOnPrice, sizeGuide } from "@/data/services";
+import { services, getService, gbp, addOnPrice, sizeGuide, fromText } from "@/data/services";
 import { reviews } from "@/data/reviews";
 import { site, tel, bookUrl } from "@/data/site";
 import { Pic } from "@/components/Pic";
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ service: 
   if (!s) return {};
   return {
     title: `${s.searchName}, Brackley | OJ Valeting`,
-    description: `${s.owenSays ?? s.blurb} Mobile, at your home or work across Bucks, Oxon, Northants, Beds and Warwickshire. From ${gbp(s.from)}. Call or text Owen to book.`,
+    description: `${s.owenSays ?? s.blurb} Mobile, at your home or work across Bucks, Oxon, Northants, Beds and Warwickshire. ${s.from > 0 ? `From ${gbp(s.from)}.` : ""} Call or text Owen to book.`,
     alternates: { canonical: `/${s.slug}/` },
   };
 }
@@ -42,7 +42,12 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             <Link href="/#prices">Services</Link> <span aria-hidden="true">/</span> {s.name}
           </p>
           <h1 id="svc-h">
-            {s.name}, from <span className="num">{gbp(s.from)}</span>
+            {s.name}
+            {s.from > 0 && (
+              <>
+                , from <span className="num">{gbp(s.from)}</span>
+              </>
+            )}
           </h1>
           <p className="svc-meta">
             {s.time}
@@ -87,7 +92,6 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           ))}
         </div>
         <p className="size-guide">
-          <Draft what="the sizes" />
           {sizeGuide.map(([size, what], i) => (
             <span key={size}>
               <strong>{size}</strong> {what}
@@ -164,7 +168,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           {others.map((o) => (
             <li key={o.slug}>
               <Link href={`/${o.slug}/`}>
-                {o.name} <span className="num">from {gbp(o.from)}</span>
+                {o.name} <span className="num">{fromText(o.from)}</span>
               </Link>
             </li>
           ))}

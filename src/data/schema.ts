@@ -33,7 +33,7 @@ export const businessLd = {
   ],
   makesOffer: services.map((s) => ({
     "@type": "Offer",
-    priceSpecification: { "@type": "PriceSpecification", minPrice: s.from, priceCurrency: "GBP" },
+    ...(s.from > 0 ? { priceSpecification: { "@type": "PriceSpecification", minPrice: s.from, priceCurrency: "GBP" } } : {}),
     itemOffered: { "@type": "Service", name: s.name, url: `${site.url}/${s.slug}/` },
   })),
 };
@@ -53,7 +53,10 @@ export function serviceLd(slug: string) {
     ...site.counties.map((n) => ({ "@type": "AdministrativeArea", name: n })),
     ...site.towns.map((n) => ({ "@type": "City", name: n })),
   ],
-    offers: { "@type": "Offer", priceCurrency: "GBP", price: s.from, priceSpecification: { "@type": "PriceSpecification", minPrice: s.from, priceCurrency: "GBP" } },
+    // Only state a price once Owen has set one (new services show "Ask Owen" until then)
+    ...(s.from > 0
+      ? { offers: { "@type": "Offer", priceCurrency: "GBP", price: s.from, priceSpecification: { "@type": "PriceSpecification", minPrice: s.from, priceCurrency: "GBP" } } }
+      : {}),
   };
 }
 

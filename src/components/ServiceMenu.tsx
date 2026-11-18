@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { services, categories, addOns, protectionAddOns, sizeGuide, gbp, type Service } from "@/data/services";
+import { services, categories, addOns, protectionAddOns, sizeGuide, gbp, type Service, fromText } from "@/data/services";
 import { bookUrl } from "@/data/site";
 import { Pic } from "@/components/Pic";
 
@@ -50,7 +50,7 @@ function Card({ s, js }: { s: Service; js: boolean }) {
             </span>
           ) : (
             <span className="mc-price">
-              from <strong className="num">{gbp(s.from)}</strong>
+              <strong className="num">{fromText(s.from)}</strong>
             </span>
           )}
         </p>

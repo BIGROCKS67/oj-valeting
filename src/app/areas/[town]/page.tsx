@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { areas, getArea } from "@/data/areas";
-import { services, gbp } from "@/data/services";
+import { services, gbp, fromText } from "@/data/services";
 import { site, tel, sms, bookHref } from "@/data/site";
 import { hoursList } from "@/data/hours";
 import { reviews } from "@/data/reviews";
@@ -70,7 +70,7 @@ export default async function TownPage({ params }: { params: Promise<{ town: str
       <ul className="book-prices" role="list">
         {services.map((s) => (
           <li key={s.slug}>
-            <Link href={`/${s.slug}/`}>{s.name}</Link> <span className="num">from {gbp(s.from)}</span>
+            <Link href={`/${s.slug}/`}>{s.name}</Link> <span className="num">{fromText(s.from)}</span>
           </li>
         ))}
       </ul>

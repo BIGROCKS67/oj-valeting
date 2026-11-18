@@ -23,14 +23,14 @@ export const sizeGuide: [Size, string][] = [
 // Add-ons, word for word from Owen's price list (17 Nov 2026). "+" means from.
 export const addOns: Record<string, string> = {
   "Engine bay clean": "£25+",
-  "Alloy ceramic coating, up to 2 years": "£80+",
+  "Alloy ceramic coating, 1 or 2 years": "£60+",
   "Exhaust polish": "£25+",
   "Exhaust tips polished and restored": "£30+",
   "Clay bar with full decontamination wash": "£50+",
   "Full decontamination wash": "£40+",
   "Mould removal": "£40+",
   "Soft top treatment": "£65+",
-  "Full window ceramic coating, 1 year": "£50+",
+  "Full window ceramic coating, 12 to 24 months": "£60+",
   "Wax sealant or paste wax": "£20+",
   "Ceramic spray": "£25+",
   "Pet hair removal (depends how bad)": "£25+",
@@ -139,6 +139,7 @@ export const services: Service[] = [
     searchName: "Car deep clean",
     from: 150,
     time: "3 to 5 hours",
+    note: "Price may change once Owen sees how dirty the car is.",
     jobHours: 5,
     owenSays: "Bring your vehicle back to looking brand new with the full deep clean package.",
     includes: [
@@ -176,14 +177,14 @@ export const services: Service[] = [
     prices: [
       { label: "Inside and out", prices: [["Small", "£150+"], ["Medium", "£165+"], ["Large", "£180+"], ["XL", "£200+"]] },
       { label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£160+"]] },
-      { label: "Outside only", prices: [["Small", "£35"], ["Medium", "£40"], ["Large", "£45"], ["XL", "£50"]] },
+      { label: "Outside only", prices: [["Small", "£40"], ["Medium", "£45"], ["Large", "£50"], ["XL", "£55"]] },
     ],
     photos: ["owen-steam-cleaning-door", "porsche-red-leather-interior", "land-rover-interior", "ford-interior"],
     goodFor: "a car that's about to be sold, a family or dog car, or one that hasn't had a proper clean in a long time.",
   },
   {
     slug: "paint-correction",
-    name: "Full paint correction",
+    name: "Stage 1 paint correction",
     category: "Paint correction",
     blurb: "Machine polished to take out swirls, light scratches and dullness.",
     squareId: "OUN7JPWB65ZLOR6BKFUDUTO2",
@@ -217,7 +218,6 @@ export const services: Service[] = [
       "Exhaust tips polished and restored",
       "Interior plastics polished",
       "Scratch removal (touch-up pen supplied)",
-      "Stage 2 and 3 correction",
     ],
     prices: [
       {
@@ -261,8 +261,8 @@ export const services: Service[] = [
     ],
     includesConfirmed: false,
     extras: [
-      "Full window ceramic coating, 1 year",
-      "Alloy ceramic coating, up to 2 years",
+      "Full window ceramic coating, 12 to 24 months",
+      "Alloy ceramic coating, 1 or 2 years",
       "Interior leather ceramic coating",
     ],
     // Owen, 17 Nov 2026: paint may need correcting first, at a discounted price.
@@ -381,6 +381,7 @@ export const services: Service[] = [
     searchName: "Car interior deep clean",
     from: 130,
     time: "About 2 hours",
+    note: "Price may change once Owen sees how dirty the car is.",
     jobHours: 2,
     includes: [
       {
@@ -412,7 +413,7 @@ export const services: Service[] = [
     category: "Exterior",
     blurb: "Full wash plus iron fallout and tar taken off the paint, then sealed.",
     searchName: "Car exterior deep clean",
-    from: 35,
+    from: 40,
     time: "1 to 2 hours",
     jobHours: 2,
     includes: [
@@ -429,18 +430,88 @@ export const services: Service[] = [
     ],
     includesConfirmed: false,
     extras: ["Clay bar with full decontamination wash", "Headlight restoration, the pair", "Exhaust tips polished and restored", "Ceramic spray"],
-    prices: [{ label: "Outside only", prices: [["Small", "£35"], ["Medium", "£40"], ["Large", "£45"], ["XL", "£50"]] }],
+    prices: [{ label: "Outside only", prices: [["Small", "£40"], ["Medium", "£45"], ["Large", "£50"], ["XL", "£55"]] }],
     photos: ["range-rover-satin", "porsche-wheel", "vw-golf-r-rear", "bmw-m4-rear"],
     goodFor: "paint that feels rough or looks dull, or a car getting ready for polishing or a coating.",
+  },
+
+  // Owen, voice note 18 Nov 20:02: stage 2 alongside stage 1 (no stage 3). Prices and times to come
+  // from Owen; until then every size says Ask Owen. "What's included" is a draft for him to confirm.
+  {
+    slug: "stage-2-paint-correction",
+    name: "Stage 2 paint correction",
+    category: "Paint correction",
+    blurb: "A two-stage machine polish for deeper swirls and scratches, then a finishing polish for the gloss.",
+    searchName: "Stage 2 paint correction",
+    from: 0,
+    time: "Owen will confirm the time",
+    jobHours: 8,
+    includes: [
+      {
+        group: "Preparation",
+        items: [
+          "Snow foam and two-bucket hand wash",
+          "Iron fallout and tar removed, then a clay bar to leave the paint smooth",
+          "Trim and rubbers masked off",
+        ],
+      },
+      {
+        group: "Correction",
+        items: [
+          "Cutting stage to take out deeper swirls and scratches",
+          "Finishing polish to bring the gloss back",
+          "Checked panel by panel under light",
+          "Protected with sealant afterwards",
+        ],
+      },
+    ],
+    includesConfirmed: false,
+    extras: ["Headlight restoration, the pair", "Exhaust tips polished and restored", "Interior plastics polished"],
+    prices: [{ label: "Stage 2 paint correction", note: "Clay bar included", prices: [["Small", "Ask Owen"], ["Medium", "Ask Owen"], ["Large", "Ask Owen"], ["XL", "Ask Owen"]] }],
+    photos: ["owen-porsche-boxster-polish", "garage-gloss-bonnet", "porsche-911", "ford-headlight"],
+    goodFor: "paint with heavier swirls and scratches that a single polish won't fully take out.",
+  },
+  // Owen, voice note 18 Nov 20:01: a new car protection detail, a single stage paint correction plus
+  // a 3 year ceramic coating. Prices and times to come from Owen.
+  {
+    slug: "new-car-protection",
+    name: "New car protection detail",
+    category: "Protection",
+    blurb: "For a new car: a single stage paint correction and a 3 year ceramic coating, so it stays like the day you got it.",
+    searchName: "New car protection detail",
+    from: 0,
+    time: "Owen will confirm the time",
+    jobHours: 8,
+    includes: [
+      {
+        group: "Preparation",
+        items: ["Snow foam and two-bucket hand wash", "Iron fallout and tar removed, then a clay bar"],
+      },
+      {
+        group: "Correction",
+        items: ["Single stage machine polish to take out any marks from the dealer or delivery"],
+      },
+      {
+        group: "Protection",
+        items: ["3 year ceramic coating on the paintwork"],
+      },
+    ],
+    includesConfirmed: false,
+    extras: ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"],
+    prices: [{ label: "New car protection detail", prices: [["Small", "Ask Owen"], ["Medium", "Ask Owen"], ["Large", "Ask Owen"], ["XL", "Ask Owen"]] }],
+    photos: ["owen-polo-sill", "owen-wheel-clean", "porsche-taycan-black", "bmw-m4"],
+    goodFor: "a new or nearly new car you want protected from day one.",
   },
 ];
 
 /** Menu order on the home page, and which add-ons sit in the Protection tab */
 export const categories: Category[] = ["Full valets", "Interior", "Exterior", "Paint correction", "Protection", "Plans"];
-export const protectionAddOns = ["Full window ceramic coating, 1 year", "Alloy ceramic coating, up to 2 years", "Interior leather ceramic coating", "Ceramic spray"];
+export const protectionAddOns = ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating", "Ceramic spray"];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
 export const gbp = (n: number) => `£${n}`;
+/** "from £X", or "Ask Owen" while Owen hasn't priced a service yet (from: 0) */
+export const fromText = (n: number) => (n > 0 ? `from £${n}` : "Ask Owen");
 
 // Keep every list (nav, footer, /book/, "Other services") in menu order: valets first, plans last.
 services.sort((a, b) => categories.indexOf(a.category) - categories.indexOf(b.category));

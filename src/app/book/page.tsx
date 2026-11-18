@@ -1,7 +1,7 @@
 import { PageHead } from "@/components/PageHead";
 import type { Metadata } from "next";
 import { site, tel, sms } from "@/data/site";
-import { services, gbp, addOns } from "@/data/services";
+import { services, gbp, addOns, fromText } from "@/data/services";
 import { hoursList, season } from "@/data/hours";
 
 export const metadata: Metadata = {
@@ -102,7 +102,7 @@ export default function Book() {
           <ul className="book-prices" role="list">
             {services.map((s) => (
               <li key={s.slug}>
-                <span>{s.name}</span> <span className="num">from {gbp(s.from)}</span>
+                <span>{s.name}</span> <span className="num">{fromText(s.from)}</span>
               </li>
             ))}
           </ul>

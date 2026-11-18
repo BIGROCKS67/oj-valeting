@@ -405,17 +405,15 @@ p {
   }
 }
 @media (min-width: 1024px) {
-  .hero-pic {
-    left: auto;
-    width: 60%;
-  }
+  /* Owen, 18 Nov: the photo right across the page. hero-w is the Taycan on the right with its own
+     tones stretched and blurred to the left edge, so the lettering sits over the car's shadow side. */
   .hero-pic img {
-    object-position: 50% 50%;
+    object-position: 100% 50%;
   }
   .hero::after {
     background:
-      linear-gradient(90deg, var(--livery) 40%, color-mix(in oklab, var(--livery) 85%, transparent) 52%, transparent 70%),
-      linear-gradient(0deg, var(--livery), transparent 25%);
+      linear-gradient(90deg, color-mix(in oklab, var(--livery) 88%, transparent) 0%, color-mix(in oklab, var(--livery) 55%, transparent) 38%, transparent 62%),
+      linear-gradient(0deg, var(--livery), transparent 22%);
   }
   .hero-in {
     padding: 120px 64px 96px;

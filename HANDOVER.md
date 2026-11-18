@@ -227,3 +227,13 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - 18 Nov: Reviews page now opens with a 5.0 summary (stars, See them on Google, Leave a review link to the g.page review form) and shows every review as a starred card in columns. Stars on the home page reviews too. Our Work is an editorial gallery (every ninth photo big, captions on the photos) and tapping a photo opens it full size with Prev/Next, swipe and arrow keys (WorkGallery.tsx).
 - 18 Nov 17:01-17:07 (Owen): paint correction £210 / £260 / £310 / £360; ceramic coating 5 year £330 / £380 / £430 / £480 (3 year still £30 less, 7 year £80 more, so ceramic now from £300). Updated on the service pages, price menu, guides and llms.txt. Change in Square too before booking reopens.
 - 18 Nov (Owen): clay bar wash and ozone treatment add-ons now show £50+ and £20+.
+- 18 Nov evening (Owen's 7 voice notes, transcribed locally):
+  - Deep exterior clean (and the outside-only row of Full deep clean): £40 / £45 / £50 / £55.
+  - Size guide Draft tag removed. "What's included" lists stay Draft until Owen confirms them.
+  - Paint correction: the existing one is now "Stage 1 paint correction" (same page, /paint-correction/); new "Stage 2 paint correction" (/stage-2-paint-correction/). No stage 3.
+  - Protection: new "New car protection detail" (/new-car-protection/): single stage paint correction plus a 3 year ceramic coating.
+  - Stage 2 and New car protection show "Ask Owen" for price and time until Owen sends them (from: 0 in services.ts; no price in the search data until then).
+  - "Price may change once Owen sees how dirty the car is" now on Deep interior and Full deep clean too.
+  - Add-ons: "Alloy ceramic coating, 1 or 2 years" £60+ and "Full window ceramic coating, 12 to 24 months" £60+.
+  - Hero photo now runs across the full width on desktop (hero-w: the Taycan on the right, its own tones blurred out to the left behind the lettering).
+  - NEED FROM OWEN: prices and times for Stage 2 and New car protection. Add both, and all of today's price changes, to Square before booking reopens.
