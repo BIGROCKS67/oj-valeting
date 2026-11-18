@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, bookHref } from "@/data/site";
 import { Pic } from "@/components/Pic";
-import { Draft } from "@/components/Draft";
 
-// Owen, call 18 Nov 2026: an About page with a photo of him by his van and a short "Hi, I'm Owen"
-// paragraph on his experience and how he started. He is sending both. Until then this uses facts he has
-// already given (sales call 16 Nov, WhatsApp 17 Nov) and his steam cleaning photo, with a Draft tag.
+// Owen's own words, sent on WhatsApp 18 Nov 2026 (15:36); spelling tidied only. Photo: his steam
+// cleaning shot until he sends one of him by his van.
 
 export const metadata: Metadata = {
   title: "About Owen | OJ Valeting",
@@ -23,22 +21,21 @@ export default function About() {
       </figure>
       <div className="about-text prose">
         <h1 id="about-h">Hi, I&rsquo;m Owen</h1>
+        <p className="about-tag">Just me and my business</p>
         <p>
-          <Draft what="this page" />
+          I started OJ Valeting just over a year ago and have cleaned over 450 different types of vehicles, and
+          counting.
         </p>
         <p>
-          I started OJ Valeting just over a year ago, and by last summer I was doing five or six cars a day. I&rsquo;ve
-          cleaned over 450 vehicles since, from city cars to Range Rovers, motorbikes, caravans and a Scania horsebox.
+          Honesty and quality are the heart of everything I do. I&rsquo;ll always give you genuine advice and recommend
+          only what your vehicle needs. My OCD and attention to detail is unmatched and you won&rsquo;t be disappointed.
         </p>
         <p>
-          I&rsquo;m based between Brackley and Buckingham and I come to you, at home or at work. You book me, and I&rsquo;m
-          the one who turns up and does the job. I bring a waterproof gazebo, so rain won&rsquo;t stop me. All I need is a
-          tap and a plug socket.
+          I travel nationwide to make sure you get the best results. I&rsquo;m fully insured, and 24 hour emergency
+          call-outs are welcome.
         </p>
-        <p>
-          I&rsquo;ll always tell you honestly what your car needs and quote for that, not just the most expensive package.
-          I&rsquo;m fully insured, and I do emergency call-outs too.
-        </p>
+        <p>I&rsquo;m super proud of how it&rsquo;s going and the support is much appreciated.</p>
+        <p>Look forward to meeting you.</p>
         <p className="about-cta">
           <a href={bookHref} className="btn btn-foam btn-big">
             Book a clean

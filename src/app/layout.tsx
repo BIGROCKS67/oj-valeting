@@ -119,11 +119,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="foot-in">
             <div className="foot-a">
               <img src={asset("/logo-mark.png")} width={434} height={368} alt="" className="foot-mark" loading="lazy" />
-              <p className="foot-name">OJ Valeting</p>
+              <p className="foot-name">OJ VALETING</p>
               <p>
                 Mobile valeting and detailing by Owen, at your home or place of work across{" "}
-                {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}. Fully insured. Emergency call-outs
-                too.
+                {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}, and nationwide. Fully insured. 24 hour
+                emergency call-outs too.
               </p>
               <p className="foot-base">Based in Buckingham, Buckinghamshire MK18</p>
             </div>

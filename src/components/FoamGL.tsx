@@ -7,8 +7,9 @@ import { asset } from "@/data/base";
 // Look 1, the full version: Owen's photo covered in snow foam, drawn by a shader.
 // - Foam: three sizes of bubble (cells with walls and a highlight each), slowly shifting, with
 //   the photo showing through, bent, where the foam is thin.
-// - Rinse: scrolling runs water down from the top with drips, taking the foam with it (one way
-//   only). With no scroll in 1.8 s it rinses itself. Paint behind the water looks wet, with droplets.
+// - Jet wash: it plays by itself. The foam sits for a moment, then a pressure washer sweeps back
+//   and forth down the car (a bright stream, mist and spray where it hits) and cuts the foam off.
+//   A quick rinse takes the last bits, with drips. Paint behind the water looks wet, with beads.
 // - Polish: one light sweep runs across the clean paint, then it stops drawing.
 // Calls onFail if WebGL isn't there, so the 2D foam can stand in.
 
@@ -30,6 +31,8 @@ uniform float uTime;
 uniform float uRinse;
 uniform float uSweep;
 uniform float uDpr;
+uniform vec2 uJet;
+uniform float uJetOn;
 
 vec2 hash2(vec2 p) {
   p = vec2(dot(p, vec2(127.1, 311.7)), dot(p, vec2(269.5, 183.3)));
@@ -160,6 +163,22 @@ void main() {
   float cover_ = smoothstep(0.08, 0.55, m);
   vec3 outc = mix(paint, foam, cover_);
 
+  // The jet: a thin bright stream from the lance (off the top right), a burst of mist where it
+  // hits, and spray flicking off around it
+  vec2 asp = vec2(uRes.x / uRes.y, 1.0);
+  vec2 here = vec2(vUv.x, 1.0 - vUv.y) * asp;
+  vec2 hit = uJet * asp;
+  vec2 src = hit + vec2(0.55, -0.9);
+  vec2 sd = here - src, sv = hit - src;
+  float along = clamp(dot(sd, sv) / dot(sv, sv), 0.0, 1.0);
+  float ds = length(sd - sv * along);
+  float stream = exp(-ds * ds * 60000.0) * 0.65 + exp(-ds * ds * 3000.0) * 0.12;
+  float dh = length(here - hit);
+  float mist = exp(-dh * dh * 70.0) * 0.38 + exp(-dh * dh * 900.0) * 0.4;
+  vec2 sc = floor(px / (4.0 * uDpr));
+  float spark = step(0.94, hash2(sc + floor(uTime * 40.0)).x) * smoothstep(0.16, 0.02, dh);
+  outc += (stream + mist + spark * 0.7) * uJetOn;
+
   // Polish: one band of light across the paint
   vec2 dir = normalize(vec2(1.0, 0.42));
   float s = dot(vec2(vUv.x * uRes.x / uRes.y, vUv.y), dir) - (uSweep * 2.6 - 0.8);
@@ -207,7 +226,7 @@ export function FoamGL({ onFail }: { onFail: () => void }) {
     const U = (n: string) => gl.getUniformLocation(prog, n);
     const u = {
       img: U("uImg"), mask: U("uMask"), res: U("uRes"), imgRes: U("uImgRes"), focus: U("uFocus"),
-      time: U("uTime"), rinse: U("uRinse"), sweep: U("uSweep"), dpr: U("uDpr"),
+      time: U("uTime"), rinse: U("uRinse"), sweep: U("uSweep"), dpr: U("uDpr"), jet: U("uJet"), jetOn: U("uJetOn"),
     };
 
     const tex = (unit: number) => {
@@ -234,7 +253,7 @@ export function FoamGL({ onFail }: { onFail: () => void }) {
     let maskReady = false;
     const wide = () => window.innerWidth >= 700;
     const phone = !wide();
-    const dpr = Math.min(window.devicePixelRatio || 1, phone ? 1 : 1.5);
+    const dpr = Math.min(window.devicePixelRatio || 1, phone ? 1.25 : 1.5);
 
     const size = () => {
       w = hero.clientWidth;
@@ -267,52 +286,95 @@ export function FoamGL({ onFail }: { onFail: () => void }) {
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, 1, 1, 0, gl.RGB, gl.UNSIGNED_BYTE, new Uint8Array([28, 31, 36]));
     gl.uniform2f(u.imgRes, 1, 1);
     cv.classList.add("is-on");
-    let auto = 0;
+    let start = 0; // when the photo is in: the show runs from here
     img.onload = () => {
       gl.activeTexture(gl.TEXTURE0);
       gl.bindTexture(gl.TEXTURE_2D, imgTex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, img);
       gl.uniform2f(u.imgRes, img.naturalWidth, img.naturalHeight);
-      auto = window.setTimeout(() => {
-        if (target < 0.05) autoFrom = performance.now();
-      }, 1800);
+      start = stepped ? t0 + n * 16.7 : performance.now();
     };
 
-    // Nobody has to do anything (Jack, 18 Nov: attention spans). Scrolling rinses the foam down
-    // the car, one way only. If they don't scroll within 1.8 s it rinses itself.
-    let target = 0; // where the rinse should be, 0 to 1
-    let rinse = 0; // where it is, easing towards target
-    let autoFrom = 0; // when the automatic rinse started
-    let doneAt = 0; // when the rinse finished: the polish runs from here
-    const onScroll = () => {
-      const p = Math.min(window.scrollY / (window.innerHeight * 0.35), 1);
-      if (p > target) target = p;
+    // It plays by itself (Jack, 18 Nov): foam sits for a moment, a jet wash sweeps back and forth
+    // down the car and blasts it off, a last rinse takes the bits, then the polish. ~5 s in all.
+    const HOLD = 700;
+    const JET = phone ? 2900 : 2600;
+    const PASSES = phone ? 6.5 : 4.5;
+    const RINSE = 650;
+    const SWEEP = 1200;
+    let lastT = -1;
+    const jetAt = (t: number): [number, number] => [0.5 - 0.62 * Math.cos(t * Math.PI * PASSES), -0.06 + t * 1.14];
+    const blast = (x: number, y: number, chunks = false) => {
+      // x, y in 0..1; the fan is taller than it is wide so the passes overlap
+      const mw = mask.width;
+      const mh = mask.height;
+      const rx = mh * (phone ? 0.09 : 0.11);
+      const ry = mh * (phone ? 0.12 : 0.17);
+      mx.save();
+      mx.translate(x * mw, y * mh);
+      mx.scale(rx / ry, 1);
+      const g = mx.createRadialGradient(0, 0, ry * 0.35, 0, 0, ry);
+      g.addColorStop(0, "rgba(0,0,0,1)");
+      g.addColorStop(1, "rgba(0,0,0,0)");
+      mx.fillStyle = g;
+      mx.beginPath();
+      mx.arc(0, 0, ry, 0, Math.PI * 2);
+      mx.fill();
+      mx.restore();
+      // Chunks knocked off around the edge, so the cut isn't a clean line
+      if (!chunks) return;
+      mx.fillStyle = "rgba(0,0,0,0.55)";
+      for (let i = 0; i < 2; i++) {
+        const a = Math.random() * Math.PI * 2;
+        const r = ry * (0.8 + Math.random() * 0.7);
+        mx.beginPath();
+        mx.arc(x * mw + Math.cos(a) * r * (rx / ry), y * mh + Math.sin(a) * r * 0.8, 0.5 + Math.random() * 1.6, 0, Math.PI * 2);
+        mx.fill();
+      }
     };
 
     size();
     const ro = new ResizeObserver(size);
     ro.observe(hero);
-    window.addEventListener("scroll", onScroll, { passive: true });
 
     let raf = 0;
     let visible = true;
     const io = new IntersectionObserver(([e]) => (visible = e.isIntersecting));
     io.observe(hero);
     const t0 = performance.now();
-    const frame = (now: number) => {
+    const stepped = new URLSearchParams(location.search).has("frames");
+    let n = 0;
+    const frame = (real: number) => {
       raf = requestAnimationFrame(frame);
+      const now = stepped ? t0 + n++ * 16.7 : real;
       if (!ready || !visible) return;
+      const e = start ? now - start : 0;
+      // Jet
+      const jt = Math.min(Math.max((e - HOLD) / JET, 0), 1);
+      const jetOn = start && e > HOLD && jt < 1 ? 1 : 0;
+      if (jetOn) {
+        // Follow the real zig-zag between frames, so a slow phone still gets clean passes
+        const from = lastT < 0 ? jt : lastT;
+        const steps = Math.max(1, Math.ceil((jt - from) * 900));
+        for (let i = 1; i <= steps; i++) {
+          const [bx, by] = jetAt(from + ((jt - from) * i) / steps);
+          blast(bx, by, i === steps);
+        }
+        lastT = jt;
+        dirty = true;
+        const [x, y] = jetAt(jt);
+        gl.uniform2f(u.jet, Math.min(Math.max(x, -0.05), 1.05), y);
+      }
+      gl.uniform1f(u.jetOn, jetOn);
       if (dirty) {
         gl.activeTexture(gl.TEXTURE1);
         gl.bindTexture(gl.TEXTURE_2D, maskTex);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, mask);
         dirty = false;
       }
-      if (autoFrom) target = Math.max(target, Math.min((now - autoFrom) / 1600, 1));
-      rinse += (target - rinse) * 0.12;
-      if (target >= 1 && rinse > 0.995) rinse = 1;
-      if (rinse >= 1 && !doneAt) doneAt = now;
-      const sweep = doneAt ? Math.min((now - doneAt) / 1200, 1) : 0;
+      // Last rinse for the bits the jet missed, then the polish
+      const rinse = Math.min(Math.max((e - HOLD - JET) / RINSE, 0), 1);
+      const sweep = Math.min(Math.max((e - HOLD - JET - RINSE) / SWEEP, 0), 1);
       gl.uniform1f(u.time, (now - t0) / 1000);
       gl.uniform1f(u.rinse, rinse);
       gl.uniform1f(u.sweep, sweep);
@@ -323,10 +385,8 @@ export function FoamGL({ onFail }: { onFail: () => void }) {
 
     return () => {
       cancelAnimationFrame(raf);
-      clearTimeout(auto);
       ro.disconnect();
       io.disconnect();
-      window.removeEventListener("scroll", onScroll);
     };
   }, [onFail]);
 

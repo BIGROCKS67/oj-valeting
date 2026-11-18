@@ -1815,3 +1815,9 @@ textarea {
     max-width: 9ch;
   }
 }
+.about-tag {
+  font-weight: 700;
+  font-size: var(--step-1);
+  color: var(--foam-ink);
+  margin-top: -0.5rem;
+}
