@@ -171,5 +171,5 @@ Owen's changes:
 - Times: basic interior and basic exterior "45 minutes to 1 hour" (Square 1 hr), deep exterior "1 to 2 hours" (Square 2 hr). Deep interior stays 2 hours.
 - New lines in site.ts: `needs` (tap and plug socket, waterproof gazebo) and `honest` (honest quote, not just the most expensive package). Shown on home, book page (FAQ "What do you need from me?"), every service page, llms.txt. Removed "van, water and kit" claims (Owen needs the customer's tap).
 - Basic package and basic interior: "Price may change once Owen sees how dirty the car is." (also on the price menu cards).
-- Square: basic interior, basic exterior and deep exterior descriptions now carry the time, tap/plug, gazebo and Apple Pay. The other six Square services still say the old payment line and have no tap/plug line: TODO with the Apple Pay pass.
+- Square: all 9 service descriptions now carry the time, tap/plug, gazebo, honest quote and Apple Pay (18 Nov 2026). Apple Pay still to add to the 5 Google product cards.
 - Ceramic coating: Owen will use the same photo, no AI images. "Change the others as mentioned" still needs his list.
