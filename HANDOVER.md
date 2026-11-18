@@ -187,7 +187,7 @@ Owen sent 40 job photos on WhatsApp (14:03 to 14:10) and rang Jack (14:19, 16 mi
 Done:
 - Basic package card photo is now the white BMW M4 in foam (owen-39), Maintenance package is the Defender covered in snow foam (owen-38). All other package photos unchanged, as Owen said.
 - All 40 photos added to Our Work, newest first, each captioned with the car. Captions are our read of each car: Owen said he'll correct any once they're up. Least sure: owen-08 (Range Rover Sport alloy), owen-28 (Porsche Taycan), owen-30 (Range Rover Sport), owen-16 (BMW X5 interior), owen-40 (VW Transporter, a customer's, not his van). The home page row now shows the first 16 new ones.
-- Bonnet photo caption: "Paint correction on a bonnet". Owen has a better bonnet photo to send.
+- Bonnet photo caption: "Bonnet paint correction" (Owen, 18 Nov: keep the same photo).
 - Price tabs: "Polishing" renamed "Paint correction".
 - New add-on: Plastic restoration £30+ (18 add-ons, even columns). Not in Square yet; add it there when booking reopens.
 - Size guide: Large now names a Range Rover and Mercedes GLC. Owen will re-quote on the day if someone books the wrong size; no reg field.

@@ -36,7 +36,7 @@ export const captions: Record<string, string> = {
   "scania-horsebox": "Scania horsebox",
   tesla: "Tesla",
   "mitsubishi-evo-trailer": "Mitsubishi Lancer Evo, on its trailer",
-  "garage-gloss-bonnet": "Paint correction on a bonnet",
+  "garage-gloss-bonnet": "Bonnet paint correction",
   "porsche-taycan": "Porsche Taycan",
   "range-rover-sport": "Range Rover Sport",
   "land-rover-defender-90": "Land Rover Defender 90",
