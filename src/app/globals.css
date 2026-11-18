@@ -2515,3 +2515,152 @@ textarea {
     font-size: 16px;
   }
 }
+
+
+/* Phone menu: full-screen overlay (18 Nov 2026) */
+.nav-menu summary {
+  position: relative;
+  z-index: 62;
+}
+.nm-close {
+  display: none;
+}
+.nav-menu[open] .nm-open {
+  display: none;
+}
+.nav-menu[open] .nm-close {
+  display: inline;
+}
+.nav-menu[open] summary {
+  background: transparent;
+  color: var(--paper);
+  border-color: var(--paper);
+}
+.nm-panel {
+  display: none;
+}
+.nav-menu[open] .nm-panel {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  z-index: 61;
+  background: var(--livery);
+  padding: 96px var(--gut) calc(24px + env(safe-area-inset-bottom));
+  overflow-y: auto;
+  animation: fade-up 0.25s ease-out both;
+}
+:root:has(.nav-menu[open]) {
+  overflow: hidden;
+}
+.nm-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: static !important;
+  background: none !important;
+  border: 0 !important;
+}
+.nm-list > li > a,
+.nm-sub > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border: 0;
+  color: var(--paper);
+  font-size: 32px;
+  font-weight: 600;
+  font-stretch: 108%;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  text-decoration: none;
+  cursor: pointer;
+  list-style: none;
+}
+.nm-sub > summary::-webkit-details-marker {
+  display: none;
+}
+.nm-sub > summary::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  rotate: 45deg;
+  translate: 0 -4px;
+  transition: rotate 0.2s ease-out, translate 0.2s ease-out;
+}
+.nm-sub[open] > summary::after {
+  rotate: 225deg;
+  translate: 0 4px;
+}
+.nm-sub[open] > summary {
+  color: var(--foam-lite);
+}
+.nm-sub ul {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 4px 0 8px 2px;
+  position: static !important;
+  background: none !important;
+  border: 0 !important;
+}
+.nm-sub li a {
+  display: block;
+  padding: 9px 0;
+  border: 0;
+  color: color-mix(in oklab, var(--paper) 78%, transparent);
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.nm-list a:active,
+.nm-sub li a:active {
+  color: var(--foam-lite);
+}
+.nm-foot {
+  display: grid;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 28px;
+}
+.nm-foot .btn {
+  width: 100%;
+}
+.nav-menu .nm-list {
+  padding: 0;
+}
+:root:has(.nav-menu[open]) .action-bar {
+  display: none;
+}
+:root:has(.nav-menu[open]) .brand {
+  position: relative;
+  z-index: 62;
+}
+.site-head .nav-menu[open] > summary,
+.site-head .nm-sub > summary,
+.site-head .nm-sub[open] > summary {
+  background: transparent !important;
+}
+.site-head .nav-menu[open] > summary {
+  color: var(--paper) !important;
+  border-color: var(--paper) !important;
+}
+.site-head .nm-sub > summary {
+  border: 0 !important;
+  color: var(--paper) !important;
+  padding-inline: 0 !important;
+  min-height: 0;
+}
+.site-head .nm-sub[open] > summary {
+  color: var(--foam-lite) !important;
+}
+.nav .nm-foot .btn-line-dark {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+.nav .nm-foot .btn-foam {
+  color: var(--livery);
+}

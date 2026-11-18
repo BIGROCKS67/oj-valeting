@@ -238,3 +238,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
   - Hero photo now runs across the full width on desktop (hero-w: the Taycan on the right, its own tones blurred out to the left behind the lettering).
   - NEED FROM OWEN: prices and times for Stage 2 and New car protection. Add both, and all of today's price changes, to Square before booking reopens.
 - 18 Nov night: hero photo given a cinematic grade (edges and gravel darkened so the car and red caliper are spotlit, top-right clutter in shadow), same on the phone crop; hero type scales up on screens 1500px and wider; hero text and the stats band now line up with the header logo.
+- 18 Nov night (Owen): phone menu is now a full-screen black overlay with big links (Home, Services, Our work, Reviews, About, Areas covered, Contact). Services opens with an arrow to list every service. Book a clean and Call buttons at the bottom, Close top right. No JS needed.

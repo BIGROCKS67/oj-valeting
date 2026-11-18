@@ -67,33 +67,58 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <img className="logo-light" src={asset("/logo-light.webp")} width={360} height={168} alt="" aria-hidden="true" />
             </Link>
             <nav aria-label="Main" className="nav">
+              {/* Phone menu: full-screen livery black with big links; Services opens to show each one
+                  (Owen, 18 Nov: like Elite Kleanz rather than a long list). No JS needed to open or close. */}
               <details className="nav-menu">
-                <summary>Menu</summary>
-                <ul>
-                  <li>
-                    <Link href="/#prices">Services</Link>
-                  </li>
-                  {services.map((s) => (
-                    <li key={s.slug} className="nav-svc">
-                      <Link href={`/${s.slug}/`}>{s.name}</Link>
+                <summary>
+                  <span className="nm-open">Menu</span>
+                  <span className="nm-close">Close</span>
+                </summary>
+                <div className="nm-panel">
+                  <ul className="nm-list">
+                    <li>
+                      <Link href="/">Home</Link>
                     </li>
-                  ))}
-                  <li>
-                    <Link href="/work/">Our work</Link>
-                  </li>
-                  <li>
-                    <Link href="/reviews/">Reviews</Link>
-                  </li>
-                  <li>
-                    <Link href="/about/">About</Link>
-                  </li>
-                  <li>
-                    <Link href="/areas/">Areas covered</Link>
-                  </li>
-                  <li>
-                    <Link href="/contact/">Contact</Link>
-                  </li>
-                </ul>
+                    <li>
+                      <details className="nm-sub">
+                        <summary>Services</summary>
+                        <ul>
+                          <li>
+                            <Link href="/#prices">All services and prices</Link>
+                          </li>
+                          {services.map((s) => (
+                            <li key={s.slug}>
+                              <Link href={`/${s.slug}/`}>{s.name}</Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    </li>
+                    <li>
+                      <Link href="/work/">Our work</Link>
+                    </li>
+                    <li>
+                      <Link href="/reviews/">Reviews</Link>
+                    </li>
+                    <li>
+                      <Link href="/about/">About</Link>
+                    </li>
+                    <li>
+                      <Link href="/areas/">Areas covered</Link>
+                    </li>
+                    <li>
+                      <Link href="/contact/">Contact</Link>
+                    </li>
+                  </ul>
+                  <div className="nm-foot">
+                    <a href={bookHref} className="btn btn-foam btn-big">
+                      Book a clean
+                    </a>
+                    <a href={tel} className="btn btn-line-dark btn-big">
+                      Call <span className="num">{site.phone}</span>
+                    </a>
+                  </div>
+                </div>
               </details>
               <ul className="nav-wide">
                 <li>
