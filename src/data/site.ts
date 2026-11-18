@@ -33,7 +33,7 @@ export const site = {
   // crops of Owen's Taycan (owen-28). Swap for a video loop if Owen films one.
   bookingApp: "https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services",
   // Google Business Profile, as shown on Maps 17 Nov 2026. Update the count as reviews come in.
-  google: { rating: "5.0", count: 13, url: "https://maps.google.com/?cid=380385847269804503" },
+  google: { rating: "5.0", count: 13, url: "https://maps.google.com/?cid=380385847269804503", review: "https://g.page/r/CddJGqjpZkcFEBM/review" },
 };
 
 /** Book straight into one service in Square, or the full list if it isn't there yet */

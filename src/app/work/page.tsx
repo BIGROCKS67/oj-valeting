@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { wall, captions } from "@/data/photos";
 import { site, bookHref } from "@/data/site";
-import { Pic } from "@/components/Pic";
+import { WorkGallery } from "@/components/WorkGallery";
 import { PageHead } from "@/components/PageHead";
 
 export const metadata: Metadata = {
@@ -24,16 +24,9 @@ export default function Work() {
           <a href={site.instagram}>Instagram {site.instagramHandle}</a> and <a href={site.facebook}>Facebook</a>.
         </p>
       </PageHead>
-      <ul className="wrap work-grid" role="list">
-        {all.map((id) => (
-          <li key={id}>
-            <figure>
-              <Pic id={id} sizes="(min-width: 1100px) 25vw, (min-width: 600px) 33vw, 50vw" />
-              <figcaption>{captions[id]}</figcaption>
-            </figure>
-          </li>
-        ))}
-      </ul>
+      <section className="wrap page-body">
+        <WorkGallery items={all.map((id) => ({ id, caption: captions[id] }))} />
+      </section>
       <p className="wrap center-cta">
         <a href={bookHref} className="btn btn-foam btn-big">
           Book a clean
