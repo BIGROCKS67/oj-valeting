@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { wall, captions } from "@/data/photos";
 import { site, bookHref } from "@/data/site";
 import { Pic } from "@/components/Pic";
+import { PageHead } from "@/components/PageHead";
 
 export const metadata: Metadata = {
   title: "Valeting work: cars, vans, horseboxes | OJ Valeting",
@@ -16,14 +17,13 @@ export default function Work() {
   const all = [...wall, ...extra];
   return (
     <>
-      <section className="wrap page-head" aria-labelledby="work-h">
-        <h1 id="work-h">Our work</h1>
+      <PageHead id="work-h" eyebrow="450+ vehicles cleaned" title="Our work">
+        {/* Owen, 17 Nov 2026: over 450 vehicles cleaned. */}
         <p>
-          {/* Owen, 17 Nov 2026: over 450 vehicles cleaned. */}
-          Over 450 vehicles cleaned, every one on the owner&rsquo;s drive or yard. New ones go up on{" "}
+          Every one cleaned on the owner&rsquo;s own drive or yard. New ones go up on{" "}
           <a href={site.instagram}>Instagram {site.instagramHandle}</a> and <a href={site.facebook}>Facebook</a>.
         </p>
-      </section>
+      </PageHead>
       <ul className="wrap work-grid" role="list">
         {all.map((id) => (
           <li key={id}>

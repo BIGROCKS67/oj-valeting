@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHead } from "@/components/PageHead";
 import { areas } from "@/data/areas";
 import { site, bookHref } from "@/data/site";
 
@@ -12,12 +13,14 @@ export const metadata: Metadata = {
 
 export default function Areas() {
   return (
-    <section className="wrap page-head" aria-labelledby="areas-h">
-      <h1 id="areas-h">Areas Owen covers</h1>
-      <p>
-        Owen is based between Brackley and Buckingham and comes to your home or work. He covers{" "}
-        {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}. {site.fuelNote}
-      </p>
+    <>
+      <PageHead id="areas-h" eyebrow="Mobile valeting, UK nationwide" title="Areas Owen covers">
+        <p>
+          Owen is based between Brackley and Buckingham and comes to your home or work. He covers{" "}
+          {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}. {site.fuelNote}
+        </p>
+      </PageHead>
+      <section className="wrap page-body">
       <ul className="area-list" role="list">
         {areas.map((a) => (
           <li key={a.slug}>
@@ -36,6 +39,7 @@ export default function Areas() {
           Book a clean
         </a>
       </p>
-    </section>
+      </section>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import { site, tel, sms, bookHref } from "@/data/site";
 import { hoursList } from "@/data/hours";
 import Link from "next/link";
 import { Draft } from "@/components/Draft";
+import { PageHead } from "@/components/PageHead";
 
 // Owen, 18 Nov 2026: a Contact button at the end of the top menu instead of the number and Book.
 
@@ -14,13 +15,15 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <section className="wrap contact" aria-labelledby="contact-h">
+    <>
+    <PageHead id="contact-h" eyebrow={`Call or text ${site.phone}`} title="Contact Owen">
+      <p>
+        Call or text and Owen will get back to you. Tell him the car and roughly what you&rsquo;re after, and he&rsquo;ll
+        give you an honest quote.
+      </p>
+    </PageHead>
+    <section className="wrap contact">
       <div className="contact-text">
-        <h1 id="contact-h">Contact Owen</h1>
-        <p className="contact-lead">
-          Call or text and Owen will get back to you. Tell him the car and roughly what you&rsquo;re after, and he&rsquo;ll
-          give you an honest quote.
-        </p>
         {/* Owen, 18 Nov: terms on this page, above the contact details, not a page of their own.
             Facts the site already states; Owen is writing his own wording. */}
         <section id="terms" className="contact-terms" aria-labelledby="terms-h">
@@ -93,5 +96,6 @@ export default function Contact() {
         </p>
       </div>
     </section>
+    </>
   );
 }

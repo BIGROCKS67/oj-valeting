@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PageHead } from "@/components/PageHead";
 import { guides } from "@/data/guides";
 
 export const metadata: Metadata = {
@@ -10,9 +11,11 @@ export const metadata: Metadata = {
 
 export default function Guides() {
   return (
-    <section className="wrap page-head" aria-labelledby="guides-h">
-      <h1 id="guides-h">Guides</h1>
-      <p>Straight answers to the questions Owen gets asked most.</p>
+    <>
+      <PageHead id="guides-h" eyebrow="Prices and advice" title="Guides">
+        <p>Straight answers to the questions Owen gets asked most.</p>
+      </PageHead>
+      <section className="wrap page-body">
       <ul className="area-list" role="list">
         {guides.map((g) => (
           <li key={g.slug}>
@@ -21,6 +24,7 @@ export default function Guides() {
           </li>
         ))}
       </ul>
-    </section>
+      </section>
+    </>
   );
 }

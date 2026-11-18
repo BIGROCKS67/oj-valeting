@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, bookHref } from "@/data/site";
 import { Pic } from "@/components/Pic";
+import { PageHead } from "@/components/PageHead";
 
 // Owen's own words, sent on WhatsApp 18 Nov 2026 (15:36); spelling tidied only. Photo: his steam
 // cleaning shot until he sends one of him by his van.
@@ -15,13 +16,13 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <section className="wrap about" aria-labelledby="about-h">
+    <>
+    <PageHead id="about-h" eyebrow="Just me and my business" title={<>Hi, I&rsquo;m Owen</>} />
+    <section className="wrap about">
       <figure className="about-photo">
         <Pic id="owen-steam-cleaning-door" priority sizes="(min-width: 900px) 40vw, 100vw" alt="Owen in his OJ Valeting T-shirt, steam cleaning the inside of a car door" />
       </figure>
       <div className="about-text prose">
-        <h1 id="about-h">Hi, I&rsquo;m Owen</h1>
-        <p className="about-tag">Just me and my business</p>
         <p>
           I started OJ Valeting just over a year ago and have cleaned over 450 different types of vehicles, and
           counting.
@@ -44,5 +45,6 @@ export default function About() {
         </p>
       </div>
     </section>
+    </>
   );
 }

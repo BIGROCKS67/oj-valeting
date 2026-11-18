@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { site } from "@/data/site";
+import { PageHead } from "@/components/PageHead";
 
 export const metadata: Metadata = {
   title: "Privacy | OJ Valeting",
@@ -9,8 +10,9 @@ export const metadata: Metadata = {
 
 export default function Privacy() {
   return (
-    <section className="wrap prose" aria-labelledby="pv-h">
-      <h1 id="pv-h">Privacy</h1>
+    <>
+    <PageHead id="pv-h" title="Privacy" />
+    <section className="wrap prose">
       <p>OJ Valeting is run by Owen, who is responsible for the details you send through this site.</p>
       <h2>What happens to your details</h2>
       <p>
@@ -32,5 +34,6 @@ export default function Privacy() {
         unhappy with the answer you can complain to the Information Commissioner&rsquo;s Office at ico.org.uk.
       </p>
     </section>
+    </>
   );
 }

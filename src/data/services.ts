@@ -1,3 +1,4 @@
+// Owen, WhatsApp 18 Nov 16:52: deep interior XL £160+, basic interior XL £50+ (inside-only rows match).
 // Names, times and Owen's one-line descriptions are from his old services page
 // (ojvaleting.org/my-services, 16 Nov 2026). Prices by size and add-on prices are from the
 // price list he sent on 17 Nov 2026. The "What's included"
@@ -122,7 +123,7 @@ export const services: Service[] = [
     ],
     prices: [
       { label: "Inside and out", prices: [["Small", "£45+"], ["Medium", "£55+"], ["Large", "£65+"], ["XL", "£75+"]] },
-      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
+      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£50+"]] },
       { label: "Outside only", prices: [["Small", "£25"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
     ],
     photos: ["bmw-m4-wash", "owen-porsche-boxster-wash", "vw-golf-r", "porsche-cayenne"],
@@ -173,7 +174,7 @@ export const services: Service[] = [
     ],
     prices: [
       { label: "Inside and out", prices: [["Small", "£150+"], ["Medium", "£165+"], ["Large", "£180+"], ["XL", "£200+"]] },
-      { label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£155+"]] },
+      { label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£160+"]] },
       { label: "Outside only", prices: [["Small", "£35"], ["Medium", "£40"], ["Large", "£45"], ["XL", "£50"]] },
     ],
     photos: ["owen-steam-cleaning-door", "porsche-red-leather-interior", "land-rover-interior", "ford-interior"],
@@ -337,7 +338,7 @@ export const services: Service[] = [
       "Interior plastics polished",
     ],
     prices: [
-      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
+      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£50+"]] },
     ],
     photos: ["discovery-interior", "ford-interior", "boot-cleaned", "land-rover-interior"],
     goodFor: "a car that looks fine outside but needs the inside sorting: school runs, work vans, dog hair.",
@@ -399,7 +400,7 @@ export const services: Service[] = [
       "Mould removal",
       "Interior plastics polished",
     ],
-    prices: [{ label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£155+"]] }],
+    prices: [{ label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£160+"]] }],
     photos: ["owen-steam-cleaning-door", "porsche-red-leather-interior", "land-rover-interior", "discovery-interior"],
     goodFor: "family and dog cars, smells, spills, mould, or a car you've just bought second hand.",
   },

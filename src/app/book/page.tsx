@@ -1,3 +1,4 @@
+import { PageHead } from "@/components/PageHead";
 import type { Metadata } from "next";
 import { site, tel, sms } from "@/data/site";
 import { services, gbp, addOns } from "@/data/services";
@@ -57,10 +58,11 @@ const faqLd = {
 };
 export default function Book() {
   return (
-    <section className="wrap book-page" aria-labelledby="book-h">
+    <>
+    <PageHead id="book-h" eyebrow={`${site.google.rating} on Google · fully insured`} title="Book a clean" />
+    <section className="wrap book-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <div className="book-intro">
-        <h1 id="book-h">Book a clean</h1>
         {site.bookingOpen ? (
           <>
             <p>
@@ -148,5 +150,6 @@ export default function Book() {
         ))}
       </div>
     </section>
+    </>
   );
 }

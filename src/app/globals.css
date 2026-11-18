@@ -880,11 +880,37 @@ figcaption {
 /* Service pages */
 .svc-hero {
   display: grid;
-  max-width: calc(var(--max) + 2 * var(--gut));
-  margin-inline: auto;
+  background: var(--livery);
+  color: var(--paper);
+}
+.svc-hero h1 {
+  color: var(--paper);
+  font-weight: 600;
+  font-stretch: 108%;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.svc-hero .crumb,
+.svc-hero .crumb a {
+  color: color-mix(in oklab, var(--paper) 70%, transparent);
+}
+.svc-hero .svc-meta {
+  color: var(--paper);
+}
+.svc-hero p {
+  color: color-mix(in oklab, var(--paper) 82%, transparent);
+}
+.svc-hero .btn-line {
+  border-color: var(--paper);
+  color: var(--paper);
+}
+.svc-hero .btn-line:hover {
+  background: var(--paper);
+  color: var(--livery);
 }
 .svc-hero-text {
-  padding: clamp(1.25rem, 4vw, 3.5rem) var(--gut) 1.5rem;
+  padding: clamp(1.75rem, 4vw, 4rem) var(--gut) 2rem max(var(--gut), calc((100vw - var(--max)) / 2 + var(--gut)));
+  align-self: center;
 }
 .crumb {
   font-size: var(--step--1);
@@ -1894,4 +1920,358 @@ textarea {
 .contact-terms p {
   margin: 0.25rem 0 0;
   max-width: 62ch;
+}
+
+
+/* ===== Slick pass, 18 Nov 2026 (Jack: "a whole re-lick") ===== */
+
+/* Header: livery black on every page, so the site reads as one piece; the home page floats it over the photo */
+.site-head {
+  background: var(--livery);
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+.logo-dark {
+  display: none;
+}
+.logo-light {
+  display: block;
+}
+.nav-wide a {
+  color: color-mix(in oklab, var(--paper) 78%, transparent);
+  font-weight: 500;
+}
+.nav-wide a:hover {
+  color: var(--paper);
+  text-decoration: none;
+}
+.nav-menu summary {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+.nav-menu[open] summary {
+  background: var(--paper);
+  color: var(--livery);
+}
+.btn-dark {
+  background: var(--livery);
+  color: var(--paper);
+}
+.btn-dark:hover {
+  background: var(--foam);
+  color: var(--livery);
+}
+
+/* Title band that every inner page opens with, same type as the home hero */
+.page-band {
+  background: var(--livery);
+  color: var(--paper);
+  padding-block: clamp(2.5rem, 7vw, 6rem) clamp(2rem, 5vw, 4rem);
+}
+.page-band h1 {
+  margin: 0;
+  color: var(--paper);
+  font-size: clamp(40px, 5.2vw, 76px);
+  font-weight: 600;
+  font-stretch: 108%;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+}
+.page-eyebrow {
+  margin: 0 0 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--paper) 72%, transparent);
+}
+.page-eyebrow.dark {
+  color: var(--ink-soft);
+}
+.page-intro {
+  margin-top: 1.25rem;
+  max-width: 56ch;
+  font-size: 18px;
+  line-height: 1.5;
+  color: color-mix(in oklab, var(--paper) 80%, transparent);
+}
+.page-intro p {
+  margin: 0;
+}
+.page-intro a {
+  color: var(--foam-lite);
+}
+.page-body {
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+.motion .page-band-in > * {
+  animation: fade-up 0.45s ease-out both;
+}
+.motion .page-band-in > :nth-child(2) { animation-delay: 60ms; }
+.motion .page-band-in > :nth-child(3) { animation-delay: 120ms; }
+
+/* Services: a clean grid with no lone card on the last row (3 by 3 on desktop) */
+@media (min-width: 640px) {
+  .menu-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .menu-cards > li:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+@media (min-width: 1000px) {
+  .menu-cards {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .menu-cards > li:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+  .menu-cards > li:last-child:nth-child(3n + 1) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Driveway mosaic */
+.drives {
+  padding-block: clamp(3rem, 8vw, 6.5rem);
+}
+.drives-head {
+  max-width: 44rem;
+  margin-bottom: 2.25rem;
+}
+.drives-head h2 {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 600;
+  font-stretch: 108%;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.drives-head p:last-child {
+  margin: 1rem 0 0;
+  color: var(--ink-soft);
+  font-size: 18px;
+}
+.mosaic {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.mosaic li {
+  aspect-ratio: 1;
+}
+.mosaic .m-big {
+  grid-column: 1 / -1;
+  aspect-ratio: 4 / 3;
+}
+.mosaic figure {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--paper-2);
+}
+.mosaic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: scale 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mosaic figure:hover img {
+  scale: 1.04;
+}
+.mosaic figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 2.5rem 14px 12px;
+  color: var(--paper);
+  font-size: 13px;
+  font-weight: 600;
+  background: linear-gradient(0deg, rgb(0 0 0 / 0.6), transparent);
+}
+.mosaic-cta {
+  margin: 2rem 0 0;
+}
+@media (min-width: 900px) {
+  .mosaic {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    aspect-ratio: 2 / 1;
+  }
+  .mosaic li,
+  .mosaic .m-big {
+    aspect-ratio: auto;
+  }
+  .mosaic .m-big {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .mosaic figcaption {
+    font-size: 14px;
+    padding: 3rem 18px 16px;
+  }
+}
+
+/* Owen: photo edge to edge on one half, story on livery on the other */
+.owen {
+  background: var(--livery);
+  color: var(--paper);
+  padding: 0;
+}
+.owen-split {
+  display: grid;
+}
+.owen-photo {
+  margin: 0;
+}
+.owen-photo img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+.owen-text {
+  padding: clamp(2.5rem, 6vw, 5rem) var(--gut);
+  align-self: center;
+  max-width: 40rem;
+}
+.owen-text h2 {
+  margin: 0;
+  color: var(--paper);
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 600;
+  font-stretch: 108%;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.owen-quote {
+  margin: 1.75rem 0 1.25rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--foam);
+}
+.owen-quote p {
+  margin: 0;
+  font-size: clamp(19px, 1.6vw, 23px);
+  line-height: 1.4;
+  color: var(--paper);
+}
+.owen-text > p {
+  color: color-mix(in oklab, var(--paper) 78%, transparent);
+}
+.owen-text .facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  margin: 1.75rem 0 2rem;
+  border-top: 1px solid rgb(255 255 255 / 0.1);
+}
+.owen-text .facts li {
+  border: 0;
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 0;
+  padding: 0.75rem 0.75rem 0.75rem 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--paper) 88%, transparent);
+}
+@media (min-width: 900px) {
+  .owen-split {
+    grid-template-columns: 1fr 1fr;
+    min-height: 680px;
+  }
+  .owen-photo img {
+    aspect-ratio: auto;
+  }
+  .owen-text {
+    padding-inline: clamp(2.5rem, 5vw, 5.5rem);
+  }
+}
+
+/* Reviews: featured quote beside the Google rating */
+.said {
+  padding-block: clamp(3rem, 8vw, 6.5rem);
+}
+.said h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 600;
+  font-stretch: 108%;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.said-top {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+.said .big-quote {
+  max-width: 30ch;
+  margin: 0;
+}
+.said .big-quote p {
+  font-weight: 500;
+  font-stretch: 100%;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.3;
+}
+.said .big-quote figcaption {
+  margin-top: 1rem;
+}
+.rating-card {
+  align-self: end;
+  background: var(--livery);
+  color: var(--paper);
+  padding: 2rem;
+  border-radius: 2px;
+}
+.rating-card p {
+  margin: 0;
+  color: color-mix(in oklab, var(--paper) 75%, transparent);
+}
+.rating-num {
+  font-size: 72px;
+  font-weight: 700;
+  font-stretch: 112%;
+  line-height: 1;
+  color: var(--paper) !important;
+}
+.rating-stars {
+  display: flex;
+  gap: 2px;
+  margin: 0.75rem 0 0.4rem !important;
+}
+.rating-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.5rem !important;
+}
+.rating-links a:not(.btn) {
+  color: var(--paper);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+.reviews li {
+  border-top: 1px solid var(--rule);
+}
+@media (min-width: 900px) {
+  .said-top {
+    grid-template-columns: 7fr 4fr;
+    gap: 4rem;
+  }
+}
+@media (max-width: 639px) {
+  .mc-pic,
+  .mc-pic img {
+    aspect-ratio: 16 / 9;
+  }
+  .owen-photo img {
+    aspect-ratio: 1;
+    object-position: 50% 100%;
+  }
 }
