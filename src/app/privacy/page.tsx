@@ -25,7 +25,7 @@ export default function Privacy() {
       <p>Booking details are kept for 12 months after the last job, then deleted, unless you&rsquo;re on a maintenance plan.</p>
       <h2>Cookies</h2>
       <p>
-        This site sets no cookies and loads nothing from Google, Facebook or any advertising company. The Square booking
+        This site sets no cookies and loads nothing from Google, Facebook or any advertising company. The map on the areas page is a picture made from OpenStreetMap data and served from this site, so it loads nothing from anyone else. The Square booking
         page is run by Square and has its own cookie settings.
       </p>
       <h2>Your rights</h2>

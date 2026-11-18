@@ -2671,3 +2671,137 @@ textarea {
     padding-top: max(110px, 34svh);
   }
 }
+
+/* Areas page: dark map with a card over it (Owen, 18 Nov 2026) */
+.area-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: clamp(560px, 82svh, 820px);
+  display: grid;
+  align-items: center;
+  background: var(--livery);
+  overflow: clip;
+}
+.area-map {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  margin: 0;
+}
+.area-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% 50%;
+}
+.map-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  margin: 0;
+  font-size: 11px;
+  color: rgb(255 255 255 / 0.45);
+}
+.area-card-wrap {
+  padding-block: 2rem;
+  pointer-events: none;
+}
+.area-card {
+  pointer-events: auto;
+  max-width: 34rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: color-mix(in oklab, var(--livery) 92%, transparent);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: 2px;
+  color: var(--paper);
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.35);
+}
+.area-card h1 {
+  margin: 0 0 1rem;
+  color: var(--paper);
+  font-size: clamp(36px, 4.4vw, 60px);
+  font-weight: 600;
+  font-stretch: 108%;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.area-card p {
+  color: color-mix(in oklab, var(--paper) 82%, transparent);
+  font-size: 17px;
+  line-height: 1.55;
+  margin: 0;
+}
+.area-card .page-eyebrow {
+  margin-bottom: 0.9rem;
+}
+.area-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.5rem !important;
+}
+.area-towns ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.area-towns li a,
+.area-towns li span {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+.area-towns li a:hover {
+  border-color: var(--ink);
+}
+@media (max-width: 699px) {
+  .area-hero {
+    align-items: end;
+    min-height: 620px;
+  }
+}
+
+.area-card-wrap {
+  width: 100%;
+}
+/* Soft foam-blue glow over the five counties (the map is centred on them), no pin */
+.area-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 54% 48%, rgb(0 151 215 / 0.3) 0, rgb(0 151 215 / 0.12) 15vw, transparent 25vw);
+}
+@media (min-width: 900px) {
+  .area-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgb(10 12 15 / 0.55), transparent 45%);
+  }
+}
+@media (max-width: 899px) {
+  .area-glow {
+    background: radial-gradient(circle at 55% 30%, rgb(0 151 215 / 0.3) 0, transparent 45vw);
+  }
+}
+@media (max-width: 699px) {
+  .area-card-wrap {
+    padding-top: 240px;
+  }
+  .area-map img {
+    object-position: 50% 30%;
+  }
+}
