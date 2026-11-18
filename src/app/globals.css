@@ -281,118 +281,245 @@ p {
   }
 }
 
-/* Hero: one full-bleed photo of a finished job, big lettering, one action. Still, apart from the
-   photo settling in on load (Jack, 18 Nov: slick and professional, like Porsche and Polestar). */
+/* Hero (20-agent study, 18 Nov 2026): one graded photo held still, fading into livery black with no
+   seam, lettering bottom-left, one quiet proof line by the button. */
 .hero {
   position: relative;
   isolation: isolate;
   overflow: clip;
   display: grid;
+  align-items: end;
+  min-height: clamp(600px, 100svh, 900px);
   background: var(--livery);
   color: var(--paper);
 }
-.hero-bg {
-  position: relative;
-  overflow: hidden;
-  height: 46svh;
-  min-height: 280px;
-}
-.hero-bg picture {
+.hero-pic {
   position: absolute;
   inset: 0;
+  z-index: -2;
 }
-.hero-bg picture + picture {
-  opacity: 0;
-}
-.hero-bg img {
+.hero-pic img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% var(--focus, 50%);
+  object-position: 50% 30%;
 }
-.hero-text {
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, var(--livery) 0%, color-mix(in oklab, var(--livery) 90%, transparent) 38%, transparent 64%);
+}
+.hero-in {
   width: 100%;
-  max-width: calc(var(--max) + 2 * var(--gut));
+  max-width: calc(1280px + 2 * var(--gut));
   margin-inline: auto;
-  padding: 1.75rem var(--gut) 2.5rem;
+  padding: 0 20px 28px;
+}
+.hero-copy {
+  max-width: 600px;
+}
+.hero-eyebrow {
+  margin: 0 0 1rem;
+  font-size: 14px;
+  font-weight: 500;
+  color: color-mix(in oklab, var(--paper) 72%, transparent);
 }
 .hero h1 {
-  font-size: clamp(2.3rem, 1rem + 3.9vw, 4.25rem);
-  line-height: 1;
+  margin: 0;
+  font-size: clamp(40px, 5.2vw, 76px);
+  font-weight: 600;
+  font-stretch: 108%;
+  line-height: 0.98;
   letter-spacing: -0.02em;
-  max-width: 14ch;
   color: var(--paper);
   text-shadow: none;
+  max-width: none;
+}
+.hl {
+  display: block;
+  overflow: clip;
+  padding-bottom: 0.06em;
+}
+.hl > span {
+  display: block;
+}
+.hl-light {
+  font-weight: 300;
 }
 .hero-sub {
-  font-size: var(--step-1);
+  margin: 20px 0 0;
+  max-width: 38ch;
+  font-size: 18px;
   line-height: 1.45;
-  color: color-mix(in oklab, var(--paper) 78%, var(--livery));
-  max-width: 40ch;
-  margin-top: 1.25rem;
+  color: color-mix(in oklab, var(--paper) 78%, transparent);
 }
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem 1.5rem;
-  margin: 2rem 0 1.25rem;
+  gap: 14px 24px;
+  margin-top: 32px;
+}
+.hero-book {
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 650;
 }
 .hero-link {
   color: var(--paper);
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   text-decoration: underline;
-  text-underline-offset: 0.3em;
+  text-underline-offset: 4px;
   text-decoration-thickness: 1px;
 }
 .hero-link:hover {
   color: var(--foam-lite);
 }
-.hero-small {
-  font-size: var(--step--1);
-  font-weight: 600;
-  color: color-mix(in oklab, var(--paper) 70%, var(--livery));
+.hero-proof {
+  margin: 20px 0 0;
+  font-size: 14px;
+  color: color-mix(in oklab, var(--paper) 72%, transparent);
 }
-.hero .rating {
+.hero-proof a {
+  color: inherit;
+  text-decoration: none;
+}
+.hero-proof a:hover {
   color: var(--paper);
 }
-@media (max-width: 699px) {
-  .hero .btn-big {
+.hero-proof svg {
+  vertical-align: -1px;
+}
+@media (max-width: 1023px) {
+  .hero-book {
     width: 100%;
     justify-content: center;
   }
-}
-@media (min-width: 700px) {
-  .hero-bg {
-    height: 62svh;
+  .hero-cta {
+    gap: 14px;
   }
 }
-/* Big screens: lettering on livery black on the left, the photo filling the right */
-@media (min-width: 960px) {
-  .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    min-height: min(calc(100svh - 74px), 880px);
+@media (min-width: 1024px) {
+  .hero-pic {
+    left: auto;
+    width: 60%;
   }
-  .hero-bg {
-    grid-column: 2;
-    grid-row: 1;
-    height: auto;
-    min-height: 100%;
+  .hero-pic img {
+    object-position: 50% 50%;
   }
-  .hero-bg img {
-    object-position: 38% 66%;
+  .hero::after {
+    background:
+      linear-gradient(90deg, var(--livery) 40%, color-mix(in oklab, var(--livery) 85%, transparent) 52%, transparent 70%),
+      linear-gradient(0deg, var(--livery), transparent 25%);
   }
-  .hero-text {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-    max-width: none;
-    padding: 4rem clamp(2rem, 4vw, 4.5rem) 4rem max(var(--gut), calc((100vw - var(--max)) / 2));
+  .hero-in {
+    padding: 120px 64px 96px;
   }
-  .hero h1 {
-    max-width: 15ch;
-    font-size: clamp(2.4rem, 0.6rem + 3.4vw, 4.1rem);
+}
+
+/* The proof strip, as a hairline band right under the hero */
+.proof-band {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: var(--livery);
+  color: color-mix(in oklab, var(--paper) 68%, transparent);
+  border-top: 1px solid rgb(255 255 255 / 0.08);
+  font-size: 14px;
+}
+.proof-band li {
+  display: grid;
+  gap: 4px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+.proof-band li:nth-child(odd) {
+  border-right: 1px solid rgb(255 255 255 / 0.08);
+}
+.proof-band strong {
+  color: var(--paper);
+  font-size: 24px;
+  font-weight: 700;
+  font-stretch: 112%;
+  line-height: 1;
+}
+@media (min-width: 1024px) {
+  .proof-band {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    padding-inline: max(64px, calc((100vw - 1280px) / 2));
   }
+  .proof-band li {
+    padding: 24px 24px 26px;
+    border-bottom: 0;
+    border-right: 1px solid rgb(255 255 255 / 0.08);
+  }
+  .proof-band li:first-child {
+    padding-left: 0;
+  }
+  .proof-band li:last-child {
+    border-right: 0;
+  }
+}
+
+/* Header over the home page photo (CSS-only via :has, so no flash): transparent with a top scrim,
+   solid livery once scrolled (HeadState adds .head-solid) */
+.logo-light {
+  display: none;
+}
+:root:has(.hero) .site-head {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+}
+:root:has(.hero) .site-head:not(.head-solid) {
+  background: transparent;
+  border-bottom-color: transparent;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+:root:has(.hero) .site-head::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 120px;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(0 0 0 / 0.55), transparent);
+  transition: opacity 0.2s ease-out;
+}
+:root:has(.hero) .site-head.head-solid {
+  background: color-mix(in oklab, var(--livery) 96%, transparent);
+  border-bottom: 1px solid rgb(255 255 255 / 0.08);
+}
+:root:has(.hero) .site-head.head-solid::before {
+  opacity: 0;
+}
+:root:has(.hero) .site-head .logo-dark {
+  display: none;
+}
+:root:has(.hero) .site-head .logo-light {
+  display: block;
+}
+:root:has(.hero) .site-head .nav-wide a {
+  color: color-mix(in oklab, var(--paper) 78%, transparent);
+  font-weight: 500;
+}
+:root:has(.hero) .site-head .nav-wide a:hover {
+  color: var(--paper);
+}
+:root:has(.hero) .site-head .nav-menu summary {
+  color: var(--paper);
+  border-color: var(--paper);
+}
+:root:has(.hero) .site-head .nav-menu[open] summary {
+  background: var(--paper);
+  color: var(--livery);
 }
 
 /* Price list: painted down the van side */
@@ -1015,27 +1142,28 @@ figcaption {
   position: relative;
   overflow: clip;
 }
-/* Three of Owen's jobs fade slowly into each other, each easing back from a slight zoom while it
-   shows. 7 s each, 21 s round. Only with motion allowed; otherwise the first photo stays. */
-.motion .hero-bg picture {
-  animation: hero-fade 21s linear infinite both;
-  animation-delay: calc(var(--i) * 7s - 0.6s);
+/* Hero entrance, done by 1.1 s: the photo settles, headline lines rise through their masks, the rest
+   fades up. The H1 is never at opacity 0, so it still counts for LCP. */
+.motion .hero-pic img {
+  animation: settle 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-.motion .hero-bg img {
-  animation: hero-drift 21s linear infinite both;
-  animation-delay: calc(var(--i) * 7s - 0.6s);
+.motion .hl > span {
+  animation: line-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 100ms;
 }
-@keyframes hero-fade {
-  0% { opacity: 0; }
-  6% { opacity: 1; }
-  33.3% { opacity: 1; }
-  39% { opacity: 0; }
-  100% { opacity: 0; }
+.motion .hl:nth-child(2) > span { animation-delay: 180ms; }
+.motion .hl:nth-child(3) > span { animation-delay: 260ms; }
+.motion :is(.hero-eyebrow, .hero-sub, .hero-cta, .hero-proof) {
+  animation: fade-up 0.4s ease-out both;
+  animation-delay: 350ms;
 }
-@keyframes hero-drift {
-  0% { scale: 1.08; }
-  39% { scale: 1; }
-  100% { scale: 1; }
+@keyframes line-up {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
 }
 .motion .svc-hero-photo img {
   animation: pull-up 0.9s var(--ease-park) both;
@@ -1067,7 +1195,7 @@ figcaption {
   to { opacity: 1; transform: none; }
 }
 @keyframes settle {
-  from { scale: 1.05; }
+  from { scale: 1.04; }
   to { scale: 1; }
 }
 @keyframes rise {
@@ -1663,49 +1791,6 @@ textarea {
   margin-top: -0.5rem;
 }
 
-/* Hero headline in two weights, and the proof strip under the buttons (Jack, 18 Nov) */
-.h1-light {
-  font-weight: 300;
-}
-.proof {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.1rem 1.5rem;
-  margin: 2rem 0 0;
-  padding: 1.5rem 0 0;
-  list-style: none;
-  border-top: 1px solid color-mix(in oklab, var(--paper) 18%, transparent);
-  font-size: var(--step--1);
-  color: color-mix(in oklab, var(--paper) 68%, var(--livery));
-}
-.proof li {
-  display: grid;
-  gap: 0.15rem;
-  align-content: start;
-}
-.proof a {
-  display: grid;
-  gap: 0.15rem;
-  color: inherit;
-  text-decoration: none;
-}
-.proof strong {
-  color: var(--paper);
-  font-size: var(--step-2);
-  font-weight: 800;
-  font-stretch: 125%;
-  line-height: 1;
-  letter-spacing: -0.01em;
-}
-.proof a:hover strong {
-  color: var(--foam-lite);
-}
-@media (min-width: 1200px) {
-  .proof {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem 1.75rem;
-  }
-}
 
 /* Contact page (18 Nov 2026) */
 .contact {

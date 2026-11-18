@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { HeadState } from "@/components/HeadState";
 import Link from "next/link";
 import "./globals.css";
 import { site, tel, sms, bookHref } from "@/data/site";
@@ -59,9 +60,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         <header className="site-head">
+          <HeadState />
           <div className="head-in">
             <Link href="/" className="brand" aria-label="OJ Valeting, home">
-              <img src={asset("/logo.png")} width={1078} height={503} alt="OJ Valeting" />
+              <img className="logo-dark" src={asset("/logo.webp")} width={360} height={168} alt="OJ Valeting" />
+              <img className="logo-light" src={asset("/logo-light.webp")} width={360} height={168} alt="" aria-hidden="true" />
             </Link>
             <nav aria-label="Main" className="nav">
               <details className="nav-menu">

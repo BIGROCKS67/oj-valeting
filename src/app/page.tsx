@@ -22,59 +22,71 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([businessLd, websiteLd]) }} />
 
+      {/* Hero, from the 20-agent study (18 Nov 2026): one photo held still, fading into livery black, the
+          lettering bottom-left, proof as one quiet line by the button. Headline wording is Owen's. */}
       <section className="hero" aria-labelledby="hero-h">
-        <div className="hero-bg">
-          {site.hero.map((h, i) => (
-            <picture key={h.photo} style={{ "--i": i } as React.CSSProperties}>
-              <source media="(min-width: 960px)" srcSet={asset(`/photos/hero-${h.photo}-tall.webp`)} />
-              <img
-                src={asset(`/photos/${h.photo}-960.webp`)}
-                alt={i === 0 ? h.alt : ""}
-                width={960}
-                height={1280}
-                fetchPriority={i === 0 ? "high" : "low"}
-                decoding="async"
-                style={{ "--focus": h.focus } as React.CSSProperties}
-              />
-            </picture>
-          ))}
-        </div>
-        <div className="hero-text">
-          {/* Owen, 18 Nov: capital letters on this title */}
-          <h1 id="hero-h">
-            <span className="h1-light">Professional</span> Mobile Valeting and Detailing
-          </h1>
-          <p className="hero-sub">
-            At your home or work across {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}, and
-            nationwide.
-          </p>
-          <div className="hero-cta">
-            <a href={bookHref} className="btn btn-foam btn-big">
-              Book a clean
-            </a>
-            <Link href="/work/" className="hero-link">
-              See our work
-            </Link>
-          </div>
-          {/* Proof in numbers: Owen's own figures (450+ vehicles, call 17 Nov) and his Google profile */}
-          <ul className="proof" role="list">
-            <li>
-              <strong className="num">450+</strong> vehicles cleaned
-            </li>
-            <li>
-              <a href={site.google.url}>
-                <strong className="num">{site.google.rating}</strong> {site.google.count} Google reviews
+        <picture className="hero-pic">
+          <source media="(min-width: 1024px)" type="image/avif" srcSet={asset("/photos/hero-d.avif")} />
+          <source media="(min-width: 1024px)" type="image/webp" srcSet={asset("/photos/hero-d.webp")} />
+          <source type="image/avif" srcSet={asset("/photos/hero-m.avif")} />
+          <img
+            src={asset("/photos/hero-m.webp")}
+            alt="A black Porsche Taycan wheel with red brake calipers, glossy after a valet by Owen"
+            width={845}
+            height={1127}
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
+        <div className="hero-in">
+          <div className="hero-copy">
+            <p className="hero-eyebrow">Owen comes to you, at home or work, anywhere in the UK</p>
+            <h1 id="hero-h">
+              <span className="hl hl-light">
+                <span>Professional</span>
+              </span>
+              <span className="hl">
+                <span>Mobile Valeting</span>
+              </span>
+              <span className="hl">
+                <span>and Detailing</span>
+              </span>
+            </h1>
+            <p className="hero-sub">Hand wash, deep cleans, paint correction and ceramic coating, done properly on your drive.</p>
+            <div className="hero-cta">
+              <a href={bookHref} className="btn btn-foam hero-book">
+                Book a clean
               </a>
-            </li>
-            <li>
-              <strong className="num">24hr</strong> call-outs, fully insured
-            </li>
-            <li>
-              <strong>UK</strong> nationwide
-            </li>
-          </ul>
+              <Link href="/work/" className="hero-link">
+                See our work
+              </Link>
+            </div>
+            <p className="hero-proof">
+              <a href={site.google.url}>
+                <svg viewBox="0 0 20 20" width="14" height="14" aria-hidden="true">
+                  <path fill="#f5b400" d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9z" />
+                </svg>{" "}
+                {site.google.rating} from {site.google.count} Google reviews
+              </a>
+              <span aria-hidden="true"> · </span>450+ vehicles cleaned<span aria-hidden="true"> · </span>24hr call-outs
+            </p>
+          </div>
         </div>
       </section>
+      <ul className="proof-band" role="list" aria-label="OJ Valeting in numbers">
+        <li>
+          <strong className="num">450+</strong> vehicles cleaned
+        </li>
+        <li>
+          <strong className="num">{site.google.rating}</strong> from {site.google.count} Google reviews
+        </li>
+        <li>
+          <strong className="num">24hr</strong> call-outs, fully insured
+        </li>
+        <li>
+          <strong>UK</strong> nationwide
+        </li>
+      </ul>
 
       <section className="livery" id="prices" aria-labelledby="prices-h">
         <div className="suds" aria-hidden="true">

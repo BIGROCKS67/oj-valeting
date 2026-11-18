@@ -75,3 +75,13 @@ To go fully live (slots disappear once taken, reminders, deposits), Owen signs u
 - **Depth:** the "3D" ask is met with depth, not a 3D model: the photo drifts a few pixels against the pointer (fine pointers only) and sinks at 0.3x on scroll, and settles from 1.12x on load. Transform only, inside `html.motion` (no reduced motion). This is load and scroll movement, which section 8 of UI_RULES normally bans; kept because the client asked for a "wow" hero. Code: `src/components/HeroDepth.tsx`.
 - **Options:** `site.hero` picks the photo, crop and lettering side. Screenshots of the three options are in `handover/hero-options-2026-11-18/`. Live: Porsche Taycan wheel and red calipers.
 - **About and Terms pages** added (`/about/`, `/terms/`), both with a Draft tag until Owen sends his own words and photo.
+
+## 11. Hero and header, final (18 Nov 2026, 20-agent study)
+
+Jack asked for the crispest hero and header possible. 18 researchers looked at Porsche, Polestar, Lotus, Koenigsegg, Rimac, Awwwards automotive winners, the coating brands (XPEL, Gyeon, Ceramic Pro), top UK and US detailers, header patterns, type, motion, video, phone layouts and conversion; one synthesised, one critic checked feasibility. Findings that drove the build:
+- One photo held still, filling the screen, beats a split box or a slideshow.
+- Tight type: weight 600 at 108% width, line height 0.98, -0.02em tracking; "Professional" in 300. Each line rises through a mask once on load (done by 1.1 s, H1 never at opacity 0).
+- Proof as one quiet line by the button, the four-item strip as a hairline band under the hero.
+- Header transparent over the photo with a top scrim, solid livery after 48px of scroll. CSS-only via :has(.hero) so it never flashes; HeadState.tsx adds .head-solid. White-lettering logo (logo-light.webp) for dark.
+- Photo graded (contrast +10%, colour -6%) and art-directed: hero-d (square, desktop, right 60% fading into livery) and hero-m (tall crop with the wheel high, phones). AVIF 176KB / 89KB with WebP fallback.
+- Kept from Owen: his headline wording and capitals, Contact as the header button with no phone number, all four proof items.
