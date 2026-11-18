@@ -415,8 +415,10 @@ p {
       linear-gradient(90deg, color-mix(in oklab, var(--livery) 88%, transparent) 0%, color-mix(in oklab, var(--livery) 55%, transparent) 38%, transparent 62%),
       linear-gradient(0deg, var(--livery), transparent 22%);
   }
+  /* Same left edge as the logo in the header */
   .hero-in {
-    padding: 120px 64px 96px;
+    max-width: var(--max);
+    padding: 120px var(--gut) 96px;
   }
 }
 
@@ -451,7 +453,7 @@ p {
 @media (min-width: 1024px) {
   .proof-band {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    padding-inline: max(64px, calc((100vw - 1280px) / 2));
+    padding-inline: max(var(--gut), calc((100vw - var(--max)) / 2 + var(--gut)));
   }
   .proof-band li {
     padding: 24px 24px 26px;
@@ -2488,5 +2490,28 @@ textarea {
   }
   .lb-fig {
     padding-bottom: 72px;
+  }
+}
+
+/* Big screens: the hero lettering scales up so it holds its own against the photo */
+@media (min-width: 1500px) {
+  .hero h1 {
+    font-size: clamp(76px, 4.9vw, 96px);
+  }
+  .hero-copy {
+    max-width: 720px;
+  }
+  .hero-sub {
+    font-size: 20px;
+    max-width: 40ch;
+  }
+  .hero-eyebrow,
+  .hero-proof {
+    font-size: 15px;
+  }
+  .hero-book {
+    min-height: 56px;
+    padding: 0 32px;
+    font-size: 16px;
   }
 }

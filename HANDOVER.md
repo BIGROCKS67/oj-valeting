@@ -237,3 +237,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
   - Add-ons: "Alloy ceramic coating, 1 or 2 years" £60+ and "Full window ceramic coating, 12 to 24 months" £60+.
   - Hero photo now runs across the full width on desktop (hero-w: the Taycan on the right, its own tones blurred out to the left behind the lettering).
   - NEED FROM OWEN: prices and times for Stage 2 and New car protection. Add both, and all of today's price changes, to Square before booking reopens.
+- 18 Nov night: hero photo given a cinematic grade (edges and gravel darkened so the car and red caliper are spotlit, top-right clutter in shadow), same on the phone crop; hero type scales up on screens 1500px and wider; hero text and the stats band now line up with the header logo.
