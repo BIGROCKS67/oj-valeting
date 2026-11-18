@@ -26,7 +26,7 @@ export const addOns: Record<string, string> = {
   "Alloy ceramic coating, up to 2 years": "£80+",
   "Exhaust polish": "£25+",
   "Exhaust tips polished and restored": "£30+",
-  "Clay bar with full decontamination wash": "£50",
+  "Clay bar with full decontamination wash": "£50+",
   "Full decontamination wash": "£40+",
   "Mould removal": "£40+",
   "Soft top treatment": "£65+",
@@ -38,7 +38,7 @@ export const addOns: Record<string, string> = {
   "Vinyl removal": "£150+",
   "Interior plastics polished": "£40+",
   "Interior leather ceramic coating": "£120+",
-  "Ozone treatment": "£20",
+  "Ozone treatment": "£20+",
   // Owen, call 18 Nov 2026.
   "Plastic restoration": "£30+",
 };

@@ -226,3 +226,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - 18 Nov: number plate on the van behind Owen in owen-steam-cleaning-door blurred (both sizes).
 - 18 Nov: Reviews page now opens with a 5.0 summary (stars, See them on Google, Leave a review link to the g.page review form) and shows every review as a starred card in columns. Stars on the home page reviews too. Our Work is an editorial gallery (every ninth photo big, captions on the photos) and tapping a photo opens it full size with Prev/Next, swipe and arrow keys (WorkGallery.tsx).
 - 18 Nov 17:01-17:07 (Owen): paint correction £210 / £260 / £310 / £360; ceramic coating 5 year £330 / £380 / £430 / £480 (3 year still £30 less, 7 year £80 more, so ceramic now from £300). Updated on the service pages, price menu, guides and llms.txt. Change in Square too before booking reopens.
+- 18 Nov (Owen): clay bar wash and ozone treatment add-ons now show £50+ and £20+.
