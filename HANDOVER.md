@@ -178,3 +178,4 @@ Owen's changes:
 - Google profile strength: shop front photo (the van, handover/oj-valeting-van.jpg) added 18 Nov 2026, so the checklist is complete. Skipped the Ads credit and Workspace offers.
 - Ranking re-check scheduled as a one-off task on 15 Jan 2027 (oj-valeting-ranking-check-jan-2027).
 - ojvaleting.org redirect page now carries Owen's logo as favicon (ojvaleting-redirect repo, 18 Nov 2026) so the old Google result stops showing the design.com "D". Google profile Website button already points to ojvalet.co.uk. Profile checklist: only Google Ads and Workspace upsells left, skipped on purpose.
+- 18 Nov 2026: removed "Car wash" extra category (Google was showing it instead of Valeting service). Primary stays Valeting service. Opening date still empty: waiting on Owen for the month/year he started (gives the "X+ years in business" line).
