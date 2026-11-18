@@ -177,3 +177,4 @@ Owen's changes:
 - ojvaleting.org transfer: Owen paid at GoDaddy, 1 year, £24.17 (18 Nov 2026). Waiting for it to land (up to 5-7 days); then check DNS still points at the ojvaleting-redirect repo.
 - Google profile strength: shop front photo (the van, handover/oj-valeting-van.jpg) added 18 Nov 2026, so the checklist is complete. Skipped the Ads credit and Workspace offers.
 - Ranking re-check scheduled as a one-off task on 15 Jan 2027 (oj-valeting-ranking-check-jan-2027).
+- ojvaleting.org redirect page now carries Owen's logo as favicon (ojvaleting-redirect repo, 18 Nov 2026) so the old Google result stops showing the design.com "D". Google profile Website button already points to ojvalet.co.uk. Profile checklist: only Google Ads and Workspace upsells left, skipped on purpose.
