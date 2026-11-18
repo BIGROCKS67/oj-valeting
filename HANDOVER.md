@@ -173,3 +173,7 @@ Owen's changes:
 - Basic package and basic interior: "Price may change once Owen sees how dirty the car is." (also on the price menu cards).
 - Square: all 9 service descriptions now carry the time, tap/plug, gazebo, honest quote and Apple Pay (18 Nov 2026). Apple Pay still to add to the 5 Google product cards.
 - Ceramic coating: Owen will use the same photo, no AI images. "Change the others as mentioned" still needs his list.
+- Google product cards (all 5): payment line now "Pay by Apple Pay, bank transfer or cash." (18 Nov 2026, pending Google review).
+- ojvaleting.org transfer: Owen paid at GoDaddy, 1 year, £24.17 (18 Nov 2026). Waiting for it to land (up to 5-7 days); then check DNS still points at the ojvaleting-redirect repo.
+- Google profile strength: only "Add a shop front photo" missing. Use handover/oj-valeting-van.jpg (the van). Jack or Owen drags it in; Google's upload box won't take it from the browser tool.
+- Ranking re-check scheduled as a one-off task on 15 Jan 2027 (oj-valeting-ranking-check-jan-2027).
