@@ -57,7 +57,7 @@ export default function Home() {
                 <span>and Detailing</span>
               </span>
             </h1>
-            <p className="hero-sub">Hand wash, deep cleans, paint correction and ceramic coating, done properly on your drive.</p>
+            <p className="hero-sub">Maintenance, deep cleans, paint correction and ceramic coating, done properly on your drive.</p>
             <div className="hero-cta">
               <a href={bookHref} className="btn btn-foam hero-book">
                 Book a clean

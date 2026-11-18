@@ -2664,3 +2664,10 @@ textarea {
 .nav .nm-foot .btn-foam {
   color: var(--livery);
 }
+
+/* Phones: keep the top of the hero text clear of the fixed header, with the wheel showing above it */
+@media (max-width: 1023px) {
+  .hero-in {
+    padding-top: max(110px, 34svh);
+  }
+}
