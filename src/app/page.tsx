@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <div className="livery-in">
           <div className="livery-head">
-            <h2 id="prices-h">Prices</h2>
+            <h2 id="prices-h">Services</h2>
             <p>
               Pick what you need: inside, outside or both, paint correction, a coating or a regular plan. Prices are for a small
               car and go up with size, and every service has its full table. Cars, vans, motorbikes, caravans, motorhomes,

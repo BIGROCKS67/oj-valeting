@@ -39,7 +39,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="svc-hero" aria-labelledby="svc-h">
         <div className="svc-hero-text">
           <p className="crumb">
-            <Link href="/#prices">Prices</Link> <span aria-hidden="true">/</span> {s.name}
+            <Link href="/#prices">Services</Link> <span aria-hidden="true">/</span> {s.name}
           </p>
           <h1 id="svc-h">
             {s.name}, from <span className="num">{gbp(s.from)}</span>

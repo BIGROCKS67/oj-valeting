@@ -214,3 +214,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - Headline in two weights: "Professional" light, "Mobile Valeting and Detailing" heavy.
 - Proof strip under the buttons: 450+ vehicles cleaned, 5.0 from 13 Google reviews, 24hr call-outs fully insured, UK nationwide from Brackley.
 - Next step: Owen films 3 or 4 short clips (foam sliding, jet wash cutting through, water beading, slow walk past a finished car) and we swap the photos for a silent video loop.
+- 18 Nov (Owen): menu and home section say "Services" instead of "Prices".

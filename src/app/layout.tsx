@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <summary>Menu</summary>
                 <ul>
                   <li>
-                    <Link href="/#prices">Prices</Link>
+                    <Link href="/#prices">Services</Link>
                   </li>
                   {services.map((s) => (
                     <li key={s.slug} className="nav-svc">
@@ -91,7 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </details>
               <ul className="nav-wide">
                 <li>
-                  <Link href="/#prices">Prices</Link>
+                  <Link href="/#prices">Services</Link>
                 </li>
                 <li>
                   <Link href="/work/">Our work</Link>
