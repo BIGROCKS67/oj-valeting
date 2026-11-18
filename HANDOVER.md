@@ -201,7 +201,7 @@ Waiting on Owen: the better bonnet photo, a photo of him by his van and his "Hi,
 ## 18 Nov 2026 (evening): three hero looks for Owen to try
 
 Jack asked to build all three "wow" ideas and let Owen pick on the live home page. Normal visitors see no change. Owen's links:
-- https://ojvalet.co.uk/?look=1 Foam: the Taycan is covered in snow foam, he wipes it off with the mouse or a finger, and it rinses away on its own 2.5 seconds after the last wipe.
+- https://ojvalet.co.uk/?look=1 Foam (the one to push): a WebGL shader (`src/components/FoamGL.tsx`) draws real-looking snow foam over the Taycan: round lit bubbles in three sizes, thicker clumps and thinner streaks sliding down. Wipe it with the mouse or a finger and the paint underneath looks wet with droplets. 2.5 s after the last wipe (5 s if untouched) water rinses it down from the top with drips, then one polish light sweeps across. Falls back to the simpler 2D foam if WebGL is missing.
 - https://ojvalet.co.uk/?look=2 3D wheel: an alloy built in code (three.js, loaded only on this look) turning behind the lettering and tilting with the mouse.
 - https://ojvalet.co.uk/?look=3 Scroll: scrolling flicks through 12 of his own jobs behind the lettering. A stand-in until he films one job dirty to clean on a tripod.
 A bar at the bottom switches looks, and "I like this one" opens WhatsApp with the choice typed out. Once he picks: build that look into the hero for real, then delete `src/components/HeroLooks.tsx`, the `<HeroLooks />` line in `src/app/page.tsx` and the "Hero looks" CSS block at the end of `globals.css` (and `three` from package.json if he doesn't pick 2).

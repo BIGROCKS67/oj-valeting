@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { FoamGL } from "@/components/FoamGL";
 import { asset } from "@/data/base";
 
 // Three hero "looks" for Owen to try on the live home page before he picks one (Jack, 18 Nov 2026).
@@ -30,6 +31,8 @@ const seq = [
 
 export function HeroLooks() {
   const [look, setLook] = useState<Look | null>(null);
+  const [noGL, setNoGL] = useState(false);
+  const failGL = useCallback(() => setNoGL(true), []);
 
   useEffect(() => {
     const v = new URLSearchParams(location.search).get("look");
@@ -58,7 +61,7 @@ export function HeroLooks() {
 
   return (
     <>
-      {look === 1 && <Foam />}
+      {look === 1 && (noGL ? <Foam /> : <FoamGL onFail={failGL} />)}
       {look === 2 && <Wheel />}
       {look === 3 && <Scroll />}
       <div className="look-bar" role="region" aria-label="Try a home page look">
