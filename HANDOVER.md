@@ -179,3 +179,21 @@ Owen's changes:
 - Ranking re-check scheduled as a one-off task on 15 Jan 2027 (oj-valeting-ranking-check-jan-2027).
 - ojvaleting.org redirect page now carries Owen's logo as favicon (ojvaleting-redirect repo, 18 Nov 2026) so the old Google result stops showing the design.com "D". Google profile Website button already points to ojvalet.co.uk. Profile checklist: only Google Ads and Workspace upsells left, skipped on purpose.
 - 18 Nov 2026: removed "Car wash" extra category (Google was showing it instead of Valeting service). Primary stays Valeting service. Opening date still empty: waiting on Owen for the month/year he started (gives the "X+ years in business" line).
+
+## 18 Nov 2026 (afternoon): Owen's call and his 40 photos
+
+Owen sent 40 job photos on WhatsApp (14:03 to 14:10) and rang Jack (14:19, 16 min). Originals: `handover/owen-photos-2026-11-18/` (owen-01 to owen-40). On the site as `public/photos/<name>-480/960.webp`, metadata stripped.
+
+Done:
+- Basic package card photo is now the white BMW M4 in foam (owen-39), Maintenance package is the Defender covered in snow foam (owen-38). All other package photos unchanged, as Owen said.
+- All 40 photos added to Our Work, newest first, each captioned with the car. Captions are our read of each car: Owen said he'll correct any once they're up. Least sure: owen-08 (Range Rover Sport alloy), owen-28 (Porsche Taycan), owen-30 (Range Rover Sport), owen-16 (BMW X5 interior), owen-40 (VW Transporter, a customer's, not his van). The home page row now shows the first 16 new ones.
+- Bonnet photo caption: "Paint correction on a bonnet". Owen has a better bonnet photo to send.
+- Price tabs: "Polishing" renamed "Paint correction".
+- New add-on: Plastic restoration £30+ (18 add-ons, even columns). Not in Square yet; add it there when booking reopens.
+- Size guide: Large now names a Range Rover and Mercedes GLC. Owen will re-quote on the day if someone books the wrong size; no reg field.
+- Home hero: full background photo of a finished car instead of the van, headline "Professional mobile valeting and detailing", "on your drive, from £45" and "Owen brings the van" removed. Depth effect on pointer and scroll. Live option: Taycan wheel. Other options in `handover/hero-options-2026-11-18/`; switch with `site.hero` in `src/data/site.ts`.
+- About page (/about/, in the top menu) and Terms and conditions (/terms/, in the footer). Both carry a Draft tag and use only facts Owen has already given.
+
+Not sure from the call: Owen mentioned "Protection" and Jack said "protection plans". The Protection tab is unchanged for now; ask Owen if he wants it renamed (there is already a separate Plans tab for the maintenance plan).
+
+Waiting on Owen: the better bonnet photo, a photo of him by his van and his "Hi, I'm Owen" paragraph for About, his T&Cs wording, any caption corrections, which hero he prefers, and the "What's included" lists (he'll do those last).

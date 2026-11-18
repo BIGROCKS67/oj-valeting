@@ -14,7 +14,7 @@ export type Size = "Small" | "Medium" | "Large" | "XL";
 export const sizeGuide: [Size, string][] = [
   ["Small", "city cars and small hatchbacks, like a Polo or Fiesta"],
   ["Medium", "family hatchbacks and saloons, like a Golf or 3 Series"],
-  ["Large", "estates and SUVs, like a Discovery Sport or 5 Series Touring"],
+  ["Large", "estates and bigger SUVs, like a Range Rover, Mercedes GLC or 5 Series Touring"],
   ["XL", "7-seaters, big 4x4s, vans and motorhomes"],
 ];
 
@@ -37,10 +37,12 @@ export const addOns: Record<string, string> = {
   "Interior plastics polished": "£40+",
   "Interior leather ceramic coating": "£120+",
   "Ozone treatment": "£20",
+  // Owen, call 18 Nov 2026.
+  "Plastic restoration": "£30+",
 };
 export const addOnPrice = (name: string) => addOns[name] ?? "Ask Owen";
 
-export type Category = "Full valets" | "Interior" | "Exterior" | "Polishing" | "Protection" | "Plans";
+export type Category = "Full valets" | "Interior" | "Exterior" | "Paint correction" | "Protection" | "Plans";
 
 export type Service = {
   slug: string;
@@ -123,7 +125,7 @@ export const services: Service[] = [
       { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
       { label: "Outside only", prices: [["Small", "£25"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
     ],
-    photos: ["owen-porsche-boxster-wash", "vw-golf-r", "porsche-cayenne", "boot-cleaned"],
+    photos: ["bmw-m4-wash", "owen-porsche-boxster-wash", "vw-golf-r", "porsche-cayenne"],
     goodFor: "a car that's been looked after and needs a proper clean inside and out.",
   },
   {
@@ -180,7 +182,7 @@ export const services: Service[] = [
   {
     slug: "paint-correction",
     name: "Full paint correction",
-    category: "Polishing",
+    category: "Paint correction",
     blurb: "Machine polished to take out swirls, light scratches and dullness.",
     squareId: "OUN7JPWB65ZLOR6BKFUDUTO2",
     searchName: "Paint correction",
@@ -304,7 +306,7 @@ export const services: Service[] = [
     extras: ["Wax sealant or paste wax", "Ceramic spray", "Pet hair removal (depends how bad)"],
     prices: [{ label: "Each visit", prices: [["Small", "£40"], ["Medium", "£50"], ["Large", "£60"], ["XL", "£70"]] }],
     option: { name: "frequency", label: "How often?", choices: ["Every 2 weeks", "Every 4 weeks", "Every 6 weeks"] },
-    photos: ["range-rover", "land-rover-defender-110", "bmw-5-series", "owen-polo-roof"],
+    photos: ["defender-snow-foam", "range-rover", "land-rover-defender-110", "bmw-5-series"],
     goodFor: "keeping a car at its best once it's had a deep clean. Steve F keeps both his household's cars on it.",
   },
   {
@@ -432,7 +434,7 @@ export const services: Service[] = [
 ];
 
 /** Menu order on the home page, and which add-ons sit in the Protection tab */
-export const categories: Category[] = ["Full valets", "Interior", "Exterior", "Polishing", "Protection", "Plans"];
+export const categories: Category[] = ["Full valets", "Interior", "Exterior", "Paint correction", "Protection", "Plans"];
 export const protectionAddOns = ["Full window ceramic coating, 1 year", "Alloy ceramic coating, up to 2 years", "Interior leather ceramic coating", "Ceramic spray"];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);

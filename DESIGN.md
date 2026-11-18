@@ -68,3 +68,10 @@ A rival's logo on this page: the van photo, the painted price list in his exact 
 Owen wants "a booking system like Harry's". Static hosting cannot hold a live diary, so v1 is a **booking request**: the customer chooses package, vehicle, extras, day and start time, and it lands in Owen's email as a job card (FormSubmit, same as the Peters site). Owen texts back to confirm. Days he doesn't work are not offered.
 
 To go fully live (slots disappear once taken, reminders, deposits), Owen signs up to a booking app himself (Goldie is what most UK detailers use; Cal.com is free). Put its link in `site.bookingApp` and the time step hands over to it with the package already chosen. See `HANDOVER.md`.
+
+## 10. Changes from Owen's call, 18 Nov 2026
+
+- **Hero:** Owen asked for a full background photo instead of the van ("something that stands out, like a nice car or a wheel", "3D" if possible) and the headline "Professional mobile valeting and detailing". This overrides the van-beside-the-price-list hero and the "full-bleed" ban in section 2, because the client asked for it in his own words. It stays his: the photo is one of his own jobs on a customer's drive, and the lettering keeps the logo's wide capitals and grey drop shadow. Livery black rises over the photo from the lettering side so it always reads.
+- **Depth:** the "3D" ask is met with depth, not a 3D model: the photo drifts a few pixels against the pointer (fine pointers only) and sinks at 0.3x on scroll, and settles from 1.12x on load. Transform only, inside `html.motion` (no reduced motion). This is load and scroll movement, which section 8 of UI_RULES normally bans; kept because the client asked for a "wow" hero. Code: `src/components/HeroDepth.tsx`.
+- **Options:** `site.hero` picks the photo, crop and lettering side. Screenshots of the three options are in `handover/hero-options-2026-11-18/`. Live: Porsche Taycan wheel and red calipers.
+- **About and Terms pages** added (`/about/`, `/terms/`), both with a Draft tag until Owen sends his own words and photo.

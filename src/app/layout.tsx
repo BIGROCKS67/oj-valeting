@@ -82,6 +82,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Link href="/reviews/">Reviews</Link>
                   </li>
                   <li>
+                    <Link href="/about/">About</Link>
+                  </li>
+                  <li>
                     <Link href="/areas/">Areas covered</Link>
                   </li>
                 </ul>
@@ -95,6 +98,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </li>
                 <li>
                   <Link href="/reviews/">Reviews</Link>
+                </li>
+                <li>
+                  <Link href="/about/">About</Link>
                 </li>
               </ul>
             </nav>
@@ -181,6 +187,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </li>
                 <li>
                   <Link href="/guides/">Guides and prices</Link>
+                </li>
+                <li>
+                  <Link href="/about/">About Owen</Link>
+                </li>
+                <li>
+                  <Link href="/terms/">Terms and conditions</Link>
                 </li>
                 <li>
                   <Link href="/privacy/">Privacy</Link>

@@ -182,5 +182,165 @@
   "soft-top-treatment": [
     1200,
     1600
+  ],
+  "coachman-caravan": [
+    960,
+    1280
+  ],
+  "vw-polo-grey": [
+    960,
+    1280
+  ],
+  "ford-transit-custom": [
+    960,
+    1280
+  ],
+  "transit-custom-cab": [
+    960,
+    1280
+  ],
+  "audi-tt-rs": [
+    960,
+    1280
+  ],
+  "audi-tt-rs-wheel": [
+    960,
+    1280
+  ],
+  "mercedes-c-class-cabriolet": [
+    960,
+    1280
+  ],
+  "range-rover-sport-wheel": [
+    960,
+    1280
+  ],
+  "range-rover-black": [
+    960,
+    1280
+  ],
+  "bmw-x3": [
+    960,
+    1280
+  ],
+  "defender-110-black": [
+    960,
+    1280
+  ],
+  "audi-q2": [
+    960,
+    1280
+  ],
+  "porsche-macan-white": [
+    960,
+    1280
+  ],
+  "porsche-boxster-red": [
+    960,
+    1280
+  ],
+  "defender-110-green": [
+    960,
+    1280
+  ],
+  "bmw-x5-interior": [
+    960,
+    1280
+  ],
+  "porsche-taycan-blue": [
+    960,
+    1280
+  ],
+  "porsche-cayman": [
+    960,
+    1280
+  ],
+  "range-rover-sport-black": [
+    960,
+    1280
+  ],
+  "mercedes-eqb": [
+    960,
+    1280
+  ],
+  "bmw-m4-white": [
+    960,
+    1280
+  ],
+  "range-rover-sport-rear": [
+    960,
+    1280
+  ],
+  "range-rover-alloy": [
+    960,
+    1280
+  ],
+  "audi-q5-sportback": [
+    960,
+    1280
+  ],
+  "ktm-duke": [
+    960,
+    1280
+  ],
+  "defender-90-black": [
+    960,
+    1280
+  ],
+  "bmw-m2": [
+    960,
+    1280
+  ],
+  "porsche-taycan-black": [
+    960,
+    1280
+  ],
+  "range-rover-boot": [
+    960,
+    1280
+  ],
+  "range-rover-sport-gloss": [
+    960,
+    1280
+  ],
+  "porsche-cayenne-coupe": [
+    960,
+    1280
+  ],
+  "range-rover-sport-grey": [
+    960,
+    1280
+  ],
+  "ford-focus-st": [
+    960,
+    1280
+  ],
+  "mercedes-cla": [
+    960,
+    1280
+  ],
+  "alfa-romeo-4c": [
+    960,
+    1280
+  ],
+  "range-rover-velar": [
+    960,
+    1280
+  ],
+  "bmw-x6": [
+    960,
+    1280
+  ],
+  "defender-snow-foam": [
+    960,
+    1280
+  ],
+  "bmw-m4-wash": [
+    960,
+    1280
+  ],
+  "vw-transporter": [
+    960,
+    1280
   ]
 }

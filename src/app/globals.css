@@ -281,25 +281,56 @@ p {
   }
 }
 
-/* Hero: lettering on paper beside the van */
+/* Hero: Owen's lettering over a full-bleed photo of a finished car (Owen, call 18 Nov 2026) */
 .hero {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
   display: grid;
-  max-width: calc(var(--max) + 2 * var(--gut));
-  margin-inline: auto;
+  align-items: end;
+  min-height: min(calc(100svh - 74px), 860px);
+  background: var(--livery);
+  color: var(--paper);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% var(--focus, 50%);
+  transform: translate3d(calc(var(--px, 0) * -18px), calc(var(--sy, 0px) + var(--py, 0) * -12px), 0) scale(1.06);
+  transition: transform 0.4s var(--ease-out);
+}
+/* Livery black rises from the bottom (and the left on wide screens) so the lettering always reads */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, var(--livery) 8%, color-mix(in oklab, var(--livery) 70%, transparent) 45%, color-mix(in oklab, var(--livery) 10%, transparent) 80%);
 }
 .hero-text {
-  padding: clamp(1.5rem, 4vw, 4rem) var(--gut) 1.5rem;
-  align-self: center;
+  width: 100%;
+  max-width: calc(var(--max) + 2 * var(--gut));
+  margin-inline: auto;
+  padding: 30vh var(--gut) clamp(1.5rem, 4vw, 3.5rem);
+  transform: translate3d(calc(var(--px, 0) * 6px), calc(var(--py, 0) * 4px), 0);
+  transition: transform 0.4s var(--ease-out);
 }
 .hero h1 {
-  max-width: 14ch;
-  text-shadow: 0.045em 0.045em 0 color-mix(in oklab, var(--shadow-grey) 45%, transparent);
+  max-width: 13ch;
+  color: var(--paper);
+  text-shadow: 0.045em 0.045em 0 color-mix(in oklab, var(--livery) 70%, transparent);
 }
 .hero-sub {
   font-size: var(--step-1);
   line-height: 1.4;
-  color: var(--ink-soft);
-  max-width: 40ch;
+  color: color-mix(in oklab, var(--paper) 86%, var(--livery));
+  max-width: 44ch;
 }
 .hero-cta {
   display: flex;
@@ -310,25 +341,36 @@ p {
 .hero-small {
   font-size: var(--step--1);
   font-weight: 600;
-  color: var(--ink-soft);
+  color: color-mix(in oklab, var(--paper) 80%, var(--livery));
 }
-.hero-photo {
-  margin: 0;
+.hero .rating {
+  color: var(--paper);
 }
-.hero-photo img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  object-position: 50% 60%;
-}
-@media (min-width: 900px) {
+@media (min-width: 700px) {
   .hero {
-    grid-template-columns: 1.15fr 0.85fr;
-    min-height: min(calc(100svh - 74px), 820px);
+    align-items: center;
   }
-  .hero-photo img {
-    height: 100%;
-    aspect-ratio: auto;
+  .hero::before {
+    background:
+      linear-gradient(to right, var(--livery) 0%, color-mix(in oklab, var(--livery) 78%, transparent) 38%, transparent 72%),
+      linear-gradient(to top, color-mix(in oklab, var(--livery) 60%, transparent), transparent 40%);
+  }
+  .hero-bg img {
+    object-position: var(--focus-x, 70%) 50%;
+  }
+  .hero-text {
+    padding-top: clamp(2rem, 6vw, 5rem);
+  }
+  /* Photos with the car on the left put the lettering on the right */
+  .hero[data-side="right"]::before {
+    background:
+      linear-gradient(to left, var(--livery) 0%, color-mix(in oklab, var(--livery) 78%, transparent) 38%, transparent 72%),
+      linear-gradient(to top, color-mix(in oklab, var(--livery) 60%, transparent), transparent 40%);
+  }
+  .hero[data-side="right"] .hero-text {
+    display: grid;
+    grid-template-columns: minmax(0, 36rem);
+    justify-content: end;
   }
 }
 
@@ -948,12 +990,13 @@ figcaption {
 }
 
 /* Hero: the van pulls up, the lettering follows, then light runs across the fresh polish */
-.hero-photo,
 .svc-hero-photo {
   position: relative;
   overflow: clip;
 }
-.motion .hero-photo img,
+.motion .hero-bg img {
+  animation: settle 1.4s var(--ease-out) both;
+}
 .motion .svc-hero-photo img {
   animation: pull-up 0.9s var(--ease-park) both;
 }
@@ -970,7 +1013,6 @@ figcaption {
 .svc-hero-text > :nth-child(4) { --n: 3; }
 .hero-text > :nth-child(5),
 .svc-hero-text > :nth-child(5) { --n: 4; }
-.motion .hero-photo::after,
 .motion .svc-hero-photo::after {
   content: "";
   position: absolute;
@@ -983,6 +1025,10 @@ figcaption {
 @keyframes pull-up {
   from { opacity: 0; transform: translateX(14%) scale(1.06); }
   to { opacity: 1; transform: none; }
+}
+@keyframes settle {
+  from { scale: 1.12; }
+  to { scale: 1; }
 }
 @keyframes rise {
   from { opacity: 0; transform: translateY(22px); }
@@ -1129,7 +1175,7 @@ textarea {
   }
 }
 /* Photos show a calm tone while they load instead of a white gap */
-:is(.hero-photo, .svc-hero-photo, .drive-row, .work-grid, .photo-strip, .owen-photo) img {
+:is(.svc-hero-photo, .drive-row, .work-grid, .photo-strip, .owen-photo) img {
   background: color-mix(in oklab, var(--rule) 70%, var(--paper));
 }
 
@@ -1536,4 +1582,36 @@ textarea {
 .guide-meta {
   font-size: 0.9rem;
   opacity: 0.7;
+}
+
+/* About Owen (added 18 Nov 2026) */
+.about {
+  display: grid;
+  gap: 2rem;
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+.about-photo {
+  margin: 0;
+}
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+.about-text.prose {
+  padding-block: 0;
+}
+.about-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 900px) {
+  .about {
+    grid-template-columns: 5fr 7fr;
+    align-items: center;
+    gap: 4rem;
+  }
 }

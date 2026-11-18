@@ -7,6 +7,8 @@ import { ReviewList } from "@/components/ReviewList";
 import { RowButtons } from "@/components/RowButtons";
 import { ServiceMenu } from "@/components/ServiceMenu";
 import { businessLd, websiteLd } from "@/data/schema";
+import { HeroDepth } from "@/components/HeroDepth";
+import { asset } from "@/data/base";
 
 // Foam bubbles that rise once behind the price list: [left %, size px, delay ms]
 const suds: [number, number, number][] = [
@@ -21,18 +23,31 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([businessLd, websiteLd]) }} />
 
-      <section className="hero" aria-labelledby="hero-h">
+      <section className="hero" data-side={site.hero.side} aria-labelledby="hero-h">
+        <HeroDepth />
+        <picture className="hero-bg" aria-hidden="true">
+          <source media="(min-width: 700px)" srcSet={asset(`/photos/hero-${site.hero.photo}-1536.webp`)} />
+          <img
+            src={asset(`/photos/${site.hero.photo}-960.webp`)}
+            alt=""
+            width={960}
+            height={1280}
+            fetchPriority="high"
+            decoding="async"
+            style={{ "--focus": site.hero.focus, "--focus-x": site.hero.focusX } as React.CSSProperties}
+          />
+        </picture>
         <div className="hero-text">
-          <h1 id="hero-h">Mobile car valeting and detailing on your drive, from&nbsp;£45</h1>
+          <h1 id="hero-h">Professional mobile valeting and detailing</h1>
           <p className="hero-sub">
-            Owen brings the van and all the kit to your home or work, across {site.counties.slice(0, -1).join(", ")} and{" "}
-            {site.counties.at(-1)}, and nationwide. Valets, deep cleans, paint correction and ceramic coating.
+            At your home or work across {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}, and
+            nationwide. Valets, deep cleans, paint correction and ceramic coating.
           </p>
           <div className="hero-cta">
             <a href={bookHref} className="btn btn-foam btn-big">
               Book a clean
             </a>
-            <a href={tel} className="btn btn-line btn-big">
+            <a href={tel} className="btn btn-line-dark btn-big">
               Call <span className="num">{site.phone}</span>
             </a>
           </div>
@@ -44,9 +59,6 @@ export default function Home() {
             <span>Fully insured. Emergency call-outs too.</span>
           </p>
         </div>
-        <figure className="hero-photo">
-          <Pic id="oj-van-livery" priority sizes="(min-width: 900px) 45vw, 100vw" alt="The black OJ Valeting van with its blue bubble livery, parked on a gravel drive" />
-        </figure>
       </section>
 
       <section className="livery" id="prices" aria-labelledby="prices-h">
@@ -59,7 +71,7 @@ export default function Home() {
           <div className="livery-head">
             <h2 id="prices-h">Prices</h2>
             <p>
-              Pick what you need: inside, outside or both, a polish, a coating or a regular plan. Prices are for a small
+              Pick what you need: inside, outside or both, paint correction, a coating or a regular plan. Prices are for a small
               car and go up with size, and every service has its full table. Cars, vans, motorbikes, caravans, motorhomes,
               horseboxes and farm vehicles all welcome.
             </p>
