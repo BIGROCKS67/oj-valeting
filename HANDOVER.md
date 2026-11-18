@@ -166,3 +166,10 @@ Owen's changes:
 - Square Appointments Plus: £29 per location a month, trial ends 18 Dec 2026 (Square's date), no card on the account. Owen asked the price for keeping customer texts; Jack to tell him.
 - ojvaleting.org transfer: Owen said yes (17 Nov). Domain is unlocked (whois status ok), already on GoDaddy name servers (ns33/ns34.domaincontrol.com). Transfer started on Owen's GoDaddy, stopped at the auth code box; Jack pastes the design.com code and picks 1 year. After it lands: check the A/CNAME/TXT records still serve the redirect repo.
 - Ceramic photo: Owen sends it 18 Nov.
+
+## 18 Nov 2026 (Owen's WhatsApp notes, 17 Nov late) — commit cd04bf4
+- Times: basic interior and basic exterior "45 minutes to 1 hour" (Square 1 hr), deep exterior "1 to 2 hours" (Square 2 hr). Deep interior stays 2 hours.
+- New lines in site.ts: `needs` (tap and plug socket, waterproof gazebo) and `honest` (honest quote, not just the most expensive package). Shown on home, book page (FAQ "What do you need from me?"), every service page, llms.txt. Removed "van, water and kit" claims (Owen needs the customer's tap).
+- Basic package and basic interior: "Price may change once Owen sees how dirty the car is." (also on the price menu cards).
+- Square: basic interior, basic exterior and deep exterior descriptions now carry the time, tap/plug, gazebo and Apple Pay. The other six Square services still say the old payment line and have no tap/plug line: TODO with the Apple Pay pass.
+- Ceramic coating: Owen will use the same photo, no AI images. "Change the others as mentioned" still needs his list.
