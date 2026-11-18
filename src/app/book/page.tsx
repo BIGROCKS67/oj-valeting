@@ -26,8 +26,9 @@ const faq: [string, string][] = [
   ],
   [
     "Can the price change?",
-    "Prices are from prices. Owen confirms the final figure once he's seen the size and state of the vehicle, before he starts, so there are no surprises at the end.",
+    "Prices are from prices. Owen confirms the final figure once he's seen the size and state of the vehicle, before he starts, so there are no surprises at the end. " + site.honest,
   ],
+  ["What do you need from me?", site.needs],
   ["How do I pay?", "Apple Pay, bank transfer or cash on the day."],
   [
     "Where do you cover?",
@@ -108,6 +109,7 @@ export default function Book() {
             table by size. Owen confirms the final price once he&rsquo;s seen the vehicle. Motorbike, caravan, motorhome, horsebox, farm vehicle or
             something not on the list? <a href={sms("Hi Owen, ")}>Text him</a> and he&rsquo;ll sort a time.
           </p>
+          <p>{site.needs}</p>
           <p>{site.payment}</p>
           <h2>Add-ons</h2>
           <ul className="book-prices" role="list">

@@ -48,6 +48,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             {s.time}
             {s.note ? `. ${s.note}` : ""}
           </p>
+          <p className="svc-meta">{site.needs}</p>
           {s.owenSays ? <p className="svc-says">&ldquo;{s.owenSays}&rdquo;</p> : <p className="svc-says">{s.blurb}</p>}
           <p>Best for {s.goodFor}</p>
           <div className="hero-cta">

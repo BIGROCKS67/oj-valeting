@@ -19,7 +19,7 @@ export const areas: Area[] = [
     drive: "about 10 minutes",
     villages: ["Evenley", "Turweston", "Croughton", "Syresham", "Westbury"],
     intro:
-      "Brackley is on Owen's doorstep, so it's one of the easiest places for him to fit a job in. He comes to your drive or workplace with the van, water and all the kit.",
+      "Brackley is on Owen's doorstep, so it's one of the easiest places for him to fit a job in. He comes to your drive or workplace with the van and all the kit. All he needs is a tap and a plug socket.",
   },
   {
     slug: "buckingham",

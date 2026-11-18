@@ -24,7 +24,7 @@ export const guides: Guide[] = [
       "Owen's 2026 prices for a mobile car valet, deep clean, paint correction and ceramic coating, by car size, around Brackley, Buckingham and Towcester.",
     updated: "November 2026",
     intro:
-      "Here's what a mobile valet costs with OJ Valeting, by car size. Owen comes to your home or work, so the price includes him bringing the van, water and kit to you.",
+      "Here's what a mobile valet costs with OJ Valeting, by car size. Owen comes to your home or work, so the price includes him bringing the van and kit to you. All he needs is a tap and a plug socket.",
     sections: [
       {
         q: "How much is a basic mobile valet?",

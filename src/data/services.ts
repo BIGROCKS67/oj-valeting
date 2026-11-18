@@ -73,7 +73,8 @@ export type Service = {
   goodFor: string;
 };
 
-// jobHours: top of Owen's own time range (Owen's job times, 17 Nov 2026). Basic interior/exterior 45 min, deep interior 2h (Owen, 18 Nov 2026). Deep exterior: CONFIRM.
+// jobHours: top of Owen's own time range (Owen's job times, 17 Nov 2026). Basic interior/exterior 45 min to 1 hour,
+// deep interior 2h, deep exterior 1 to 2 hours (Owen, WhatsApp 17-18 Nov 2026).
 
 export const services: Service[] = [
   {
@@ -87,7 +88,7 @@ export const services: Service[] = [
     time: "1 to 2 hours",
     jobHours: 2,
     owenSays: "Bring your vehicle back to looking like new with the basic package.",
-    note: "Subject to condition, and any type of vehicle welcome.",
+    note: "Price may change once Owen sees how dirty the car is. Any type of vehicle welcome.",
     includes: [
       {
         group: "Outside",
@@ -314,9 +315,9 @@ export const services: Service[] = [
     blurb: "Hoovered, wiped down and glass cleaned inside. Outside left as it is.",
     searchName: "Mobile car interior valet",
     from: 30,
-    time: "About 45 minutes",
-    jobHours: 0.75,
-    note: "Price depends on condition.",
+    time: "45 minutes to 1 hour",
+    jobHours: 1,
+    note: "Price may change once Owen sees how dirty the car is.",
     includes: [
       {
         group: "Inside",
@@ -347,8 +348,8 @@ export const services: Service[] = [
     blurb: "Snow foam, safe hand wash, wheels and glass. Inside left as it is.",
     searchName: "Mobile car wash and exterior valet",
     from: 25,
-    time: "About 45 minutes",
-    jobHours: 0.75,
+    time: "45 minutes to 1 hour",
+    jobHours: 1,
     includes: [
       {
         group: "Outside",
@@ -408,8 +409,8 @@ export const services: Service[] = [
     blurb: "Full wash plus iron fallout and tar taken off the paint, then sealed.",
     searchName: "Car exterior deep clean",
     from: 35,
-    time: "Up to 5 hours",
-    jobHours: 5,
+    time: "1 to 2 hours",
+    jobHours: 2,
     includes: [
       {
         group: "Outside",

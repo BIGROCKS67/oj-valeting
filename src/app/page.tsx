@@ -66,7 +66,7 @@ export default function Home() {
           </div>
           <ServiceMenu />
           <p className="livery-foot">
-            Owen confirms the final price once he&rsquo;s seen the vehicle, before he starts. Fuel charges may apply further afield. {site.payment}
+            Owen confirms the final price once he&rsquo;s seen the vehicle, before he starts. Fuel charges may apply further afield. {site.honest} {site.needs} {site.payment}
           </p>
         </div>
       </section>
@@ -107,11 +107,13 @@ export default function Home() {
             </p>
             <p>
               Owen started OJ Valeting just over a year ago and was doing five or six cars a day by last summer. You
-              book him, and he&rsquo;s the one who turns up, in the black van with the bubbles on the side.
+              book him, and he&rsquo;s the one who turns up, in the black van with the bubbles on the side. {site.honest}
             </p>
             <ul className="facts" role="list">
               <li>Fully insured</li>
               <li>Comes to your home or work</li>
+              <li>Waterproof gazebo, so rain won&rsquo;t stop him</li>
+              <li>Needs a tap and a plug socket</li>
               <li>Emergency call-outs</li>
             </ul>
           </div>
