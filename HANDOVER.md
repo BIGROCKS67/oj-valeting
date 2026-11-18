@@ -198,14 +198,13 @@ Not sure from the call: Owen mentioned "Protection" and Jack said "protection pl
 
 Waiting on Owen: the better bonnet photo, a photo of him by his van and his "Hi, I'm Owen" paragraph for About, his T&Cs wording, any caption corrections, which hero he prefers, and the "What's included" lists (he'll do those last).
 
-## 18 Nov 2026 (evening): hero looks for Owen to try
+## 18 Nov 2026 (evening): the hero, final
 
-Jack asked for something "proper insane" for the home page, built to the level of the best car sites, and for Owen to pick on the live page. Normal visitors see no change. Owen's links:
-- https://ojvalet.co.uk/?look=1 Foam. A WebGL shader (`src/components/FoamGL.tsx`) draws dense, real-looking snow foam over the Taycan: round lit bubbles in three sizes, clumps, and streaks sliding down. It plays by itself (Jack: attention spans): the foam sits for 0.7 s, then a jet wash sweeps back and forth down the car (bright stream from the top right, mist and spray where it hits, ragged foam edges), a quick rinse with drips takes the bits, then one polish light sweeps across and a few water beads stay. About 5 s in all. Add `&frames` to the link to step it one frame at a time for checking.
-- https://ojvalet.co.uk/?look=2 Scroll. A shader (`src/components/ScrollGL.tsx`) runs through 8 of his jobs while you scroll. Each car pushes in slowly, then a water squeegee pulls down the screen and leaves the next car behind it, with droplets in its wake. The car's name lands in big type, with a 01/08 counter. The picture follows the scroll with weight, so a flick glides and a hard scroll still gets through.
-- The 3D wheel was dropped (Jack, 18 Nov). three.js is uninstalled.
-A bar at the bottom switches looks, and "I like this one" opens WhatsApp with the choice typed out. Without WebGL both looks fall back to simpler versions. Once Owen picks: build that look into the hero for real, then delete the other one, the look bar and `HeroLooks.tsx`.
+We tried three "wow" heroes (WebGL foam and jet wash, a squeegee scroll through his jobs, a 3D wheel). Jack judged them gimmicky. A research pass on Porsche, Polestar, XPEL, Spyker and the best detailers found that premium heroes share four things: one strong photo, a big short headline, one main action, and almost no motion. So the looks were removed (they're in git history: commit 5f570d4 and ef59dab) and the hero is now:
+- Big screens: lettering on livery black on the left half, Owen's Taycan photo filling the right half (`hero-porsche-taycan-black-tall.webp`).
+- Phones: the photo on top (46% of the screen), lettering on black underneath.
+- Headline "Professional Mobile Valeting and Detailing" (Owen asked for capitals), one line on where he covers, "Book a clean" plus a "See our work" link, the Google rating, insured and 24 hour call-outs.
+- Motion: the photo settles in from 1.05x over 1.6 s and the lettering fades up. Nothing on scroll or pointer.
+- Swap the photo with `site.hero` in `src/data/site.ts`.
 
-- 18 Nov 15:37: About page now uses Owen's own text (WhatsApp), Draft tag removed. Still waiting on the photo of him by his van.
-- 18 Nov: footer now says "and nationwide" and "24 hour emergency call-outs" (Owen's About text), name in capitals: OJ VALETING.
-- 18 Nov 15:39 (Owen): repeat Boxster and white M4 shots taken off Our Work; Range Rover boot captioned "Deep interior clean"; red Macan leather captioned "Leather protection, Porsche Macan".
+Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 year ceramic coating, Porsche Macan", "Wax sealant, BMW 5 Series", "Deep exterior clean, Range Rover", "7 year ceramic coating, Land Rover Defender 110", "Deep interior clean, Range Rover". New photo of a car's seats added as "Mould removal". The repeat white Macan taken off the wall. Price tabs in title case (Full Valets, Paint Correction, Add-Ons).

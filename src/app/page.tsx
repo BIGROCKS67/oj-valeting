@@ -7,8 +7,6 @@ import { ReviewList } from "@/components/ReviewList";
 import { RowButtons } from "@/components/RowButtons";
 import { ServiceMenu } from "@/components/ServiceMenu";
 import { businessLd, websiteLd } from "@/data/schema";
-import { HeroDepth } from "@/components/HeroDepth";
-import { HeroLooks } from "@/components/HeroLooks";
 import { asset } from "@/data/base";
 
 // Foam bubbles that rise once behind the price list: [left %, size px, delay ms]
@@ -24,41 +22,40 @@ export default function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([businessLd, websiteLd]) }} />
 
-      <section className="hero" data-side={site.hero.side} aria-labelledby="hero-h">
-        <HeroDepth />
-        <picture className="hero-bg" aria-hidden="true">
-          <source media="(min-width: 700px)" srcSet={asset(`/photos/hero-${site.hero.photo}-1536.webp`)} />
+      <section className="hero" aria-labelledby="hero-h">
+        <picture className="hero-bg">
+          <source media="(min-width: 960px)" srcSet={asset(`/photos/hero-${site.hero.photo}-tall.webp`)} />
           <img
             src={asset(`/photos/${site.hero.photo}-960.webp`)}
-            alt=""
+            alt="A black Porsche Taycan wheel with red brake calipers, clean and glossy after a valet by Owen"
             width={960}
             height={1280}
             fetchPriority="high"
             decoding="async"
-            style={{ "--focus": site.hero.focus, "--focus-x": site.hero.focusX } as React.CSSProperties}
+            style={{ "--focus": site.hero.focus } as React.CSSProperties}
           />
         </picture>
-        <HeroLooks />
         <div className="hero-text">
-          <h1 id="hero-h">Professional mobile valeting and detailing</h1>
+          {/* Owen, 18 Nov: capital letters on this title */}
+          <h1 id="hero-h">Professional Mobile Valeting and Detailing</h1>
           <p className="hero-sub">
             At your home or work across {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}, and
-            nationwide. Valets, deep cleans, paint correction and ceramic coating.
+            nationwide.
           </p>
           <div className="hero-cta">
             <a href={bookHref} className="btn btn-foam btn-big">
               Book a clean
             </a>
-            <a href={tel} className="btn btn-line-dark btn-big">
-              Call <span className="num">{site.phone}</span>
-            </a>
+            <Link href="/work/" className="hero-link">
+              See our work
+            </Link>
           </div>
           <p className="hero-small">
             <a href={site.google.url} className="rating">
               <span className="stars" aria-hidden="true">★★★★★</span> {site.google.rating} from {site.google.count} Google
               reviews
             </a>
-            <span>Fully insured. Emergency call-outs too.</span>
+            <span>Fully insured. 24 hour emergency call-outs.</span>
           </p>
         </div>
       </section>

@@ -11,6 +11,8 @@ import { Pic } from "@/components/Pic";
 
 const tabs = ["All", ...categories, "Add-ons"] as const;
 type Tab = (typeof tabs)[number];
+// Owen, 18 Nov: capital letters on every word of the tab names
+const label = (t: Tab) => t.replace(/(^|[\s-])([a-z])/g, (_, a, b) => a + b.toUpperCase());
 const slugOf = (t: Tab) => t.toLowerCase().replace(/[^a-z]+/g, "-");
 
 const sizeHint: Record<string, string> = Object.fromEntries(sizeGuide.map(([k, v]) => [k, v.split(",")[0]]));
@@ -99,7 +101,7 @@ export function ServiceMenu() {
               onClick={() => setActive(t)}
               onKeyDown={(e) => onKey(e, i)}
             >
-              {t}
+              {label(t)}
             </button>
           ))}
         </div>
@@ -119,7 +121,7 @@ export function ServiceMenu() {
             aria-labelledby={js ? `tab-${slugOf(t)}` : undefined}
             hidden={js && active !== t}
           >
-            {!js && <h3 className="menu-panel-h">{t}</h3>}
+            {!js && <h3 className="menu-panel-h">{label(t)}</h3>}
             {list.length > 0 && (
               <ul className="menu-cards" role="list">
                 {list.map((s) => (

@@ -281,96 +281,109 @@ p {
   }
 }
 
-/* Hero: Owen's lettering over a full-bleed photo of a finished car (Owen, call 18 Nov 2026) */
+/* Hero: one full-bleed photo of a finished job, big lettering, one action. Still, apart from the
+   photo settling in on load (Jack, 18 Nov: slick and professional, like Porsche and Polestar). */
 .hero {
   position: relative;
   isolation: isolate;
   overflow: clip;
   display: grid;
-  align-items: end;
-  min-height: min(calc(100svh - 74px), 860px);
   background: var(--livery);
   color: var(--paper);
 }
 .hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
+  display: block;
+  height: 46svh;
+  min-height: 280px;
 }
 .hero-bg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% var(--focus, 50%);
-  transform: translate3d(calc(var(--px, 0) * -18px), calc(var(--sy, 0px) + var(--py, 0) * -12px), 0) scale(1.06);
-  transition: transform 0.4s var(--ease-out);
-}
-/* Livery black rises from the bottom (and the left on wide screens) so the lettering always reads */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(to top, var(--livery) 8%, color-mix(in oklab, var(--livery) 70%, transparent) 45%, color-mix(in oklab, var(--livery) 10%, transparent) 80%);
 }
 .hero-text {
   width: 100%;
   max-width: calc(var(--max) + 2 * var(--gut));
   margin-inline: auto;
-  padding: 30vh var(--gut) clamp(1.5rem, 4vw, 3.5rem);
-  transform: translate3d(calc(var(--px, 0) * 6px), calc(var(--py, 0) * 4px), 0);
-  transition: transform 0.4s var(--ease-out);
+  padding: 1.75rem var(--gut) 2.5rem;
 }
 .hero h1 {
-  max-width: 13ch;
+  font-size: clamp(2.3rem, 1rem + 3.9vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  max-width: 14ch;
   color: var(--paper);
-  text-shadow: 0.045em 0.045em 0 color-mix(in oklab, var(--livery) 70%, transparent);
+  text-shadow: none;
 }
 .hero-sub {
   font-size: var(--step-1);
-  line-height: 1.4;
-  color: color-mix(in oklab, var(--paper) 86%, var(--livery));
-  max-width: 44ch;
+  line-height: 1.45;
+  color: color-mix(in oklab, var(--paper) 78%, var(--livery));
+  max-width: 40ch;
+  margin-top: 1.25rem;
 }
 .hero-cta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 1.5rem 0 1rem;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+  margin: 2rem 0 1.25rem;
+}
+.hero-link {
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  text-decoration-thickness: 1px;
+}
+.hero-link:hover {
+  color: var(--foam-lite);
 }
 .hero-small {
   font-size: var(--step--1);
   font-weight: 600;
-  color: color-mix(in oklab, var(--paper) 80%, var(--livery));
+  color: color-mix(in oklab, var(--paper) 70%, var(--livery));
 }
 .hero .rating {
   color: var(--paper);
 }
-@media (min-width: 700px) {
-  .hero {
-    align-items: center;
+@media (max-width: 699px) {
+  .hero .btn-big {
+    width: 100%;
+    justify-content: center;
   }
-  .hero::before {
-    background:
-      linear-gradient(to right, var(--livery) 0%, color-mix(in oklab, var(--livery) 78%, transparent) 38%, transparent 72%),
-      linear-gradient(to top, color-mix(in oklab, var(--livery) 60%, transparent), transparent 40%);
+}
+@media (min-width: 700px) {
+  .hero-bg {
+    height: 62svh;
+  }
+}
+/* Big screens: lettering on livery black on the left, the photo filling the right */
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: min(calc(100svh - 74px), 880px);
+  }
+  .hero-bg {
+    grid-column: 2;
+    grid-row: 1;
+    height: auto;
+    min-height: 100%;
   }
   .hero-bg img {
-    object-position: var(--focus-x, 70%) 50%;
+    object-position: 38% 66%;
   }
   .hero-text {
-    padding-top: clamp(2rem, 6vw, 5rem);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    max-width: none;
+    padding: 4rem clamp(2rem, 4vw, 4.5rem) 4rem max(var(--gut), calc((100vw - var(--max)) / 2));
   }
-  /* Photos with the car on the left put the lettering on the right */
-  .hero[data-side="right"]::before {
-    background:
-      linear-gradient(to left, var(--livery) 0%, color-mix(in oklab, var(--livery) 78%, transparent) 38%, transparent 72%),
-      linear-gradient(to top, color-mix(in oklab, var(--livery) 60%, transparent), transparent 40%);
-  }
-  .hero[data-side="right"] .hero-text {
-    display: grid;
-    grid-template-columns: minmax(0, 36rem);
-    justify-content: end;
+  .hero h1 {
+    max-width: 15ch;
+    font-size: clamp(2.4rem, 0.6rem + 3.4vw, 4.1rem);
   }
 }
 
@@ -995,7 +1008,7 @@ figcaption {
   overflow: clip;
 }
 .motion .hero-bg img {
-  animation: settle 1.4s var(--ease-out) both;
+  animation: settle 1.6s var(--ease-out) both;
 }
 .motion .svc-hero-photo img {
   animation: pull-up 0.9s var(--ease-park) both;
@@ -1027,7 +1040,7 @@ figcaption {
   to { opacity: 1; transform: none; }
 }
 @keyframes settle {
-  from { scale: 1.12; }
+  from { scale: 1.05; }
   to { scale: 1; }
 }
 @keyframes rise {
@@ -1616,205 +1629,6 @@ textarea {
   }
 }
 
-/* Hero looks for Owen to try (?look=1, 2 or 3). Remove with HeroLooks.tsx once he picks. */
-.hero-fx {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-}
-.hero-foam {
-  width: 100%;
-  height: 100%;
-  transition: opacity 0.5s var(--ease-out);
-}
-.foam-hint {
-  position: absolute;
-  top: 22%;
-  left: var(--gut);
-  margin: 0;
-  padding: 0.5rem 0.85rem;
-  border-radius: var(--r);
-  background: var(--livery);
-  color: var(--paper);
-  font-weight: 700;
-  font-size: var(--step--1);
-  pointer-events: none;
-}
-@media (min-width: 700px) {
-  .foam-hint {
-    top: 45%;
-    left: 18%;
-  }
-}
-.hero-foam-gl {
-  width: 100%;
-  height: 100%;
-}
-.hero[data-look="2"] .hero-bg {
-  display: none;
-}
-.hero[data-look="2"] {
-  min-height: 280vh;
-  align-items: start;
-}
-.hero[data-look="2"]::before {
-  display: none;
-}
-.hero[data-look="2"] .hero-text {
-  position: sticky;
-  top: 0;
-  min-height: 100svh;
-  align-content: end;
-}
-.seq-stage {
-  position: sticky;
-  top: 0;
-  height: 100svh;
-  overflow: hidden;
-}
-.seq-stage picture {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-}
-.seq-stage picture.on {
-  opacity: 1;
-}
-.seq-stage img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.seq-stage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, var(--livery) 8%, color-mix(in oklab, var(--livery) 70%, transparent) 45%, color-mix(in oklab, var(--livery) 10%, transparent) 80%);
-}
-.seq-count {
-  position: absolute;
-  z-index: 1;
-  top: 1rem;
-  left: var(--gut);
-  margin: 0;
-  color: var(--paper);
-  font-weight: 700;
-  font-size: var(--step--1);
-}
-@media (min-width: 700px) {
-  .hero[data-look="2"] .hero-text {
-    align-content: center;
-  }
-  .seq-stage::after {
-    background:
-      linear-gradient(to left, var(--livery) 0%, color-mix(in oklab, var(--livery) 78%, transparent) 38%, transparent 72%),
-      linear-gradient(to top, color-mix(in oklab, var(--livery) 60%, transparent), transparent 40%);
-  }
-  .seq-count {
-    top: 1.5rem;
-  }
-}
-.look-bar {
-  position: fixed;
-  z-index: 40;
-  left: 50%;
-  bottom: calc(64px + env(safe-area-inset-bottom));
-  translate: -50% 0;
-  width: max-content;
-  max-width: calc(100vw - 2 * 16px);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  padding: 0.5rem;
-  border-radius: var(--r);
-  background: var(--livery);
-  color: var(--paper);
-  font-size: var(--step--1);
-  box-shadow: 0 6px 24px rgb(0 0 0 / 0.35);
-}
-.look-bar-h {
-  font-weight: 700;
-  padding-inline: 0.25rem;
-}
-.look-bar button,
-.look-like {
-  min-height: 36px;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid color-mix(in oklab, var(--paper) 45%, transparent);
-  border-radius: var(--r);
-  background: none;
-  color: var(--paper);
-  font: inherit;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-}
-.look-bar button[aria-pressed="true"] {
-  background: var(--paper);
-  color: var(--livery);
-}
-.look-like {
-  background: var(--foam);
-  border-color: var(--foam);
-  color: var(--livery);
-}
-@media (max-width: 699px) {
-  .look-bar-h {
-    display: none;
-  }
-}
-@media (min-width: 900px) {
-  .look-bar {
-    bottom: 16px;
-  }
-}
-.hero:has(.hero-foam-gl) .hero-bg {
-  visibility: hidden;
-}
-
-.seq-gl {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s var(--ease-out);
-}
-.seq-gl.is-on {
-  opacity: 1;
-}
-/* The car's name lands in big type as each one arrives */
-.seq-name {
-  position: absolute;
-  z-index: 1;
-  left: var(--gut);
-  top: 3.25rem;
-  margin: 0;
-  max-width: 12ch;
-  color: var(--paper);
-  font-size: clamp(2rem, 1rem + 5vw, 5.5rem);
-  font-weight: 900;
-  font-stretch: 125%;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  text-shadow: 0.04em 0.04em 0 color-mix(in oklab, var(--livery) 70%, transparent);
-  animation: name-in 0.5s var(--ease-out) both;
-}
-@keyframes name-in {
-  from { opacity: 0; transform: translateY(0.4em); clip-path: inset(0 0 100% 0); }
-  to { opacity: 1; transform: none; clip-path: inset(0 0 0 0); }
-}
-@media (min-width: 700px) {
-  .seq-name {
-    top: 3.5rem;
-    max-width: 9ch;
-  }
-}
 .about-tag {
   font-weight: 700;
   font-size: var(--step-1);

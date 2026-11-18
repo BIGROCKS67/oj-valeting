@@ -29,11 +29,10 @@ export const site = {
   // Owen, 17 Nov 2026: online booking paused until he is ready to go live. While false, every
   // Book button goes to /book/, which says call or text. Set true (and switch Square back on) to reopen.
   bookingOpen: false,
-  // Home page background (Owen, call 18 Nov 2026: a full background, not the van). Options made for him to pick:
-  // "porsche-taycan-black" (wheel and red calipers), "range-rover-alloy" (close-up wheel), "bmw-m4-white".
-  // Each needs public/photos/hero-<id>-1536.webp (wide crop) and the usual <id>-960.webp. focus = phone crop height,
-  // focusX = wide crop across, side = which side the lettering sits (away from the car).
-  hero: { photo: "porsche-taycan-black", focus: "62%", focusX: "0%", side: "right" },
+  // Home page photo (Owen, call 18 Nov 2026: a finished car, not the van). Big screens show
+  // public/photos/hero-<photo>-tall.webp beside the lettering; phones show <photo>-960.webp on top,
+  // cropped at "focus" down the picture.
+  hero: { photo: "porsche-taycan-black", focus: "72%" },
   bookingApp: "https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services",
   // Google Business Profile, as shown on Maps 17 Nov 2026. Update the count as reviews come in.
   google: { rating: "5.0", count: 13, url: "https://maps.google.com/?cid=380385847269804503" },
