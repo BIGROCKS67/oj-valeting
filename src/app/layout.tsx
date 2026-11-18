@@ -15,10 +15,10 @@ const motionBoot = `try{var d=document.documentElement;if(matchMedia("(prefers-r
 const archivo = localFont({
   src: "../fonts/archivo-latin-standard-normal.woff2",
   variable: "--font-archivo",
-  weight: "100 900",
+  weight: "300 900",
   display: "swap",
   adjustFontFallback: "Arial",
-  declarations: [{ prop: "font-stretch", value: "62% 125%" }],
+  declarations: [{ prop: "font-stretch", value: "100% 125%" }],
 });
 
 export const metadata: Metadata = {

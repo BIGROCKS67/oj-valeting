@@ -493,6 +493,24 @@ p {
   background: linear-gradient(180deg, rgb(0 0 0 / 0.55), transparent);
   transition: opacity 0.2s ease-out;
 }
+:root:has(.hero) .head-in,
+:root:has(.hero) .brand img {
+  transition: padding 0.2s ease-out, height 0.2s ease-out;
+}
+/* Desktop: 72px over the photo, 60px once scrolled */
+@media (min-width: 900px) {
+  :root:has(.hero) .head-in {
+    min-height: 72px;
+    padding-block: 8px;
+  }
+  :root:has(.hero) .site-head.head-solid .head-in {
+    min-height: 60px;
+    padding-block: 4px;
+  }
+  :root:has(.hero) .site-head.head-solid .brand img {
+    height: 46px;
+  }
+}
 :root:has(.hero) .site-head.head-solid {
   background: color-mix(in oklab, var(--livery) 96%, transparent);
   border-bottom: 1px solid rgb(255 255 255 / 0.08);

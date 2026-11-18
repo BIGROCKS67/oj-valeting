@@ -24,6 +24,9 @@ export default function Home() {
 
       {/* Hero, from the 20-agent study (18 Nov 2026): one photo held still, fading into livery black, the
           lettering bottom-left, proof as one quiet line by the button. Headline wording is Owen's. */}
+      {/* Preload the one hero photo each screen size will use, so it starts loading before the CSS */}
+      <link rel="preload" as="image" type="image/avif" href={asset("/photos/hero-d.avif")} media="(min-width: 1024px)" fetchPriority="high" />
+      <link rel="preload" as="image" type="image/avif" href={asset("/photos/hero-m.avif")} media="(max-width: 1023px)" fetchPriority="high" />
       <section className="hero" aria-labelledby="hero-h">
         <picture className="hero-pic">
           <source media="(min-width: 1024px)" type="image/avif" srcSet={asset("/photos/hero-d.avif")} />
