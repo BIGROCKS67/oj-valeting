@@ -208,3 +208,9 @@ We tried three "wow" heroes (WebGL foam and jet wash, a squeegee scroll through 
 - Swap the photo with `site.hero` in `src/data/site.ts`.
 
 Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 year ceramic coating, Porsche Macan", "Wax sealant, BMW 5 Series", "Deep exterior clean, Range Rover", "7 year ceramic coating, Land Rover Defender 110", "Deep interior clean, Range Rover". New photo of a car's seats added as "Mould removal". The repeat white Macan taken off the wall. Price tabs in title case (Full Valets, Paint Correction, Add-Ons).
+
+### 18 Nov, later: hero made livelier (Jack: "feels flat")
+- Three of Owen's jobs cross-fade behind the lettering (Taycan, Defender in snow foam, black Range Rover), 7 s each, each easing back from a slight zoom. Set in `site.hero` (a list). Reduced motion keeps the first photo still.
+- Headline in two weights: "Professional" light, "Mobile Valeting and Detailing" heavy.
+- Proof strip under the buttons: 450+ vehicles cleaned, 5.0 from 13 Google reviews, 24hr call-outs fully insured, UK nationwide from Brackley.
+- Next step: Owen films 3 or 4 short clips (foam sliding, jet wash cutting through, water beading, slow walk past a finished car) and we swap the photos for a silent video loop.

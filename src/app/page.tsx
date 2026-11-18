@@ -23,21 +23,27 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([businessLd, websiteLd]) }} />
 
       <section className="hero" aria-labelledby="hero-h">
-        <picture className="hero-bg">
-          <source media="(min-width: 960px)" srcSet={asset(`/photos/hero-${site.hero.photo}-tall.webp`)} />
-          <img
-            src={asset(`/photos/${site.hero.photo}-960.webp`)}
-            alt="A black Porsche Taycan wheel with red brake calipers, clean and glossy after a valet by Owen"
-            width={960}
-            height={1280}
-            fetchPriority="high"
-            decoding="async"
-            style={{ "--focus": site.hero.focus } as React.CSSProperties}
-          />
-        </picture>
+        <div className="hero-bg">
+          {site.hero.map((h, i) => (
+            <picture key={h.photo} style={{ "--i": i } as React.CSSProperties}>
+              <source media="(min-width: 960px)" srcSet={asset(`/photos/hero-${h.photo}-tall.webp`)} />
+              <img
+                src={asset(`/photos/${h.photo}-960.webp`)}
+                alt={i === 0 ? h.alt : ""}
+                width={960}
+                height={1280}
+                fetchPriority={i === 0 ? "high" : "low"}
+                decoding="async"
+                style={{ "--focus": h.focus } as React.CSSProperties}
+              />
+            </picture>
+          ))}
+        </div>
         <div className="hero-text">
           {/* Owen, 18 Nov: capital letters on this title */}
-          <h1 id="hero-h">Professional Mobile Valeting and Detailing</h1>
+          <h1 id="hero-h">
+            <span className="h1-light">Professional</span> Mobile Valeting and Detailing
+          </h1>
           <p className="hero-sub">
             At your home or work across {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}, and
             nationwide.
@@ -50,13 +56,23 @@ export default function Home() {
               See our work
             </Link>
           </div>
-          <p className="hero-small">
-            <a href={site.google.url} className="rating">
-              <span className="stars" aria-hidden="true">★★★★★</span> {site.google.rating} from {site.google.count} Google
-              reviews
-            </a>
-            <span>Fully insured. 24 hour emergency call-outs.</span>
-          </p>
+          {/* Proof in numbers: Owen's own figures (450+ vehicles, call 17 Nov) and his Google profile */}
+          <ul className="proof" role="list">
+            <li>
+              <strong className="num">450+</strong> vehicles cleaned
+            </li>
+            <li>
+              <a href={site.google.url}>
+                <strong className="num">{site.google.rating}</strong> {site.google.count} Google reviews
+              </a>
+            </li>
+            <li>
+              <strong className="num">24hr</strong> call-outs, fully insured
+            </li>
+            <li>
+              <strong>UK</strong> nationwide, from Brackley
+            </li>
+          </ul>
         </div>
       </section>
 
