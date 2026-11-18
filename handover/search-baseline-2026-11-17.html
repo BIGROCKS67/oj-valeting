@@ -1,0 +1,127 @@
+<title>OJ Valeting Search Baseline</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column, a results table that scrolls on its own at phone width, status pills per search */
+:root {
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --fg: #12161b;
+  --muted: #5a6470;
+  --line: #dde3ea;
+  --foam: #0080b8;
+  --good: #1d7a43;
+  --good-bg: #e3f4ea;
+  --no: #8a4b08;
+  --no-bg: #fbeedd;
+  --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1418; --surface: #161d23; --fg: #e8edf2; --muted: #9aa6b2; --line: #2a343d;
+    --foam: #4fb8e8; --good: #7fd6a2; --good-bg: #173325; --no: #f0b46a; --no-bg: #3a2a16; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1418; --surface: #161d23; --fg: #e8edf2; --muted: #9aa6b2; --line: #2a343d;
+  --foam: #4fb8e8; --good: #7fd6a2; --good-bg: #173325; --no: #f0b46a; --no-bg: #3a2a16; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg); font: 400 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+main { max-width: 860px; margin: 0 auto; padding-block: 40px 64px; display: grid; gap: 36px; }
+h1, h2 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.6rem); font-weight: 800; }
+h2 { font-size: 1.35rem; font-weight: 700; }
+p { margin: 0; max-width: 65ch; }
+.meta { color: var(--muted); font-size: 0.92rem; }
+header { display: grid; gap: 12px; }
+.eyebrow { font: 600 0.78rem/1 var(--body); letter-spacing: 0.08em; text-transform: uppercase; color: var(--foam); }
+section { display: grid; gap: 14px; }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.93rem; }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; }
+tr:last-child td { border-bottom: 0; }
+td.q { font-weight: 600; white-space: nowrap; }
+.pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; }
+.yes { background: var(--good-bg); color: var(--good); }
+.no { background: var(--no-bg); color: var(--no); }
+.who { color: var(--muted); }
+ul { margin: 0; padding-left: 1.2rem; display: grid; gap: 8px; max-width: 65ch; }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.cols > div { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.cols h3 { margin: 0; font: 700 1rem/1.3 var(--display); }
+.num { font-variant-numeric: tabular-nums; }
+footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+
+<main>
+  <header>
+    <p class="eyebrow">OJ Valeting · ojvalet.co.uk</p>
+    <h1>Where Owen shows up on Google</h1>
+    <p class="meta">Starting point, checked 17 November 2026, the night the new site and town pages went live. Google searches from a laptop near Towcester with personalisation off. Re-check the same searches in mid January 2027.</p>
+  </header>
+
+  <section aria-labelledby="results-h">
+    <h2 id="results-h">The searches</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Search</th><th>Map pack (top 3)</th><th>Owen in map pack?</th><th>Owen on page 1?</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="q">oj valeting</td><td class="who">Owen's profile, plus OJ Valeting &amp; OJ Studio (Lincoln)</td><td><span class="pill yes">Yes</span></td><td><span class="pill yes">#1</span> <span class="who">old ojvaleting.org address</span></td></tr>
+          <tr><td class="q">car valeting buckingham</td><td class="who">Pro Detailing UK, JMS Detailing, The Motor Spa</td><td><span class="pill no">No</span></td><td><span class="pill yes">#6</span> <span class="who">old ojvaleting.org address</span></td></tr>
+          <tr><td class="q">car valeting brackley</td><td class="who">Huntsmiths Detailing <span class="num">5.0 (24)</span>, Waves Hand Car Wash <span class="num">4.4 (68)</span>, Dimensions Detailing <span class="num">5.0 (9)</span></td><td><span class="pill no">No</span></td><td><span class="pill no">No</span></td></tr>
+          <tr><td class="q">mobile car valeting brackley</td><td class="who">Advance Mobile Car Valeting, JB Mobile Valeting, Aweax Mobile Car Valeting</td><td><span class="pill no">No</span></td><td><span class="pill no">No</span></td></tr>
+          <tr><td class="q">car valeting towcester</td><td class="who">No map pack shown</td><td><span class="pill no">No</span></td><td><span class="pill no">No</span></td></tr>
+          <tr><td class="q">mobile valeting bicester</td><td class="who">LP Luxury Detailing, Oxford Mobile Valeting, Aweax Mobile Car Valeting</td><td><span class="pill no">No</span></td><td><span class="pill no">No</span></td></tr>
+          <tr><td class="q">ceramic coating brackley</td><td class="who">Luxe Detailing, Huntsmiths Detailing, The Motor Spa</td><td><span class="pill no">No</span></td><td><span class="pill no">No</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Owen wins searches for his own name. For "valeting + town" searches he isn't in the map pack yet, and only the old .org address shows on page 1 (for Buckingham). That's expected on day one: Google hasn't swapped the old address for ojvalet.co.uk yet, and the town pages are hours old.</p>
+  </section>
+
+  <section aria-labelledby="done-h">
+    <h2 id="done-h">What's now in place</h2>
+    <div class="cols">
+      <div>
+        <h3>Website</h3>
+        <ul>
+          <li>Town in every page title, Buckingham MK18 in the footer and business data</li>
+          <li>Town pages: Brackley, Buckingham, Towcester, Bicester</li>
+          <li>Guides: valet prices, and paint correction before ceramic coating</li>
+          <li>AI search crawlers allowed by name, full price list for AI tools</li>
+          <li>Sitemap read by Google (22 pages) and Bing, IndexNow sent</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Google profile</h3>
+        <ul>
+          <li>Name now "OJ Valeting", matching the van and site</li>
+          <li>Categories: Valeting service and Car wash</li>
+          <li>5 service cards with photos, prices and links</li>
+          <li>New hours, new job photos, payment details</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="next-h">
+    <h2 id="next-h">What moves the map pack next</h2>
+    <ul>
+      <li><strong>Reviews.</strong> Owen has 13. The Brackley leaders have 24 and 68. Sending his review link to past customers is the biggest single lever.</li>
+      <li><strong>A Google post every week.</strong> A recent job with a photo keeps the profile active.</li>
+      <li><strong>Bing Places.</strong> Copies the Google profile to Bing, which feeds ChatGPT and Copilot answers.</li>
+      <li><strong>Re-check in mid January 2027</strong>, same searches, same method.</li>
+    </ul>
+  </section>
+
+  <footer>Checked by Rocks Tech for OJ Valeting. Map pack = the three businesses Google shows on the map above the web results.</footer>
+</main>
