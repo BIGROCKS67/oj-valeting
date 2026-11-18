@@ -1706,3 +1706,71 @@ textarea {
     gap: 1.5rem 1.75rem;
   }
 }
+
+/* Contact page (18 Nov 2026) */
+.contact {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+.contact-lead {
+  font-size: var(--step-1);
+  max-width: 44ch;
+  color: var(--ink-soft);
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  border-top: 1px solid var(--rule);
+}
+.contact-list li {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.contact-list span {
+  color: var(--ink-soft);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+.contact-list a {
+  font-size: var(--step-1);
+  font-weight: 700;
+  color: var(--ink);
+  word-break: break-word;
+}
+.contact-side {
+  background: var(--livery);
+  color: var(--paper);
+  padding: 1.75rem;
+  align-self: start;
+}
+.contact-side h2 {
+  font-size: var(--step-2);
+  margin: 0 0 1rem;
+}
+.contact-hours div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid color-mix(in oklab, var(--paper) 15%, transparent);
+}
+.contact-hours dd {
+  margin: 0;
+  font-weight: 600;
+}
+.contact-side p {
+  margin-top: 1.25rem;
+  color: color-mix(in oklab, var(--paper) 75%, var(--livery));
+}
+@media (min-width: 900px) {
+  .contact {
+    grid-template-columns: 7fr 5fr;
+    gap: 4rem;
+  }
+}

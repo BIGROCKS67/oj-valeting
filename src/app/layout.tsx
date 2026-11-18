@@ -87,6 +87,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <li>
                     <Link href="/areas/">Areas covered</Link>
                   </li>
+                  <li>
+                    <Link href="/terms/">T&amp;Cs</Link>
+                  </li>
+                  <li>
+                    <Link href="/contact/">Contact</Link>
+                  </li>
                 </ul>
               </details>
               <ul className="nav-wide">
@@ -102,14 +108,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <li>
                   <Link href="/about/">About</Link>
                 </li>
+                <li>
+                  <Link href="/terms/">T&amp;Cs</Link>
+                </li>
               </ul>
             </nav>
-            <a href={tel} className="head-call">
-              <span className="head-call-l">Call Owen</span> <span className="num">{site.phone}</span>
-            </a>
-            <a href={bookHref} className="btn btn-foam head-book">
-              Book a clean
-            </a>
+            {/* Owen, 18 Nov: Contact at the end instead of the number and Book a clean */}
+            <Link href="/contact/" className="btn btn-foam head-book">
+              Contact
+            </Link>
           </div>
         </header>
 
@@ -190,6 +197,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </li>
                 <li>
                   <Link href="/about/">About Owen</Link>
+                </li>
+                <li>
+                  <Link href="/contact/">Contact</Link>
                 </li>
                 <li>
                   <Link href="/terms/">Terms and conditions</Link>
