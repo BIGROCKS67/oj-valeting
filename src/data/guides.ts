@@ -67,7 +67,7 @@ export const guides: Guide[] = [
       {
         q: "Is there anything extra to pay?",
         a: [
-          "Owen confirms the final price once he's seen the size and state of the vehicle, before he starts, so there are no surprises at the end. Fuel charges may apply further afield (about £10 for a job 45 minutes away).",
+          "Owen confirms the final price once he's seen the size and state of the vehicle, before he starts, so there are no surprises at the end. Fuel charges may apply further afield.",
           "Extras like ozone treatment (£20), pet hair removal (from £25) or headlight restoration (from £75 a pair) can be added to any clean.",
         ],
       },

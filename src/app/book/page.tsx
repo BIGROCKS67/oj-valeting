@@ -32,7 +32,7 @@ const faq: [string, string][] = [
   ["How do I pay?", "Apple Pay, bank transfer or cash on the day."],
   [
     "Where do you cover?",
-    "Owen is based between Brackley and Buckingham and covers Buckinghamshire, Oxfordshire, Northamptonshire, Bedfordshire and Warwickshire. Nationwide too, with a small fuel charge for further afield (about £10 for a job 45 minutes away).",
+    "Owen is based between Brackley and Buckingham and covers Buckinghamshire, Oxfordshire, Northamptonshire, Bedfordshire and Warwickshire. Nationwide too, with a small fuel charge for further afield.",
   ],
   [
     "Motorbike, caravan, motorhome, horsebox, van or farm vehicle?",
