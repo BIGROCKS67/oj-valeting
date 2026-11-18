@@ -240,3 +240,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - 18 Nov night: hero photo given a cinematic grade (edges and gravel darkened so the car and red caliper are spotlit, top-right clutter in shadow), same on the phone crop; hero type scales up on screens 1500px and wider; hero text and the stats band now line up with the header logo.
 - 18 Nov night (Owen): phone menu is now a full-screen black overlay with big links (Home, Services, Our work, Reviews, About, Areas covered, Contact). Services opens with an arrow to list every service. Book a clean and Call buttons at the bottom, Close top right. No JS needed.
 - 18 Nov (Owen): hero line now starts "Maintenance, deep cleans..." instead of "Hand wash". Phone hero text pushed down so it never sits under the header.
+- 18 Nov (Owen): About page line "I'm super proud..." replaced with "I use professional grade products and equipment to get the job completed to the highest quality."

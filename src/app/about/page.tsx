@@ -35,7 +35,7 @@ export default function About() {
           I travel nationwide to make sure you get the best results. I&rsquo;m fully insured, and 24 hour emergency
           call-outs are welcome.
         </p>
-        <p>I&rsquo;m super proud of how it&rsquo;s going and the support is much appreciated.</p>
+        <p>I use professional grade products and equipment to get the job completed to the highest quality.</p>
         <p>Look forward to meeting you.</p>
         <p className="about-cta">
           <a href={bookHref} className="btn btn-foam btn-big">
