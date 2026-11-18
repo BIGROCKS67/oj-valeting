@@ -26,7 +26,7 @@ export default function Home() {
         <div className="hero-bg">
           {site.hero.map((h, i) => (
             <picture key={h.photo} style={{ "--i": i } as React.CSSProperties}>
-              <source media="(min-width: 960px)" srcSet={asset(`/photos/hero-${h.photo}-tall.webp`)} />
+              <source media="(min-width: 700px)" srcSet={asset(`/photos/hero-${h.photo}-wide.webp`)} />
               <img
                 src={asset(`/photos/${h.photo}-960.webp`)}
                 alt={i === 0 ? h.alt : ""}
@@ -34,7 +34,7 @@ export default function Home() {
                 height={1280}
                 fetchPriority={i === 0 ? "high" : "low"}
                 decoding="async"
-                style={{ "--focus": h.focus } as React.CSSProperties}
+                style={{ "--focus": h.focus, "--focus-x": h.focusX } as React.CSSProperties}
               />
             </picture>
           ))}

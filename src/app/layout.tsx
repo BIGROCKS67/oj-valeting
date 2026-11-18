@@ -88,9 +88,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Link href="/areas/">Areas covered</Link>
                   </li>
                   <li>
-                    <Link href="/terms/">T&amp;Cs</Link>
-                  </li>
-                  <li>
                     <Link href="/contact/">Contact</Link>
                   </li>
                 </ul>
@@ -107,9 +104,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </li>
                 <li>
                   <Link href="/about/">About</Link>
-                </li>
-                <li>
-                  <Link href="/terms/">T&amp;Cs</Link>
                 </li>
               </ul>
             </nav>
@@ -202,7 +196,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Link href="/contact/">Contact</Link>
                 </li>
                 <li>
-                  <Link href="/terms/">Terms and conditions</Link>
+                  <Link href="/contact/#terms">Terms and conditions</Link>
                 </li>
                 <li>
                   <Link href="/privacy/">Privacy</Link>

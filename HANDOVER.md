@@ -216,3 +216,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - Next step: Owen films 3 or 4 short clips (foam sliding, jet wash cutting through, water beading, slow walk past a finished car) and we swap the photos for a silent video loop.
 - 18 Nov (Owen): menu and home section say "Services" instead of "Prices".
 - 18 Nov (Owen): top menu is now Services, Our work, Reviews, About, T&Cs, then a Contact button. The number and Book a clean came out of the header (Book stays in the hero, footer and phone action bar). New /contact/ page: call, text, email, Instagram, Facebook, opening hours, area.
+- 18 Nov (Owen): hero back to full-bleed photos right across the back (he liked that), still cross-fading the three jobs, lettering on the right. T&Cs taken out of the menu and put on the Contact page above the contact details ("Please read before booking", Draft until Owen sends his wording); /terms/ now redirects to /contact/#terms.
