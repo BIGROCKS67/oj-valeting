@@ -1,3 +1,4 @@
+// Owen, WhatsApp 18 Nov 17:01: paint correction £210 / £260 / £310 / £360.
 // Owen, WhatsApp 18 Nov 16:52: deep interior XL £160+, basic interior XL £50+ (inside-only rows match).
 // Names, times and Owen's one-line descriptions are from his old services page
 // (ojvaleting.org/my-services, 16 Nov 2026). Prices by size and add-on prices are from the
@@ -222,7 +223,7 @@ export const services: Service[] = [
       {
         label: "Paint correction",
         note: "Clay bar included",
-        prices: [["Small", "£210"], ["Medium", "£230"], ["Large", "£250"], ["XL", "£270"]],
+        prices: [["Small", "£210"], ["Medium", "£260"], ["Large", "£310"], ["XL", "£360"]],
       },
     ],
     photos: ["owen-porsche-boxster-polish", "porsche-911", "garage-gloss-bonnet", "ford-headlight"],
@@ -235,7 +236,7 @@ export const services: Service[] = [
     blurb: "Years of gloss and protection, and a car that's far easier to wash.",
     squareId: "YOJHVAR5GVHFBCLZETWATB6Z",
     searchName: "Ceramic coating",
-    from: 270,
+    from: 300,
     time: "3 to 5 hours",
     jobHours: 5,
     owenSays: "This gives your vehicle the ultimate long-lasting protection with the ceramic coating option.",
@@ -267,12 +268,12 @@ export const services: Service[] = [
     // Owen, 17 Nov 2026: paint may need correcting first, at a discounted price.
     cardTip: "Need a paint correction first? It comes at a discounted price with a coating.",
     tip: "Paint swirled or dull? It may need a paint correction first so the coating goes on to perfect paint. Book the two together and the correction comes at a discounted price. Owen will tell you when he sees the car.",
-    // CONFIRM: Owen's list says XL £350, less than Large £380. Shown as "Ask Owen" until he confirms.
+    // Owen, WhatsApp 18 Nov 17:07: 5 year £330 / £380 / £430 / £480. 3 and 7 year offsets unchanged.
     prices: [
       {
         label: "5 year coating",
         note: "3 year is £30 less, 7 year is £80 more",
-        prices: [["Small", "£300"], ["Medium", "£340"], ["Large", "£380"], ["XL", "Ask Owen"]],
+        prices: [["Small", "£330"], ["Medium", "£380"], ["Large", "£430"], ["XL", "£480"]],
       },
     ],
     option: { name: "coating_years", label: "How long should it last?", choices: ["3 years", "5 years", "7 years", "Not sure yet"] },

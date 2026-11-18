@@ -43,13 +43,13 @@ export const guides: Guide[] = [
       {
         q: "How much is paint correction?",
         a: [
-          "Paint correction with a clay bar included is £210 for a small car, £230 medium, £250 large and £270 XL. It's a machine polish to take out swirls, light scratches and dullness.",
+          "Paint correction with a clay bar included is £210 for a small car, £260 medium, £310 large and £360 XL. It's a machine polish to take out swirls, light scratches and dullness.",
         ],
       },
       {
         q: "How much is ceramic coating?",
         a: [
-          "A 5 year ceramic coating is £300 for a small car, £340 medium and £380 large. A 3 year coating is £30 less and a 7 year coating is £80 more. For an XL vehicle, ask Owen.",
+          "A 5 year ceramic coating is £330 for a small car, £380 medium, £430 large and £480 XL. A 3 year coating is £30 less and a 7 year coating is £80 more.",
         ],
       },
       {
@@ -110,8 +110,8 @@ export const guides: Guide[] = [
       {
         q: "What do they cost on their own?",
         a: [
-          "Paint correction, clay bar included: £210 small, £230 medium, £250 large, £270 XL.",
-          "Ceramic coating, 5 year: £300 small, £340 medium, £380 large. 3 year is £30 less, 7 year is £80 more. Ask Owen for XL.",
+          "Paint correction, clay bar included: £210 small, £260 medium, £310 large, £360 XL.",
+          "Ceramic coating, 5 year: £330 small, £380 medium, £430 large, £480 XL. 3 year is £30 less, 7 year is £80 more.",
         ],
       },
       {
