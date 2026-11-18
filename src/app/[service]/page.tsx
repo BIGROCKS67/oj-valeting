@@ -167,8 +167,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           <details>
             <summary>Is there a deposit?</summary>
             <p>
-              A deposit secures your booking. Owen confirms the amount when you book. The full terms are on the{" "}
-              <Link href="/contact/#terms">contact page</Link>.
+              {site.deposit} The full terms are on the <Link href="/contact/#terms">contact page</Link>.
             </p>
           </details>
           <details>

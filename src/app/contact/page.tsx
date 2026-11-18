@@ -29,9 +29,6 @@ export default function Contact() {
             call button, then a quote form. Deposit and belongings are drafts until Owen confirms them. */}
         <section id="terms" className="contact-terms" aria-labelledby="terms-h">
           <h2 id="terms-h">Please read before booking</h2>
-          <p>
-            <Draft what="these terms" />
-          </p>
           <div className="drops">
             <details>
               <summary>Prices</summary>
@@ -44,10 +41,13 @@ export default function Contact() {
             </details>
             <details>
               <summary>Deposit</summary>
-              <p>A deposit secures your booking. Owen confirms the amount when you book.</p>
+              <p>{site.deposit}</p>
             </details>
             <details>
               <summary>Personal belongings</summary>
+              <p>
+                <Draft what="this" />
+              </p>
               <p>
                 Please take anything valuable or personal out of the vehicle before Owen starts. He can&rsquo;t be
                 responsible for items left inside.

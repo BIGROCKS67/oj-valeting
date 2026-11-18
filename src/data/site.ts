@@ -19,6 +19,9 @@ export const site = {
   payment: "Pay by Apple Pay, bank transfer or cash on the day.",
   // Owen, WhatsApp 17 Nov 2026: say this on the site and in booking.
   needs: "Owen needs a tap and a plug socket he can use at yours. He brings a waterproof gazebo, so rain won't stop the job.",
+  // Owen, 18 Nov 2026: £50 deposit on bookings over £150, taken off the final price; lost if they
+  // cancel less than 48 hours before the booking.
+  deposit: "Bookings over £150 need a £50 deposit to secure the date. It comes off the final price. If you cancel less than 48 hours before your booking, the deposit isn't refunded.",
   // Owen, WhatsApp 17 Nov 2026.
   honest: "Owen tells you honestly what your car needs and quotes for that every time, not just the most expensive package.",
   // Owen, 17 Nov 2026: say nationwide.

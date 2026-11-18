@@ -43,6 +43,7 @@ const faq: [string, string][] = [
     "Can I add extras?",
     "Yes. Mention them in the notes when you book, or text Owen. Every add-on and its price is listed on this page.",
   ],
+  ["Is there a deposit?", site.deposit],
   [
     "How do I change or cancel?",
     site.bookingOpen
