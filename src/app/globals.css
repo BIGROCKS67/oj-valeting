@@ -1615,3 +1615,174 @@ textarea {
     gap: 4rem;
   }
 }
+
+/* Hero looks for Owen to try (?look=1, 2 or 3). Remove with HeroLooks.tsx once he picks. */
+.hero-fx {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+}
+.hero-foam {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s var(--ease-out);
+}
+.foam-hint {
+  position: absolute;
+  top: 22%;
+  left: var(--gut);
+  margin: 0;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--r);
+  background: var(--livery);
+  color: var(--paper);
+  font-weight: 700;
+  font-size: var(--step--1);
+  pointer-events: none;
+}
+@media (min-width: 700px) {
+  .foam-hint {
+    top: 45%;
+    left: 18%;
+  }
+}
+.hero[data-look="2"] .hero-bg,
+.hero[data-look="3"] .hero-bg {
+  display: none;
+}
+.hero[data-look="2"] {
+  background: radial-gradient(ellipse at 28% 50%, var(--livery-2), var(--livery) 65%);
+}
+.hero-wheel {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease-out);
+}
+.hero-wheel.is-on {
+  opacity: 1;
+}
+.hero-wheel canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.hero[data-look="3"] {
+  min-height: 320vh;
+  align-items: start;
+}
+.hero[data-look="3"]::before {
+  display: none;
+}
+.hero[data-look="3"] .hero-text {
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  align-content: end;
+}
+.seq-stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+}
+.seq-stage picture {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+.seq-stage picture.on {
+  opacity: 1;
+}
+.seq-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.seq-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--livery) 8%, color-mix(in oklab, var(--livery) 70%, transparent) 45%, color-mix(in oklab, var(--livery) 10%, transparent) 80%);
+}
+.seq-count {
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  left: var(--gut);
+  margin: 0;
+  color: var(--paper);
+  font-weight: 700;
+  font-size: var(--step--1);
+}
+@media (min-width: 700px) {
+  .hero[data-look="3"] .hero-text {
+    align-content: center;
+  }
+  .seq-stage::after {
+    background:
+      linear-gradient(to left, var(--livery) 0%, color-mix(in oklab, var(--livery) 78%, transparent) 38%, transparent 72%),
+      linear-gradient(to top, color-mix(in oklab, var(--livery) 60%, transparent), transparent 40%);
+  }
+  .seq-count {
+    top: auto;
+    bottom: 1.5rem;
+  }
+}
+.look-bar {
+  position: fixed;
+  z-index: 40;
+  left: 50%;
+  bottom: calc(64px + env(safe-area-inset-bottom));
+  translate: -50% 0;
+  width: max-content;
+  max-width: calc(100vw - 2 * 16px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem;
+  border-radius: var(--r);
+  background: var(--livery);
+  color: var(--paper);
+  font-size: var(--step--1);
+  box-shadow: 0 6px 24px rgb(0 0 0 / 0.35);
+}
+.look-bar-h {
+  font-weight: 700;
+  padding-inline: 0.25rem;
+}
+.look-bar button,
+.look-like {
+  min-height: 36px;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid color-mix(in oklab, var(--paper) 45%, transparent);
+  border-radius: var(--r);
+  background: none;
+  color: var(--paper);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.look-bar button[aria-pressed="true"] {
+  background: var(--paper);
+  color: var(--livery);
+}
+.look-like {
+  background: var(--foam);
+  border-color: var(--foam);
+  color: var(--livery);
+}
+@media (max-width: 699px) {
+  .look-bar-h {
+    display: none;
+  }
+}
+@media (min-width: 900px) {
+  .look-bar {
+    bottom: 16px;
+  }
+}

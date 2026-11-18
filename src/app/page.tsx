@@ -8,6 +8,7 @@ import { RowButtons } from "@/components/RowButtons";
 import { ServiceMenu } from "@/components/ServiceMenu";
 import { businessLd, websiteLd } from "@/data/schema";
 import { HeroDepth } from "@/components/HeroDepth";
+import { HeroLooks } from "@/components/HeroLooks";
 import { asset } from "@/data/base";
 
 // Foam bubbles that rise once behind the price list: [left %, size px, delay ms]
@@ -37,6 +38,7 @@ export default function Home() {
             style={{ "--focus": site.hero.focus, "--focus-x": site.hero.focusX } as React.CSSProperties}
           />
         </picture>
+        <HeroLooks />
         <div className="hero-text">
           <h1 id="hero-h">Professional mobile valeting and detailing</h1>
           <p className="hero-sub">
