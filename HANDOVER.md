@@ -249,3 +249,9 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
   - Deposit and belongings wording are DRAFT. Need from Owen: deposit amount, whether it comes off the final price, whether it's refundable and with how much notice.
   - Payments: Owen asked about Stripe for deposits and card payments on his phone. Recommended Square instead (already his booking system): Square Appointments takes deposits at booking, and Tap to Pay on iPhone takes cards with no reader.
 - 18 Nov (Owen): deposit confirmed: £50 on bookings over £150, comes off the final price, lost if cancelled less than 48 hours before the booking (read as 48 hours before the appointment; check with Owen if he meant 48 hours after booking). Shown on Contact, every service page and the Book page FAQ (site.deposit). Set the same deposit rule in Square Appointments. Personal belongings line still Draft.
+
+## 19 Nov 2026: Square brought in line with the site
+- Prices: basic exterior S £30; deep exterior £40/45/50/55; deep interior XL £160; Stage 1 paint correction (renamed from "Full paint correction") £210/260/310/360; ceramic 5yr £330/380/430/480.
+- New service "New car protection detail", £480 fixed, 8 hrs + 30 min after (8 hrs is a placeholder until Owen gives the time).
+- Deposit: Appointments > Settings > Payments & cancellations > Require a deposit, £50 flat on every variation over £150 (ceramic all, Stage 1 all, new car protection, full deep clean M/L/XL, deep interior XL). Cut-off 2 days, policy text added.
+- Not in Square yet: Stage 2 paint correction (no price). Online booking still disabled; site `bookingOpen: false`.
