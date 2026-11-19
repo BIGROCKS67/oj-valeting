@@ -473,12 +473,12 @@ export const services: Service[] = [
     goodFor: "paint with heavier swirls and scratches that a single polish won't fully take out.",
   },
   // Owen, voice note 18 Nov 20:01: a new car protection detail, a single stage paint correction plus
-  // a 3 year ceramic coating. Prices and times to come from Owen.
+  // a 5 year ceramic coating (Owen, 19 Nov: was 3 year). Prices and times to come from Owen.
   {
     slug: "new-car-protection",
     name: "New car protection detail",
     category: "Protection",
-    blurb: "For a new car: a single stage paint correction and a 3 year ceramic coating, so it stays like the day you got it.",
+    blurb: "For a new car: a single stage paint correction and a 5 year ceramic coating, so it stays like the day you got it.",
     searchName: "New car protection detail",
     from: 480,
     time: "Owen will confirm the time",
@@ -494,7 +494,7 @@ export const services: Service[] = [
       },
       {
         group: "Protection",
-        items: ["3 year ceramic coating on the paintwork"],
+        items: ["5 year ceramic coating on the paintwork"],
       },
     ],
     includesConfirmed: false,
