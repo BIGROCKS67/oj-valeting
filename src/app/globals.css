@@ -3015,7 +3015,7 @@ textarea {
   }
   .about-hero-pic img { object-position: 100% 40%; }
   .about-hero::after {
-    background: linear-gradient(90deg, color-mix(in oklab, var(--livery) 85%, transparent) 0%, color-mix(in oklab, var(--livery) 55%, transparent) 42%, transparent 62%),
+    background: linear-gradient(90deg, color-mix(in oklab, var(--livery) 85%, transparent) 0%, color-mix(in oklab, var(--livery) 50%, transparent) 40%, transparent 52%),
       linear-gradient(0deg, color-mix(in oklab, var(--livery) 60%, transparent) 0%, transparent 30%);
   }
   .about-hero-in {
