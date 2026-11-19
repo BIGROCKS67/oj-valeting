@@ -312,6 +312,34 @@ export const services: Service[] = [
     photos: ["defender-snow-foam", "range-rover", "land-rover-defender-110", "bmw-5-series"],
     goodFor: "keeping a car at its best once it's had a deep clean. Steve F keeps both his household's cars on it.",
   },
+  // Owen, voice note 19 Nov 14:55: second plan for nicer cars, every 2 or 4 weeks, with extras such as small scratches
+  // sorted. Prices and the exact extras to come from Owen.
+  {
+    slug: "ultimate-maintenance",
+    name: "Ultimate maintenance package",
+    category: "Plans",
+    blurb: "For nicer cars: everything in the maintenance package every 2 or 4 weeks, with added extras on each visit.",
+    searchName: "Ultimate maintenance valet plan",
+    from: 0,
+    time: "Owen will confirm the time",
+    jobHours: 3,
+    note: "Every 2 or 4 weeks.",
+    includes: [
+      {
+        group: "Each visit",
+        items: [
+          "Everything in the maintenance package",
+          "Added extras, such as small scratches sorted as part of the visit",
+        ],
+      },
+    ],
+    includesConfirmed: false,
+    extras: ["Ceramic spray", "Alloy ceramic coating, 1 or 2 years"],
+    prices: [{ label: "Each visit", prices: [["Small", "Ask Owen"], ["Medium", "Ask Owen"], ["Large", "Ask Owen"], ["XL", "Ask Owen"]] }],
+    option: { name: "frequency", label: "How often?", choices: ["Every 2 weeks", "Every 4 weeks"] },
+    photos: ["porsche-taycan-black", "porsche-macan-white", "range-rover", "bmw-5-series"],
+    goodFor: "a car you care about that you want kept at its very best, with the little extras taken care of too.",
+  },
   {
     slug: "interior-valet",
     name: "Basic interior clean",
