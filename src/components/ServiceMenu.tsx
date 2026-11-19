@@ -146,3 +146,19 @@ export function ServiceMenu() {
     </div>
   );
 }
+
+/** The same cards on their own, for the /services/<group>/ pages */
+export function ServiceCardList({ slugs }: { slugs: string[] }) {
+  const [js, setJs] = useState(false);
+  useEffect(() => setJs(true), []);
+  const list = services.filter((s) => slugs.includes(s.slug));
+  return (
+    <div className={`menu${js ? " is-js" : ""}`}>
+      <ul className="menu-cards" role="list">
+        {list.map((s) => (
+          <Card key={s.slug} s={s} js={js} />
+        ))}
+      </ul>
+    </div>
+  );
+}

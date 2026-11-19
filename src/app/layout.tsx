@@ -4,7 +4,7 @@ import { HeadState } from "@/components/HeadState";
 import Link from "next/link";
 import "./globals.css";
 import { site, tel, sms, bookHref } from "@/data/site";
-import { services } from "@/data/services";
+import { services, serviceGroups } from "@/data/services";
 import { asset, isPreview } from "@/data/base";
 import { hoursList, season } from "@/data/hours";
 import { Motion } from "@/components/Motion";
@@ -86,9 +86,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                           <li>
                             <Link href="/#prices">All services and prices</Link>
                           </li>
-                          {services.map((s) => (
-                            <li key={s.slug}>
-                              <Link href={`/${s.slug}/`}>{s.name}</Link>
+                          {serviceGroups.map((g) => (
+                            <li key={g.slug}>
+                              <Link href={`/services/${g.slug}/`}>{g.name}</Link>
                             </li>
                           ))}
                         </ul>

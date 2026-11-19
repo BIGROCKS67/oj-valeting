@@ -516,3 +516,28 @@ export const fromText = (n: number) => (n > 0 ? `from £${n}` : "Ask Owen");
 
 // Keep every list (nav, footer, /book/, "Other services") in menu order: valets first, plans last.
 services.sort((a, b) => categories.indexOf(a.category) - categories.indexOf(b.category));
+
+/** Owen, voice note 19 Nov: Services in the menu split into three groups, like Elite Kleanz. Each has its own page at /services/<slug>/ */
+export const serviceGroups: { slug: string; name: string; cats: Category[]; intro: string }[] = [
+  {
+    slug: "valeting",
+    name: "Valeting Services",
+    cats: ["Full valets", "Interior", "Exterior", "Plans"],
+    intro:
+      "Regular cleans and full deep cleans, inside, outside or both. Done by hand at your home or work.",
+  },
+  {
+    slug: "ceramic-coating",
+    name: "Ceramic Coating Services",
+    cats: ["Protection"],
+    intro:
+      "Long lasting ceramic protection for paint, wheels and glass. It keeps the car glossy and makes every wash after it quicker and easier.",
+  },
+  {
+    slug: "correction",
+    name: "Correction Services",
+    cats: ["Paint correction"],
+    intro:
+      "Machine polishing to take out swirls, light scratches and dull, tired paint, bringing back the depth and gloss the car had when it was new.",
+  },
+];
