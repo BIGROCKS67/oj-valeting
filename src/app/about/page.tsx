@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { site, bookHref } from "@/data/site";
-import { Pic } from "@/components/Pic";
-import { PageHead } from "@/components/PageHead";
 
 // Owen's own words, sent on WhatsApp 18 Nov 2026 (15:36); spelling tidied only. Photo: his steam
 // cleaning shot until he sends one of him by his van.
@@ -17,11 +15,19 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <>
-    <PageHead id="about-h" eyebrow="Just me and my business" title={<>Hi, I&rsquo;m Owen</>} />
-    <section className="wrap about">
-      <figure className="about-photo">
-        <Pic id="owen-steam-cleaning-door" priority sizes="(min-width: 900px) 40vw, 100vw" alt="Owen in his OJ Valeting T-shirt, steam cleaning the inside of a car door" />
-      </figure>
+    {/* Owen, voice note 19 Nov: photo across the whole width behind the text, like the home page.
+        about-w is a wide composite (photo right, dark soft fill left); about-m is the plain photo for phones.
+        Swap both when Owen sends a new photo. */}
+    <section className="about-hero" aria-labelledby="about-h">
+      <picture className="about-hero-pic">
+        <source media="(min-width: 900px)" type="image/avif" srcSet="/photos/about-w.avif" />
+        <source media="(min-width: 900px)" type="image/webp" srcSet="/photos/about-w.webp" />
+        <source type="image/avif" srcSet="/photos/about-m.avif" />
+        <img src="/photos/about-m.webp" alt="Owen in his OJ Valeting T-shirt, steam cleaning the inside of a car door" fetchPriority="high" />
+      </picture>
+      <div className="about-hero-in">
+      <p className="page-eyebrow">Just me and my business</p>
+      <h1 id="about-h">Hi, I&rsquo;m Owen</h1>
       <div className="about-text prose">
         <p>
           I started OJ Valeting just over a year ago and have cleaned over 450 different types of vehicles, and
@@ -44,8 +50,10 @@ export default function About() {
           <a href={bookHref} className="btn btn-foam btn-big">
             Book a clean
           </a>{" "}
-          <Link href="/work/">See the work</Link> or <a href={site.instagram}>follow on Instagram</a>.
+          <Link href="/work/">See the work</Link>
+          <a href={site.instagram}>Follow on Instagram</a>
         </p>
+      </div>
       </div>
     </section>
     </>

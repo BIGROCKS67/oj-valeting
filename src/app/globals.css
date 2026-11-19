@@ -2954,3 +2954,76 @@ textarea {
   color: var(--paper);
   font-size: 15px;
 }
+
+/* About hero, full width photo behind Owen's words (Owen, 19 Nov 2026) */
+.about-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: var(--livery);
+  color: var(--paper);
+}
+.about-hero-pic {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: min(78svh, 620px);
+  z-index: -2;
+}
+.about-hero-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: min(78svh, 620px);
+  z-index: -1;
+  background: linear-gradient(0deg, var(--livery) 0%, color-mix(in oklab, var(--livery) 60%, transparent) 35%, transparent 70%);
+}
+.about-hero-in {
+  width: 100%;
+  max-width: calc(1280px + 2 * var(--gut));
+  margin-inline: auto;
+  padding: calc(min(78svh, 620px) - 140px) var(--gut) clamp(3rem, 7vw, 5rem);
+}
+.about-hero h1 {
+  margin: 0 0 1.5rem;
+  color: var(--paper);
+  font-size: clamp(40px, 5.2vw, 76px);
+  font-weight: 600;
+  font-stretch: 108%;
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+.about-hero .page-eyebrow {
+  color: color-mix(in oklab, var(--paper) 72%, transparent);
+}
+.about-hero .about-text {
+  max-width: 34rem;
+  color: color-mix(in oklab, var(--paper) 88%, transparent);
+}
+.about-hero .about-text p { color: inherit; }
+.about-hero .about-cta a:not(.btn) { color: var(--paper); }
+@media (min-width: 900px) {
+  .about-hero-pic,
+  .about-hero::after {
+    inset: 0;
+    height: auto;
+  }
+  .about-hero-pic img { object-position: 100% 40%; }
+  .about-hero::after {
+    background: linear-gradient(90deg, color-mix(in oklab, var(--livery) 85%, transparent) 0%, color-mix(in oklab, var(--livery) 55%, transparent) 42%, transparent 62%),
+      linear-gradient(0deg, color-mix(in oklab, var(--livery) 60%, transparent) 0%, transparent 30%);
+  }
+  .about-hero-in {
+    max-width: var(--max);
+    min-height: clamp(640px, 88svh, 900px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+}
