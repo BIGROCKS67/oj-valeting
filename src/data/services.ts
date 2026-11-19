@@ -318,6 +318,7 @@ export const services: Service[] = [
     slug: "ultimate-maintenance",
     name: "Ultimate maintenance package",
     category: "Plans",
+    squareId: "YFKWA2HQR7PXYTRORVYUYIYK",
     blurb: "For nicer cars: everything in the maintenance package every 2 or 4 weeks, with added extras on each visit.",
     searchName: "Ultimate maintenance valet plan",
     from: 80, // Owen, 19 Nov 16:35
