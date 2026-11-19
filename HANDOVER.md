@@ -255,3 +255,5 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - New service "New car protection detail", £480 fixed, 8 hrs + 30 min after (8 hrs is a placeholder until Owen gives the time).
 - Deposit: Appointments > Settings > Payments & cancellations > Require a deposit, £50 flat on every variation over £150 (ceramic all, Stage 1 all, new car protection, full deep clean M/L/XL, deep interior XL). Cut-off 2 days, policy text added.
 - Not in Square yet: Stage 2 paint correction (no price). Online booking still disabled; site `bookingOpen: false`.
+- 19 Nov (afternoon): Owen changed the deposit to 20% on every service, not refundable if the customer cancels; if Owen cancels (weather) he rebooks or refunds in full. Square: Require a deposit > Percentage 20% on all services (37 variations), refund policy and cancellation text updated. Site `site.deposit` and llms.txt updated. Cut-off still 2 days (only controls when clients can self-cancel).
+- 19 Nov: Ultimate maintenance package added to the site (Plans, every 2 or 4 weeks, "Ask Owen"); not in Square until Owen prices it. New car protection now a 5 year coating (site + Square description).
