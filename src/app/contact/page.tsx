@@ -45,15 +45,13 @@ export default function Contact() {
             <details>
               <summary>Personal belongings</summary>
               <p>
-              </p>
-              <p>
                 Please take anything valuable or personal out of the vehicle before Owen starts. He can&rsquo;t be
                 responsible for items left inside.
               </p>
             </details>
             <details>
               <summary>What Owen needs from you</summary>
-              <p>{site.needs}</p>
+              <p>Owen needs an accessible tap and electric to complete the service.</p>
             </details>
             <details>
               <summary>Paying</summary>
