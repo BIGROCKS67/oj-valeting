@@ -470,6 +470,7 @@ export const services: Service[] = [
     slug: "stage-2-paint-correction",
     name: "Stage 2 paint correction",
     category: "Paint correction",
+    squareId: "UD2OY4XRMDYG7EOUOSIC2YPS",
     blurb: "A two-stage machine polish for deeper swirls and scratches, finished with a 1 year ceramic coating.",
     searchName: "Stage 2 paint correction",
     from: 260, // Owen, WhatsApp 19 Nov 16:32-16:33
