@@ -3,7 +3,6 @@ import { site, tel, sms, bookHref } from "@/data/site";
 import { hoursList } from "@/data/hours";
 import { services } from "@/data/services";
 import Link from "next/link";
-import { Draft } from "@/components/Draft";
 import { PageHead } from "@/components/PageHead";
 
 // Owen, 18 Nov 2026: a Contact button at the end of the top menu instead of the number and Book.
@@ -26,7 +25,7 @@ export default function Contact() {
     <section className="wrap contact">
       <div className="contact-text">
         {/* Owen, 18 Nov: laid out like elitekleanz.com/contact: the terms first (as drop-downs), then a big
-            call button, then a quote form. Deposit and belongings are drafts until Owen confirms them. */}
+            call button, then a quote form. Deposit and belongings confirmed by Owen 18 Nov. */}
         <section id="terms" className="contact-terms" aria-labelledby="terms-h">
           <h2 id="terms-h">Please read before booking</h2>
           <div className="drops">
@@ -46,7 +45,6 @@ export default function Contact() {
             <details>
               <summary>Personal belongings</summary>
               <p>
-                <Draft what="this" />
               </p>
               <p>
                 Please take anything valuable or personal out of the vehicle before Owen starts. He can&rsquo;t be
