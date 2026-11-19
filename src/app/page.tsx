@@ -103,8 +103,9 @@ export default function Home() {
           <div className="livery-head">
             <h2 id="prices-h">Services</h2>
             <p>
-              Pick what you need: inside, outside or both, paint correction, a coating or a regular plan. Prices are for a small
-              car and go up with size, and every service has its full table. Cars, vans, motorbikes, caravans, motorhomes,
+              From a regular maintenance clean or a full mobile deep clean on your drive to professional paint correction and
+              long lasting ceramic protection, every service is carried out to a detailing standard wherever your vehicle is
+              parked. Prices are for a small car and go up with size, and every service has its full table. Cars, vans, motorbikes, caravans, motorhomes,
               horseboxes and farm vehicles all welcome.
             </p>
           </div>
