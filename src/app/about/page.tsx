@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, bookHref } from "@/data/site";
 
-// Owen's own words, sent on WhatsApp 18 Nov 2026 (15:36); spelling tidied only. Photo: his steam
-// cleaning shot until he sends one of him by his van.
+// Owen's own words, sent on WhatsApp 18 Nov 2026 (15:36); spelling tidied only. Photo: Owen by his van (19 Nov).
 
 export const metadata: Metadata = {
   title: "About Owen | OJ Valeting",
@@ -23,7 +22,7 @@ export default function About() {
         <source media="(min-width: 900px)" type="image/avif" srcSet="/photos/about-w.avif" />
         <source media="(min-width: 900px)" type="image/webp" srcSet="/photos/about-w.webp" />
         <source type="image/avif" srcSet="/photos/about-m.avif" />
-        <img src="/photos/about-m.webp" alt="Owen in his OJ Valeting T-shirt, steam cleaning the inside of a car door" fetchPriority="high" />
+        <img src="/photos/about-m.webp" alt="Owen in his OJ Valeting cap and T-shirt, standing in front of the OJ Valeting van" fetchPriority="high" />
       </picture>
       <div className="about-hero-in">
       <p className="page-eyebrow">Just me and my business</p>

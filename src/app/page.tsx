@@ -147,7 +147,7 @@ export default function Home() {
       <section className="owen" aria-labelledby="owen-h">
         <div className="owen-split">
           <figure className="owen-photo">
-            <Pic id="owen-steam-cleaning-door" sizes="(min-width: 900px) 50vw, 100vw" alt="Owen in his OJ Valeting T-shirt, steam cleaning the inside of a car door" />
+            <Pic id="owen-van-arms-crossed" sizes="(min-width: 900px) 50vw, 100vw" alt="Owen in his OJ Valeting cap and T-shirt, standing in front of the OJ Valeting van" />
           </figure>
           <div className="owen-text">
             <p className="page-eyebrow">Just me and my business</p>
