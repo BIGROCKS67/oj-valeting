@@ -6,7 +6,6 @@ import { reviews } from "@/data/reviews";
 import { site, tel, bookUrl } from "@/data/site";
 import { Pic } from "@/components/Pic";
 import { captions } from "@/data/photos";
-import { Draft } from "@/components/Draft";
 import { ReviewList } from "@/components/ReviewList";
 import { serviceLd } from "@/data/schema";
 
@@ -105,7 +104,6 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       <section className="wrap svc-body">
         <div className="included">
           <h2>What&rsquo;s included</h2>
-          {!s.includesConfirmed && <Draft />}
           {s.includes.map((g) => (
             <div key={g.group} className="inc-group">
               <h3>{g.group}</h3>
