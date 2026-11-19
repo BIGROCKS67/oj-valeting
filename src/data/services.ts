@@ -528,7 +528,7 @@ export const services: Service[] = [
     includesConfirmed: false,
     extras: ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"],
     prices: [{ label: "New car protection detail", prices: [["Starting from", "£480+"]] }],
-    photos: ["owen-polo-sill", "owen-wheel-clean", "porsche-taycan-black", "bmw-m4"],
+    photos: ["defender-110-green", "owen-polo-sill", "owen-wheel-clean", "porsche-taycan-black"], // Owen, 19 Nov: Defender as the main photo
     goodFor: "a new or nearly new car you want protected from day one.",
   },
 ];
