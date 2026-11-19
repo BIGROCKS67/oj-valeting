@@ -36,6 +36,10 @@ export default function About() {
           call-outs are welcome.
         </p>
         <p>I use professional grade products and equipment to get the job completed to the highest quality.</p>
+        <p>
+          I also take the weather into consideration when carrying out professional work, and if it&rsquo;s needed I
+          have a gazebo I can work under for the best results.
+        </p>
         <p className="about-cta">
           <a href={bookHref} className="btn btn-foam btn-big">
             Book a clean
