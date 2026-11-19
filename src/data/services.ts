@@ -307,7 +307,7 @@ export const services: Service[] = [
     ],
     includesConfirmed: false,
     extras: ["Wax sealant or paste wax", "Ceramic spray", "Pet hair removal (depends how bad)"],
-    prices: [{ label: "Each visit", prices: [["Small", "£40"], ["Medium", "£50"], ["Large", "£60"], ["XL", "£70"]] }],
+    prices: [{ label: "Each visit", prices: [["Small", "£40+"], ["Medium", "£50+"], ["Large", "£60+"], ["XL", "£70+"]] }], // Owen, 19 Nov: "+" on all, quoted on how dirty the car is
     option: { name: "frequency", label: "How often?", choices: ["Every 2 weeks", "Every 4 weeks", "Every 6 weeks"] },
     photos: ["defender-snow-foam", "range-rover", "land-rover-defender-110", "bmw-5-series"],
     goodFor: "keeping a car at its best once it's had a deep clean. Steve F keeps both his household's cars on it.",
