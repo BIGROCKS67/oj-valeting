@@ -159,7 +159,7 @@ export default function Home() {
               </p>
             </blockquote>
             <p>
-              Owen started OJ Valeting just over a year ago and has cleaned over 450 vehicles since. You book him, and
+              Owen started OJ Valeting just over a year ago and has worked on over 450 vehicles since. You book him, and
               he&rsquo;s the one who turns up and does the job.
             </p>
             <ul className="facts" role="list">

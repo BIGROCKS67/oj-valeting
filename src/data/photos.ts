@@ -1,7 +1,7 @@
 import dims from "./photo-dims.json";
 
 // All photos are Owen's own, from his old site's portfolio (ojvaleting.org/portfolio).
-// Captions name the vehicle only: the old site gave no towns or dates. CONFIRM list asks for them.
+// Captions name the vehicle (plus a service on some: Owen, 19 Nov 16:42, "a few different jobs of all my services"): the old site gave no towns or dates. CONFIRM list asks for them.
 
 export const captions: Record<string, string> = {
   "oj-van-livery": "The OJ Valeting van",
@@ -58,31 +58,31 @@ export const captions: Record<string, string> = {
   "transit-custom-cab": "Ford Transit Custom cab",
   "audi-tt-rs": "Audi TT RS",
   "audi-tt-rs-wheel": "Audi TT RS alloy",
-  "mercedes-c-class-cabriolet": "Mercedes C-Class Cabriolet",
+  "mercedes-c-class-cabriolet": "Basic package, Mercedes C-Class Cabriolet",
   "range-rover-sport-wheel": "Range Rover Sport alloy",
   "range-rover-black": "Deep exterior clean, Range Rover",
   "bmw-x3": "BMW X3",
-  "defender-110-black": "Land Rover Defender 110",
+  "defender-110-black": "Stage 2 paint correction, Land Rover Defender 110",
   "audi-q2": "Audi Q2",
   "porsche-macan-white": "Porsche Macan",
   "porsche-boxster-red": "Porsche 718 Boxster",
   "defender-110-green": "7 year ceramic coating, Land Rover Defender 110",
   "bmw-x5-interior": "BMW X5 interior",
   "porsche-taycan-blue": "Porsche Taycan",
-  "porsche-cayman": "Porsche Cayman",
+  "porsche-cayman": "Ceramic coating, Porsche Cayman",
   "range-rover-sport-black": "Range Rover Sport",
   "mercedes-eqb": "Mercedes EQB",
   "bmw-m4-white": "BMW M4",
   "range-rover-sport-rear": "Range Rover Sport",
-  "range-rover-alloy": "Range Rover alloy",
-  "audi-q5-sportback": "Audi Q5 Sportback",
+  "range-rover-alloy": "Deep exterior clean, Range Rover alloy",
+  "audi-q5-sportback": "Maintenance package, Audi Q5 Sportback",
   "ktm-duke": "KTM Duke motorbike",
-  "defender-90-black": "Land Rover Defender 90",
+  "defender-90-black": "Full deep clean, Land Rover Defender 90",
   "bmw-m2": "BMW M2",
-  "porsche-taycan-black": "Porsche Taycan",
+  "porsche-taycan-black": "Ultimate maintenance package, Porsche Taycan",
   "range-rover-boot": "Deep interior clean, Range Rover",
   "range-rover-sport-gloss": "Range Rover Sport",
-  "porsche-cayenne-coupe": "Porsche Cayenne Coupé",
+  "porsche-cayenne-coupe": "Stage 1 paint correction, Porsche Cayenne Coupé",
   "range-rover-sport-grey": "Range Rover Sport",
   "ford-focus-st": "Ford Focus ST",
   "mercedes-cla": "Mercedes CLA",

@@ -320,8 +320,8 @@ export const services: Service[] = [
     category: "Plans",
     blurb: "For nicer cars: everything in the maintenance package every 2 or 4 weeks, with added extras on each visit.",
     searchName: "Ultimate maintenance valet plan",
-    from: 0,
-    time: "Owen will confirm the time",
+    from: 80, // Owen, 19 Nov 16:35
+    time: "1.5 to 3 hours",
     jobHours: 3,
     note: "Every 2 or 4 weeks.",
     includes: [
@@ -335,7 +335,7 @@ export const services: Service[] = [
     ],
     includesConfirmed: false,
     extras: ["Ceramic spray", "Alloy ceramic coating, 1 or 2 years"],
-    prices: [{ label: "Each visit", prices: [["Small", "Ask Owen"], ["Medium", "Ask Owen"], ["Large", "Ask Owen"], ["XL", "Ask Owen"]] }],
+    prices: [{ label: "Each visit", prices: [["Small", "£80"], ["Medium", "£110"], ["Large", "£140"], ["XL", "£170"]] }],
     option: { name: "frequency", label: "How often?", choices: ["Every 2 weeks", "Every 4 weeks"] },
     photos: ["porsche-taycan-black", "porsche-macan-white", "range-rover", "bmw-5-series"],
     goodFor: "a car you care about that you want kept at its very best, with the little extras taken care of too.",
@@ -473,7 +473,7 @@ export const services: Service[] = [
     squareId: "UD2OY4XRMDYG7EOUOSIC2YPS",
     blurb: "A two-stage machine polish for deeper swirls and scratches, finished with a 1 year ceramic coating.",
     searchName: "Stage 2 paint correction",
-    from: 260, // Owen, WhatsApp 19 Nov 16:32-16:33
+    from: 300, // Owen, WhatsApp 19 Nov 16:32 (edited to £300-£450, 16:36 "changed prices last second")
     time: "4 to 7 hours",
     jobHours: 7,
     includes: [
@@ -497,7 +497,7 @@ export const services: Service[] = [
     ],
     includesConfirmed: false,
     extras: ["Headlight restoration, the pair", "Exhaust tips polished and restored", "Interior plastics polished"],
-    prices: [{ label: "Stage 2 paint correction", note: "Clay bar and 1 year ceramic included", prices: [["Small", "£260"], ["Medium", "£310"], ["Large", "£360"], ["XL", "£410"]] }],
+    prices: [{ label: "Stage 2 paint correction", note: "Clay bar and 1 year ceramic included", prices: [["Small", "£300"], ["Medium", "£350"], ["Large", "£400"], ["XL", "£450"]] }],
     photos: ["owen-porsche-boxster-polish", "garage-gloss-bonnet", "porsche-911", "ford-headlight"],
     goodFor: "paint with heavier swirls and scratches that a single polish won't fully take out.",
   },
@@ -510,7 +510,7 @@ export const services: Service[] = [
     blurb: "For a new car: a single stage paint correction and a 5 year ceramic coating, so it stays like the day you got it.",
     searchName: "New car protection detail",
     from: 430, // Owen, 19 Nov 16:28 (was 480)
-    time: "Owen will confirm the time",
+    time: "A whole day", // Owen, 19 Nov 16:38
     jobHours: 8,
     includes: [
       {

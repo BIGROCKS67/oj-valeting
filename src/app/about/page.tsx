@@ -29,7 +29,7 @@ export default function About() {
       <h1 id="about-h">Hi, I&rsquo;m Owen</h1>
       <div className="about-text prose">
         <p>
-          I started OJ Valeting just over a year ago and have cleaned over 450 different types of vehicles, and
+          I started OJ Valeting just over a year ago and have worked on over 450 different types of vehicles, and
           counting.
         </p>
         <p>
