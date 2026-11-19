@@ -143,7 +143,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       </section>
 
       {/* Good to know: drop-downs like elitekleanz.com (Owen, 18 Nov). Facts already on the site; the
-          deposit line is a draft until Owen confirms the amount. */}
+          deposit: 20% on every service (Owen, 19 Nov). */}
       <section className="wrap svc-faq" aria-labelledby="gk-h">
         <h2 id="gk-h">Good to know</h2>
         <div className="drops">

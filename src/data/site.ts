@@ -19,9 +19,10 @@ export const site = {
   payment: "Pay by Apple Pay, bank transfer or cash on the day.",
   // Owen, WhatsApp 17 Nov 2026: say this on the site and in booking.
   needs: "Owen needs a tap and a plug socket he can use at yours. He brings a waterproof gazebo, so rain won't stop the job.",
-  // Owen, 18 Nov 2026: £50 deposit on bookings over £150, taken off the final price; lost if they
+  // Owen, 19 Nov 2026 (replaces 18 Nov £50-over-£150 rule): 20% deposit on every service, non-refundable, like Elite Kleanz's terms.
+  // Was: £50 deposit on bookings over £150, taken off the final price; lost if they
   // cancel less than 48 hours before the booking.
-  deposit: "Bookings over £150 need a £50 deposit to secure the date. It comes off the final price. If you cancel less than 48 hours before your booking, the deposit isn't refunded.",
+  deposit: "Every booking needs a 20% deposit to secure the date, and it comes off the final price. Deposits can't be refunded or moved to another booking if you cancel or don't keep the appointment. If Owen has to cancel, because of the weather for example, he'll rebook you at the earliest date he can or give you a full refund.",
   // Owen, WhatsApp 17 Nov 2026.
   honest: "Owen tells you honestly what your car needs and quotes for that every time, not just the most expensive package.",
   // Owen, 17 Nov 2026: say nationwide.
