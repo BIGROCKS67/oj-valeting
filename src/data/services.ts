@@ -508,7 +508,7 @@ export const services: Service[] = [
     category: "Protection",
     blurb: "For a new car: a single stage paint correction and a 5 year ceramic coating, so it stays like the day you got it.",
     searchName: "New car protection detail",
-    from: 480,
+    from: 430, // Owen, 19 Nov 16:28 (was 480)
     time: "Owen will confirm the time",
     jobHours: 8,
     includes: [
@@ -527,7 +527,7 @@ export const services: Service[] = [
     ],
     includesConfirmed: false,
     extras: ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"],
-    prices: [{ label: "New car protection detail", prices: [["Starting from", "£480+"]] }],
+    prices: [{ label: "New car protection detail", prices: [["Starting from", "£430+"]] }],
     photos: ["defender-110-green", "owen-polo-sill", "owen-wheel-clean", "porsche-taycan-black"], // Owen, 19 Nov: Defender as the main photo
     goodFor: "a new or nearly new car you want protected from day one.",
   },
