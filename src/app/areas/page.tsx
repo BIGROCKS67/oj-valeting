@@ -32,7 +32,7 @@ export default function Areas() {
         <span className="area-glow" aria-hidden="true" />
         <div className="wrap area-card-wrap">
           <div className="area-card">
-            <p className="page-eyebrow">Mobile valeting, UK nationwide</p>
+            <p className="page-eyebrow">Mobile valeting and detailing, UK nationwide</p>
             <h1 id="areas-h">Areas Owen covers</h1>
             <p>
               Owen comes to your home or work across {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}.

@@ -21,6 +21,7 @@ function Card({ s, js }: { s: Service; js: boolean }) {
   const table = s.prices[0];
   const [size, setSize] = useState(0);
   const [label, price] = table.prices[size];
+  const sized = table.prices.length > 1;
   return (
     <li className="menu-card">
       <Link href={`/${s.slug}/`} className="mc-pic" tabIndex={-1} aria-hidden="true">
@@ -32,7 +33,7 @@ function Card({ s, js }: { s: Service; js: boolean }) {
         </h3>
         <p className="mc-blurb">{s.blurb}</p>
         {s.cardTip && <p className="mc-tip">{s.cardTip}</p>}
-        {js && (
+        {js && sized && (
           <div className="mc-sizes" role="group" aria-label={`${s.name}: price by vehicle size`}>
             {table.prices.map(([k], i) => (
               <button key={k} type="button" aria-pressed={i === size} onClick={() => setSize(i)}>
@@ -54,7 +55,7 @@ function Card({ s, js }: { s: Service; js: boolean }) {
             </span>
           )}
         </p>
-        {js && <p className="mc-hint">{sizeHint[label]}</p>}
+        {js && sized && <p className="mc-hint">{sizeHint[label]}</p>}
         {s.note?.startsWith("Price may change") && <p className="mc-hint">{s.note}</p>}
         <p className="mc-links">
           <Link href={`/${s.slug}/`}>What&rsquo;s included</Link>

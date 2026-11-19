@@ -30,7 +30,7 @@ export const guides: Guide[] = [
         q: "How much is a basic mobile valet?",
         a: [
           "A basic valet inside and out starts at £45 for a small car, £55 for a medium, £65 for a large and £75 for an XL (7-seater or van). It takes 1 to 2 hours.",
-          "Inside only starts at £30, and outside only starts at £25.",
+          "Inside only starts at £30, and outside only starts at £30.",
         ],
       },
       {

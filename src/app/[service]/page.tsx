@@ -71,7 +71,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       </section>
 
       <section className="wrap svc-prices" aria-labelledby="pr-h">
-        <h2 id="pr-h">Prices by vehicle size</h2>
+        <h2 id="pr-h">{s.prices[0].prices.length > 1 ? "Prices by vehicle size" : "Price"}</h2>
         {s.tip && <p className="price-tip">{s.tip}</p>}
         <div className="price-tables">
           {s.prices.map((t) => (
@@ -91,7 +91,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             </table>
           ))}
         </div>
-        <p className="size-guide">
+        {s.prices[0].prices.length > 1 && (<p className="size-guide">
           {sizeGuide.map(([size, what], i) => (
             <span key={size}>
               <strong>{size}</strong> {what}
@@ -99,7 +99,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             </span>
           ))}{" "}
           A &ldquo;+&rdquo; means from: Owen confirms the final price once he&rsquo;s seen the vehicle.
-        </p>
+        </p>)}
       </section>
 
       <section className="wrap svc-body">

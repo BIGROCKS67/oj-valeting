@@ -36,7 +36,6 @@ export default function About() {
           call-outs are welcome.
         </p>
         <p>I use professional grade products and equipment to get the job completed to the highest quality.</p>
-        <p>Look forward to meeting you.</p>
         <p className="about-cta">
           <a href={bookHref} className="btn btn-foam btn-big">
             Book a clean

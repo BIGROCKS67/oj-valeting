@@ -1,5 +1,6 @@
 // Owen, WhatsApp 18 Nov 17:01: paint correction £210 / £260 / £310 / £360.
 // Owen, WhatsApp 18 Nov 16:52: deep interior XL £160+, basic interior XL £50+ (inside-only rows match).
+// Owen, WhatsApp 18 Nov 22:09-22:15: new car protection from £480+ (no size table), basic interior XL £45+, basic exterior small £30.
 // Names, times and Owen's one-line descriptions are from his old services page
 // (ojvaleting.org/my-services, 16 Nov 2026). Prices by size and add-on prices are from the
 // price list he sent on 17 Nov 2026. The "What's included"
@@ -9,7 +10,7 @@
 export type Option = { name: string; label: string; choices: string[] };
 
 /** One price table: a row per vehicle size. Prices are Owen's own (price list sent 17 Nov 2026). */
-export type PriceTable = { label: string; note?: string; prices: [Size, string][] };
+export type PriceTable = { label: string; note?: string; prices: [Size | "Starting from", string][] };
 export type Size = "Small" | "Medium" | "Large" | "XL";
 
 // CONFIRM with Owen: which cars count as which size. Shown with a Draft tag until he signs it off.
@@ -124,8 +125,8 @@ export const services: Service[] = [
     ],
     prices: [
       { label: "Inside and out", prices: [["Small", "£45+"], ["Medium", "£55+"], ["Large", "£65+"], ["XL", "£75+"]] },
-      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£50+"]] },
-      { label: "Outside only", prices: [["Small", "£25"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
+      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
+      { label: "Outside only", prices: [["Small", "£30"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
     ],
     photos: ["bmw-m4-wash", "owen-porsche-boxster-wash", "vw-golf-r", "porsche-cayenne"],
     goodFor: "a car that's been looked after and needs a proper clean inside and out.",
@@ -339,7 +340,7 @@ export const services: Service[] = [
       "Interior plastics polished",
     ],
     prices: [
-      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£50+"]] },
+      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
     ],
     photos: ["discovery-interior", "ford-interior", "boot-cleaned", "land-rover-interior"],
     goodFor: "a car that looks fine outside but needs the inside sorting: school runs, work vans, dog hair.",
@@ -351,7 +352,7 @@ export const services: Service[] = [
     category: "Exterior",
     blurb: "Snow foam, safe hand wash, wheels and glass. Inside left as it is.",
     searchName: "Mobile car wash and exterior valet",
-    from: 25,
+    from: 30,
     time: "45 minutes to 1 hour",
     jobHours: 1,
     includes: [
@@ -368,7 +369,7 @@ export const services: Service[] = [
     ],
     includesConfirmed: false,
     extras: ["Wax sealant or paste wax", "Ceramic spray", "Exhaust polish", "Engine bay clean"],
-    prices: [{ label: "Outside only", prices: [["Small", "£25"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] }],
+    prices: [{ label: "Outside only", prices: [["Small", "£30"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] }],
     photos: ["vw-golf-r", "range-rover-satin", "owen-polo-roof", "gloss-roof"],
     goodFor: "a quick, safe wash between valets, or before a trip or a sale.",
   },
@@ -479,7 +480,7 @@ export const services: Service[] = [
     category: "Protection",
     blurb: "For a new car: a single stage paint correction and a 3 year ceramic coating, so it stays like the day you got it.",
     searchName: "New car protection detail",
-    from: 0,
+    from: 480,
     time: "Owen will confirm the time",
     jobHours: 8,
     includes: [
@@ -498,7 +499,7 @@ export const services: Service[] = [
     ],
     includesConfirmed: false,
     extras: ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"],
-    prices: [{ label: "New car protection detail", prices: [["Small", "Ask Owen"], ["Medium", "Ask Owen"], ["Large", "Ask Owen"], ["XL", "Ask Owen"]] }],
+    prices: [{ label: "New car protection detail", prices: [["Starting from", "£480+"]] }],
     photos: ["owen-polo-sill", "owen-wheel-clean", "porsche-taycan-black", "bmw-m4"],
     goodFor: "a new or nearly new car you want protected from day one.",
   },
