@@ -108,8 +108,8 @@ export default function Book() {
             ))}
           </ul>
           <p>
-            These are prices for a small car. Bigger vehicles cost a bit more: each service page has the full
-            table by size. Owen confirms the final price once he&rsquo;s seen the vehicle. Motorbike, caravan, motorhome, horsebox, farm vehicle or
+            {/* Owen, 20 Nov 16:37: removed the "prices for a small car" lead-in */}
+            Owen confirms the final price once he&rsquo;s seen the vehicle. Motorbike, caravan, motorhome, horsebox, farm vehicle or
             something not on the list? <a href={sms("Hi Owen, ")}>Text him</a> and he&rsquo;ll sort a time.
           </p>
           <p>{site.needs}</p>

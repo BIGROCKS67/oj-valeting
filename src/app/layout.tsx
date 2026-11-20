@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   // Bing Webmaster Tools (Jack's account), added 17 Nov 2026. Keep it.
   verification: { other: { "msvalidate.01": "41E604313DBE1C6486CD9A5F3A4A5002" } },
-  title: "OJ Valeting | Mobile Car Valeting, Brackley & Buckingham",
+  title: "OJ Valeting | Mobile Detailing and Valeting, Buckinghamshire", // Owen, 20 Nov 17:00
   description:
-    "Owen comes to your home or work with the OJ Valeting van. Valets from £45, deep cleans from £150, paint correction and ceramic coating. Brackley, Buckingham, Towcester and beyond.",
+    "Mobile detailing and valeting in Buckinghamshire and nationwide. Owen comes to your home or work: valets from £45, deep cleans from £150, paint correction and ceramic coating.",
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -150,7 +150,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <img src={asset("/logo-mark.png")} width={434} height={368} alt="" className="foot-mark" loading="lazy" />
               <p className="foot-name">OJ VALETING</p>
               <p>
-                Mobile valeting and detailing by Owen, at your home or place of work across{" "}
+                Mobile detailing and valeting by Owen, at your home or place of work across{" "}
                 {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}, and nationwide. Fully insured. 24 hour
                 emergency call-outs too.
               </p>

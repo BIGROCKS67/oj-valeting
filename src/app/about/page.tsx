@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site, bookHref } from "@/data/site";
 
-// Owen's own words, sent on WhatsApp 18 Nov 2026 (15:36); spelling tidied only. Photo: Owen by his van (19 Nov).
+// Owen's own words, sent on WhatsApp 20 Nov 2026 (16:41). Photo: Owen by his van (19 Nov).
 
 export const metadata: Metadata = {
   title: "About Owen | OJ Valeting",
   description:
-    "Owen runs OJ Valeting, a mobile valeting and detailing business based between Brackley and Buckingham. He does every job himself.",
+    "Owen runs OJ Valeting, a fully insured mobile detailing and valeting business in Buckinghamshire. Over 450 vehicles worked on, every job done by Owen himself.",
   alternates: { canonical: "/about/" },
 };
 
@@ -28,23 +28,32 @@ export default function About() {
       <p className="page-eyebrow">Just me and my business</p>
       <h1 id="about-h">Hi, I&rsquo;m Owen</h1>
       <div className="about-text prose">
+        {/* Owen's own About text, WhatsApp 20 Nov 16:41. Weather/gazebo line kept from 19 Nov. */}
+        <p className="about-lead">Professional valeting and detailing, with a passion for perfection.</p>
         <p>
-          I started OJ Valeting just over a year ago and have worked on over 450 different types of vehicles, and
-          counting.
+          I started OJ Valeting just over a year ago from a genuine passion for cars and a love for bringing vehicles
+          back to their best. Since then, I&rsquo;ve had the pleasure of working on over 450 different vehicles, and
+          I&rsquo;m proud of how far the business has come.
         </p>
         <p>
-          Honesty and quality are the heart of everything I do. I&rsquo;ll always give you genuine advice and recommend
-          only what your vehicle needs. My OCD and attention to detail is unmatched and you won&rsquo;t be disappointed.
+          For me, detailing is about more than just cleaning cars. I love seeing the transformation, taking pride in
+          the smallest details and knowing every customer drives away happy with the results.
         </p>
         <p>
-          I travel nationwide to make sure you get the best results. I&rsquo;m fully insured, and 24 hour emergency
-          call-outs are welcome.
+          Honesty, quality and attention to detail are at the heart of everything I do. I use professional grade
+          products and equipment, never cut corners and always recommend what&rsquo;s best for your vehicle.
         </p>
-        <p>I use professional grade products and equipment to get the job completed to the highest quality.</p>
         <p>
-          I also take the weather into consideration when carrying out professional work, and if it&rsquo;s needed I
-          have a gazebo I can work under for the best results.
+          As a fully insured mobile valeting and detailing business, I bring professional vehicle care directly to
+          you, wherever you are. I also take the weather into consideration, and if it&rsquo;s needed I have a gazebo
+          I can work under for the best results.
         </p>
+        <p>
+          My goal is simple: to deliver outstanding results, provide a service you can trust and treat every vehicle
+          as if it were my own.
+        </p>
+        <p>Thank you for supporting OJ Valeting!</p>
+        <p className="about-sign">Owen, owner of OJ Valeting</p>
         <p className="about-cta">
           <a href={bookHref} className="btn btn-foam btn-big">
             Book a clean

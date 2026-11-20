@@ -3027,3 +3027,13 @@ textarea {
     padding-block: clamp(4rem, 8vw, 7rem);
   }
 }
+/* Owen's About text, 20 Nov: tagline under the heading and a sign-off */
+.about-hero .about-text .about-lead {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--paper);
+}
+.about-hero .about-text .about-sign {
+  font-weight: 600;
+  color: var(--paper);
+}
