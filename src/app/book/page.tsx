@@ -114,7 +114,7 @@ export default function Book() {
           </p>
           <p>{site.needs}</p>
           <p>{site.payment}</p>
-          <h2>Add-ons</h2>
+          <h2 id="add-ons">Add-ons</h2>
           <ul className="book-prices" role="list">
             {Object.entries(addOns).map(([name, price]) => (
               <li key={name}>

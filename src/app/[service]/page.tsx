@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { services, getService, gbp, addOnPrice, sizeGuide, fromText } from "@/data/services";
+import { services, getService, gbp, addOns, addOnPrice, sizeGuide, fromText } from "@/data/services";
 import { reviews } from "@/data/reviews";
 import { site, tel, bookUrl } from "@/data/site";
 import { Pic } from "@/components/Pic";
@@ -117,7 +117,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         </div>
 
         <aside className="extras" aria-labelledby="ex-h">
-          <h2 id="ex-h">{s.extras.length ? "Extras you can add" : "Extras"}</h2>
+          <h2 id="ex-h">{s.extras.length ? "Popular extras for this service" : "Extras"}</h2>
           {s.extras.length ? (
             <>
               <ul>
@@ -128,9 +128,18 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
                 ))}
               </ul>
               <p className="aside-note">Mention any you want in the notes when you book, or text Owen. After something that isn&rsquo;t listed? Just ask.</p>
+              {/* Owen, voice note 21 Nov: show these are only some of the extras, with a way to the full list */}
+              <p>
+                <Link href="/book/#add-ons" className="btn btn-line btn-line-dark">
+                  See all {Object.keys(addOns).length} extras and prices
+                </Link>
+              </p>
             </>
           ) : (
-            <p>Added extras are available on request. Mention them when you book.</p>
+            <>
+              <p>Added extras are available on request. Mention them when you book.</p>
+              <p><Link href="/book/#add-ons" className="btn btn-line btn-line-dark">See all extras and prices</Link></p>
+            </>
           )}
           {s.option && (
             <p className="aside-note">
