@@ -26,8 +26,9 @@ export const addOns: Record<string, string> = {
   "Engine bay clean": "£25+",
   "Alloy ceramic coating, 1 or 2 years": "£60+",
   "Exhaust polish": "£30+", // Owen, 21 Nov: one exhaust add-on, £30+ (tips polished and restored merged in)
-  "Clay bar with full decontamination wash": "£50+",
-  "Full decontamination wash": "£40+",
+  "Clay bar with full decontamination wash": "£60+", // Owen, 21 Nov 12:41 (was £50+)
+  "Full decontamination wash": "£25+", // Owen, 21 Nov 12:39 (was £40+)
+  "Clay bar": "£50+", // Owen, 21 Nov 12:38: on its own, for the full deep clean (decon wash already included)
   "Mould removal": "£40+",
   "Soft top treatment": "£65+",
   "Full window ceramic coating, 12 to 24 months": "£60+",
@@ -170,7 +171,7 @@ export const services: Service[] = [
       "Pet hair removal (depends how bad)",
       "Mould removal",
       "Soft top treatment",
-      "Clay bar with full decontamination wash",
+      "Clay bar",
     ],
     prices: [
       { label: "Inside and out", prices: [["Small", "£150+"], ["Medium", "£165+"], ["Large", "£180+"], ["XL", "£200+"]] },
