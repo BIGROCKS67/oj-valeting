@@ -57,7 +57,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           <p>Best for {s.goodFor}</p>
           <div className="hero-cta">
             <a href={bookUrl(s.squareId)} className="btn btn-foam btn-big">
-              Book the {s.name.toLowerCase()}
+              Book the {s.name}
             </a>
             <a href={tel} className="btn btn-line btn-big">
               Call <span className="num">{site.phone}</span>
