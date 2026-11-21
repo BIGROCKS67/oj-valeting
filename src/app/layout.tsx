@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         <summary>Services</summary>
                         <ul>
                           <li>
-                            <Link href="/#prices">All services and prices</Link>
+                            <Link href="/#prices">All Services and Prices</Link>
                           </li>
                           {serviceGroups.map((g) => (
                             <li key={g.slug}>

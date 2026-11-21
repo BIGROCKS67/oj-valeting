@@ -49,7 +49,7 @@ export default async function Group({ params }: { params: Promise<{ group: strin
             </Link>
           ))}{" "}
           <Link href="/#prices" className="hero-link dark">
-            All services and prices
+            All Services and Prices
           </Link>
         </p>
         <p className="center-cta">
