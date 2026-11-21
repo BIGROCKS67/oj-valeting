@@ -25,8 +25,7 @@ export const sizeGuide: [Size, string][] = [
 export const addOns: Record<string, string> = {
   "Engine bay clean": "£25+",
   "Alloy ceramic coating, 1 or 2 years": "£60+",
-  "Exhaust polish": "£25+",
-  "Exhaust tips polished and restored": "£30+",
+  "Exhaust polish": "£30+", // Owen, 21 Nov: one exhaust add-on, £30+ (tips polished and restored merged in)
   "Clay bar with full decontamination wash": "£50+",
   "Full decontamination wash": "£40+",
   "Mould removal": "£40+",
@@ -85,7 +84,7 @@ export type Service = {
 export const services: Service[] = [
   {
     slug: "car-valeting",
-    name: "Basic package",
+    name: "Basic Package", // Owen, 21 Nov: capitals on service titles
     category: "Full valets",
     blurb: "A proper valet inside and out, at your home or work.",
     squareId: "Y335SIFHZPY26WGD4L74DGV7",
@@ -116,14 +115,12 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: [
+    extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Wax sealant or paste wax",
       "Ceramic spray",
       "Engine bay clean",
       "Pet hair removal (depends how bad)",
       "Seat stain removal",
-      "Headlight restoration, the pair",
-      "Exhaust polish",
     ],
     prices: [
       { label: "Inside and out", prices: [["Small", "£45+"], ["Medium", "£55+"], ["Large", "£65+"], ["XL", "£75+"]] },
@@ -135,7 +132,7 @@ export const services: Service[] = [
   },
   {
     slug: "deep-clean",
-    name: "Full deep clean",
+    name: "Full Deep Clean",
     category: "Full valets",
     blurb: "Everything out, shampooed, steamed and decontaminated, inside and out.",
     squareId: "7QPFGXPL75UJLWTY7WEMRYJR",
@@ -168,15 +165,12 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: [
+    extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Ozone treatment",
       "Pet hair removal (depends how bad)",
-      "Seat stain removal",
       "Mould removal",
-      "Interior plastics polished",
       "Soft top treatment",
       "Clay bar with full decontamination wash",
-      "Vinyl removal",
     ],
     prices: [
       { label: "Inside and out", prices: [["Small", "£150+"], ["Medium", "£165+"], ["Large", "£180+"], ["XL", "£200+"]] },
@@ -188,7 +182,7 @@ export const services: Service[] = [
   },
   {
     slug: "paint-correction",
-    name: "Stage 1 paint correction",
+    name: "Stage 1 Paint Correction",
     category: "Paint correction",
     blurb: "Machine polished to take out swirls, light scratches and dullness.",
     squareId: "OUN7JPWB65ZLOR6BKFUDUTO2",
@@ -217,11 +211,11 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: [
+    extras: [ // Owen, voice notes 21 Nov 10:54-10:55
       "Headlight restoration, the pair",
-      "Exhaust tips polished and restored",
-      "Interior plastics polished",
+      "Exhaust polish",
       "Scratch removal (touch-up pen supplied)",
+      "Wax sealant or paste wax",
     ],
     prices: [
       {
@@ -235,7 +229,7 @@ export const services: Service[] = [
   },
   {
     slug: "ceramic-coating",
-    name: "Ceramic coating",
+    name: "Ceramic Coating",
     category: "Protection",
     blurb: "Years of gloss and protection, and a car that's far easier to wash.",
     squareId: "YOJHVAR5GVHFBCLZETWATB6Z",
@@ -264,10 +258,13 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: [
+    extras: [ // Owen, voice notes 21 Nov 10:54-10:55
       "Full window ceramic coating, 12 to 24 months",
       "Alloy ceramic coating, 1 or 2 years",
       "Interior leather ceramic coating",
+      "Plastic trim restoration",
+      "Soft top treatment",
+      "Exhaust polish",
     ],
     // Owen, 17 Nov 2026: paint may need correcting first, at a discounted price.
     cardTip: "Need a paint correction first? It comes at a discounted price with a coating.",
@@ -286,7 +283,7 @@ export const services: Service[] = [
   },
   {
     slug: "maintenance-valet",
-    name: "Maintenance package",
+    name: "Maintenance Package",
     category: "Plans",
     blurb: "A booked-in wash and tidy every 2, 4 or 6 weeks, so the car never slips.",
     squareId: "BGCFUBL4UQKHY4JFNSSAHAOM",
@@ -309,7 +306,12 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: ["Wax sealant or paste wax", "Ceramic spray", "Pet hair removal (depends how bad)"],
+    extras: [ // Owen, voice notes 21 Nov 10:57-11:01
+      "Wax sealant or paste wax",
+      "Ceramic spray",
+      "Pet hair removal (depends how bad)",
+      "Seat stain removal",
+    ],
     prices: [{ label: "Each visit", prices: [["Small", "£40+"], ["Medium", "£50+"], ["Large", "£60+"], ["XL", "£70+"]] }], // Owen, 19 Nov: "+" on all, quoted on how dirty the car is
     option: { name: "frequency", label: "How often?", choices: ["Every 2 weeks", "Every 4 weeks", "Every 6 weeks"] },
     photos: ["defender-snow-foam", "range-rover", "land-rover-defender-110", "bmw-5-series"],
@@ -319,7 +321,7 @@ export const services: Service[] = [
   // sorted. Prices and the exact extras to come from Owen.
   {
     slug: "ultimate-maintenance",
-    name: "Ultimate maintenance package",
+    name: "Ultimate Maintenance Package",
     category: "Plans",
     squareId: "YFKWA2HQR7PXYTRORVYUYIYK",
     blurb: "For nicer cars: everything in the maintenance package every 2 or 4 weeks, with added extras on each visit.",
@@ -338,7 +340,14 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: ["Ceramic spray", "Alloy ceramic coating, 1 or 2 years"],
+    extras: [ // Owen, voice notes 21 Nov 10:57-11:01
+      "Ceramic spray",
+      "Clay bar with full decontamination wash",
+      "Engine bay clean",
+      "Pet hair removal (depends how bad)",
+      "Interior plastics polished",
+      "Ozone treatment",
+    ],
     prices: [{ label: "Each visit", prices: [["Small", "£80"], ["Medium", "£110"], ["Large", "£140"], ["XL", "£170"]] }],
     option: { name: "frequency", label: "How often?", choices: ["Every 2 weeks", "Every 4 weeks"] },
     photos: ["porsche-taycan-black", "porsche-macan-white", "range-rover", "bmw-5-series"],
@@ -346,7 +355,7 @@ export const services: Service[] = [
   },
   {
     slug: "interior-valet",
-    name: "Basic interior clean",
+    name: "Basic Interior Clean",
     squareId: "QHVHCQN4AXLK6WH4HEILDT4Z",
     category: "Interior",
     blurb: "Hoovered, wiped down and glass cleaned inside. Outside left as it is.",
@@ -366,11 +375,11 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: [
+    extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Pet hair removal (depends how bad)",
       "Seat stain removal",
       "Ozone treatment",
-      "Interior plastics polished",
+      "Interior leather ceramic coating",
     ],
     prices: [
       { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
@@ -380,7 +389,7 @@ export const services: Service[] = [
   },
   {
     slug: "exterior-valet",
-    name: "Basic exterior clean",
+    name: "Basic Exterior Clean",
     squareId: "NZHA643IUQHGJDWAL24V2XWG",
     category: "Exterior",
     blurb: "Snow foam, safe hand wash, wheels and glass. Inside left as it is.",
@@ -401,14 +410,21 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: ["Wax sealant or paste wax", "Ceramic spray", "Exhaust polish", "Engine bay clean"],
+    extras: [ // Owen, voice notes 21 Nov 10:47-10:52
+      "Wax sealant or paste wax",
+      "Ceramic spray",
+      "Exhaust polish",
+      "Engine bay clean",
+      "Plastic trim restoration",
+      "Clay bar with full decontamination wash",
+    ],
     prices: [{ label: "Outside only", prices: [["Small", "£30"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] }],
     photos: ["vw-golf-r", "range-rover-satin", "owen-polo-roof", "gloss-roof"],
     goodFor: "a quick, safe wash between valets, or before a trip or a sale.",
   },
   {
     slug: "deep-interior",
-    name: "Deep interior clean",
+    name: "Deep Interior Clean",
     squareId: "JIGGKAI27UU5FOWNBFT7M2CO",
     category: "Interior",
     blurb: "Everything out, seats and carpets shampooed and extracted, plastics steamed.",
@@ -430,12 +446,12 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: [
+    extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Ozone treatment",
       "Pet hair removal (depends how bad)",
-      "Seat stain removal",
       "Mould removal",
       "Interior plastics polished",
+      "Interior leather ceramic coating",
     ],
     prices: [{ label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£160+"]] }],
     photos: ["owen-steam-cleaning-door", "porsche-red-leather-interior", "land-rover-interior", "discovery-interior"],
@@ -443,7 +459,7 @@ export const services: Service[] = [
   },
   {
     slug: "deep-exterior",
-    name: "Deep exterior clean",
+    name: "Deep Exterior Clean",
     squareId: "36UI4EG27IT4KO6FDC7V623W",
     category: "Exterior",
     blurb: "Full wash plus iron fallout and tar taken off the paint, then sealed.",
@@ -464,7 +480,12 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: ["Clay bar with full decontamination wash", "Headlight restoration, the pair", "Exhaust tips polished and restored", "Ceramic spray"],
+    extras: [ // Owen, voice notes 21 Nov 10:47-10:52
+      "Clay bar with full decontamination wash",
+      "Headlight restoration, the pair",
+      "Exhaust polish",
+      "Ceramic spray",
+    ],
     prices: [{ label: "Outside only", prices: [["Small", "£40"], ["Medium", "£45"], ["Large", "£50"], ["XL", "£55"]] }],
     photos: ["range-rover-satin", "porsche-wheel", "vw-golf-r-rear", "bmw-m4-rear"],
     goodFor: "paint that feels rough or looks dull, or a car getting ready for polishing or a coating.",
@@ -474,7 +495,7 @@ export const services: Service[] = [
   // from Owen; until then every size says Ask Owen. "What's included" is a draft for him to confirm.
   {
     slug: "stage-2-paint-correction",
-    name: "Stage 2 paint correction",
+    name: "Stage 2 Paint Correction",
     category: "Paint correction",
     squareId: "UD2OY4XRMDYG7EOUOSIC2YPS",
     blurb: "A two-stage machine polish for deeper swirls and scratches, finished with a 1 year ceramic coating.",
@@ -502,7 +523,12 @@ export const services: Service[] = [
       },
     ],
     includesConfirmed: false,
-    extras: ["Headlight restoration, the pair", "Exhaust tips polished and restored", "Interior plastics polished"],
+    extras: [ // Owen, voice notes 21 Nov 10:54-10:55
+      "Headlight restoration, the pair",
+      "Exhaust polish",
+      "Scratch removal (touch-up pen supplied)",
+      "Wax sealant or paste wax",
+    ],
     prices: [{ label: "Stage 2 paint correction", note: "Clay bar and 1 year ceramic included", prices: [["Small", "£300"], ["Medium", "£350"], ["Large", "£400"], ["XL", "£450"]] }],
     photos: ["owen-porsche-boxster-polish", "garage-gloss-bonnet", "porsche-911", "ford-headlight"],
     goodFor: "paint with heavier swirls and scratches that a single polish won't fully take out.",
@@ -511,7 +537,7 @@ export const services: Service[] = [
   // a 5 year ceramic coating (Owen, 19 Nov: was 3 year). Prices and times to come from Owen.
   {
     slug: "new-car-protection",
-    name: "New car protection detail",
+    name: "New Car Protection Detail",
     category: "Protection",
     blurb: "For a new car: a single stage paint correction and a 5 year ceramic coating, so it stays like the day you got it.",
     searchName: "New car protection detail",
