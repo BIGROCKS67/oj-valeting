@@ -40,8 +40,9 @@ export const addOns: Record<string, string> = {
   "Interior plastics polished": "£40+",
   "Interior leather ceramic coating": "£120+",
   "Ozone treatment": "£20+",
-  // Owen, call 18 Nov 2026.
-  "Plastic restoration": "£30+",
+  // Owen, call 18 Nov 2026; renamed and seat stains added by Owen, WhatsApp 20 Nov 18:20.
+  "Plastic trim restoration": "£30+",
+  "Seat stain removal": "£20+",
 };
 export const addOnPrice = (name: string) => addOns[name] ?? "Ask Owen";
 
@@ -120,6 +121,7 @@ export const services: Service[] = [
       "Ceramic spray",
       "Engine bay clean",
       "Pet hair removal (depends how bad)",
+      "Seat stain removal",
       "Headlight restoration, the pair",
       "Exhaust polish",
     ],
@@ -169,6 +171,7 @@ export const services: Service[] = [
     extras: [
       "Ozone treatment",
       "Pet hair removal (depends how bad)",
+      "Seat stain removal",
       "Mould removal",
       "Interior plastics polished",
       "Soft top treatment",
@@ -365,6 +368,7 @@ export const services: Service[] = [
     includesConfirmed: false,
     extras: [
       "Pet hair removal (depends how bad)",
+      "Seat stain removal",
       "Ozone treatment",
       "Interior plastics polished",
     ],
@@ -429,6 +433,7 @@ export const services: Service[] = [
     extras: [
       "Ozone treatment",
       "Pet hair removal (depends how bad)",
+      "Seat stain removal",
       "Mould removal",
       "Interior plastics polished",
     ],
