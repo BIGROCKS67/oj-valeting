@@ -144,13 +144,13 @@ export const services: Service[] = [
     slug: "paint-correction",
     name: "Stage 1 Paint Correction",
     category: "Paint correction",
-    blurb: "Includes a full deep exterior wash and paintwork prepped ready for the stage 1 paint correction to be carried out. This stage 1 paint correction removes 75% to 90% of light swirls, scratches and defects on the paintwork. (Clay bar may also be needed.)", // Owen, WhatsApp 22 Nov
+    blurb: "Includes a full deep exterior wash and paintwork prepped ready for the stage 1 paint correction to be carried out. This stage 1 paint correction removes 70% to 85% of light swirls, scratches and defects on the paintwork. (Clay bar may also be needed.)", // Owen, WhatsApp 22 Nov
     squareId: "OUN7JPWB65ZLOR6BKFUDUTO2",
     searchName: "Paint correction",
     from: 210,
     time: "3 to 5 hours",
     jobHours: 5,
-    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
+    includes: [{group: "Exterior", items: ["A full deep exterior wash, prepped for the stage 1 machine polish", "Car air dried", "Tyres dressed", "Stage 1 paint correction to remove 70% to 85% of surface scratches and swirl marks and boost the gloss of the paintwork"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:54-10:55
       "Headlight restoration, the pair",
@@ -179,7 +179,7 @@ export const services: Service[] = [
     time: "3 to 5 hours",
     jobHours: 5,
     note: "3, 5 and 7 year options available.",
-    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
+    includes: [{group: "Exterior", items: ["A full deep exterior wash and decontamination of the paintwork, fully prepped ready for the ceramic coating", "Car air dried", "Tyres dressed", "3, 5 or 7 year ceramic coating applied to protect your vehicle"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:54-10:55
       "Full window ceramic coating, 12 to 24 months",
@@ -215,7 +215,7 @@ export const services: Service[] = [
     time: "1 to 2 hours",
     jobHours: 2,
     note: "Every 2, 4 or 6 weeks.",
-    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
+    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket method hand wash", "Car fully dried", "Tyres dressed", "All glass cleaned", "Tar and glue removal", "Wax sealant applied"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:57-11:01
       "Wax sealant or paste wax",
@@ -241,7 +241,7 @@ export const services: Service[] = [
     time: "1.5 to 3 hours",
     jobHours: 3,
     note: "Every 2 or 4 weeks.",
-    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
+    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed", "Shampoo and steam spot vac of fabric seats, or steam clean of leather seats"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket method hand wash", "Car fully dried", "Tyres dressed", "All glass cleaned", "Full decontamination of the paintwork", "Wax sealant applied", "A light machine polish if scratches or bush marks appear between visits"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:57-11:01
       "Ceramic spray",
@@ -364,7 +364,7 @@ export const services: Service[] = [
     from: 300, // Owen, WhatsApp 19 Nov 16:32 (edited to £300-£450, 16:36 "changed prices last second")
     time: "4 to 7 hours",
     jobHours: 7,
-    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
+    includes: [{group: "Exterior", items: ["A full deep exterior wash, prepped for the stage 2 machine polish", "Car air dried", "Tyres dressed", "Stage 2 paint correction to remove 90% to 95% of surface scratches and swirl marks and boost the gloss of the paintwork"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:54-10:55
       "Headlight restoration, the pair",
@@ -384,13 +384,13 @@ export const services: Service[] = [
     category: "Protection",
     blurb: "This is the ultimate package for your newly purchased vehicle. This includes a full deep interior clean with leather or fabric protectant applied, a full deep exterior clean, a light stage 1 machine polish and then a 5 year ceramic coating.", // Owen, WhatsApp 22 Nov
     searchName: "New car protection detail",
-    from: 430, // Owen, 19 Nov 16:28 (was 480)
+    from: 450, // Owen, WhatsApp 23 Nov 21:22 (was 430)
     time: "A whole day", // Owen, 19 Nov 16:38
     jobHours: 8,
-    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
+    includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet areas shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed", "Fabric or leather treatment applied", "Ozone machine to decontaminate the inside of the vehicle"]}, {group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned", "Full decontamination", "Stage 1 paint correction", "5 year ceramic coating"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"],
-    prices: [{ label: "New car protection detail", prices: [["Starting from", "£430+"]] }],
+    prices: [{ label: "New Car Protection Package", prices: [["Starting from", "£450+"]] }],
     photos: ["defender-110-green", "owen-polo-sill", "owen-wheel-clean", "porsche-taycan-black"], // Owen, 19 Nov: Defender as the main photo
     goodFor: "a new or nearly new car you want protected from day one.",
   },

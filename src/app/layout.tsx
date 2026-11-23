@@ -136,6 +136,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <li>
                   <Link href="/about/">About</Link>
                 </li>
+                <li>
+                  <a href={giftUrl}>Gift Vouchers</a>
+                </li>
               </ul>
             </nav>
             {/* Owen, 18 Nov: Contact at the end instead of the number and Book a clean */}
