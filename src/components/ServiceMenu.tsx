@@ -54,6 +54,8 @@ function Card({ s, js }: { s: Service; js: boolean }) {
             </span>
           )}
         </p>
+        {js && sized && <p className="mc-hint">{sizeHint[label]}</p>}
+        {s.note?.startsWith("Price may vary") && <p className="mc-hint">{s.note}</p>}
         <p className="mc-links">
           <Link href={`/${s.slug}/`}>{s.includes.length ? <>What&rsquo;s included</> : "More details"}</Link>
           <a href={bookUrl(s.squareId)} className="pl-book">
@@ -64,6 +66,14 @@ function Card({ s, js }: { s: Service; js: boolean }) {
     </li>
   );
 }
+
+// Owen, WhatsApp 22 Nov 22:09: size line back on the cards, in capitals.
+const sizeHint: Record<string, string> = {
+  Small: "City Cars and Small Hatchbacks",
+  Medium: "Family Hatchbacks and Saloons",
+  Large: "Estates and Bigger SUVs",
+  XL: "7-Seaters, Big 4x4s, Vans and Motorhomes",
+};
 
 export function ServiceMenu() {
   const [js, setJs] = useState(false);

@@ -164,7 +164,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             <summary>Can the price change?</summary>
             <p>
               The prices are starting prices for each size. Owen confirms the final price once he&rsquo;s seen the
-              vehicle, before he starts. {s.note?.startsWith("Price may change") ? s.note : ""} {site.honest}
+              vehicle, before he starts. {s.note?.startsWith("Price may vary") ? s.note : ""} {site.honest}
             </p>
           </details>
           <details>

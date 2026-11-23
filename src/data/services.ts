@@ -94,7 +94,7 @@ export const services: Service[] = [
     from: 45,
     time: "1 to 2 hours",
     jobHours: 2,
-    note: "Price may change once Owen sees how dirty the car is. Any type of vehicle welcome.",
+    note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
     includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
@@ -121,7 +121,7 @@ export const services: Service[] = [
     searchName: "Car deep clean",
     from: 150,
     time: "3 to 5 hours",
-    note: "Price may change once Owen sees how dirty the car is.",
+    note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
     jobHours: 5,
     includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
@@ -266,7 +266,7 @@ export const services: Service[] = [
     from: 30,
     time: "45 minutes to 1 hour",
     jobHours: 1,
-    note: "Price may change once Owen sees how dirty the car is.",
+    note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
     includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
@@ -314,7 +314,7 @@ export const services: Service[] = [
     searchName: "Car interior deep clean",
     from: 130,
     time: "About 2 hours",
-    note: "Price may change once Owen sees how dirty the car is.",
+    note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
     jobHours: 2,
     includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,

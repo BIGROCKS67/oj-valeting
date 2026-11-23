@@ -57,11 +57,14 @@ export default function Home() {
                 <span>and Detailing</span>
               </span>
             </h1>
-            <p className="hero-sub">Maintenance, deep cleans, paint correction and ceramic coating.</p>
+            <p className="hero-sub">Maintenance, Deep Cleans, Paint Correction and Ceramic Coating, Done Properly on Your Drive.</p>
             <div className="hero-cta">
               <a href={bookHref} className="btn btn-foam hero-book">
                 Book a clean
               </a>
+              <Link href="/work/" className="hero-link">
+                See Our Work
+              </Link>
             </div>
             <p className="hero-proof">
               <a href={site.google.url}>
