@@ -3037,3 +3037,13 @@ textarea {
   font-weight: 600;
   color: var(--paper);
 }
+/* Owen, 23 Nov: all menu links on the computer menu; keep them on one line on smaller laptops */
+.nav-wide a {
+  white-space: nowrap;
+}
+@media (min-width: 900px) and (max-width: 1099px) {
+  .nav-wide {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}

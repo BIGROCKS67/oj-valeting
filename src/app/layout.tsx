@@ -125,6 +125,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </details>
               <ul className="nav-wide">
                 <li>
+                  <Link href="/">Home</Link>
+                </li>
+                <li>
                   <Link href="/#prices">Services</Link>
                 </li>
                 <li>
@@ -135,6 +138,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </li>
                 <li>
                   <Link href="/about/">About</Link>
+                </li>
+                <li>
+                  <Link href="/areas/">Areas covered</Link>
                 </li>
                 <li>
                   <a href={giftUrl}>Gift Vouchers</a>

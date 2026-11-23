@@ -95,7 +95,7 @@ export const services: Service[] = [
     time: "1 to 2 hours",
     jobHours: 2,
     note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
-    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket method hand wash", "Car fully dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
+    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Wax sealant or paste wax",
@@ -215,7 +215,7 @@ export const services: Service[] = [
     time: "1 to 2 hours",
     jobHours: 2,
     note: "Every 2, 4 or 6 weeks.",
-    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket method hand wash", "Car fully dried", "Tyres dressed", "All glass cleaned", "Tar and glue removal", "Wax sealant applied"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
+    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned", "Tar and glue removal", "Wax sealant applied"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:57-11:01
       "Wax sealant or paste wax",
@@ -241,7 +241,7 @@ export const services: Service[] = [
     time: "1.5 to 3 hours",
     jobHours: 3,
     note: "Every 2 or 4 weeks.",
-    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed", "Shampoo and steam spot vac of fabric seats, or steam clean of leather seats"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket method hand wash", "Car fully dried", "Tyres dressed", "All glass cleaned", "Full decontamination of the paintwork", "Wax sealant applied", "A light machine polish if scratches or bush marks appear between visits"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
+    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed", "Shampoo and steam spot vac of fabric seats, or steam clean of leather seats"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned", "Full decontamination of the paintwork", "Wax sealant applied", "A light machine polish if scratches or bush marks appear between visits"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:57-11:01
       "Ceramic spray",
@@ -291,7 +291,7 @@ export const services: Service[] = [
     from: 30,
     time: "45 minutes to 1 hour",
     jobHours: 1,
-    includes: [{group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket method hand wash", "Car fully dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
+    includes: [{group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Wax sealant or paste wax",
