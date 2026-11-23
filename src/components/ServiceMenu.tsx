@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { services, categories, addOns, protectionAddOns, sizeGuide, gbp, type Service, fromText } from "@/data/services";
+import { services, categories, addOns, protectionAddOns, gbp, type Service, fromText } from "@/data/services";
 import { bookUrl } from "@/data/site";
 import { Pic } from "@/components/Pic";
 
@@ -15,7 +15,6 @@ type Tab = (typeof tabs)[number];
 const label = (t: Tab) => t.replace(/(^|[\s-])([a-z])/g, (_, a, b) => a + b.toUpperCase());
 const slugOf = (t: Tab) => t.toLowerCase().replace(/[^a-z]+/g, "-");
 
-const sizeHint: Record<string, string> = Object.fromEntries(sizeGuide.map(([k, v]) => [k, v.split(",")[0]]));
 
 function Card({ s, js }: { s: Service; js: boolean }) {
   const table = s.prices[0];
@@ -55,10 +54,8 @@ function Card({ s, js }: { s: Service; js: boolean }) {
             </span>
           )}
         </p>
-        {js && sized && <p className="mc-hint">{sizeHint[label]}</p>}
-        {s.note?.startsWith("Price may change") && <p className="mc-hint">{s.note}</p>}
         <p className="mc-links">
-          <Link href={`/${s.slug}/`}>What&rsquo;s included</Link>
+          <Link href={`/${s.slug}/`}>{s.includes.length ? <>What&rsquo;s included</> : "More details"}</Link>
           <a href={bookUrl(s.squareId)} className="pl-book">
             Book
           </a>

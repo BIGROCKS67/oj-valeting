@@ -43,6 +43,7 @@ export const addOns: Record<string, string> = {
   // Owen, call 18 Nov 2026; renamed and seat stains added by Owen, WhatsApp 20 Nov 18:20.
   "Plastic trim restoration": "£30+",
   "Seat stain removal": "£20+",
+  "Vehicle cleared (rubbish and personal belongings)": "£10+", // Owen, WhatsApp 22 Nov 20:50
 };
 export const addOnPrice = (name: string) => addOns[name] ?? "Ask Owen";
 
@@ -87,34 +88,14 @@ export const services: Service[] = [
     slug: "car-valeting",
     name: "Basic Package", // Owen, 21 Nov: capitals on service titles
     category: "Full valets",
-    blurb: "A proper valet inside and out, at your home or work.",
+    blurb: "A complete inside and out clean, bringing back that fresh, well-maintained look to your vehicle.", // Owen, WhatsApp 22 Nov
     squareId: "Y335SIFHZPY26WGD4L74DGV7",
     searchName: "Mobile car valet",
     from: 45,
     time: "1 to 2 hours",
     jobHours: 2,
-    owenSays: "Bring your vehicle back to looking like new with the basic package.",
     note: "Price may change once Owen sees how dirty the car is. Any type of vehicle welcome.",
-    includes: [
-      {
-        group: "Outside",
-        items: [
-          "Snow foam pre-wash to lift the dirt before anything touches the paint",
-          "Hand wash, two-bucket method",
-          "Wheels, tyres and arches cleaned, tyres dressed",
-          "Hand dried with microfibre towels",
-          "Windows and mirrors cleaned",
-        ],
-      },
-      {
-        group: "Inside",
-        items: [
-          "Seats, carpets, mats and boot hoovered",
-          "Dash, console and door cards wiped down",
-          "Windows cleaned inside",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Wax sealant or paste wax",
@@ -135,36 +116,14 @@ export const services: Service[] = [
     slug: "deep-clean",
     name: "Full Deep Clean",
     category: "Full valets",
-    blurb: "Everything out, shampooed, steamed and decontaminated, inside and out.",
+    blurb: "A thorough top-to-bottom deep clean, with carpets and upholstery shampooed, surfaces steam cleaned and the vehicle fully decontaminated inside and out. Bringing your vehicle back to its best condition.", // Owen, WhatsApp 22 Nov
     squareId: "7QPFGXPL75UJLWTY7WEMRYJR",
     searchName: "Car deep clean",
     from: 150,
     time: "3 to 5 hours",
     note: "Price may change once Owen sees how dirty the car is.",
     jobHours: 5,
-    owenSays: "Bring your vehicle back to looking brand new with the full deep clean package.",
-    includes: [
-      {
-        group: "Inside",
-        items: [
-          "Everything taken out, then every surface hoovered, including under the seats and in the boot well",
-          "Seats and carpets shampooed and extracted",
-          "Plastics, vents and door shuts steam cleaned",
-          "Leather cleaned and conditioned",
-          "Interior glass cleaned",
-        ],
-      },
-      {
-        group: "Outside",
-        items: [
-          "Snow foam and two-bucket hand wash",
-          "Wheel faces and barrels cleaned, arches degreased",
-          "Iron fallout and tar removed from the paint",
-          "Door shuts cleaned",
-          "Sealant applied, tyres dressed, glass cleaned",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Ozone treatment",
@@ -185,32 +144,13 @@ export const services: Service[] = [
     slug: "paint-correction",
     name: "Stage 1 Paint Correction",
     category: "Paint correction",
-    blurb: "Machine polished to take out swirls, light scratches and dullness.",
+    blurb: "Includes a full deep exterior wash and paintwork prepped ready for the stage 1 paint correction to be carried out. This stage 1 paint correction removes 75% to 90% of light swirls, scratches and defects on the paintwork. (Clay bar may also be needed.)", // Owen, WhatsApp 22 Nov
     squareId: "OUN7JPWB65ZLOR6BKFUDUTO2",
     searchName: "Paint correction",
     from: 210,
     time: "3 to 5 hours",
     jobHours: 5,
-    owenSays:
-      "My paint correction package is the ideal solution for vehicles with paint defects, swirl marks, and minor imperfections.",
-    includes: [
-      {
-        group: "Preparation",
-        items: [
-          "Snow foam and two-bucket hand wash",
-          "Iron fallout and tar removed, then a clay bar to leave the paint smooth",
-          "Trim and rubbers masked off",
-        ],
-      },
-      {
-        group: "Correction",
-        items: [
-          "Machine polished to take out swirl marks, light scratches and dullness",
-          "Checked panel by panel under light",
-          "Protected with sealant afterwards",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:54-10:55
       "Headlight restoration, the pair",
@@ -232,32 +172,14 @@ export const services: Service[] = [
     slug: "ceramic-coating",
     name: "Ceramic Coating",
     category: "Protection",
-    blurb: "Years of gloss and protection, and a car that's far easier to wash.",
+    blurb: "If you're looking for the ultimate protection then ceramic coating is the one. Includes a deep exterior clean and full decontamination of paintwork before applying either a 3, 5 or 7 year ceramic coating. It's important to prep the paintwork, alloys and glass professionally before to ensure optimal bond. (May also need a paint correction at a discounted price.)", // Owen, WhatsApp 22 Nov
     squareId: "YOJHVAR5GVHFBCLZETWATB6Z",
     searchName: "Ceramic coating",
     from: 300,
     time: "3 to 5 hours",
     jobHours: 5,
-    owenSays: "This gives your vehicle the ultimate long-lasting protection with the ceramic coating option.",
     note: "3, 5 and 7 year options available.",
-    includes: [
-      {
-        group: "Preparation",
-        items: [
-          "Full wash and decontamination",
-          "Clay bar so the coating goes on to clean, smooth paint",
-          "Panel wipe to take off any oils before coating",
-        ],
-      },
-      {
-        group: "Coating",
-        items: [
-          "Ceramic coating applied panel by panel",
-          "Left to cure, then checked over before handover",
-          "Aftercare advice on washing the coated car",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:54-10:55
       "Full window ceramic coating, 12 to 24 months",
@@ -286,26 +208,14 @@ export const services: Service[] = [
     slug: "maintenance-valet",
     name: "Maintenance Package",
     category: "Plans",
-    blurb: "A booked-in wash and tidy every 2, 4 or 6 weeks, so the car never slips.",
+    blurb: "A priority booked maintenance interior and exterior clean every 2, 4 or 6 weeks. This package keeps your vehicle looking like new all year round and comes at a discounted price and a couple of added extras. Please see details for what's included.", // Owen, WhatsApp 22 Nov
     squareId: "BGCFUBL4UQKHY4JFNSSAHAOM",
     searchName: "Maintenance valet plan",
     from: 40,
     time: "1 to 2 hours",
     jobHours: 2,
-    owenSays:
-      "My maintenance plan is designed to keep your vehicle looking its best on a regular booked basis. Enjoying a little discount with a few added extras too.",
     note: "Every 2, 4 or 6 weeks.",
-    includes: [
-      {
-        group: "Each visit",
-        items: [
-          "Snow foam and hand wash, wheels and tyres cleaned",
-          "Hand dried, glass cleaned",
-          "Interior hoovered and wiped down",
-          "Same day and time each visit where possible",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:57-11:01
       "Wax sealant or paste wax",
@@ -325,21 +235,13 @@ export const services: Service[] = [
     name: "Ultimate Maintenance Package",
     category: "Plans",
     squareId: "YFKWA2HQR7PXYTRORVYUYIYK",
-    blurb: "For nicer cars: everything in the maintenance package every 2 or 4 weeks, with added extras on each visit.",
+    blurb: "Designed for anyone who wants to keep their vehicle looking its absolute best all year round. Including everything from the standard Maintenance Package, with a scheduled visit every 2 or 4 weeks, alongside additional specialist treatments and premium extras added to each visit.", // Owen, WhatsApp 22 Nov
     searchName: "Ultimate maintenance valet plan",
     from: 80, // Owen, 19 Nov 16:35
     time: "1.5 to 3 hours",
     jobHours: 3,
     note: "Every 2 or 4 weeks.",
-    includes: [
-      {
-        group: "Each visit",
-        items: [
-          "Everything in the maintenance package",
-          "Added extras, such as small scratches sorted as part of the visit",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:57-11:01
       "Ceramic spray",
@@ -359,22 +261,13 @@ export const services: Service[] = [
     name: "Basic Interior Clean",
     squareId: "QHVHCQN4AXLK6WH4HEILDT4Z",
     category: "Interior",
-    blurb: "Hoovered, wiped down and glass cleaned inside. Outside left as it is.",
+    blurb: "A thorough interior clean, including vacuuming, wiping down all surfaces and cleaning interior windows and glass. Exterior cleaning is not included.", // Owen, WhatsApp 22 Nov
     searchName: "Mobile car interior valet",
     from: 30,
     time: "45 minutes to 1 hour",
     jobHours: 1,
     note: "Price may change once Owen sees how dirty the car is.",
-    includes: [
-      {
-        group: "Inside",
-        items: [
-          "Seats, carpets, mats and boot hoovered",
-          "Dash, console and door cards wiped down",
-          "Windows and mirrors cleaned inside",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Pet hair removal (depends how bad)",
@@ -393,23 +286,12 @@ export const services: Service[] = [
     name: "Basic Exterior Clean",
     squareId: "NZHA643IUQHGJDWAL24V2XWG",
     category: "Exterior",
-    blurb: "Snow foam, safe hand wash, wheels and glass. Inside left as it is.",
+    blurb: "A thorough exterior clean, including a pre wash to lift and loosen dirt, a safe hand wash, wheel cleaning and exterior glass cleaning. Interior cleaning is not included.", // Owen, WhatsApp 22 Nov
     searchName: "Mobile car wash and exterior valet",
     from: 30,
     time: "45 minutes to 1 hour",
     jobHours: 1,
-    includes: [
-      {
-        group: "Outside",
-        items: [
-          "Snow foam pre-wash to lift the dirt before anything touches the paint",
-          "Hand wash, two-bucket method",
-          "Wheels, tyres and arches cleaned, tyres dressed",
-          "Hand dried with microfibre towels",
-          "Windows and mirrors cleaned",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Wax sealant or paste wax",
@@ -428,24 +310,13 @@ export const services: Service[] = [
     name: "Deep Interior Clean",
     squareId: "JIGGKAI27UU5FOWNBFT7M2CO",
     category: "Interior",
-    blurb: "Everything out, seats and carpets shampooed and extracted, plastics steamed.",
+    blurb: "A comprehensive interior deep clean, including the removal of all loose items, thorough shampooing and extraction of seats and carpets and steam cleaning of interior plastics and surfaces. Brought back to a brand new condition.", // Owen, WhatsApp 22 Nov
     searchName: "Car interior deep clean",
     from: 130,
     time: "About 2 hours",
     note: "Price may change once Owen sees how dirty the car is.",
     jobHours: 2,
-    includes: [
-      {
-        group: "Inside",
-        items: [
-          "Everything taken out, then every surface hoovered, including under the seats and in the boot well",
-          "Seats and carpets shampooed and extracted",
-          "Plastics, vents and door shuts steam cleaned",
-          "Leather cleaned and conditioned",
-          "Interior glass cleaned",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Ozone treatment",
@@ -463,23 +334,12 @@ export const services: Service[] = [
     name: "Deep Exterior Clean",
     squareId: "36UI4EG27IT4KO6FDC7V623W",
     category: "Exterior",
-    blurb: "Full wash plus iron fallout and tar taken off the paint, then sealed.",
+    blurb: "Ultimate deep exterior clean including a full pre wash to lift and loosen dirt, detail brush all door shuts, boot shut and badges etc so not a spot is missed. Alloys, wheel arches and tyres detail brushed and brought back to a brand new condition. Then a safe 2 bucket hand wash is carried out. Tar, iron and glue removal so paintwork is fully decontaminated. Then vehicle has a wax sealant applied to give extra gloss and protection. Vehicle is then finally dried using an air blow machine and professional drying towels. Tyres then finally dressed.", // Owen, WhatsApp 22 Nov
     searchName: "Car exterior deep clean",
     from: 40,
     time: "1 to 2 hours",
     jobHours: 2,
-    includes: [
-      {
-        group: "Outside",
-        items: [
-          "Snow foam and two-bucket hand wash",
-          "Wheel faces and barrels cleaned, arches degreased",
-          "Iron fallout and tar removed from the paint",
-          "Door shuts cleaned",
-          "Sealant applied, tyres dressed, glass cleaned",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Clay bar with full decontamination wash",
@@ -499,30 +359,12 @@ export const services: Service[] = [
     name: "Stage 2 Paint Correction",
     category: "Paint correction",
     squareId: "UD2OY4XRMDYG7EOUOSIC2YPS",
-    blurb: "A two-stage machine polish for deeper swirls and scratches, finished with a 1 year ceramic coating.",
+    blurb: "Stage 1 paint correction can achieve great results and improve the paintwork to a whole new level. But if you're looking for absolute perfect paintwork then the stage 2 is where it cuts the paintwork back deeper than the top layer to reveal the absolute perfect finish. (Clay bar may also be needed.)", // Owen, WhatsApp 22 Nov
     searchName: "Stage 2 paint correction",
     from: 300, // Owen, WhatsApp 19 Nov 16:32 (edited to £300-£450, 16:36 "changed prices last second")
     time: "4 to 7 hours",
     jobHours: 7,
-    includes: [
-      {
-        group: "Preparation",
-        items: [
-          "Snow foam and two-bucket hand wash",
-          "Iron fallout and tar removed, then a clay bar to leave the paint smooth",
-          "Trim and rubbers masked off",
-        ],
-      },
-      {
-        group: "Correction",
-        items: [
-          "Cutting stage to take out deeper swirls and scratches",
-          "Finishing polish to bring the gloss back",
-          "Checked panel by panel under light",
-          "1 year ceramic coating on the paintwork",
-        ],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:54-10:55
       "Headlight restoration, the pair",
@@ -538,27 +380,14 @@ export const services: Service[] = [
   // a 5 year ceramic coating (Owen, 19 Nov: was 3 year). Prices and times to come from Owen.
   {
     slug: "new-car-protection",
-    name: "New Car Protection Detail",
+    name: "New Car Protection Package",
     category: "Protection",
-    blurb: "For a new car: a single stage paint correction and a 5 year ceramic coating, so it stays like the day you got it.",
+    blurb: "This is the ultimate package for your newly purchased vehicle. This includes a full deep interior clean with leather or fabric protectant applied, a full deep exterior clean, a light stage 1 machine polish and then a 5 year ceramic coating.", // Owen, WhatsApp 22 Nov
     searchName: "New car protection detail",
     from: 430, // Owen, 19 Nov 16:28 (was 480)
     time: "A whole day", // Owen, 19 Nov 16:38
     jobHours: 8,
-    includes: [
-      {
-        group: "Preparation",
-        items: ["Snow foam and two-bucket hand wash", "Iron fallout and tar removed, then a clay bar"],
-      },
-      {
-        group: "Correction",
-        items: ["Single stage machine polish to take out any marks from the dealer or delivery"],
-      },
-      {
-        group: "Protection",
-        items: ["5 year ceramic coating on the paintwork"],
-      },
-    ],
+    includes: [], // Owen, voice note 22 Nov: old lists removed, he is sending new ones
     includesConfirmed: false,
     extras: ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"],
     prices: [{ label: "New car protection detail", prices: [["Starting from", "£430+"]] }],

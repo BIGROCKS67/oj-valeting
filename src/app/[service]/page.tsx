@@ -53,7 +53,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             {s.note ? `. ${s.note}` : ""}
           </p>
           <p className="svc-meta">{site.needs}</p>
-          {s.owenSays ? <p className="svc-says">&ldquo;{s.owenSays}&rdquo;</p> : <p className="svc-says">{s.blurb}</p>}
+          <p className="svc-says">{s.blurb}</p>
           <p>Best for {s.goodFor}</p>
           <div className="hero-cta">
             <a href={bookUrl(s.squareId)} className="btn btn-foam btn-big">
@@ -102,7 +102,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       </section>
 
       <section className="wrap svc-body">
-        <div className="included">
+        {s.includes.length > 0 && (<div className="included">
           <h2>What&rsquo;s included</h2>
           {s.includes.map((g) => (
             <div key={g.group} className="inc-group">
@@ -114,7 +114,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
               </ul>
             </div>
           ))}
-        </div>
+        </div>)}
 
         <aside className="extras" aria-labelledby="ex-h">
           <h2 id="ex-h">{s.extras.length ? "Popular extras for this service" : "Extras"}</h2>
