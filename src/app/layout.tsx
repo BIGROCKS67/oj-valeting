@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import { HeadState } from "@/components/HeadState";
 import Link from "next/link";
 import "./globals.css";
-import { site, tel, sms, bookHref } from "@/data/site";
+import { site, tel, sms, bookHref, giftUrl } from "@/data/site";
 import { services, serviceGroups } from "@/data/services";
 import { asset, isPreview } from "@/data/base";
 import { hoursList, season } from "@/data/hours";
@@ -105,6 +105,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     </li>
                     <li>
                       <Link href="/areas/">Areas covered</Link>
+                    </li>
+                    <li>
+                      <a href={giftUrl}>Gift Vouchers</a>
                     </li>
                     <li>
                       <Link href="/contact/">Contact</Link>
@@ -219,6 +222,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </li>
                 <li>
                   <Link href="/about/">About Owen</Link>
+                </li>
+                <li>
+                  <a href={giftUrl}>Gift Vouchers</a>
                 </li>
                 <li>
                   <Link href="/contact/">Contact</Link>

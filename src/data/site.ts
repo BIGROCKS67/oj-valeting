@@ -40,6 +40,9 @@ export const site = {
   google: { rating: "5.0", count: 13, url: "https://maps.google.com/?cid=380385847269804503", review: "https://g.page/r/CddJGqjpZkcFEBM/review" },
 };
 
+/** Square eGift card order page (set up 23 Nov 2026: £25, £50, £100, £150) */
+export const giftUrl = "https://app.squareup.com/gift/ML8QY5NRCAAJG/order";
+
 /** Book straight into one service in Square, or the full list if it isn't there yet */
 export const bookUrl = (squareId?: string) =>
   !site.bookingOpen ? "/book/" : squareId ? `${site.bookingApp}/${squareId}` : site.bookingApp;
