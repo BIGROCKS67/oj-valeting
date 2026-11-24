@@ -270,3 +270,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - 23 Nov 11:11 (Owen text + voice note): new what's included lists for Basic Package and Full Deep Clean; basic interior/exterior and deep interior/exterior use the matching half. Rest of the services to follow from Owen.
 - 23 Nov 17:25-21:22 (Owen): what's included lists for the other 6 services ("everything from X" expanded); Stage 1 now 70% to 85%; New Car Protection from £450+; Gift Vouchers added to the desktop nav.
 - 23 Nov (Owen): "Safe 2 bucket hand wash method" (method moved to the end); desktop nav now has every phone-menu link (Home, Services, Our work, Reviews, About, Areas covered, Gift Vouchers + Contact button), kept on one line 900-1099px.
+- 24 Nov: 'carpet area' wording, 'paintwork decontaminated', shorter Deep Exterior blurb (Owen)

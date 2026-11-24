@@ -123,7 +123,7 @@ export const services: Service[] = [
     time: "3 to 5 hours",
     note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
     jobHours: 5,
-    includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet areas shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
+    includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet area shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and paintwork decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Ozone treatment",
@@ -316,7 +316,7 @@ export const services: Service[] = [
     time: "About 2 hours",
     note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
     jobHours: 2,
-    includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet areas shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
+    includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet area shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Ozone treatment",
@@ -334,12 +334,12 @@ export const services: Service[] = [
     name: "Deep Exterior Clean",
     squareId: "36UI4EG27IT4KO6FDC7V623W",
     category: "Exterior",
-    blurb: "Ultimate deep exterior clean including a full pre wash to lift and loosen dirt, detail brush all door shuts, boot shut and badges etc so not a spot is missed. Alloys, wheel arches and tyres detail brushed and brought back to a brand new condition. Then a safe 2 bucket hand wash is carried out. Tar, iron and glue removal so paintwork is fully decontaminated. Then vehicle has a wax sealant applied to give extra gloss and protection. Vehicle is then finally dried using an air blow machine and professional drying towels. Tyres then finally dressed.", // Owen, WhatsApp 22 Nov
+    blurb: "A thorough exterior clean including a full pre-wash, detailed door shuts, badges, alloys, wheel arches and tyres. Safe two-bucket hand wash followed by tar, iron and glue removal to fully decontaminate the paintwork. Finished with a quality wax sealant for added gloss and protection, a professional dry and tyre dressing for that perfect finish.", // Owen, WhatsApp 22 Nov
     searchName: "Car exterior deep clean",
     from: 40,
     time: "1 to 2 hours",
     jobHours: 2,
-    includes: [{group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
+    includes: [{group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and paintwork decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
       "Clay bar with full decontamination wash",
@@ -387,7 +387,7 @@ export const services: Service[] = [
     from: 450, // Owen, WhatsApp 23 Nov 21:22 (was 430)
     time: "A whole day", // Owen, 19 Nov 16:38
     jobHours: 8,
-    includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet areas shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed", "Fabric or leather treatment applied", "Ozone machine to decontaminate the inside of the vehicle"]}, {group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned", "Full decontamination", "Stage 1 paint correction", "5 year ceramic coating"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
+    includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet area shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed", "Fabric or leather treatment applied", "Ozone machine to decontaminate the inside of the vehicle"]}, {group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and paintwork decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned", "Full decontamination", "Stage 1 paint correction", "5 year ceramic coating"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"],
     prices: [{ label: "New Car Protection Package", prices: [["Starting from", "£450+"]] }],
