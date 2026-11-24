@@ -241,7 +241,7 @@ export const services: Service[] = [
     time: "1.5 to 3 hours",
     jobHours: 3,
     note: "Every 2 or 4 weeks.",
-    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed", "Shampoo and steam spot vac of fabric seats, or steam clean of leather seats"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned", "Full decontamination of the paintwork", "Wax sealant applied", "A light machine polish if scratches or bush marks appear between visits"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
+    includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed", "Shampoo and steam spot vac of fabric seats, or steam clean of leather seats"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned", "Full decontamination of the paintwork", "Wax sealant applied", "A light machine polish if scratches or bush marks appear between visits"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:57-11:01
       "Ceramic spray",
