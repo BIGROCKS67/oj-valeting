@@ -235,12 +235,12 @@ export const services: Service[] = [
     name: "Ultimate Maintenance Package",
     category: "Plans",
     squareId: "YFKWA2HQR7PXYTRORVYUYIYK",
-    blurb: "Designed for anyone who wants to keep their vehicle looking its absolute best all year round. Including everything from the standard Maintenance Package, with a scheduled visit every 2 or 4 weeks, alongside additional specialist treatments and premium extras added to each visit.", // Owen, WhatsApp 22 Nov
+    blurb: "Designed for anyone who wants to keep their vehicle looking its absolute best all year round. Including everything from the standard Maintenance Package, with a scheduled visit every 1, 2 or 4 weeks, alongside additional specialist treatments and premium extras added to each visit.", // Owen, WhatsApp 22 Nov
     searchName: "Ultimate maintenance valet plan",
     from: 80, // Owen, 19 Nov 16:35
     time: "1.5 to 3 hours",
     jobHours: 3,
-    note: "Every 2 or 4 weeks.",
+    note: "Every 1, 2 or 4 weeks.",
     includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed", "Shampoo and steam spot vac of fabric seats, or steam clean of leather seats"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned", "Full decontamination of the paintwork", "Wax sealant applied", "A light machine polish if scratches or bush marks appear between visits"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:57-11:01
@@ -252,7 +252,7 @@ export const services: Service[] = [
       "Ozone treatment",
     ],
     prices: [{ label: "Each visit", prices: [["Small", "£80"], ["Medium", "£110"], ["Large", "£140"], ["XL", "£170"]] }],
-    option: { name: "frequency", label: "How often?", choices: ["Every 2 weeks", "Every 4 weeks"] },
+    option: { name: "frequency", label: "How often?", choices: ["Every week", "Every 2 weeks", "Every 4 weeks"] },
     photos: ["porsche-taycan-black", "porsche-macan-white", "range-rover", "bmw-5-series"],
     goodFor: "a car you care about that you want kept at its very best, with the little extras taken care of too.",
   },
