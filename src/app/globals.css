@@ -3047,3 +3047,5 @@ textarea {
     font-size: 0.9rem;
   }
 }
+
+.inc-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }

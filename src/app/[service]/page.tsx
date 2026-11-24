@@ -109,7 +109,17 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
               <h3>{g.group}</h3>
               <ul>
                 {g.items.map((i) => (
-                  <li key={i}>{i}</li>
+                  <li key={i}>
+                    {s.slug !== "deep-exterior" && i.includes("full deep exterior wash") ? (
+                      <>
+                        {i.split("full deep exterior wash")[0]}
+                        <Link href="/deep-exterior/" className="inc-link">full deep exterior wash</Link>
+                        {i.split("full deep exterior wash")[1]}
+                      </>
+                    ) : (
+                      i
+                    )}
+                  </li>
                 ))}
               </ul>
             </div>
