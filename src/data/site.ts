@@ -32,7 +32,7 @@ export const site = {
   // with 30 minutes' travel after each job; he approves each request. Every Book button links here.
   // Owen, 17 Nov 2026: online booking paused until he is ready to go live. While false, every
   // Book button goes to /book/, which says call or text. Set true (and switch Square back on) to reopen.
-  bookingOpen: false,
+  bookingOpen: true,
   // Home page photo: public/photos/hero-d.(avif|webp) on big screens, hero-m on phones, both graded
   // crops of Owen's Taycan (owen-28). Swap for a video loop if Owen films one.
   bookingApp: "https://book.squareup.com/appointments/1rs73chx3amn4i/location/LNTAB4BDN55JV/services",
