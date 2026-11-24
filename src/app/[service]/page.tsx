@@ -44,7 +44,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
             {s.name}
             {s.from > 0 && (
               <>
-                , from <span className="num">{gbp(s.from)}</span>
+                , From <span className="num">{gbp(s.from)}</span>
               </>
             )}
           </h1>
@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       </section>
 
       <section className="wrap svc-prices" aria-labelledby="pr-h">
-        <h2 id="pr-h">{s.prices[0].prices.length > 1 ? "Prices by vehicle size" : "Price"}</h2>
+        <h2 id="pr-h">{s.prices[0].prices.length > 1 ? "Prices by Vehicle Size" : "Price"}</h2>
         {s.tip && <p className="price-tip">{s.tip}</p>}
         <div className="price-tables">
           {s.prices.map((t) => (
@@ -103,7 +103,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
 
       <section className="wrap svc-body">
         {s.includes.length > 0 && (<div className="included">
-          <h2>What&rsquo;s included</h2>
+          <h2>What&rsquo;s Included</h2>
           {s.includes.map((g) => (
             <div key={g.group} className="inc-group">
               <h3>{g.group}</h3>
@@ -127,7 +127,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
         </div>)}
 
         <aside className="extras" aria-labelledby="ex-h">
-          <h2 id="ex-h">{s.extras.length ? "Popular extras for this service" : "Extras"}</h2>
+          <h2 id="ex-h">{s.extras.length ? "Popular Extras for This Service" : "Extras"}</h2>
           {s.extras.length ? (
             <>
               <ul>
@@ -162,37 +162,37 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
       {/* Good to know: drop-downs like elitekleanz.com (Owen, 18 Nov). Facts already on the site; the
           deposit: 20% on every service (Owen, 19 Nov). */}
       <section className="wrap svc-faq" aria-labelledby="gk-h">
-        <h2 id="gk-h">Good to know</h2>
+        <h2 id="gk-h">Good to Know</h2>
         <div className="drops">
           <details>
-            <summary>How long does it take?</summary>
+            <summary>How Long Does It Take?</summary>
             <p>
               {s.time === "Owen will confirm the time" ? "Owen will tell you when he quotes." : `${s.time}, depending on the size and state of the vehicle.`}
             </p>
           </details>
           <details>
-            <summary>Can the price change?</summary>
+            <summary>Can the Price Change?</summary>
             <p>
               The prices are starting prices for each size. Owen confirms the final price once he&rsquo;s seen the
               vehicle, before he starts. {s.note?.startsWith("Price may vary") ? s.note : ""} {site.honest}
             </p>
           </details>
           <details>
-            <summary>What do you need from me?</summary>
+            <summary>What Do You Need From Me?</summary>
             <p>{site.needs}</p>
           </details>
           <details>
-            <summary>Is there a deposit?</summary>
+            <summary>Is There a Deposit?</summary>
             <p>
               {site.deposit} The full terms are on the <Link href="/contact/#terms">contact page</Link>.
             </p>
           </details>
           <details>
-            <summary>What if it rains?</summary>
+            <summary>What If It Rains?</summary>
             <p>Owen does have a waterproof gazebo, so light rain won&rsquo;t stop the job.</p>
           </details>
           <details>
-            <summary>How do I pay?</summary>
+            <summary>How Do I Pay?</summary>
             <p>{site.payment}</p>
           </details>
         </div>
@@ -213,13 +213,13 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
 
       {theirs.length > 0 && (
         <section className="wrap said" aria-labelledby="sr-h">
-          <h2 id="sr-h">From customers who had it done</h2>
+          <h2 id="sr-h">From Customers Who Had It Done</h2>
           <ReviewList items={theirs} />
         </section>
       )}
 
       <section className="wrap other" aria-labelledby="ot-h">
-        <h2 id="ot-h">Other services</h2>
+        <h2 id="ot-h">Other Services</h2>
         <ul className="other-list" role="list">
           {others.map((o) => (
             <li key={o.slug}>

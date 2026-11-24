@@ -95,7 +95,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       </details>
                     </li>
                     <li>
-                      <Link href="/work/">Our work</Link>
+                      <Link href="/work/">Our Work</Link>
                     </li>
                     <li>
                       <Link href="/reviews/">Reviews</Link>
@@ -115,7 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </ul>
                   <div className="nm-foot">
                     <a href={bookHref} className="btn btn-foam btn-big">
-                      Book a clean
+                      Book a Clean
                     </a>
                     <a href={tel} className="btn btn-line-dark btn-big">
                       Call <span className="num">{site.phone}</span>
@@ -131,7 +131,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Link href="/#prices">Services</Link>
                 </li>
                 <li>
-                  <Link href="/work/">Our work</Link>
+                  <Link href="/work/">Our Work</Link>
                 </li>
                 <li>
                   <Link href="/reviews/">Reviews</Link>
@@ -147,7 +147,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </li>
               </ul>
             </nav>
-            {/* Owen, 18 Nov: Contact at the end instead of the number and Book a clean */}
+            {/* Owen, 18 Nov: Contact at the end instead of the number and Book a Clean */}
             <Link href="/contact/" className="btn btn-foam head-book">
               Contact
             </Link>
@@ -169,7 +169,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="foot-base">Based in Buckingham, Buckinghamshire MK18</p>
             </div>
             <div>
-              <p className="foot-h">Get in touch</p>
+              <p className="foot-h">Get in Touch</p>
               <ul>
                 <li>
                   <a href={tel} className="num">
@@ -215,10 +215,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <p className="foot-h">More</p>
               <ul>
                 <li>
-                  <a href={bookHref}>Book a clean</a>
+                  <a href={bookHref}>Book a Clean</a>
                 </li>
                 <li>
-                  <Link href="/work/">Our work</Link>
+                  <Link href="/work/">Our Work</Link>
                 </li>
                 <li>
                   <Link href="/reviews/">Reviews</Link>
@@ -256,7 +256,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <a href={tel}>Call</a>
           <a href={sms("Hi Owen, ")}>Text</a>
           <a href={bookHref} className="ab-book">
-            Book a clean
+            Book a Clean
           </a>
         </nav>
       </body>

@@ -14,21 +14,21 @@ export default function Privacy() {
     <PageHead id="pv-h" title="Privacy" />
     <section className="wrap prose">
       <p>OJ Valeting is run by Owen, who is responsible for the details you send through this site.</p>
-      <h2>What happens to your details</h2>
+      <h2>What Happens to Your Details</h2>
       <p>
         Online bookings are taken through Square Appointments (squareup.com), which holds your name, number, email,
         address and booking so Owen can see them in his diary and send you reminders. Square&rsquo;s own privacy notice
         covers how it stores them. If you use the quote form on the contact page, it is sent to Owen's email by FormSubmit (formsubmit.co), which passes it on and doesn't use it for anything else. Owen uses your details only to confirm and carry out the booking and to contact you
         about it.
       </p>
-      <h2>How long they are kept</h2>
+      <h2>How Long They Are Kept</h2>
       <p>Booking details are kept for 12 months after the last job, then deleted, unless you&rsquo;re on a maintenance plan.</p>
       <h2>Cookies</h2>
       <p>
         This site sets no cookies and loads nothing from Google, Facebook or any advertising company. The map on the areas page is a picture made from OpenStreetMap data and served from this site, so it loads nothing from anyone else. The Square booking
         page is run by Square and has its own cookie settings.
       </p>
-      <h2>Your rights</h2>
+      <h2>Your Rights</h2>
       <p>
         You can ask Owen for a copy of your details, or to correct or delete them, by emailing {site.email}. If you&rsquo;re
         unhappy with the answer you can complain to the Information Commissioner&rsquo;s Office at ico.org.uk.

@@ -17,7 +17,7 @@ export default function Work() {
   const all = [...wall, ...extra];
   return (
     <>
-      <PageHead id="work-h" eyebrow="450+ vehicles cleaned" title="Our work">
+      <PageHead id="work-h" eyebrow="450+ vehicles cleaned" title="Our Work">
         {/* Owen, 17 Nov 2026: over 450 vehicles cleaned. */}
         <p>
           Every one cleaned on the owner&rsquo;s own drive or yard. New ones go up on{" "}
@@ -29,7 +29,7 @@ export default function Work() {
       </section>
       <p className="wrap center-cta">
         <a href={bookHref} className="btn btn-foam btn-big">
-          Book a clean
+          Book a Clean
         </a>
       </p>
     </>

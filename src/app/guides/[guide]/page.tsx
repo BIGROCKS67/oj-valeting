@@ -58,7 +58,7 @@ export default async function GuidePage({ params }: { params: Promise<{ guide: s
           ))}
         </section>
       ))}
-      <h2>More from Owen</h2>
+      <h2>More From Owen</h2>
       <ul className="area-list" role="list">
         {g.related.map((slug) => {
           const s = getService(slug);
@@ -69,12 +69,12 @@ export default async function GuidePage({ params }: { params: Promise<{ guide: s
           ) : null;
         })}
         <li>
-          <Link href="/areas/">Areas Owen covers</Link>
+          <Link href="/areas/">Areas Owen Covers</Link>
         </li>
       </ul>
       <p className="book-live">
         <a href={bookHref} className="btn btn-foam btn-big">
-          Book a clean
+          Book a Clean
         </a>
         <a href={tel} className="btn btn-line btn-big">
           Call <span className="num">{site.phone}</span>

@@ -3,7 +3,7 @@
 // Owen, WhatsApp 18 Nov 22:09-22:15: new car protection from £480+ (no size table), basic interior XL £45+, basic exterior small £30.
 // Names, times and Owen's one-line descriptions are from his old services page
 // (ojvaleting.org/my-services, 16 Nov 2026). Prices by size and add-on prices are from the
-// price list he sent on 17 Nov 2026. The "What's included"
+// price list he sent on 17 Nov 2026. The "What's Included"
 // lists are drafts written from what other UK mobile detailers list for the same packages:
 // Owen asked for this on the call, and each list shows a Draft tag until he signs it off.
 
@@ -353,7 +353,7 @@ export const services: Service[] = [
   },
 
   // Owen, voice note 18 Nov 20:02: stage 2 alongside stage 1 (no stage 3). Prices and times to come
-  // from Owen; until then every size says Ask Owen. "What's included" is a draft for him to confirm.
+  // from Owen; until then every size says Ask Owen. "What's Included" is a draft for him to confirm.
   {
     slug: "stage-2-paint-correction",
     name: "Stage 2 Paint Correction",
@@ -405,7 +405,7 @@ export const gbp = (n: number) => `£${n}`;
 /** "from £X", or "Ask Owen" while Owen hasn't priced a service yet (from: 0) */
 export const fromText = (n: number) => (n > 0 ? `from £${n}` : "Ask Owen");
 
-// Keep every list (nav, footer, /book/, "Other services") in menu order: valets first, plans last.
+// Keep every list (nav, footer, /book/, "Other Services") in menu order: valets first, plans last.
 services.sort((a, b) => categories.indexOf(a.category) - categories.indexOf(b.category));
 
 /** Owen, voice note 19 Nov: Services in the menu split into three groups, like Elite Kleanz. Each has its own page at /services/<slug>/ */

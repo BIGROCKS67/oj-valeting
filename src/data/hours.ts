@@ -3,7 +3,7 @@
 // Owen blocks off the slots he can't do in the Square calendar himself. If the hours change,
 // change all three together.
 
-export const season = "Opening hours";
+export const season = "Opening Hours";
 
 export const hoursList: [string, string][] = [
   ["Monday", "8am to 6pm"],

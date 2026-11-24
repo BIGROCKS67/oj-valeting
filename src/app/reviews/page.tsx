@@ -7,7 +7,7 @@ import { Stars } from "@/components/Stars";
 
 export const metadata: Metadata = {
   title: "OJ Valeting reviews: mobile valeting, Brackley",
-  description: "What customers say about Owen's mobile valeting: deep cleans, ozone treatment, paint correction, caravans and vans.",
+  description: "What Customers Say about Owen's mobile valeting: deep cleans, ozone treatment, paint correction, caravans and vans.",
   alternates: { canonical: "/reviews/" },
 };
 
@@ -38,7 +38,7 @@ export default function Reviews() {
         <ReviewList cards items={[...reviews, { text: homeQuote.text, name: "Monthly customer", when: "2026" }]} />
       <p className="center-cta">
         <a href={bookHref} className="btn btn-foam btn-big">
-          Book a clean
+          Book a Clean
         </a>
       </p>
       </section>

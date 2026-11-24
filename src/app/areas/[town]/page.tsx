@@ -50,7 +50,7 @@ export default async function TownPage({ params }: { params: Promise<{ town: str
       <p className="crumb">
         <Link href="/areas/">Areas</Link> <span aria-hidden="true">/</span> {a.town}
       </p>
-      <h1 id="town-h">Mobile car valeting in {a.town}</h1>
+      <h1 id="town-h">Mobile Car Valeting in {a.town}</h1>
       <p>{a.intro}</p>
       <p>
         {a.town} is {a.drive} from Owen&rsquo;s base. He also covers the villages around it, like{" "}
@@ -58,7 +58,7 @@ export default async function TownPage({ params }: { params: Promise<{ town: str
       </p>
       <p className="book-live">
         <a href={bookHref} className="btn btn-foam btn-big">
-          Book a clean
+          Book a Clean
         </a>
         <a href={sms(`Hi Owen, I'm in ${a.town} and I'd like a `)} className="btn btn-line btn-big">
           Text Owen
@@ -79,7 +79,7 @@ export default async function TownPage({ params }: { params: Promise<{ town: str
         motorbikes, caravans, motorhomes, horseboxes and farm vehicles all welcome.
       </p>
 
-      <h2>When Owen works</h2>
+      <h2>When Owen Works</h2>
       <dl className="hours-list">
         {hoursList.map(([d, t]) => (
           <div key={d}>
@@ -89,20 +89,20 @@ export default async function TownPage({ params }: { params: Promise<{ town: str
         ))}
       </dl>
 
-      <h2>What customers say</h2>
+      <h2>What Customers Say</h2>
       <ReviewList items={reviews.slice(0, 3)} />
       <p>
-        <Link href="/reviews/">All reviews</Link> &middot; <Link href="/work/">Our work</Link> &middot;{" "}
+        <Link href="/reviews/">All reviews</Link> &middot; <Link href="/work/">Our Work</Link> &middot;{" "}
         <a href={tel}>Call {site.phone}</a>
       </p>
 
-      <h2>Other areas</h2>
+      <h2>Other Areas</h2>
       <ul className="area-list" role="list">
         {areas
           .filter((x) => x.slug !== a.slug)
           .map((x) => (
             <li key={x.slug}>
-              <Link href={`/areas/${x.slug}/`}>Mobile car valeting in {x.town}</Link>
+              <Link href={`/areas/${x.slug}/`}>Mobile Car Valeting in {x.town}</Link>
             </li>
           ))}
       </ul>

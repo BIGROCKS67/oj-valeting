@@ -60,7 +60,7 @@ export default function Home() {
             <p className="hero-sub">Maintenance, Deep Cleans, Paint Correction and Ceramic Coating, Done Properly on Your Drive.</p>
             <div className="hero-cta">
               <a href={bookHref} className="btn btn-foam hero-book">
-                Book a clean
+                Book a Clean
               </a>
               <Link href="/work/" className="hero-link">
                 See Our Work
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="wrap">
           <div className="drives-head">
             <p className="page-eyebrow dark">450+ vehicles and counting</p>
-            <h2 id="drives-h">Every car here was cleaned on its owner&rsquo;s drive</h2>
+            <h2 id="drives-h">Every Car Here Was Cleaned on Its Owner&rsquo;s Drive</h2>
             <p>
               From a Porsche Taycan to a Scania horsebox. More on <a href={site.instagram}>Instagram</a>.
             </p>
@@ -151,7 +151,7 @@ export default function Home() {
           </figure>
           <div className="owen-text">
             <p className="page-eyebrow">Just me and my business</p>
-            <h2 id="owen-h">Owen does every job himself</h2>
+            <h2 id="owen-h">Owen Does Every Job Himself</h2>
             <blockquote className="owen-quote">
               <p>
                 &ldquo;Honesty and quality are the heart of everything I do. I&rsquo;ll always give you genuine advice and
@@ -181,7 +181,7 @@ export default function Home() {
         <div className="wrap">
           <div className="said-top">
             <div>
-              <h2 id="said-h">What customers say</h2>
+              <h2 id="said-h">What Customers Say</h2>
               <figure className="big-quote">
                 <blockquote>
                   <p>&ldquo;{homeQuote.text}&rdquo;</p>
@@ -214,7 +214,7 @@ export default function Home() {
       <section className="book-band" aria-labelledby="bb-h">
         <div className="wrap bb-grid">
           <div>
-            <h2 id="bb-h">{site.bookingOpen ? <>Book straight into Owen&rsquo;s diary</> : <>Book with Owen</>}</h2>
+            <h2 id="bb-h">{site.bookingOpen ? <>Book Straight Into Owen&rsquo;s Diary</> : <>Book With Owen</>}</h2>
             <p>
               {site.bookingOpen
                 ? "Pick the package and a free slot. You only see times Owen can do, and he confirms before the day."
@@ -224,7 +224,7 @@ export default function Home() {
           </div>
           <div className="bb-actions">
             <a href={bookHref} className="btn btn-foam btn-big">
-              Book a clean
+              Book a Clean
             </a>
             <a href={tel} className="btn btn-line-dark btn-big">
               Or call <span className="num">{site.phone}</span>

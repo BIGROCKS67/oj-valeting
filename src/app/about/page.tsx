@@ -56,7 +56,7 @@ export default function About() {
         <p className="about-sign">Owen, owner of OJ Valeting</p>
         <p className="about-cta">
           <a href={bookHref} className="btn btn-foam btn-big">
-            Book a clean
+            Book a Clean
           </a>{" "}
           <Link href="/work/">See the work</Link>
           <a href={site.instagram}>Follow on Instagram</a>

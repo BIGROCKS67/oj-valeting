@@ -16,36 +16,36 @@ export const metadata: Metadata = {
 
 const faq: [string, string][] = [
   [
-    "How does booking work?",
+    "How Does Booking Work?",
     site.bookingOpen
       ? "Pick the service and your car size, then a free slot in Owen's live diary. Owen gets the request, checks it and confirms. Square sends you a confirmation and a reminder before the day."
       : "Call or text Owen on 07708 600114 with the service, your car and a day that suits, and he'll sort a time with you. Online booking opens soon.",
   ],
   [
-    "Which size is my car?",
+    "Which Size Is My Car?",
     "Roughly: small is a Polo or Fiesta, medium a Golf or 3 Series, large an estate or SUV, and XL a 7-seater, big 4x4 or van. If you're not sure, pick the nearest and Owen will tell you before he starts.",
   ],
   [
-    "Can the price change?",
+    "Can the Price Change?",
     "Prices are from prices. Owen confirms the final figure once he's seen the size and state of the vehicle, before he starts, so there are no surprises at the end. " + site.honest,
   ],
-  ["What do you need from me?", site.needs],
-  ["How do I pay?", "Apple Pay, bank transfer or cash on the day."],
+  ["What Do You Need From Me?", site.needs],
+  ["How Do I Pay?", "Apple Pay, bank transfer or cash on the day."],
   [
-    "Where do you cover?",
+    "Where Do You Cover?",
     "Owen is based between Brackley and Buckingham and covers Buckinghamshire, Oxfordshire, Northamptonshire, Bedfordshire and Warwickshire. Nationwide too, with a small fuel charge for further afield.",
   ],
   [
-    "Motorbike, caravan, motorhome, horsebox, van or farm vehicle?",
+    "Motorbike, Caravan, Motorhome, Horsebox, Van or Farm Vehicle?",
     "All welcome. Text Owen a photo and he'll quote and sort a time, because these vary too much to price online.",
   ],
   [
-    "Can I add extras?",
+    "Can I Add Extras?",
     "Yes. Mention them in the notes when you book, or text Owen. Every add-on and its price is listed on this page.",
   ],
-  ["Is there a deposit?", site.deposit],
+  ["Is There a Deposit?", site.deposit],
   [
-    "How do I change or cancel?",
+    "How Do I Change or Cancel?",
     site.bookingOpen
       ? "Use the link in your Square confirmation email, or text Owen on 07708 600114 as early as you can."
       : "Text or call Owen on 07708 600114 as early as you can.",
@@ -60,7 +60,7 @@ const faqLd = {
 export default function Book() {
   return (
     <>
-    <PageHead id="book-h" eyebrow={`${site.google.rating} on Google · fully insured`} title="Book a clean" />
+    <PageHead id="book-h" eyebrow={`${site.google.rating} on Google · fully insured`} title="Book a Clean" />
     <section className="wrap book-page">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <div className="book-intro">
@@ -124,7 +124,7 @@ export default function Book() {
           </ul>
         </div>
         <div>
-          <h2>Where Owen works</h2>
+          <h2>Where Owen Works</h2>
           <p>
             Based between Brackley and Buckingham. Regulars in {site.towns.slice(0, -1).join(", ")} and{" "}
             {site.towns.at(-1)}, and anywhere across {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}.{" "}

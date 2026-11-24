@@ -57,7 +57,7 @@ function Card({ s, js }: { s: Service; js: boolean }) {
         {js && sized && <p className="mc-hint">{sizeHint[label]}</p>}
         {s.note?.startsWith("Price may vary") && <p className="mc-hint">{s.note}</p>}
         <p className="mc-links">
-          <Link href={`/${s.slug}/`}>{s.includes.length ? <>What&rsquo;s included</> : "More details"}</Link>
+          <Link href={`/${s.slug}/`}>{s.includes.length ? <>What&rsquo;s Included</> : "More details"}</Link>
           <a href={bookUrl(s.squareId)} className="pl-book">
             Book
           </a>

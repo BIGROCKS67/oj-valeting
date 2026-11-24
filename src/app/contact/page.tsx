@@ -27,7 +27,7 @@ export default function Contact() {
         {/* Owen, 18 Nov: laid out like elitekleanz.com/contact: the terms first (as drop-downs), then a big
             call button, then a quote form. Deposit and belongings confirmed by Owen 18 Nov. */}
         <section id="terms" className="contact-terms" aria-labelledby="terms-h">
-          <h2 id="terms-h">Please read before booking</h2>
+          <h2 id="terms-h">Please Read Before Booking</h2>
           <div className="drops">
             <details>
               <summary>Prices</summary>
@@ -43,14 +43,14 @@ export default function Contact() {
               <p>{site.deposit}</p>
             </details>
             <details>
-              <summary>Personal belongings</summary>
+              <summary>Personal Belongings</summary>
               <p>
                 Please take anything valuable or personal out of the vehicle before Owen starts. He can&rsquo;t be
                 responsible for items left inside.
               </p>
             </details>
             <details>
-              <summary>What Owen needs from you</summary>
+              <summary>What Owen Needs From You</summary>
               <p>Owen needs an accessible tap and electric to complete the service.</p>
             </details>
             <details>
@@ -58,7 +58,7 @@ export default function Contact() {
               <p>{site.payment}</p>
             </details>
             <details>
-              <summary>Changing or cancelling</summary>
+              <summary>Changing or Cancelling</summary>
               <p>Text or call Owen on {site.phone} as early as you can.</p>
             </details>
           </div>
@@ -79,7 +79,7 @@ export default function Contact() {
         {/* Quote form: sent to Owen's email by FormSubmit (formsubmit.co). The first message triggers a
             one-off "activate" email to Owen, which he must click before forms come through. */}
         <form className="quote-form" action={`https://formsubmit.co/${site.email}`} method="POST">
-          <h2>Get a quote</h2>
+          <h2>Get a Quote</h2>
           <p className="qf-lead">Tell Owen about the vehicle and he&rsquo;ll text you back with an honest price.</p>
           <input type="hidden" name="_subject" value="New quote request from ojvalet.co.uk" />
           <input type="hidden" name="_template" value="table" />
@@ -125,7 +125,7 @@ export default function Contact() {
         </form>
       </div>
       <div className="contact-side">
-        <h2>Get in touch</h2>
+        <h2>Get in Touch</h2>
         <ul className="contact-list" role="list">
           <li>
             <span>Call</span>
@@ -146,7 +146,7 @@ export default function Contact() {
             <a href={site.facebook}>OJ Valeting</a>
           </li>
         </ul>
-        <h2>Opening hours</h2>
+        <h2>Opening Hours</h2>
         <dl className="contact-hours">
           {hoursList.map(([d, h]) => (
             <div key={d}>

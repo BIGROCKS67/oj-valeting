@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Thanks() {
   return (
     <>
-      <PageHead id="thanks-h" eyebrow="Message sent" title="Thanks, Owen's got it">
+      <PageHead id="thanks-h" eyebrow="Message sent" title="Thanks, Owen's Got It">
         <p>He&rsquo;ll text you back with a price as soon as he can. If it&rsquo;s urgent, give him a ring.</p>
       </PageHead>
       <section className="wrap page-body">

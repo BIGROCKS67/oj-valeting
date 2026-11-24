@@ -33,14 +33,14 @@ export default function Areas() {
         <div className="wrap area-card-wrap">
           <div className="area-card">
             <p className="page-eyebrow">Mobile valeting and detailing, UK nationwide</p>
-            <h1 id="areas-h">Areas Owen covers</h1>
+            <h1 id="areas-h">Areas Owen Covers</h1>
             <p>
               Owen comes to your home or work across {site.counties.slice(0, -1).join(", ")} and {site.counties.at(-1)}.
               Further afield is no problem either: he travels nationwide, with a small fuel charge for longer trips.
             </p>
             <p className="area-cta">
               <a href={bookHref} className="btn btn-foam">
-                Book a clean
+                Book a Clean
               </a>
               <a href={tel} className="btn btn-line-dark">
                 Call <span className="num">{site.phone}</span>
