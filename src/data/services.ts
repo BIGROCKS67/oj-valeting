@@ -382,6 +382,7 @@ export const services: Service[] = [
     slug: "new-car-protection",
     name: "New Car Protection Package",
     category: "Protection",
+    squareId: "Z4IQHYGDMFJSHYYR4A5Q6BOD",
     blurb: "This is the ultimate package for your newly purchased vehicle. This includes a full deep interior clean with leather or fabric protectant applied, a full deep exterior clean, a light stage 1 machine polish and then a 5 year ceramic coating.", // Owen, WhatsApp 22 Nov
     searchName: "New car protection detail",
     from: 450, // Owen, WhatsApp 23 Nov 21:22 (was 430)
@@ -390,7 +391,7 @@ export const services: Service[] = [
     includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet area shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed", "Fabric or leather treatment applied", "Ozone machine to decontaminate the inside of the vehicle"]}, {group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and paintwork decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned", "Full decontamination", "Stage 1 paint correction", "5 year ceramic coating"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
     extras: ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"],
-    prices: [{ label: "New Car Protection Package", prices: [["Starting from", "£450+"]] }],
+    prices: [{ label: "New Car Protection Package", prices: [["Small", "£450"], ["Medium", "£500"], ["Large", "£550"], ["XL", "£600"]] }], // Owen, voice note 24 Nov 15:52
     photos: ["defender-110-green", "owen-polo-sill", "owen-wheel-clean", "porsche-taycan-black"], // Owen, 19 Nov: Defender as the main photo
     goodFor: "a new or nearly new car you want protected from day one.",
   },

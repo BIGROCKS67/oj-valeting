@@ -280,3 +280,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 
 ## Live (24 Nov 2026)
 - Square online booking enabled again (Appointments > Online booking > Channels, 12 services) and `bookingOpen: true`. Every Book button goes to Square.
+- 24 Nov: New Car Protection priced by size £450/£500/£550/£600 (Owen voice note 15:52); Book button now opens it in Square
