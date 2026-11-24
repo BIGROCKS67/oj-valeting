@@ -105,9 +105,9 @@ export const services: Service[] = [
       "Seat stain removal",
     ],
     prices: [
-      { label: "Inside and out", prices: [["Small", "£45+"], ["Medium", "£55+"], ["Large", "£65+"], ["XL", "£75+"]] },
-      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
-      { label: "Outside only", prices: [["Small", "£30"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
+      { label: "Inside and Out", prices: [["Small", "£45+"], ["Medium", "£55+"], ["Large", "£65+"], ["XL", "£75+"]] },
+      { label: "Inside Only", note: "Depends on Condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
+      { label: "Outside Only", prices: [["Small", "£30"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
     ],
     photos: ["bmw-m4-wash", "owen-porsche-boxster-wash", "vw-golf-r", "porsche-cayenne"],
     goodFor: "a car that's been looked after and needs a proper clean inside and out.",
@@ -133,9 +133,9 @@ export const services: Service[] = [
       "Clay bar",
     ],
     prices: [
-      { label: "Inside and out", prices: [["Small", "£150+"], ["Medium", "£165+"], ["Large", "£180+"], ["XL", "£200+"]] },
-      { label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£160+"]] },
-      { label: "Outside only", prices: [["Small", "£40"], ["Medium", "£45"], ["Large", "£50"], ["XL", "£55"]] },
+      { label: "Inside and Out", prices: [["Small", "£150+"], ["Medium", "£165+"], ["Large", "£180+"], ["XL", "£200+"]] },
+      { label: "Inside Only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£160+"]] },
+      { label: "Outside Only", prices: [["Small", "£40"], ["Medium", "£45"], ["Large", "£50"], ["XL", "£55"]] },
     ],
     photos: ["owen-steam-cleaning-door", "porsche-red-leather-interior", "land-rover-interior", "ford-interior"],
     goodFor: "a car that's about to be sold, a family or dog car, or one that hasn't had a proper clean in a long time.",
@@ -276,7 +276,7 @@ export const services: Service[] = [
       "Interior leather ceramic coating",
     ],
     prices: [
-      { label: "Inside only", note: "Depends on condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
+      { label: "Inside Only", note: "Depends on Condition", prices: [["Small", "£30+"], ["Medium", "£35+"], ["Large", "£40+"], ["XL", "£45+"]] },
     ],
     photos: ["discovery-interior", "ford-interior", "boot-cleaned", "land-rover-interior"],
     goodFor: "a car that looks fine outside but needs the inside sorting: school runs, work vans, dog hair.",
@@ -301,7 +301,7 @@ export const services: Service[] = [
       "Plastic trim restoration",
       "Clay bar with full decontamination wash",
     ],
-    prices: [{ label: "Outside only", prices: [["Small", "£30"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] }],
+    prices: [{ label: "Outside Only", prices: [["Small", "£30"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] }],
     photos: ["vw-golf-r", "range-rover-satin", "owen-polo-roof", "gloss-roof"],
     goodFor: "a quick, safe wash between valets, or before a trip or a sale.",
   },
@@ -325,7 +325,7 @@ export const services: Service[] = [
       "Interior plastics polished",
       "Interior leather ceramic coating",
     ],
-    prices: [{ label: "Inside only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£160+"]] }],
+    prices: [{ label: "Inside Only", prices: [["Small", "£130+"], ["Medium", "£140+"], ["Large", "£150+"], ["XL", "£160+"]] }],
     photos: ["owen-steam-cleaning-door", "porsche-red-leather-interior", "land-rover-interior", "discovery-interior"],
     goodFor: "family and dog cars, smells, spills, mould, or a car you've just bought second hand.",
   },
@@ -347,7 +347,7 @@ export const services: Service[] = [
       "Exhaust polish",
       "Ceramic spray",
     ],
-    prices: [{ label: "Outside only", prices: [["Small", "£40"], ["Medium", "£45"], ["Large", "£50"], ["XL", "£55"]] }],
+    prices: [{ label: "Outside Only", prices: [["Small", "£40"], ["Medium", "£45"], ["Large", "£50"], ["XL", "£55"]] }],
     photos: ["range-rover-satin", "porsche-wheel", "vw-golf-r-rear", "bmw-m4-rear"],
     goodFor: "paint that feels rough or looks dull, or a car getting ready for polishing or a coating.",
   },
@@ -398,7 +398,7 @@ export const services: Service[] = [
 
 /** Menu order on the home page, and which add-ons sit in the Protection tab */
 export const categories: Category[] = ["Full valets", "Interior", "Exterior", "Paint correction", "Protection", "Plans"];
-export const protectionAddOns = ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating", "Ceramic spray"];
+export const protectionAddOns = ["Full window ceramic coating, 12 to 24 months", "Alloy ceramic coating, 1 or 2 years", "Interior leather ceramic coating"];
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
 export const gbp = (n: number) => `£${n}`;

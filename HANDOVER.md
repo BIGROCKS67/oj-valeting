@@ -273,3 +273,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - 24 Nov: 'carpet area' wording, 'paintwork decontaminated', shorter Deep Exterior blurb (Owen)
 - 24 Nov: Ultimate Maintenance 'Vehicle snow foamed and detail brushed' (Owen)
 - 24 Nov: 'full deep exterior wash' in includes links to /deep-exterior/ (Stage 1, Stage 2, Ceramic)
+- 24 Nov: price labels title case (Inside and Out / Inside Only / Outside Only / Depends on Condition); Ceramic spray removed from Protection add-ons (Owen)
