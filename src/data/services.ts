@@ -110,7 +110,7 @@ export const services: Service[] = [
       { label: "Outside Only", prices: [["Small", "£30"], ["Medium", "£35"], ["Large", "£40"], ["XL", "£45+"]] },
     ],
     photos: ["bmw-m4-wash", "owen-porsche-boxster-wash", "vw-golf-r", "porsche-cayenne"],
-    goodFor: "a car that's been looked after and needs a proper clean inside and out.",
+    goodFor: "any type of vehicle looking for a proper professional clean inside and out.",
   },
   {
     slug: "deep-clean",

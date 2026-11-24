@@ -189,7 +189,7 @@ export default async function ServicePage({ params }: { params: Promise<{ servic
           </details>
           <details>
             <summary>What if it rains?</summary>
-            <p>Owen brings a waterproof gazebo, so rain won&rsquo;t stop the job.</p>
+            <p>Owen does have a waterproof gazebo, so light rain won&rsquo;t stop the job.</p>
           </details>
           <details>
             <summary>How do I pay?</summary>

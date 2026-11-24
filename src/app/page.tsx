@@ -165,7 +165,7 @@ export default function Home() {
             <ul className="facts" role="list">
               <li>Fully insured</li>
               <li>Comes to your home or work</li>
-              <li>Waterproof gazebo, so rain won&rsquo;t stop him</li>
+              <li>Waterproof gazebo, so light rain won&rsquo;t stop him</li>
               <li>Needs a tap and a plug socket</li>
               <li>24 hour emergency call-outs</li>
               <li>UK nationwide</li>

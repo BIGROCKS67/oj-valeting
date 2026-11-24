@@ -18,7 +18,7 @@ export const site = {
   // Owen, 17 Nov 2026 (late): Apple Pay, bank transfer and cash.
   payment: "Pay by Apple Pay, bank transfer or cash on the day.",
   // Owen, WhatsApp 17 Nov 2026: say this on the site and in booking.
-  needs: "Owen needs a tap and a plug socket he can use at yours. He brings a waterproof gazebo, so rain won't stop the job.",
+  needs: "Owen needs a tap and a plug socket he can use at yours. Owen does have a waterproof gazebo, so light rain won't stop the job.",
   // Owen, 19 Nov 2026 (replaces 18 Nov £50-over-£150 rule): 20% deposit on every service, non-refundable, like Elite Kleanz's terms.
   // Was: £50 deposit on bookings over £150, taken off the final price; lost if they
   // cancel less than 48 hours before the booking.
