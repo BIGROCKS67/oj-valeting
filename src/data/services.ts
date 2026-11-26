@@ -120,9 +120,9 @@ export const services: Service[] = [
     squareId: "7QPFGXPL75UJLWTY7WEMRYJR",
     searchName: "Car deep clean",
     from: 150,
-    time: "3 to 5 hours",
+    time: "3 to 4 hours", // Owen, 26 Nov: was 3 to 5
     note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
-    jobHours: 5,
+    jobHours: 4,
     includes: [{group: "Interior", items: ["Full thorough hoover", "All carpets and carpet area shampooed, steamed and spot vac'd", "All plastics steamed and then protected", "Leather or fabric seats shampooed and steam spot vac'd", "All glass steamed and cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and paintwork decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52

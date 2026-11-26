@@ -36,7 +36,7 @@ export const guides: Guide[] = [
       {
         q: "How Much Is a Full Deep Clean?",
         a: [
-          "A full deep clean inside and out is £150 for a small car, £165 medium, £180 large and £200 XL. That's everything out, shampooed, steamed and decontaminated, and it takes 3 to 5 hours.",
+          "A full deep clean inside and out is £150 for a small car, £165 medium, £180 large and £200 XL. That's everything out, shampooed, steamed and decontaminated, and it takes 3 to 4 hours.",
           "Inside only starts at £130, outside only at £35.",
         ],
       },
