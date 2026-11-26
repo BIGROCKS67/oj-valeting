@@ -92,8 +92,8 @@ export const services: Service[] = [
     squareId: "Y335SIFHZPY26WGD4L74DGV7",
     searchName: "Mobile car valet",
     from: 45,
-    time: "1 to 2 hours",
-    jobHours: 2,
+    time: "1 to 1.5 hours", // Owen, 26 Nov: was 1 to 2
+    jobHours: 1.5,
     note: "Price may vary subject to condition of vehicle.", // Owen, WhatsApp 22 Nov 22:09
     includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
     includesConfirmed: false,
@@ -212,8 +212,8 @@ export const services: Service[] = [
     squareId: "BGCFUBL4UQKHY4JFNSSAHAOM",
     searchName: "Maintenance valet plan",
     from: 40,
-    time: "1 to 2 hours",
-    jobHours: 2,
+    time: "1 to 1.5 hours", // Owen, 26 Nov: was 1 to 2
+    jobHours: 1.5,
     note: "Every 2, 4 or 6 weeks.",
     includes: [{group: "Interior", items: ["Full thorough hoover", "Wipe down of all surfaces and plastics", "All glass cleaned", "Fragrance sprayed"]}, {group: "Exterior", items: ["Pre wash applied", "Alloys and tyres cleaned", "Vehicle snow foamed", "Safe 2 bucket hand wash method", "Car fully dried", "Tyres dressed", "All glass cleaned", "Tar and glue removal", "Wax sealant applied"]}], // Owen, WhatsApp 23 Nov 17:30-19:01
     includesConfirmed: false,
