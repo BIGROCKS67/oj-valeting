@@ -285,3 +285,4 @@ Owen's 15:40 to 15:43 list, done: captions "Engine bay clean, Range Rover", "5 y
 - 24 Nov 17:12 (Owen voice note: no add-ons under Add item on a booking): Square item library was empty. Added all 20 site add-ons as items at their starting (from) prices, e.g. Ceramic spray £25, Vinyl removal £150. Not bookable online; Owen adds them to an appointment himself and can change the price at checkout.
 - 26 Nov (Owen): Full Deep Clean now 3 to 4 hours (site, guide, llms.txt; Square 4 hrs on all sizes) so he can fit 2 in a day
 - 26 Nov (Owen): Basic Package and Maintenance Package now 1 to 1.5 hours (site, guide, llms.txt; Square 1 hr 30 on all sizes)
+- 26 Nov (Owen): Deep Exterior Clean now 1 to 1.5 hours (site, llms.txt; Square 1 hr 30 on all sizes)

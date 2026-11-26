@@ -337,8 +337,8 @@ export const services: Service[] = [
     blurb: "A thorough exterior clean including a full pre-wash, detailed door shuts, badges, alloys, wheel arches and tyres. Safe two-bucket hand wash followed by tar, iron and glue removal to fully decontaminate the paintwork. Finished with a quality wax sealant for added gloss and protection, a professional dry and tyre dressing for that perfect finish.", // Owen, WhatsApp 22 Nov
     searchName: "Car exterior deep clean",
     from: 40,
-    time: "1 to 2 hours",
-    jobHours: 2,
+    time: "1 to 1.5 hours", // Owen, 26 Nov: was 1 to 2
+    jobHours: 1.5,
     includes: [{group: "Exterior", items: ["Full pre wash", "Alloys, tyres and wheel arches deep cleaned", "Tar and iron removed and paintwork decontaminated", "Vehicle snow foamed and detail brushed", "Safe 2 bucket hand wash", "Wax sealant applied", "Vehicle dried", "Tyres dressed", "All glass cleaned"]}], // Owen, WhatsApp 23 Nov 11:11 + voice note 11:12
     includesConfirmed: false,
     extras: [ // Owen, voice notes 21 Nov 10:47-10:52
